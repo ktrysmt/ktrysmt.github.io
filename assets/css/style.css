@@ -310,7 +310,7 @@ em, i { font-style: italic; }
 }
 
 .post h2 {
-  margin: 24px 0 16px;
+  margin: 2.5em 0 16px;
   font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #333;
   border-bottom: 1px solid #eee;
