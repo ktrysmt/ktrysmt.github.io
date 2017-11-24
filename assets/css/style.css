@@ -290,8 +290,12 @@ em, i { font-style: italic; }
   box-shadow: 0 1px 0 #eee;
 }
 .top h2 {
-  margin-bottom: 60px;
-  color: rgb(170,170,170);
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 1em;
+    color: #666;
+    border-left: 0.25em solid #dfe2e5;
 }
 
 .post header {
