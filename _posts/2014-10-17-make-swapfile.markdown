@@ -13,9 +13,10 @@ published: true
 ## 作成
 
 ```
-dd if=/dev/zero of=/swapfile bs=1024K count=4096 # 4GB欲しい場合
-mkswap /swapfile
-swapon /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1024K count=1024 # 1GB欲しい場合
+sudo chmod 0600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
 ```
 
 ## スワップの確認
@@ -27,5 +28,5 @@ swapon /swapfile
 ## /etc/fstabに追記
 
 ```
-/swapfile               swap                    swap    defaults        0 0
+sudo bash -c 'echo "/swapfile               swap                    swap    defaults        0 0" >> /etc/fstab'
 ```
