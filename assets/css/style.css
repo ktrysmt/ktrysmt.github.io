@@ -140,7 +140,7 @@ nav.main-nav a {
 	top: 8px;
 	right: 6px;
 	padding: 8px 12px;
-	color: #5badf0;
+	color: #8397CF;
 	font-size: 13px;
 	/*font-weight: bold;*/
 	line-height: 1.35;
@@ -178,15 +178,14 @@ a,
 #post-list li:hover .dates,
 #title:hover {
 	text-decoration: none;
-	color: #5badf0;
-	color: #5694f1;
+	color: #8397CF;
 }
 
 .home a:hover {
   color: #333;
 }
 
-p a { color: #5694f1; }
+p a { color: #8397CF; }
 
 /*Transitions*/
 a,
