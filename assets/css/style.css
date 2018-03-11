@@ -78,6 +78,7 @@ header h2.headline {
 
 header span.list-headline {
   color: rgb(170,170,170);
+  font-size: 1.1em;
 }
 
 h2 {
