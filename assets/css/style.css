@@ -151,6 +151,10 @@ nav.main-nav a i {
   font-size:2em;
 }
 
+nav.main-nav a.cta {
+  padding-right: 0px !important;
+}
+
 #wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -205,7 +209,7 @@ ul#post-list {
 }
 
 ul { 
-  margin: 0px 0 16px;
+  margin: 0px 0 1.5em;
   padding:0;
   padding-left: 20px;
 }
@@ -224,9 +228,14 @@ li	{
 /* section#post-body */
 #post-body {
   padding-top: 10px;
+  font-size: 108%;
 }
 #post-body, p { 
-  line-height:1.7; 
+  line-height:1.8; 
+}
+
+#post-body, div { 
+  margin-bottom: 2em;
 }
 
 section#post-body img,
@@ -309,7 +318,8 @@ em, i { font-style: italic; }
 }
 
 .post h2 {
-  margin: 2.5em 0 16px;
+  margin: 0 0 1.5em;
+  padding-top: 2em;
   font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #333;
   border-bottom: 1px solid #eee;
@@ -329,7 +339,7 @@ em, i { font-style: italic; }
 }
 
 .post p {
-  margin-bottom: 10px;
+  margin-bottom: 1.5em;
 }
 
 #post-list h2 {
@@ -340,9 +350,9 @@ em, i { font-style: italic; }
 }
 h3, h4, h5 { color:#333; }
 h3 {
-  margin-bottom: 16px;
-  margin-top: 24px;
-  font-size: 20px;
+  margin-bottom: 1.5em;
+  padding-top: 1em;
+  font-size: 1.25em;
 }
 h4 { 
   font-size: 16px;
@@ -376,7 +386,7 @@ blockquote {
 	padding-left: 15px;
 	border-left: 3px solid #eee;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 1.5em;
 }
 
 hr {
@@ -389,18 +399,23 @@ hr {
 
 code {
   white-space: pre;
+  color: #e3e3e3;
+  font-weight: bold;
+  line-height: 1.7em;
 }
 
 p > code.highlighter-rouge {
-  padding: 3px 6px 2px;
-  margin: 0 3px;
-  background-color: #272b2d;
+  margin: 0 0.2em;
+  background-color: #364549;
   border-radius: 3px;
-  font-size: 12px;
-  color: #ddd;
+  font-size: 13px;
+  color: #e3e3e3;
   line-height: 1.5em;
-  font-weight: 500;
+  padding: 0.2em 0.5em;
+  font-weight: bold;
+  position: relative;
   font-family: "Source Code Pro", Menlo, monospace;
+  top: -1px;
 }
 
 span.code { font-family:Menlo, Monaco, Courier; background-color:#EEE; font-size:14px; }
@@ -420,7 +435,7 @@ pre	{
 	  line-height: 1.5em;
 	  font-weight: 500;
 	color: #d0d4d7;
-
+  background-color: #364549;
 }
 
 table {
@@ -849,11 +864,11 @@ iframe.speakerdeck-iframe {
   margin-bottom: 60px;
 }
 .post .toc-title {
-  font-size: 24px;
+  font-size: 1.5em;
   letter-spacing: -1px;
   color: #333;
-  margin-top: 40px;
-  margin-bottom: 20px; 
+  padding-top: 1em;
+  margin-bottom: 1em;
 }
 .post .toc-list ul {
   margin: 0px;
