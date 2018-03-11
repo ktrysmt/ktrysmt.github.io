@@ -28,14 +28,8 @@ archive: true
     </section>
 </article>
 
-<!-- Post Meta -->
-{% include post-meta.html %}
-
 <!-- NextPrevPostLink -->
 {% include next-prev-post-link.html %}
-
-<!-- Recent post list -->
-{% include recent-post-list.html %}
 
 <!-- Disqus comments -->
 {% if site.disqus %}
@@ -44,6 +38,12 @@ archive: true
         {% include disqus.html %}
     </div>
 {% endif %}
+
+<!-- Post Meta -->
+{% include post-meta.html %}
+
+<!-- Recent post list -->
+{% include recent-post-list.html %}
 
 <p class="small">(c) Copyright {{ site.time | date: '%Y' }} {{ site.authorRealName }}</p>
 
