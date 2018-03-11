@@ -28,19 +28,20 @@ archive: true
     </section>
 </article>
 
+<!-- Post Meta -->
+{% include post-meta.html %}
+
 <!-- NextPrevPostLink -->
 {% include next-prev-post-link.html %}
 
 <!-- Disqus comments -->
 {% if site.disqus %}
-    <div class="archive readmore">
+    <div class="post-comment archive readmore">
+        <hr>
         <h2>Comments</h2>
         {% include disqus.html %}
     </div>
 {% endif %}
-
-<!-- Post Meta -->
-{% include post-meta.html %}
 
 <!-- Recent post list -->
 {% include recent-post-list.html %}
