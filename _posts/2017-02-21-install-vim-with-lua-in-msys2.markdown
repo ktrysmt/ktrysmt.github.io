@@ -3,11 +3,10 @@ layout: post
 title: "Installing Vim8 +lua in MSYS2"
 date: 2017/02/21
 comments: true
-category: "Vim"
-tags: "Vim"
+categories: "Vim"
 published: true
 use_toc: true
-post_description: "Msys2のRuntimeは不安定だがそれでもvim+luaが使いたい、です…。" 
+description: "Msys2のRuntimeは不安定だがそれでもvim+luaが使いたい、です…。" 
 ---
 
 ## 前置き

@@ -3,8 +3,7 @@ layout: post
 title: "grep,xargs,sedを使ったワンライナー集"
 date: 2015-02-21 15:09:08 +0900
 comments: true
-category: Linux
-tags: Linux
+categories: Linux
 published: true
 ---
 

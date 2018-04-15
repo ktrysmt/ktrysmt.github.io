@@ -3,8 +3,7 @@ layout: post
 title: "[CentOS] vsftpdインストールと設定まとめ"
 date: 2014-09-06 15:09:08 +0900
 comments: true
-category: CentOS
-tags: FTP vsftpd Linux CentOS
+categories: CentOS
 published: true
 ---
 

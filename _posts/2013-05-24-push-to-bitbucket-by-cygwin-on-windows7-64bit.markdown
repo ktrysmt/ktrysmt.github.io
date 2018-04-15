@@ -3,8 +3,7 @@ layout: post
 title: "bitbucketにcygwin（windows7 64bit）からpushする"
 date: 2013-05-24 12:48:21 +0000
 comments: true
-category: Git
-tags: Cygwin Bitbucket Git
+categories: Git
 published: true
 ---
 

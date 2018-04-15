@@ -3,8 +3,7 @@ layout: post
 title: "CoreOS+Goの組み合わせはたしかに面白そうだ"
 date: 2015-04-05 15:09:08 +0900 
 comments: true
-category: Node
-tags: Docker CoreOS Golang
+categories: Node
 published: true
 ---
 

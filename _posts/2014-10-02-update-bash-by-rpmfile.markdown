@@ -3,8 +3,7 @@ layout: post
 title: "[Bash] yumでバージョンアップできない"
 date: 2014-10-01 15:09:08 +0900
 comments: true
-category: Bash
-tags: Bash Linux CentOS yum
+categories: Bash
 published: true
 ---
 

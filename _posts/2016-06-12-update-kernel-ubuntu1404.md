@@ -3,8 +3,7 @@ layout: post
 title: "Ubuntu14.04のKernelを3.19に上げる"
 date: 2016-06-12 15:09:08 +0900 
 comments: true
-category: Ubuntu
-tags: Ubuntu Kernel Docker
+categories: Ubuntu
 published: true
 ---
 

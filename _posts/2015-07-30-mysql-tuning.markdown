@@ -3,8 +3,7 @@ layout: post
 title: "MySQLの基本的なチューニングまとめ"
 date: 2015-07-09 15:09:08 +0900 
 comments: true
-category: MySQL
-tags: MySQL
+categories: MySQL
 published: true
 ---
 

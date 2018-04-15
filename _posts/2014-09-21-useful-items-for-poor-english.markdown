@@ -3,8 +3,7 @@ layout: post
 title: "開発に欠かせない英語翻訳ツールの設定"
 date: 2014-09-21 15:09:08 +0900
 comments: true
-category: Tools
-tags: Tools Translate English Chrome Windows
+categories: Tools
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "[bash] Gitのコマンドやブランチ名を入力補完"
 date: 2014-02-02 15:09:08 +0900 
 comments: true
-category: Git
-tags: Bash Git 
+categories: Git
 published: true
 ---
 

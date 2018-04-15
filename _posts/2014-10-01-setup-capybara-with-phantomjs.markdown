@@ -3,8 +3,7 @@ layout: post
 title: "phantomJSとcapybaraを使ったテスト環境を構築する"
 date: 2014-09-27 15:09:08 +0900
 comments: true
-category: Ruby
-tags: Rspec BDD PhantomJS Ruby Rails
+categories: Ruby
 published: true
 ---
 

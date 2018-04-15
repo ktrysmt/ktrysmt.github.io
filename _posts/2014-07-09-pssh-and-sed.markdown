@@ -3,8 +3,7 @@ layout: post
 title: "psshとsed一括置換の組み合わせ"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-category: Linux
-tags: pssh ssh sed Linux 
+categories: Linux
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "開発マシンにはVagrant,Browser,Terminalがあればいい"
 date: 2015-02-12 15:09:08 +0900
 comments: true
-category: Vagrant
-tags: Vagrant Vim Windows Mac Linux
+categories: Vagrant
 published: true
 ---
 

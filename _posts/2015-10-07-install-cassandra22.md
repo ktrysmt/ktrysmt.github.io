@@ -3,8 +3,7 @@ layout: post
 title: "Cassandra v2.2をCentOS6で使う"
 date: 2015-10-07 15:09:08 +0900 
 comments: true
-category: Cassandra
-tags: Cassandra CentOS
+categories: Cassandra
 published: true
 ---
 

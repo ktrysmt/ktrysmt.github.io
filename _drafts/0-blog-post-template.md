@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "{title}"
-date: 201x-1x-1x
+title: "title"
+date: 2011-01-01
 comments: true
-category: ""
-tags: ""
+categories: ""
 published: true
-use_toc: true
-post_description: "{description}" 
+use_toc: false
+description: "description" 
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "foreverでungitをデーモン化"
 date: 2014-08-31 15:09:08 +0900
 comments: true
-category: Git
-tags: npm Node ungit Javascript forever
+categories: Git
 published: true
 ---
 

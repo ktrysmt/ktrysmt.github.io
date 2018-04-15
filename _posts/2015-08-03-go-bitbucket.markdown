@@ -3,8 +3,7 @@ layout: post
 title: "bitbucketライブラリのgo-bitbucket作った"
 date: 2015-08-03 15:09:08 +0900 
 comments: true
-category: Golang
-tags: Golang
+categories: Golang
 published: true
 ---
 

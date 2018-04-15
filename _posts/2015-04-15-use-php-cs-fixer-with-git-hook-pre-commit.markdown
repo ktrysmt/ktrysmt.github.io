@@ -3,8 +3,7 @@ layout: post
 title: "git-hookのpre-commitでphp-cs-fixerを叩く"
 date: 2015-04-15 15:09:08 +0900 
 comments: true
-category: PHP
-tags: Git PHP
+categories: PHP
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "CGI(Perl)が 500 Internal Server Error のときの対処法いろいろ"
 date: 2013-05-19 12:48:21 +0000
 comments: true
-category: Perl
-tags: Perl
+categories: Perl
 published: true
 ---
 

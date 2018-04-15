@@ -3,8 +3,7 @@ layout: post
 title: "/vagrantにマウントできない とか、guest additions バージョン違い とか"
 date: 2014-11-27 15:09:08 +0900
 comments: true
-category: Vagrant
-tags: Vagrant
+categories: Vagrant
 published: true
 ---
 

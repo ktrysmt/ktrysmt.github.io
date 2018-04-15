@@ -3,8 +3,7 @@ layout: post
 title: "画面遷移の体感速度をサクッと改善するInstantClick"
 date: 2016-12-11 15:09:08 +0900
 comments: true
-category: Javascript
-tags: Javascript
+categories: JavaScript
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "npmでungitをインストールしてデーモン化"
 date: 2014-05-23 15:09:08 +0900
 comments: true
-category: Git
-tags: npm Node ungit Javascript nvm Git
+categories: Git
 published: true
 ---
 

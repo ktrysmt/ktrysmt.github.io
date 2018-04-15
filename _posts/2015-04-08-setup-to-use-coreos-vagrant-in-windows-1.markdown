@@ -3,8 +3,7 @@ layout: post
 title: "Windowsでcoreos-vagrant,etcd,fleetを使う(1)"
 date: 2015-04-09 15:09:08 +0900 
 comments: true
-category: CoreOS
-tags: CoreOS Docker Windows Vagrant etcd fleet
+categories: CoreOS
 published: true
 ---
 

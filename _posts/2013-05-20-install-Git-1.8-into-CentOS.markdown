@@ -3,8 +3,7 @@ layout: post
 title: "CentOSにGit 1.8をインストール"
 date: 2014-05-24 12:48:21 +0000
 comments: true
-category: Git
-tags: Git CentOS
+categories: Git
 published: true
 ---
 

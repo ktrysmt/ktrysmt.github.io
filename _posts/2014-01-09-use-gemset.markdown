@@ -3,8 +3,7 @@ layout: post
 title: "rvmのgemsetでrubyとrailsを管理する"
 date: 2014-01-09 05:52:07 +0000
 comments: true
-category: Ruby
-tags: Ruby Rails
+categories: Ruby
 published: true
 ---
 

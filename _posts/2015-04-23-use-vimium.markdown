@@ -3,8 +3,7 @@ layout: post
 title: "HometypeやめてVromeもやめてVimiumにした"
 date: 2015-04-23 15:09:08 +0900 
 comments: true
-category: Vim
-tags: Chrome Vim
+categories: Vim
 published: true
 ---
 

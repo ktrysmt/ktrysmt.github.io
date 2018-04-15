@@ -3,8 +3,7 @@ layout: post
 title: "Windows7でdockerを使いプロビジョニングテストするまで"
 date: 2015-03-01 15:09:08 +0900
 comments: true
-category: Vagrant
-tags: Vagrant CoreOS Docker
+categories: Vagrant
 published: true
 ---
 

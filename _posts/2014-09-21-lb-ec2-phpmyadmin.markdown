@@ -3,8 +3,7 @@ layout: post
 title: "LB+ec2環境にphpmyadminを入れる"
 date: 2014-09-20 15:09:08 +0900
 comments: true
-category: AWS
-tags: phpMyAdmin AWS EC2
+categories: AWS
 published: true
 ---
 

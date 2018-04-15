@@ -3,6 +3,8 @@ blogName: "ktrysmt's blog"
 description: "ソフトウェアエンジニアリングやマネジメントなど"
 meta_description: "ソフトウェアエンジニアリングやマネジメントなど"
 
+lang: ja_JP
+
 aboutPage: true
 
 gems:

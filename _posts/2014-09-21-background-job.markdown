@@ -3,8 +3,7 @@ layout: post
 title: "findやgrepに時間がかかるときはバックグラウンド処理に切り替え"
 date: 2014-09-21 15:09:08 +0900
 comments: true
-category: Linux
-tags: Linux
+categories: Linux
 published: true
 ---
 

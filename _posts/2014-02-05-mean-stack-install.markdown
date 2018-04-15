@@ -3,8 +3,7 @@ layout: post
 title: "MEAN Stackインストール手順まとめ"
 date: 2014-02-05 15:09:08 +0900
 comments: true
-category: Node
-tags: Node express MongoDB AngularJS Javascript
+categories: Node
 published: true
 ---
 

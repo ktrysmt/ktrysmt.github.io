@@ -1,0 +1,166 @@
+---
+pages:
+- _posts/jmespath-awscli-query.md
+- _posts/2018-04-15-scrum-for-beginners.md
+- _posts/2017-09-30-name-specification-of-nginx.md
+- _posts/2017-06-03-lt-about-code-review.md
+- _posts/2017-09-30-types-of-document-styles.md
+- _posts/2017-03-02-time-management-with-freeter.markdown
+- _posts/2017-02-22-devsumi-2017-report.markdown
+- _posts/2017-02-21-install-vim-with-lua-in-msys2.markdown
+- _posts/2017-01-23-setup-rust-language.markdown
+- _posts/2016-12-11-instant-click.md
+- _posts/2016-07-15-scraps-2Q-2016.md
+- _posts/2016-06-12-update-kernel-ubuntu1404.md
+- _posts/2016-04-26-setup-elixir.md
+- _posts/2016-04-23-calculate-srp-by-git-blame.md
+- _posts/2016-04-22-summary-16th-week.md
+- _posts/2016-03-14-install-dependencies-immediately-at-golang.md
+- _posts/2015-12-06-hook-up-clipboard-and-tmux-buffer-on-windows-and-osx.markdown
+- _posts/2015-11-21-analizing-performancerhe-tools-for-rhel.md
+- _posts/2015-10-07-install-cassandra22.md
+- _posts/2015-08-03-go-bitbucket.markdown
+- _posts/2015-07-30-checkup.markdown
+- _posts/2015-07-30-apache-expires-and-deflate.markdown
+- _posts/2015-07-30-mysql-tuning.markdown
+- _posts/2015-08-12-opcache-apcu-and-apc.markdown
+- _posts/2015-07-09-add-3rd-repositories-to-centos-6.markdown
+- _posts/2015-07-09-rsync-option.markdown
+- _posts/2015-07-09-use-gulp-and-browsersync-in-vagrant-of-windows.markdown
+- _posts/2015-07-09-how-to-learn-machine-learning.markdown
+- _posts/2015-04-23-use-vimium.markdown
+- _posts/2015-04-21-install-php5.2-into-centos5.markdown
+- _posts/2015-04-20-use-php-dict-by-neocomplete.markdown
+- _posts/2015-04-15-use-php-cs-fixer-with-git-hook-pre-commit.markdown
+- _posts/2015-04-15-install-mysql55-for-fileformat-barracuda.markdown
+- _posts/2015-04-15-use-xargs-in-parallel.markdown
+- _posts/2015-04-15-compress-png-on-linux.markdown
+- _posts/2015-04-15-howto-destroy-the-team.markdown
+- _posts/2015-04-09-setup-to-use-coreos-vagrant-in-windows-3.markdown
+- _posts/2015-04-09-setup-to-use-coreos-vagrant-in-windows-2.markdown
+- _posts/2015-04-08-setup-to-use-coreos-vagrant-in-windows-1.markdown
+- _posts/2015-04-08-use-mingw-with-git-bash-on-windows.markdown
+- _posts/2015-04-07-about-coreos-docker-golang-and-kocha.markdown
+- _posts/2015-04-01-update-vim-7.4.markdown
+- _posts/2015-03-25-use-regexp-by-sed.markdown
+- _posts/2015-03-04-useful-php-profiler-and-setting.markdown
+- _posts/2015-03-04-generate-static-pages-by-wget-options.markdown
+- _posts/2015-03-02-use-boot2docker-for-windows-for-testing.markdown
+- _posts/2015-02-27-install-gerrit-to-centos6.markdown
+- _posts/2015-02-27-for-example-git-hook-of-pre-and-post-commit-command.markdown
+- _posts/2015-02-27-usage-grep-xargs-sed.markdown
+- _posts/2015-02-27-kabukiza-tech-6.markdown
+- _posts/2015-02-14-install-phpbrew-prysh-and-composer.markdown
+- _posts/2015-02-12-minimal-install-my-machines.markdown
+- _posts/2015-02-12-update-vim-7.3.markdown
+- _posts/2015-02-01-read-the-book-of-israels-economic-miracle-2.markdown
+- _posts/2015-01-17-docker-meetup-tokyo-4.markdown
+- _posts/2015-01-15-read-the-book-of-Israels-economic-miracle.markdown
+- _posts/2014-12-08-install-phpenv-to-centos.markdown
+- _posts/2014-11-27-cannot-mount-vagrant-folder-because-of-virtualbox-guest-additions.markdown
+- _posts/2014-11-23-make-shorturl_bitly.markdown
+- _posts/2014-11-23-how-to-use-bing-translate-api-for-php.markdown
+- _posts/2014-11-15-nodefest2014.markdown
+- _posts/2014-10-17-make-swapfile.markdown
+- _posts/2014-10-15-install-s3fs.markdown
+- _posts/2014-10-01-install-ansible-on-centos6.markdown
+- _posts/2014-10-02-update-bash-by-rpmfile.markdown
+- _posts/2014-10-01-setting-git-push-by-hook-post-commit.markdown
+- _posts/2014-10-01-setup-capybara-with-phantomjs.markdown
+- _posts/2014-09-26-changing-colors-minttyrc-in-cygwin.markdown
+- _posts/2014-09-26-install-prezto.markdown
+- _posts/2014-09-21-useful-items-for-poor-english.markdown
+- _posts/2014-09-21-howto-callback-suggest.js.markdown
+- _posts/2014-09-21-background-job.markdown
+- _posts/2014-09-21-rubykaigi-synvert-transpec-rubocop.markdown
+- _posts/2014-09-21-phpunit-or-rspec.markdown
+- _posts/2014-09-21-no-need-LoadModule-apache.markdown
+- _posts/2014-09-21-mysql-Incorrect-information-in-file.markdown
+- _posts/2014-09-21-lb-ec2-phpmyadmin.markdown
+- _posts/2014-09-21-install-php5-centos.markdown
+- _posts/2014-09-21-extra-setting-htaccess.markdown
+- _posts/2014-09-21-development.markdown
+- _posts/2014-09-18-install-vsftpd-centos.markdown
+- _posts/2014-09-19-forever-ungit.markdown
+- _posts/2014-09-09-install-ruby-by-rbenv-to-centos.markdown
+- _posts/2014-06-18-replace-apache-to-nginx.markdown
+- _posts/2014-05-26-apache-tuning.markdown
+- _posts/2014-05-25-apache-jmeter.markdown
+- _posts/2013-05-20-install-Git-1.8-into-CentOS.markdown
+- _posts/2014-07-09-pssh-and-sed.markdown
+- _posts/2014-07-09-how-to-install-phantomjs-casperjs.markdown
+- _posts/2014-07-09-centos6-more-saving-of-memory.markdown
+- _posts/2014-07-08-use-autojump-by-bash.markdown
+- _posts/2014-07-07-install-peco.markdown
+- _posts/2014-07-07-install-ghq.markdown
+- _posts/2014-05-24-tig-install-centos.markdown
+- _posts/2014-05-24-click-chrome-console.markdown
+- _posts/2014-09-19-install-ungit-by-npm.markdown
+- _posts/2014-05-14-apache-productin-settiong.markdown
+- _posts/2015-07-09-setup-clamav.markdown
+- _posts/2014-02-05-mean-stack-install.markdown
+- _posts/2014-02-03-use-vim-color-schema.markdown
+- _posts/2014-02-03-git-input-completion.markdown
+- _posts/2014-02-03-cygwin-and-ConEmu-in-windows.markdown
+- _posts/2014-02-03-apt-cyg-install.markdown
+- _posts/2014-09-21-Windows7-vagrant-CentOS63-64bit.markdown
+- _posts/2014-02-03-diff-highlight-visualize-git.markdown
+- _posts/2014-02-01-investment-to-the-system.markdown
+- _posts/2014-02-03-my-.bashrc.markdown
+- _posts/2014-01-09-check-cpupower-in-windows7.markdown
+- _posts/2014-01-12-gtd-with-evernote.markdown
+- _posts/2014-01-12-shared-folder-vg-guest.markdown
+- _posts/2000-01-01-try-middleman-blog.markdown
+- _posts/2014-01-09-use-gemset.markdown
+- _posts/2013-12-24-octopress-install.markdown
+- _posts/2013-05-24-push-to-bitbucket-by-cygwin-on-windows7-64bit.markdown
+- _posts/2013-05-19-500-Internal-Server-ErrorCGI(Perl).markdown
+- _posts/0-blog-post-template.md
+hide_body: false
+is_partial: false
+fields:
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: post
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: ''
+- name: comments
+  label: Comments
+  type: boolean
+  hidden: false
+  default: ''
+- name: tags
+  label: Tags
+  type: tag_list
+  hidden: false
+  default: ''
+- name: published
+  label: Published
+  type: boolean
+  hidden: false
+  default: ''
+- name: use_toc
+  label: Use toc
+  type: boolean
+  hidden: false
+  default: false
+- name: description
+  label: Description
+  type: text
+  hidden: false
+  default: ''
+- name: categories
+  label: Categories
+  type: tag_list
+  hidden: false
+  default: ''

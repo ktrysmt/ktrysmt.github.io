@@ -3,8 +3,7 @@ layout: post
 title: "Wgetで静的サイト生成"
 date: 2015-03-01 15:09:08 +0900
 comments: true
-category: Linux
-tags: Linux Wget
+categories: Linux
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "rvmをやめてrbenvでRuby"
 date: 2014-07-22 15:09:08 +0900
 comments: true
-category: Ruby
-tags: Ruby rbenv ruby-build
+categories: Ruby
 published: true
 ---
 

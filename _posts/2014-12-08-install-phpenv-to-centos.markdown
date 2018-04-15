@@ -3,8 +3,7 @@ layout: post
 title: "CentOS6にphpenvをインストール"
 date: 2014-12-08 15:09:08 +0900
 comments: true
-category: PHP
-tags: PHP CentOS
+categories: PHP
 published: true
 ---
 

@@ -3,11 +3,10 @@ layout: post
 title: "Rustの開発環境はRustupで"
 date: 2017-01-23
 comments: true
-category: "Rust"
-tags: "Rust"
+categories: "Rust"
 published: true
 use_toc: true
-post_description: "開発に必要な基本セットがだいたい揃ったっぽいのでまとめました" 
+description: "開発に必要な基本セットがだいたい揃ったっぽいのでまとめました" 
 ---
 
 Rustupのおかげで開発環境がだいぶ整ってきましたね。

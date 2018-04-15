@@ -3,8 +3,7 @@ layout: post
 title: "CentOSでadvpngを使ってpngを圧縮する"
 date: 2015-04-10 15:09:08 +0900 
 comments: true
-category: CentOS
-tags: CentOS
+categories: CentOS
 published: true
 ---
 

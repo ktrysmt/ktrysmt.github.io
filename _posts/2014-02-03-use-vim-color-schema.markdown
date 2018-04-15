@@ -3,8 +3,7 @@ layout: post
 title: "Vimでカラースキーマを使う"
 date: 2014-02-05 15:09:08 +0900
 comments: true
-category: Vim
-tags: Vim color schema bash Git
+categories: Vim
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "RHEL向けパフォーマンス解析ツールまとめ"
 date: 2015-11-21 15:09:08 +0900 
 comments: true
-category: CentOS
-tags: RHEL CentOS Apache Nginx MySQL Linux
+categories: CentOS
 published: true
 ---
 

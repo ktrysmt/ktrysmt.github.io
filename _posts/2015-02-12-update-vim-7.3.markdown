@@ -3,8 +3,7 @@ layout: post
 title: "Vimを7.2から7.3にアップデートする"
 date: 2015-02-11 15:09:08 +0900
 comments: true
-category: Vim
-tags: Vim CentOS
+categories: Vim
 published: true
 ---
 

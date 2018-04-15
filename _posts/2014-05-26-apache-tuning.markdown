@@ -3,8 +3,7 @@ layout: post
 title: "Apache preforkのチューニングまとめ"
 date: 2014-05-26 15:09:08 +0900
 comments: true
-category: Apache
-tags: Apache
+categories: Apache
 published: true
 ---
 

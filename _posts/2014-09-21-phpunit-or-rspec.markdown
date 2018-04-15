@@ -3,8 +3,7 @@ layout: post
 title: "どのようにテスト駆動開発を現場に導入していくか"
 date: 2014-09-20 15:09:08 +0900
 comments: true
-category: Test
-tags: Testing Test TDD BDD UnitTest
+categories: Test
 published: true
 ---
 

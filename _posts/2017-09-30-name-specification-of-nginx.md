@@ -3,11 +3,10 @@ layout: post
 title: "Nginxの名前解決についてまとめ"
 date: 2017-09-30
 comments: true
-category: "Nginx"
-tags: "Nginx"
+categories: "Nginx"
 published: true
 use_toc: true
-post_description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。" 
+description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。" 
 ---
 
 Microservicesが市民権を得てきた昨今，特にAWSのELB等をInternalなロードバランサとして使うことも当たり前になり，ハマるひとも多かったのではないでしょうか。私も漏れなくハマりまして，以前遭遇した時はNginxのバグではないかと疑っていたのですが，よく調べたらどうもこの辺りの挙動は仕様のようです。

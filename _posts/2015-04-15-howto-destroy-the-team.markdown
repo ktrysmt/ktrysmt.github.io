@@ -3,8 +3,7 @@ layout: post
 title: "開発チームを潰す方法を考えよう？"
 date: 2015-04-09 15:09:08 +0900 
 comments: true
-category: Management
-tags: Management
+categories: Management
 published: true
 ---
 

@@ -3,8 +3,7 @@ layout: post
 title: "Apache JMeterの使い方"
 date: 2014-05-25 15:09:08 +0900
 comments: true
-category: Apache
-tags: JMeter Apache Test
+categories: Apache
 published: true
 ---
 

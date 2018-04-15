@@ -3,8 +3,7 @@ layout: post
 title: "「git blameでSRP算出」が便利"
 date: 2016-04-23 15:09:08 +0900 
 comments: true
-category: Git
-tags: Git
+categories: Git
 published: true
 ---
 

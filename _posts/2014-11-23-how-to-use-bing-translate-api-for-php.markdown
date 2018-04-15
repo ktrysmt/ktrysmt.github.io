@@ -3,8 +3,7 @@ layout: post
 title: "PHP(CodeIgniter)でBingTranslateAPIを使う"
 date: 2014-11-22 15:09:08 +0900
 comments: true
-category: PHP
-tags: PHP Bing
+categories: PHP
 published: true
 ---
 

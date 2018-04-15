@@ -3,8 +3,7 @@ layout: post
 title: "Vagrantで共有フォルダをマウントできなくなってしまった問題"
 date: 2014-01-12 15:09:08 +0900
 comments: true
-category: Vagrant
-tags: Vagrant VirtualBox
+categories: Vagrant
 published: true
 ---
 

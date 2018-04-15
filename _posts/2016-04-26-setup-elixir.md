@@ -3,8 +3,7 @@ layout: post
 title: "Elixir で Please ensure your locale is set to UTF-8 …"
 date: 2016-04-26 15:09:08 +0900 
 comments: true
-category: Elixir
-tags: Elixir
+categories: Elixir
 published: true
 ---
 

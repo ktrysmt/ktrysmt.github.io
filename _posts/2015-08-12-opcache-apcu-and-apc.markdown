@@ -3,8 +3,7 @@ layout: post
 title: "PHPアクセラレータまとめ"
 date: 2015-07-01 15:09:08 +0900 
 comments: true
-category: PHP
-tags: PHP Linux
+categories: PHP
 published: true
 ---
 

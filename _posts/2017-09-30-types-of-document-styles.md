@@ -2,11 +2,10 @@
 title: "文書構成様式を目的に応じて使い分ける"
 date: 2017-06-01
 comments: true
-category: "Document"
-tags: "Document"
+categories: "Document"
 published: true
 use_toc: true
-post_description: "汎用的に使えそうな文書構成の様式をまとめました。"
+description: "汎用的に使えそうな文書構成の様式をまとめました。"
 ---
 
 ## 文書構成の様式とは

@@ -3,11 +3,10 @@ layout: post
 title: "デブサミ2017にいってきたがおデブサミットみたいだった(　´)Д(｀)"
 date: 2017-02-22 
 comments: true
-category: "Event"
-tags: "Event"
+categories: "Event"
 published: true
 use_toc: true
-post_description: "いってきたので、参加のモチベーションや感想などをつらつらと。" 
+description: "いってきたので、参加のモチベーションや感想などをつらつらと。" 
 ---
 
 ブログを書くまでがイベントですよということで。  

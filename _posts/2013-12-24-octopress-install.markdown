@@ -3,8 +3,7 @@ layout: post
 title: "[CentOS] OctopressのインストールとGithubPagesでの運用を試す"
 date: 2013-12-24 08:47:56 +0000
 comments: true
-category: Ruby
-tags: Ruby Github Octopress CentOS
+categories: Ruby
 
 ---
 

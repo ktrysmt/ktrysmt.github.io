@@ -3,8 +3,7 @@ layout: post
 title: "ThinkPad X1 CarbonのCPUが遅い"
 date: 2014-01-23 05:52:07 +0000
 comments: true
-category: Windows
-tags: Windows Thinkpad CPU
+categories: Windows
 published: true
 ---
 

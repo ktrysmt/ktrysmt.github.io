@@ -3,8 +3,7 @@ layout: post
 title: "今のところよく使う.bashrc"
 date: 2014-01-31 15:09:08 +0900
 comments: true
-category: Bash
-tags: Bash Git Vim
+categories: Bash
 published: true
 ---
 

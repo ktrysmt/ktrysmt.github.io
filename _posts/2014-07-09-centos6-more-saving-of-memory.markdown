@@ -3,8 +3,7 @@ layout: post
 title: "[CentOS6] 不要なデーモンを止めてメモリを節約する"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-category: CentOS
-tags: CentOS Linux
+categories: CentOS
 published: true
 ---
 

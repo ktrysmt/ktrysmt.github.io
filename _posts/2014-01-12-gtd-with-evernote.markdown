@@ -3,8 +3,7 @@ layout: post
 title: "GTDをEvernoteで行うための運用環境を整える"
 date: 2014-01-12 19:08:16 +0900
 comments: true
-category: Evernote
-tags: Evernote GTD
+categories: Evernote
 published: true
 ---
 

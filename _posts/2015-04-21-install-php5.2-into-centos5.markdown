@@ -3,8 +3,7 @@ layout: post
 title: "CentOS5にPHP5.2を入れなければならない"
 date: 2015-04-19 15:09:08 +0900 
 comments: true
-category: PHP
-tags: PHP CentOS
+categories: PHP
 published: true
 ---
 

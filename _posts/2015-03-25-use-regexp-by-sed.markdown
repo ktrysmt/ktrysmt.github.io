@@ -3,8 +3,7 @@ layout: post
 title: "sedで正規表現するなら拡張正規表現"
 date: 2015-03-21 15:09:08 +0900 
 comments: true
-category: Linux
-tags: Linux
+categories: Linux
 published: true
 ---
 

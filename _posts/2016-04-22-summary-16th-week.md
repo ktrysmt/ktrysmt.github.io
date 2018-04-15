@@ -3,8 +3,7 @@ layout: post
 title: "2016 16th week 気になった記事"
 date: 2016-04-22 15:09:08 +0900 
 comments: true
-category: WebClip
-tags: WebClip
+categories: Document
 published: true
 ---
 

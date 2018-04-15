@@ -3,8 +3,7 @@ layout: post
 title: "[bash]CentOS6.5にghqをインストール"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-category: Git
-tags: ghq Golang Git Bash
+categories: Git
 published: true
 ---
 

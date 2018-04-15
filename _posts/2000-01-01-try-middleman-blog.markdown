@@ -3,9 +3,8 @@ layout: post
 title: "middleman blogのインストールと足りないgemについて"
 date: 2014-01-10 02:48:21 +0000
 comments: true
-category: Ruby
+categories: Ruby
 published: true
-tags: Ruby Middleman
 ---
 
 ## middleman-blogのインストール
