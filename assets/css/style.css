@@ -400,20 +400,19 @@ hr {
 
 code {
   white-space: pre;
-  color: #e3e3e3;
-  font-weight: bold;
+  color: #ffffff;
   line-height: 1.7em;
 }
 
-p > code.highlighter-rouge {
+p > code.highlighter-rouge, 
+li > code.highlighter-rouge {
   margin: 0 0.2em;
-  background-color: #364549;
+  background-color: #71778a;
   border-radius: 3px;
   font-size: 13px;
-  color: #e3e3e3;
+  color: #ffffff;
   line-height: 1.5em;
   padding: 0.2em 0.5em;
-  font-weight: bold;
   position: relative;
   font-family: "Source Code Pro", Menlo, monospace;
   top: -1px;
@@ -435,8 +434,8 @@ pre	{
 	  font-size: 13px;
 	  line-height: 1.5em;
 	  font-weight: 500;
-	color: #d0d4d7;
-  background-color: #364549;
+	color: #ffffff;
+  background-color: #71778a;
 }
 
 table {
