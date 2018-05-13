@@ -1,79 +1,49 @@
 ---
 layout: post
 use_toc: false
-title: "がんばってJMESPathを覚えてawscliの--queryを使いこなす"
-date: 2018-04-30 00:00:00 +0000
+title: "JMESPathを覚えてawscliを使いこなす"
+date: 2018-05-13 23:00:00 +0900
 comments: true
-published: false
-description: "書き方にクセがあるのが難点ですが、覚えておくとワンコマンドでだいたい事足りるようになるので、覚えておいて損はないです。"
-categories: []
+published: true
+description: "書き方に少々クセがあるのが難点ですが、使いこなすとワンコマンドでだいたい事足りるようになるのでCIなどで助かります。awscliを使うひとは覚えておいて損はないです。"
+categories: AWS
 ---
+
 JMESPathのリファレンスは以下です。
 
 * http://jmespath.org/tutorial.html
 * http://jmespath.org/specification.html
 
-### 基本
+JMESPathはjson形式の構造に対してXPathチックにアクセスできるクエリ言語です。awscliでは--queryオプションがこれに対応しています。
 
-* 空ブラケットで子要素をトップルートとして取り出せる
-* リスト化したいだけなら `Resources[*].Id`の書き方が一番ラク、複数カラムなら`Resouces[*].[Id,Arn]`とカンマ区切りで。
+### 最低限覚えておくとよいこと
+
+* `Resources[]`(空ブラケット)と`Resouces[*]`(アスタリスク)は等価、子要素をトップルートとして取り出せる
+* リスト化したいだけなら `Resources[].Id`の書き方が一番ラク、複数カラムなら`Resouces[].[Id,Arn]`とカンマ区切りで指定
 * 要素の添字(ブラケット)内に`?`を置くことで関数モード的な扱いになる
 * 関数はとりあえずcontainsを覚えておけばなんとかなる
+    * 例：
+    ```sh
+    $ aws iam list-policies --query 'Policies[?contains(Arn,`arn:aws:iam::aws`)].Arn'
+    $ aws iam list-policies --query 'Policies[?contains(Arn,to_string(`999999999999`))].Arn'
+    ```
+* containsの第二引数にはバッククォートを使うので、クエリ全体はシングルクォーテーションで囲うとエスケープの手間が省けてよい
+* awscliの`--output`を組み合わせられることを意識するとより一層便利に
+* Pipeが使える、`aws iam list-policies --query 'Policies[*].{m:PolicyName} | [0]'`のように書ける
 
-？シングルクォーテーション＋バッククォートなら、エスケープいらない？ダブルクオーテーションつかってるのがよくないだけ？
+### 気をつけるところ
 
-### よい書き方、わるい書き方
+* containsの第一引数にいれる`@`は検査対象がarray型かstring型でなければならない、object型には使えない
+* ほか、containsの第二引数のように、引数の型には注意
 
-ためしにユーザー管理ポリシーのArnを取りに行ってみます。
+### 所感
 
-```sh
-$ aws iam list-policies --query "Policies[?contains(Arn,\`:999999999999\`)].{Arn:Arn}"
-[
-    {
-        "Arn": "arn:aws:iam::999999999999:policy/CFnExecutablePolicy"
-    },
-    {
-        "Arn": "arn:aws:iam::999999999999:policy/PackerExecutablePolicy"
-    }
-]
-```
+私のユースケースとしては結局扱うのはawscliのレスポンスがほとんどなので、
+あまり多くの関数を使いこなすようなことはせず、
+最低限containsだけ使えるようになっていれば十分なのかなという評価でした。
 
-これは半角数字の前にコロンを一個入れているのでpython側でstring判定されています、よってValidですが、型への配慮が雑でよくないですね。
+型やクォートなどに少し気をつける必要はありますが、コマンドやクエリをスニペット化しておけば低コストに運用できそうです。
 
+### FYI
 
-```sh
-$ aws iam list-policies --query "Policies[?contains(Arn,\`999999999999\`)].{Arn:Arn}"
-
-'in <string>' requires string as left operand, not int
-```
-
-一方これだとpython側で自動的にintにキャストされてしまうのでInvalid、contains関数の第二引数はstringを要求します。
-
-
-```sh
-$ aws iam list-policies --query "Policies[?contains(Arn,to_string(\`999999999999\`))].{Arn:Arn}"
-[
-    {
-        "Arn": "arn:aws:iam::999999999999:policy/CFnExecutablePolicy"
-    },
-    {
-        "Arn": "arn:aws:iam::999999999999:policy/PackerExecutablePolicy"
-    }
-]
-```
-
-そして、これがValidでよい例。JMESPathにはto_stringという関数が提供されています。
-
-したがって、aws管理ポリシーだけをcliで一気に取る方法は以下のようになります。
-
-```sh
-aws iam list-policies --query "Policies[?contains(Arn,\`arn:aws:iam::aws\`)].{Arn:Arn}"
-```
-
-テキストというか一覧でほしいなら以下。`--output`を使えば良い。
-
-```sh
-aws iam list-policies --query "Policies[?contains(Arn,\`arn:aws:iam::aws\`)].{Arn:Arn}" --output text
-```
-
-結論、JMESPathをawscliの--queryで使う場合にはzshやpythonの型キャストの気持ちを理解しつつ、`--output`を組み合わせることを意識すればまぁまぁ便利。
+* [pecoとzshでかんたんsnippet管理 \- ktrysmt's blog](https://ktrysmt.github.io/blog/snippets-management-by-peco-and-zsh/)
