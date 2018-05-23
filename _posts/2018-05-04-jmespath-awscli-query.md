@@ -2,7 +2,7 @@
 layout: post
 use_toc: false
 title: "JMESPathを覚えてawscliを使いこなす"
-date: 2018-05-13 23:00:00 +0900
+date: 2018-05-24
 comments: true
 published: true
 description: "書き方に少々クセがあるのが難点ですが、使いこなすとワンコマンドでだいたい事足りるようになるのでCIなどで助かります。awscliを使うひとは覚えておいて損はないです。"
