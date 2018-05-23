@@ -34,7 +34,7 @@ JMESPathはjson形式の構造に対してXPathチックにアクセスできる
 ### 気をつけるところ
 
 * containsの第一引数にいれる`@`は検査対象がarray型かstring型でなければならない、object型には使えない
-* ほか、containsの第二引数のように、引数の型には注意
+* ほか、containsの第二引数(String型を要求)など、各種関数の引数の型に注意
 
 ### 所感
 
@@ -44,6 +44,8 @@ JMESPathはjson形式の構造に対してXPathチックにアクセスできる
 
 型やクォートなどに少し気をつける必要はありますが、コマンドやクエリをスニペット化しておけば低コストに運用できそうです。
 
+ただ正直、filtersで済むのなら、可読性のよいfiltersで済ませたいところです...。
+
 ### FYI
 
-* [pecoとzshでかんたんsnippet管理 \- ktrysmt's blog](https://ktrysmt.github.io/blog/snippets-management-by-peco-and-zsh/)
+* [pecoとzshでかんたんsnippet管理](https://ktrysmt.github.io/blog/snippets-management-by-peco-and-zsh/)
