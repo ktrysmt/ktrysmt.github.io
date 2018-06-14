@@ -29,7 +29,7 @@ Microservicesが市民権を得てきた昨今，特にAWSのELB等をInternal�
 
 `1.`の挙動により問題になるのが，proxy_passの宛先にELBなど動的にIPが変わるURLを指定したい場合です。
 
-```conf
+```nginx
 location / {
     proxy_pass "http://LoadBalancer-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com";
 }
@@ -45,7 +45,7 @@ ELBは不定期にIPが変わるため，この書き方ではいずれどこか
 
 そこで以下のような書き方をします。
 
-```conf
+```nginx
 http {
     resolver 169.254.169.253;
 
@@ -58,7 +58,7 @@ http {
 
 location内だけでこういうふうにもかけます。
 
-```conf
+```nginx
 location / {
     resolver 8.8.8.8 valid=5s;
     set $url "http://LoadBalancer-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com";
@@ -90,7 +90,7 @@ upstream内ではsetを使えない仕様であるためです。
 これが一番手っ取り早いですが，できることなら選びたくはないですよね…。
 有償版を使うとresolveフラグが使えるようになるので，以下のような記述が可能になります。
 
-```conf
+```nginx
 http {
     resolver 169.254.169.253;
 
@@ -115,7 +115,7 @@ http {
 
 これを含めてビルドすることで，以下のような記述が可能になります。
 
-```conf
+```nginx
 http {
     resolver 8.8.8.8;
     resolver_timeout 10s;
@@ -150,7 +150,7 @@ jdomainではupstreamコンテキスト内において他にも以下のディ�
 [Qiita](https://qiita.com/minamijoyo/items/183e51a28a3a9d79182f)で見つけて目からウロコだったやり方です。
 詳細はリンク先に譲るとして，コードだけ抜粋です。
 
-```conf
+```nginx
 http {
     ...
     resolver 10.9.0.2 valid=5s;
