@@ -156,7 +156,7 @@ src/以下にディレクトリを作成します。このディレクトリ名�
 
 [1]: https://github.com/ktrysmt/one-off-cloudformation-boilerplate
 
-```
+```makefile
 .DEFAULT_GOAL := help
 THIS_FILE := $(lastword $(MAKEFILE_LIST))
 

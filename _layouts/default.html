@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.blogName }}" href="/blog/feed.xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css">
   {% seo title=false %}
 </head>
 <body>
@@ -23,6 +24,7 @@
     {{ content }}
   </section>
 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
@@ -38,6 +40,18 @@
 
     document.addEventListener("DOMContentLoaded", function(event) {
       microlink('.card-preview')
+    });
+  </script>
+
+  <script>
+		hljs.configure({
+			classPrefix: 'language-',
+			tabReplace: '  ', 
+			useBR: false
+		});
+    hljs.initHighlightingOnLoad();
+    $('p.code').each(function(i, block) {
+      hljs.highlightBlock(block);
     });
   </script>
 </body>

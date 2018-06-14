@@ -16,9 +16,10 @@ gems:
   - jekyll-feed
 
 markdown: kramdown
+markdown: kramdown
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    disable : true
 
 baseurl: /
 domain_name: 'https:///ktrysmt.github.io'
