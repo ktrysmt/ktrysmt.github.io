@@ -400,7 +400,8 @@ hr {
 
 pre code {
   font: normal 14px Consolas, Monaco, monospace;
-  border-radius: 3px;
+  border-radius: 4px;
+  border: 1px solid #e1e1e8;
 }
 
 p code {
