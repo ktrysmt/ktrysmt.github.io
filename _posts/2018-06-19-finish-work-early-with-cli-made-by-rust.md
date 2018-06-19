@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rust製ツールを使って提示で帰ろう"
+title: "Rust製ツールを使って定時で帰ろう"
 date: 2018-06-19 23:00:00 +0900
 comments: true
 categories: "Rust"
