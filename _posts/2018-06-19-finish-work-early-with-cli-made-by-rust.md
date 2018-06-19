@@ -17,7 +17,7 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 
 ## ripgrep
 
-> https://github.com/BurntSushi/ripgrep
+> <https://github.com/BurntSushi/ripgrep>
 
 コマンド名は`rg`。`grep`の拡張版。`ag`より若干速い。
 
@@ -29,7 +29,7 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 
 ## fd
 
-> https://github.com/sharkdp/fd
+> <https://github.com/sharkdp/fd>
 
 コマンド名は`fd`。`find`の拡張版。
 
@@ -45,7 +45,7 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 
 ## exa
 
-> https://github.com/ogham/exa
+> <https://github.com/ogham/exa>
 
 コマンド名は`exa`。`ls`の拡張版でツリー表示の機能も内包されている。
 
