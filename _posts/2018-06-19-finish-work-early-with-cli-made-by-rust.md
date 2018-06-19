@@ -56,7 +56,7 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 * `-L` いわゆるmaxDepth、intで指定。思いがけず階層が深かったときに。
 * カラフルで見やすい。`exa -lha`, `exa -Tl`あたりをsnippetやaliasに入れておくといいです。私は`alias l="exa -lha"`をzshに入れてます。
 
-## おまけ：VimとRipgrepの連携
+## おまけ：Vimとripgrepの連携
 
 vimgrepをrgに置き換えるのもおすすめです。`--sort-files`を付けると速度は少し落ちますが、sort済み結果を返してくれます、`Qfreplace`との組み合わせでよく使います。
 
@@ -88,12 +88,12 @@ WindowsなどでSJISも対象にしたい場合には無理に`rg`を使わず�
 
 ## 参考
 
-* https://github.com/BurntSushi/ripgrep
-* https://github.com/sharkdp/fd
-* https://github.com/ogham/exa
-* https://github.com/monochromegane/the_platinum_searcher
-* http://someneat.hatenablog.jp/entry/2017/03/12/011335
-* https://github.com/thinca/vim-qfreplace
+* <https://github.com/BurntSushi/ripgrep>
+* <https://github.com/sharkdp/fd>
+* <https://github.com/ogham/exa>
+* <https://github.com/monochromegane/the_platinum_searcher>
+* <http://someneat.hatenablog.jp/entry/2017/03/12/011335>
+* <https://github.com/thinca/vim-qfreplace>
 
 
 
