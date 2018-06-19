@@ -9,6 +9,12 @@ use_toc: false
 description: "各種linuxコマンドをリッチで処理速度も早いRust製のCLIに置き換ると幸せになれるかもという話。タイトルが煽り気味で恐縮ですが、作業効率はわりかし上がると思うのでおすすめです。" 
 ---
 
+今回紹介するのは以下の３つのCLIです。
+
+* ripgrep
+* fd
+* exa
+
 ## ripgrep
 
 > https://github.com/BurntSushi/ripgrep
