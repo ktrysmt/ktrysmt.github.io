@@ -26,6 +26,11 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 * `.gitignore` に記載のディレクトリ・ファイルを無視してくれる、すべて含むことも可能
 * SJISやEUC-JPなどもサポート、 `-E` で任意のエンコーディング指定が可能
 * `-t` でファイルタイプ指定のinclude、 `-T` でファイルタイプ指定のexclude。`-tpy`でPython, `-Tjs`でJSを除外、といった風に。
+* `-g` ファイルリストに対してglobできる。`-g '!*.min.js'`といった感じに`!`を入れるとexcludeに反転する。
+
+globとファイルの中身への検索を組み合わせて`rg foo -g '*.min.js' ./public`とか書けるのがいい。
+部分一致でなくパターンマッチングも使えます、`rg -e '^foo' -g '*.md'` こんな感じ。
+巨大なリポジトリで探しものをしているときとかに重宝します。
 
 ## fd
 
@@ -35,11 +40,10 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 
 * brewで入ります。 `brew install fd`
 * オプション無しでregexパターンを渡します。`cd /etc && fd '^x.*rc$'`
-* 末尾にディレクトリ指定が直感的で地味に便利。 `fd '^x.*rc$' /etc`
-* `-e` 拡張子指定。よく使います。
-* `-d` maxDepthのこと。あんま使わない。
-* `-i` ignoreパターン
-* `-E` excludeパターンマッチを書ける。`-i`よりこっちのほうがよく使うかも。
+* 末尾でのディレクトリ指定が直感的でいい。 `fd '^x.*rc$' /etc`
+* `-e` 拡張子指定。あんま使わないかも、`fd 'png$'`みたいにパターンマッチを書くことのほうが多い。
+* `-d` maxDepthのこと。あんま使わないかな。
+* `-E` excludeパターンマッチを書ける。`-i`よりこっちのほうがよく使うかも。`node_modules`の除外などに。
 * `-0` 検索結果を`NULL`でセパレートしてくれる、検索結果をリダイレクトしてxargsへ渡したいときに助かります。
 
 総じて、findを使い慣れていればあまり困らないものではありますが、findより直感的に書け、また処理速度がかなり速いので作業効率は上がりやすいです。
@@ -93,6 +97,7 @@ WindowsなどでSJISも対象にしたい場合には無理に`rg`を使わず�
 * <https://github.com/BurntSushi/ripgrep>
 * <https://github.com/sharkdp/fd>
 * <https://github.com/ogham/exa>
+* <https://qiita.com/ktrysmt/items/70fa1d4e88e0d362c410>
 * <https://github.com/monochromegane/the_platinum_searcher>
 * <http://someneat.hatenablog.jp/entry/2017/03/12/011335>
 * <https://github.com/thinca/vim-qfreplace>
