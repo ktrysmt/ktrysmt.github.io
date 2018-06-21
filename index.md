@@ -1,5 +1,5 @@
 ---
-title: Kotaro Yoshimatsu a.k.a. @ktrysmt 
+title: Kotaro Yoshimatsu a.k.a. ktrysmt 
 permalink: /
 layout: top
 ---
@@ -14,8 +14,8 @@ I'm a japanese web developer and live in Japan.
 
 - [Twitter](https://twitter.com/{{ site.authorTwitter }})
 - [Github](https://github.com/{{ site.authorTwitter }})
-- [Blog(ja)]({{ site.blogTopUrl }})
-- [Talks - Speaker Deck](https://speakerdeck.com/{{ site.authorTwitter }})
+- [Blog (ja)]({{ site.blogTopUrl }})
+- [Slides (Speaker Deck)](https://speakerdeck.com/{{ site.authorTwitter }})
 
 ### Contact
 

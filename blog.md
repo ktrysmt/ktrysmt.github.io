@@ -1,5 +1,5 @@
 ---
-title: ktrysmt's blog 
+title: Engineering Blog @ktrysmt 
 permalink: /blog/
 profile: false 
 layout: list

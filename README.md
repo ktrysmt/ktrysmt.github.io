@@ -1,13 +1,25 @@
-# ktrysmt's blog 
+# Kotaro Yoshimatsu
 
-[A Personal Tech Blog](http://ktrysmt.github.io/) by ktrysmt.
+> a.k.a. ktrysmt
 
-## Author
 
-[@ktrysmt](https://twitter.com/ktrysmt)
+I'm a japanese web developer and live in Japan.
+
+I work as Site Reliability Engineer, Gopher or Javascript Ninja.
+
+I'm interested in Golang, Docker, DevOps, SRE and Neovim.
+
+## SNS
+[Twitter](https://twitter.com/ktrysmt)
+[Github](https://github.com/ktrysmt)
+[Blog (ja)](https://ktrysmt.github.io/blog/)
+[Slides (Speaker Deck)](https://speakerdeck.com/ktrysmt)
+
+## Contact
+
+kotaro.yoshimatsu@gmail.com
 
 ## License
-
 
 <details>
 <summary>This blog using `Kactus Theme`.</summary>
