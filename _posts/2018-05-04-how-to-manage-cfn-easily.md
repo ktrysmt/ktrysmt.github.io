@@ -137,7 +137,13 @@ src/以下にディレクトリを作成します。このディレクトリ名�
 
 `make create/stack Target=ディレクトリ名`というふうに引数でディレクトリ名を指定します。
 なおディレクトリをネストさせても各種オペレーションが通るようにMakefile内でちょっと工夫しています（後述）。
-管理規模が大きくなってきた場合を想定しています。
+
+`make bundle` ではAWSリソース環境ごとに異なる名前を使いたい場合のために、`Org`というパラメータが使えるようになってます。
+`make bundle Target=sample Org=production` というように呼びます。
+これを使うとJinjaテンプレート内で `{{ org }}` というパラメータ変数を埋め込んでおけば、そこに`produciton`の文字列がbundle時に挿入されます。
+特にS3Bucketなどは全体で一意なため、パラメータ変数を使って重複を避けてつつリソースをまたいで同じテンプレートが使えるように工夫します。
+
+このように、管理規模が大きくなってきた場合を出来る限り想定して構成しています。
 
 おおまかな作業の流れは以下です。
 
@@ -162,6 +168,7 @@ THIS_FILE := $(lastword $(MAKEFILE_LIST))
 
 # env
 Target=
+Org=
 StackName=$(shell echo "${Target}" | perl -pe 's%/%-%g')
 ChangeSetName=change-set-$(StackName)
 # filename
@@ -175,8 +182,8 @@ init:
 
 bundle: init                 ## bundle partial templates into one:    ex) `make build Target=privileged-access`
         @if [ ! -f ./src/${Target}/root.yaml.j2 ]; then echo "it is not found that './src/${Target}/root.yaml.j2'." && exit 1; fi
-        @if [ "" != `which python3` ]; then Target=${Target} OutputFile=$(BundleFile) RootFile=$(RootFile) python3 ./bin/bundle.py; \
-                elif [ "" != `which python` ]; then Target=${Target} OutputFile=$(BundleFile) RootFile=$(RootFile) python ./bin/bundle.py; \
+        @if [ "" != `which python3` ]; then Target=${Target} OutputFile=$(BundleFile) RootFile=$(RootFile) Org=$(Org) python3 ./bin/bundle.py; \
+                elif [ "" != `which python` ]; then Target=${Target} OutputFile=$(BundleFile) RootFile=$(RootFile) Org=$(Org) python ./bin/bundle.py; \
                 else echo "Please install python3."; fi
 
 lint: init                   ## lint the template:                    ex) `make lint Target=privileged-access`
