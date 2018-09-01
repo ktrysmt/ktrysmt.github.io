@@ -6,7 +6,7 @@ comments: true
 categories: "AWS"
 published: true
 use_toc: true
-description: "私も日々お世話になっている大変便利なCFnですが、上手に付き合うにはいくつかコツがいるのかなぁと感じたので、要点と管理手法をまとめました。" 
+description: "私も日々お世話になっている大変便利なCFnですが、上手に付き合うにはいくつかコツがいるのかなぁと感じたので、要点と管理手法をまとめました。"
 ---
 
 
@@ -168,7 +168,6 @@ THIS_FILE := $(lastword $(MAKEFILE_LIST))
 
 # env
 Target=
-Org=
 StackName=$(shell echo "${Target}" | perl -pe 's%/%-%g')
 ChangeSetName=change-set-$(StackName)
 # filename
@@ -177,59 +176,67 @@ RootFile=root.yaml.j2
 ParamCreateStackFile=param.create-stack.json
 ParamCreateChangeSetFile=param.create-change-set.json
 
+setup: ## install dependencies w/ npm and python. ## -
+	@if [ "" != `which yarn` ]; then yarn; \
+		elif [ "" != `which npm` ]; then npm i; \
+		else echo "Please install nodejs."; fi
+	@if [ "" != `which pip3` ]; then pip3 install -r ./requirements.txt; \
+		elif [ "" != `which pip` ]; then pip install -r ./requirements.txt; \
+		else echo "Please install python3."; fi
+
+bundle: init ## bundle partial templates into one ## make bundle Target=privileged-access
+	@if [ ! -f ./src/${Target}/root.yaml.j2 ]; then echo "it is not found that './src/${Target}/root.yaml.j2'." && exit 1; fi
+	@if [ "" != `which python3` ]; then OutputFile=$(BundleFile) RootFile=$(RootFile) python3 ./bin/bundle.py $(MAKEFLAGS); \
+		elif [ "" != `which python` ]; then OutputFile=$(BundleFile) RootFile=$(RootFile) python ./bin/bundle.py $(MAKEFLAGS); \
+		else echo "Please install python3."; fi
+
+lint: init ## lint the template ## make lint Target=privileged-access
+	aws cloudformation validate-template --template-body file://dist/${Target}/$(BundleFile)
+	cfn-lint validate ./dist/${Target}/$(BundleFile)
+
+create/stack: init ## call create-stack ## make create/stack Target=privileged-access
+	aws cloudformation create-stack \
+		--stack-name ${StackName} \
+		--cli-input-json file://src/${Target}/$(ParamCreateStackFile) \
+		--template-body file://dist/${Target}/$(BundleFile)
+
+create/change-set: init ## call create-change-set ## make create/change-set Target=privileged-access
+	aws cloudformation create-change-set \
+		--stack-name ${StackName} \
+		--change-set-name ${ChangeSetName} \
+		--cli-input-json file://src/${Target}/$(ParamCreateChangeSetFile) \
+		--template-body file://dist/${Target}/$(BundleFile)
+
+wait/stack-create: init ## call wait stack-create-complete ## make wait/stack-create Target=privileged-access
+	aws cloudformation wait stack-create-complete \
+		--stack-name ${StackName}
+
+wait/stack-update: init ## call wait stack-update-complete ## make wait/stack-update Target=privileged-access
+	aws cloudformation wait stack-update-complete \
+		--stack-name ${StackName}
+
+wait/change-set-create: init ## call wait change-set-create-complete ## make wait/change-set-create Target=privileged-access
+	aws cloudformation wait change-set-create-complete \
+		--change-set-name ${ChangeSetName} \
+		--stack-name ${StackName}
+
+desc/change-set: init ## call describe-change-set ## make desc/change-set Target=privileged-access
+	aws cloudformation describe-change-set \
+		--change-set-name ${ChangeSetName} \
+		--stack-name ${StackName}
+
+exec/change-set: init ## call execute-change-set ## make exec/change-set Target=privileged-access
+	aws cloudformation execute-change-set \
+		--change-set-name ${ChangeSetName} \
+		--stack-name ${StackName}
+
+diff/change-set: init ## check stacks differences ## make diff/change-set Target=privileged-access
+	@aws cloudformation get-template --stack-name ${StackName} --output text --query "TemplateBody" > .cache/a.diff
+	@aws cloudformation get-template --stack-name ${StackName} --change-set-name ${ChangeSetName} --output text --query "TemplateBody" > .cache/b.diff
+	@diff -U 3 .cache/{a,b}.diff || :
+
 init:
-        @if [ "" = "${Target}" ]; then echo 'The "Target" environment is empty. ex) `make lint Target=privileged-access` ' && exit 1; fi
-
-bundle: init                 ## bundle partial templates into one:    ex) `make build Target=privileged-access`
-        @if [ ! -f ./src/${Target}/root.yaml.j2 ]; then echo "it is not found that './src/${Target}/root.yaml.j2'." && exit 1; fi
-        @if [ "" != `which python3` ]; then Target=${Target} OutputFile=$(BundleFile) RootFile=$(RootFile) Org=$(Org) python3 ./bin/bundle.py; \
-                elif [ "" != `which python` ]; then Target=${Target} OutputFile=$(BundleFile) RootFile=$(RootFile) Org=$(Org) python ./bin/bundle.py; \
-                else echo "Please install python3."; fi
-
-lint: init                   ## lint the template:                    ex) `make lint Target=privileged-access`
-        aws cloudformation validate-template --template-body file://dist/${Target}/$(BundleFile)
-        cfn-lint validate ./dist/${Target}/$(BundleFile)
-
-create/stack: init           ## call create-stack:                    ex) `make create/stack Target=privileged-access`
-        aws cloudformation create-stack \
-                --stack-name ${StackName} \
-                --cli-input-json file://src/${Target}/$(ParamCreateStackFile) \
-                --template-body file://dist/${Target}/$(BundleFile)
-
-create/change-set: init      ## call create-change-set:               ex) `make create/change-set Target=privileged-access`
-        aws cloudformation create-change-set \
-                --stack-name ${StackName} \
-                --change-set-name ${ChangeSetName} \
-                --cli-input-json file://src/${Target}/$(ParamCreateChangeSetFile) \
-                --template-body file://dist/${Target}/$(BundleFile)
-
-wait/stack-create: init      ## call wait stack-create-complete:      ex) `make wait/stack-create Target=privileged-access`
-        aws cloudformation wait stack-create-complete \
-                --stack-name ${StackName}
-
-wait/stack-update: init      ## call wait stack-update-complete:      ex) `make wait/stack-update Target=privileged-access`
-        aws cloudformation wait stack-update-complete \
-                --stack-name ${StackName}
-
-wait/change-set-create: init ## call wait change-set-create-complete: ex) `make wait/change-set-create Target=privileged-access`
-        aws cloudformation wait change-set-create-complete \
-                --change-set-name ${ChangeSetName} \
-                --stack-name ${StackName}
-
-desc/change-set: init        ## call describe-change-set:             ex) `make desc/change-set Target=privileged-access`
-        aws cloudformation describe-change-set \
-                --change-set-name ${ChangeSetName} \
-                --stack-name ${StackName}
-
-exec/change-set: init        ## call execute-change-set:              ex) `make exec/change-set Target=privileged-access`
-        aws cloudformation execute-change-set \
-                --change-set-name ${ChangeSetName} \
-                --stack-name ${StackName}
-
-diff/change-set: init        ## check stacks differences:             ex) `make diff/change-set Target=privileged-access`
-        @aws cloudformation get-template --stack-name ${StackName} --output text --query "TemplateBody" > .cache/a.diff
-        @aws cloudformation get-template --stack-name ${StackName} --change-set-name ${ChangeSetName} --output text --query "TemplateBody" > .cache/b.diff
-        @diff -U 3 .cache/{a,b}.diff || :
+	@if [ "" = "${Target}" ]; then echo 'The "Target" environment is empty. ex) `make lint Target=privileged-access` ' && exit 1; fi
 ```
 
 `root.yaml.j2`の中身は以下のような感じです。
@@ -294,6 +301,8 @@ UserRoleA:
 ```
 
 あまり凝った記述をするのは管理コストが上がってしまうのでおすすめしませんが、テンプレートエンジンの力を借りて即時変数をyaml内で宣言したり、制御構文を埋め込んだりもできます。
+
+変数を埋め込む場合はテンプレート内で `｛｛ var ｝｝` のように宣言して、`make bundle Target=xxx var=1234` というように同名の引数を渡してあげればOKです。
 
 所感
 --------
