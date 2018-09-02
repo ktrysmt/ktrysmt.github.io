@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "S3の Object-level logging の設定をCloudFormationで書くときのポイント"
+title: "S3 Object-level loggingの設定をCloudFormationで書くときのポイント"
 date: 2018-09-02 03:00:00 +0900
 comments: true
 categories: ""
@@ -12,8 +12,8 @@ description: "CloudTrailをCFnで書くことになるんですが、ReadWriteTy
 
 ## 背景
 
-CloudTrailを設定するときは、後から参照することを考慮して`Read`と`Write`、あと特定のS3Bucketの Object-level logging とで、Trailおよびログ用Bucketを分けて設定することが多いです。
-この Object-level logging を CloudFormation で書くときに、ちょっとハマった話です。
+私がCloudTrailを設定するときは、後から参照することを考慮して`Read`と`Write`、あと特定のS3Bucketの`Object-level logging`とで、TrailおよびBucketを分けて設定することが多いのです。
+この`Object-level logging`をCloudFormationで書こうとしたときに、ちょっとハマったっていう話です。
 
 ## ハマったところ
 
@@ -23,7 +23,9 @@ CloudTrailを設定するときは、後から参照することを考慮して`
 
 マネコンの設定画面ではラジオボタンでNoneを選べるんですが、CFnではどうやら定義の仕方が異なるようなのです。
 
-## 解決したコード
+`Object-level logging`用と全体の監査ログ用とでBucketレベルで分かれていると管理上微妙に都合が良かったりするので、できれば`None`を選びたい...。
+
+## 解決するコード
 
 ```yml
 MyObjectLevelLoggingTrail:
@@ -45,4 +47,4 @@ MyObjectLevelLoggingTrail:
     TrailName: "my-object-level-logging-trail"
 ```
 
-`IncludeManagementEvents`を`false`にすれば、実態としては`None`を選んだことになります。
+`IncludeManagementEvents`を`false`にすれば、実態としては`None`を選んだことになります。できてよかった。
