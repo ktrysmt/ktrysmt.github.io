@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "S3のObjectLevelLoggingの設定をCloudFormationで書くときのポイント"
+title: "S3の Object-level logging の設定をCloudFormationで書くときのポイント"
 date: 2018-09-02 03:00:00 +0900
 comments: true
 categories: ""
@@ -12,8 +12,8 @@ description: "CloudTrailをCFnで書くことになるんですが、ReadWriteTy
 
 ## 背景
 
-CloudTrailを設定するときは、後から参照することを考慮して`Read`と`Write`、あと特定のS3BucketのObjectLevelLoggingとで、Trailおよびログ用Bucketを分けて設定することが多いです。
-このObjectLevelLoggingをCloudFormationで書くときに、ちょっとハマった話です。
+CloudTrailを設定するときは、後から参照することを考慮して`Read`と`Write`、あと特定のS3Bucketの Object-level logging とで、Trailおよびログ用Bucketを分けて設定することが多いです。
+この Object-level logging を CloudFormation で書くときに、ちょっとハマった話です。
 
 ## ハマったところ
 
