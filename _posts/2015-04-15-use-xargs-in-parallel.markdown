@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "xargsで並列処理したいときに使うオプションをメモ"
-date: 2015-04-11 15:09:08 +0900 
+date: 2015-04-11 15:09:08 +0900
 comments: true
 categories: Linux
 published: true

@@ -3,16 +3,16 @@ layout: post
 title: "Installing Vim8 +lua in MSYS2"
 date: 2017/02/21
 comments: true
-categories: "Vim"
+categories: Vim
 published: true
 use_toc: true
-description: "Msys2のRuntimeは不安定だがそれでもvim+luaが使いたい、です…。" 
+description: "Msys2のRuntimeは不安定だがそれでもvim+luaが使いたい、です…。"
 ---
 
 ## 前置き
 
-インストール方法自体は[参考サイト](http://qiita.com/tomotanakamura/items/5374e8dc47e710219842)とだいたい同じ。  
-ただしpython3は公式から[64bitのバイナリ](https://www.python.org/downloads/windows/)をいれるほうがよい。  
+インストール方法自体は[参考サイト](http://qiita.com/tomotanakamura/items/5374e8dc47e710219842)とだいたい同じ。
+ただしpython3は公式から[64bitのバイナリ](https://www.python.org/downloads/windows/)をいれるほうがよい。
 というのも、昨今いくつかのVimプラギンがPython3を要求するのと、Msys2経由で入るPython3だとなぜかTimeパッケージが見当たらないため。
 
 ## Installation

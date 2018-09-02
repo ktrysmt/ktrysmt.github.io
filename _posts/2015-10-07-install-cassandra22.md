@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cassandra v2.2をCentOS6で使う"
-date: 2015-10-07 15:09:08 +0900 
+date: 2015-10-07 15:09:08 +0900
 comments: true
 categories: Cassandra
 published: true
@@ -17,7 +17,7 @@ Cassandra 2.1以降はJava7,8をサポートしているので特にバージョ
 name = DataStax Repo for Apache Cassandra
 baseurl = http://rpm.datastax.com/community
 enabled = 1
-gpgcheck = 0' > /etc/yum.repos.d/datastax.repo 
+gpgcheck = 0' > /etc/yum.repos.d/datastax.repo
 # yum -y install dsc22 cassandra-tools
 # chown -R cassandra:cassandra /var/lib/cassandra
 # exec $SHELL # reload
@@ -49,6 +49,6 @@ Note: Non-system keyspaces don't have the same replication settings, effective o
 Connected to Test Cluster at 127.0.0.1:9042.
 [cqlsh 5.0.1 | Cassandra 2.2.2 | CQL spec 3.3.1 | Native protocol v4]
 Use HELP for help.
-cqlsh> 
+cqlsh>
 
 ```

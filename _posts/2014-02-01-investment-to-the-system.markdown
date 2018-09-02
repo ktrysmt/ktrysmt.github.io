@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "受託開発の課題"
-date: 2014-02-01 15:09:08 +0900 
+date: 2014-02-01 15:09:08 +0900
 comments: true
 categories: Management
 published: true

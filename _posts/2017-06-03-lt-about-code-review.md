@@ -3,10 +3,10 @@ layout: post
 title: "社内LT会でコードレビューを支える技術というテーマで話してきた"
 date: 2017-06-03
 comments: true
-categories: "Zsh"
+categories: Zsh
 published: true
 use_toc: false
-description: "作業効率化のためのいろいろな工夫をコードレビューの観点でまとめてみました。" 
+description: "作業効率化のためのいろいろな工夫をコードレビューの観点でまとめてみました。"
 ---
 
 

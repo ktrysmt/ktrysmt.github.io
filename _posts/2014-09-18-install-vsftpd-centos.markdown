@@ -9,7 +9,7 @@ published: true
 
 面倒なのでコピペで運用できるようにした。
 
-## install 
+## install
 
 ```
 yum -y install vsftpd

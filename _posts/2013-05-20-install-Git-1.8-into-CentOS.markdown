@@ -18,7 +18,7 @@ yumでのインストールだと1.7系までみたいなので、1.8は手で�
 # tar zxvf git-1.8.5.2.tar.gz
 # cd git-1.8.5.2
 # ./configure
-# make 
+# make
 # make install
 ```
 

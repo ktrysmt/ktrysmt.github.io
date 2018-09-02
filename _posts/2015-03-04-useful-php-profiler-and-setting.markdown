@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHPのプロファイラとよく使う設定"
-date: 2015-03-03 15:09:08 +0900 
+date: 2015-03-03 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
@@ -70,12 +70,12 @@ php_value auto_prepend_file /path/to/my_prepend.php
 ```
 <?php
 include '/path/to/ChromePhp.php';
-  
+
 // 接続元IPアドレス偽装
 #$_SERVER['REMOTE_ADDR'] = 'xxx.xxx.xxx.xxx';
- 
+
 #$_SERVER['HTTP_USER_AGENT'] = 'hogehoge user agent';
- 
+
 // パラメータの強制変更(デバッグ用など)
 #$_POST['hoge'] = 'foo';
 #$_GET['aaa'] = 'bbb';
@@ -85,7 +85,7 @@ function __xhprof_finish() {
   $xhprof_lib = '/path/to/xhprof_lib';
   require_once($xhprof_lib . '/utils/xhprof_lib.php');
   require_once($xhprof_lib . '/utils/xhprof_runs.php');
- 
+
   $app_name = 'myapp';
   $result = xhprof_disable();
   $runs = new XHProfRuns_Default();
@@ -93,7 +93,7 @@ function __xhprof_finish() {
   $url = 'http://localhost/?run='.$run_id . '&source='.$app_name;
   #error_log($url); // 計測結果の確認URLをerror_logに出力
 }
- 
+
 xhprof_enable();
 register_shutdown_function('__xhprof_finish');
 ```

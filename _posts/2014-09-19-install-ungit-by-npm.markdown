@@ -40,14 +40,14 @@ $ vi /etc/init.d/ungit
 ```
 #!/bin/sh
 # chkconfig: 2345 91 91
-                                   
+
 . /etc/rc.d/init.d/functions
 
 PROG="/root/.nvm/v0.11.13/bin/ungit"
 PROGNAME=`basename $PROG`
-                            
+
 [ -f $PROG ] || exit 0
-                
+
 case "$1" in
     start)
         echo -n $"Starting $PROGNAME:"
@@ -71,7 +71,7 @@ case "$1" in
         exit 1
         ;;
 esac
-exit 0 
+exit 0
 ```
 
 ```

@@ -18,36 +18,36 @@ published: true
 ## Apacheチューニングは以下。
 
 ```
-  65 PidFile run/httpd.pid  
-  66   
-  67 #  
-  68 # Timeout: The number of seconds before receives and sends time out.  
-  69 #  
+  65 PidFile run/httpd.pid
+  66
+  67 #
+  68 # Timeout: The number of seconds before receives and sends time out.
+  69 #
   70 Timeout 60
-  71   
-  72 #  
+  71
+  72 #
   73 # KeepAlive: Whether or not to allow persistent connections (more than
-  74 # one request per connection). Set to "Off" to deactivate.  
-  75 #  
+  74 # one request per connection). Set to "Off" to deactivate.
+  75 #
   76 KeepAlive On
-  77 
+  77
   78 #
   79 # MaxKeepAliveRequests: The maximum number of requests to allow
   80 # during a persistent connection. Set to 0 to allow an unlimited amount.
   81 # We recommend you leave this number high, for maximum performance.
   82 #
   83 MaxKeepAliveRequests 26
-  84 
+  84
   85 #
   86 # KeepAliveTimeout: Number of seconds to wait for the next request from the
   87 # same client on the same connection.
   88 #
   89 KeepAliveTimeout 5
-  90 
+  90
   91 ##
   92 ## Server-Pool Size Regulation (MPM specific)
-  93 ## 
-  94 
+  93 ##
+  94
   95 # prefork MPM
   96 # StartServers: number of server processes to start
   97 # MinSpareServers: minimum number of server processes which are kept spare
@@ -63,7 +63,7 @@ published: true
  107 MaxClients         300
  108 MaxRequestsPerChild  100
  109 </IfModule>
- 110 
+ 110
 ```
 
 ## 不要なバージョン番号やソフトウェア名を隠す

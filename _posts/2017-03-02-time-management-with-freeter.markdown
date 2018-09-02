@@ -3,10 +3,10 @@ layout: post
 title: "Freeter.ioを使ってみたら結構いい感じだった"
 date: 2017-03-02
 comments: true
-categories: "Tools"
+categories: Tools
 published: true
 use_toc: true
-description: "試しに使ってみたところ、集中しやすいタスク処理環境が構築できそうだったので。" 
+description: "試しに使ってみたところ、集中しやすいタスク処理環境が構築できそうだったので。"
 ---
 
 ## What is this

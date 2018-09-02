@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHPアクセラレータまとめ"
-date: 2015-07-01 15:09:08 +0900 
+date: 2015-07-01 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
@@ -12,7 +12,7 @@ published: true
 ```
 # yum -y install php55-opcache (amzn-main)
 # yum -y install php55-opcache --enablerepo=remi-php55 (remi-php55)
-# pecl install APCu-beta 
+# pecl install APCu-beta
 
 # vim /etc/php.d/opcache.ini #ファイルキャッシュを不可(=0)にするか2秒に変更
 opcache.memory_consumption=256 #共有メモリとして256MB設定

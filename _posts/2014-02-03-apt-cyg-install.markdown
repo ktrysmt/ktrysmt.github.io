@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cygwinにapt-cygをインストールする"
-date: 2014-02-02 15:09:08 +0900 
+date: 2014-02-02 15:09:08 +0900
 comments: true
 categories: Windows
 published: true

@@ -3,10 +3,10 @@ layout: post
 title: "Nginxの名前解決についてまとめ"
 date: 2017-09-30
 comments: true
-categories: "Nginx"
+categories: Nginx
 published: true
 use_toc: true
-description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。" 
+description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。"
 ---
 
 Microservicesが市民権を得てきた昨今，特にAWSのELB等をInternalなロードバランサとして使うことも当たり前になり，ハマるひとも多かったのではないでしょうか。私も漏れなくハマりまして，以前遭遇した時はNginxのバグではないかと疑っていたのですが，よく調べたらどうもこの辺りの挙動は仕様のようです。
@@ -51,7 +51,7 @@ http {
 
     location / {
         set $url "http://LoadBalancer-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com";
-        proxy_pass $url;    
+        proxy_pass $url;
     }
 }
 ```
@@ -186,7 +186,7 @@ http {
     server {
         listen       unix:/var/run/nginx_backend2.sock;
         server_name  example.com;
-        ... 
+        ...
 
         set $lb_backend2 "internal-lb-backend2-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com";
 

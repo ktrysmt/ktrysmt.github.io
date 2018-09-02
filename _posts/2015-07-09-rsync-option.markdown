@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "rsyncで押さえておくオプション"
-date: 2015-06-28 15:09:08 +0900 
+date: 2015-06-28 15:09:08 +0900
 comments: true
 categories: Linux
 published: true

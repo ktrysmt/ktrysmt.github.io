@@ -67,7 +67,7 @@ $ wget https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz
 $ sudo tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 $ echo "export GOPATH=/usr/local/go" >> $HOME/.bashrc
 $ echo "export PATH=$PATH:$GOPATH/bin" >> $HOME/.bashrc
-$ go version                                                                                                         
+$ go version
 go version go1.2.2 linux/amd64
 ```
 

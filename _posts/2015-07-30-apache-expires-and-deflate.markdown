@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "httpdのパフォーマンスをさっさと改善(expires,deflate)"
-date: 2015-07-10 15:09:08 +0900 
+date: 2015-07-10 15:09:08 +0900
 comments: true
 categories: Apache
 published: true

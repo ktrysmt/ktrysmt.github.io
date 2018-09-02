@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "neocomplete-php重いのでやめて、辞書ファイルをneocompleteで読み込む方法に切り替えた"
-date: 2015-04-19 15:09:08 +0900 
+date: 2015-04-19 15:09:08 +0900
 comments: true
 categories: Vim
 published: true

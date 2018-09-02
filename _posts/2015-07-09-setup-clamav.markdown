@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "常駐ClamAV"
-date: 2014-02-28 15:09:08 +0900 
+date: 2014-02-28 15:09:08 +0900
 comments: true
 categories: Security
 published: true
@@ -14,7 +14,7 @@ ClamAVを使うときのコピペ用まとめ。
 at CentOS 6
 
 ```
-rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm 
+rpm -ivh http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 yum -y install clamd
 ```
 

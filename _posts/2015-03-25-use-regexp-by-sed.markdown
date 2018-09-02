@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "sedで正規表現するなら拡張正規表現"
-date: 2015-03-21 15:09:08 +0900 
+date: 2015-03-21 15:09:08 +0900
 comments: true
 categories: Linux
 published: true

@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "デブサミ2017にいってきたがおデブサミットみたいだった(　´)Д(｀)"
-date: 2017-02-22 
+date: 2017-02-22
 comments: true
-categories: "Event"
+categories: Event
 published: true
 use_toc: true
-description: "いってきたので、参加のモチベーションや感想などをつらつらと。" 
+description: "いってきたので、参加のモチベーションや感想などをつらつらと。"
 ---
 
-ブログを書くまでがイベントですよということで。  
+ブログを書くまでがイベントですよということで。
 各セッションのメモなどについては他のブログを参考にしていただくとして、主に会場やイベント全体ついての感想など。
 
 ## デブサミとは
@@ -104,7 +104,7 @@ description: "いってきたので、参加のモチベーションや感想な
 
 ## 終わりに；目を通しておきたいセッションの資料など
 
-最近のテックカンパニーの皆さんはSpeakerDeckやSlideshareにあげてくれることが多いのでたいへん有難いですね。  
+最近のテックカンパニーの皆さんはSpeakerDeckやSlideshareにあげてくれることが多いのでたいへん有難いですね。
 いずれも技術的に突っ込んだ話してるので大いに参考になります。
 
 - <http://d.hatena.ne.jp/rx7/20170216/p1>
@@ -112,7 +112,7 @@ description: "いってきたので、参加のモチベーションや感想な
 - <https://www.slideshare.net/beniyama/ss-72260669>
 - <http://niconare.nicovideo.jp/watch/kn2331>
 
-逆説のキャリア思考のセッションについて色々言っちゃいましたが、  
+逆説のキャリア思考のセッションについて色々言っちゃいましたが、
 基本的にはキャリアや将来に悩みがある人にとっては参考になるかと思います。URLは以下です。
 
 - <https://www.slideshare.net/takaumada/paradoxical-startup-career-thinking>

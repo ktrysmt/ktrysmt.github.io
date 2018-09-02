@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "gitのdiffを見やすくするdiff-highlight"
-date: 2014-02-01 15:09:08 +0900 
+date: 2014-02-01 15:09:08 +0900
 comments: true
 categories: Git
 published: true

@@ -90,7 +90,7 @@ net.core.somaxconn = 10240
 
 
 
-## File Descriptor 
+## File Descriptor
 
 ```
 # echo 'ulimit -n 65536
@@ -276,7 +276,7 @@ server {
      # $do_not_fastcgi_cache変数を使う場合アンコメント
      #fastcgi_cache_bypass $do_not_fastcgi_cache;
      #fastcgi_no_cache $do_not_fastcgi_cache;
-     
+
      # cache機構を使う場合アンコメント
      #fastcgi_cache FASTCGI;
      #fastcgi_cache_valid  200 6h;
@@ -293,7 +293,7 @@ server {
     proxy_cache_valid  200 302  7d;
     proxy_cache_valid  404 7d;
 
-    # LB経由の場合はx-forwarded-forを使用    
+    # LB経由の場合はx-forwarded-forを使用
     #proxy_set_header X-Real-IP  $remote_addr;
     #proxy_set_header Host $host;
     #proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -462,7 +462,7 @@ nginx.confとvirtula.confを修正
 # vim /etc/nginx/nginx.conf #サブドメイン名が長くなるなら数字を大きめに設定
 
 http {
-  server_names_hash_bucket_size  64; 
+  server_names_hash_bucket_size  64;
   server_names_hash_max_size    512;
 （以下略）
 ```

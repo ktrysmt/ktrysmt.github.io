@@ -7,12 +7,12 @@ categories: Bash
 published: true
 ---
 
-## install 
+## install
 
 ```
 $ git clone git://github.com/joelthelion/autojump.git
 $ cd autojump
-$ ./install.py                                                                                                        
+$ ./install.py
 ```
 
 ## .bashrc追記

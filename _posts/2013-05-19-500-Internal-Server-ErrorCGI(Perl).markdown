@@ -7,12 +7,12 @@ categories: Perl
 published: true
 ---
 
-[<img class="aligncenter size-full wp-image-208" alt="wg8v" src="http://labo.in-ception.com/wp-content/uploads/2013/08/wg8v.png" width="769" height="161" />][1]  
+[<img class="aligncenter size-full wp-image-208" alt="wg8v" src="http://labo.in-ception.com/wp-content/uploads/2013/08/wg8v.png" width="769" height="161" />][1]
 500エラーは何が原因なんだか検討もつかず途方に暮れます。
 
 [1]: http://labo.in-ception.com/wp-content/uploads/2013/08/wg8v.png
 
-ググればいろいろなサイトで対処法が載っていますが、  
+ググればいろいろなサイトで対処法が載っていますが、
 後輩が困ってたので自分用も兼ねつつのまとめです。
 
 他の手段も覚えたら随時更新します。
@@ -42,14 +42,14 @@ published: true
 
 ## ファイルの文字コードを確認
 
-Perlでは、Sjift_JISでは特定のマルチバイトがきたとき、うまく動きません。  
-古いPerl環境の場合は、ソースに漢字・日本語が混じるときはいったん`EUC-JP`にしてみると幸せになれそうです。  
+Perlでは、Sjift_JISでは特定のマルチバイトがきたとき、うまく動きません。
+古いPerl環境の場合は、ソースに漢字・日本語が混じるときはいったん`EUC-JP`にしてみると幸せになれそうです。
 テキストエディタで保存する際、文字コードをEUCにして保存するとよいです。
 
 ## 改行コードの変更
 
-Windows端末でCGIファイルを作成していたり、上書き保存していたりしたら要確認。  
-CRLFである場合はCR消しましょう。LF残しで。  
+Windows端末でCGIファイルを作成していたり、上書き保存していたりしたら要確認。
+CRLFである場合はCR消しましょう。LF残しで。
 消すツールはなんでもいいですが、nkfコマンドがラク。
 
 <pre lang="sh"># nkf -Lu filename.cgi</pre>

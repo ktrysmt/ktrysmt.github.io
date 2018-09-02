@@ -3,7 +3,7 @@ layout: post
 title: "開発のすすめかたテンプレ"
 date: 2014-09-20 15:09:08 +0900
 comments: true
-categories: Development
+categories: Management
 published: true
 ---
 

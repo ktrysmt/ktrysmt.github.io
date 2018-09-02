@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WindowsのGit BashでMinGWを使う"
-date: 2015-04-08 15:09:08 +0900 
+date: 2015-04-08 15:09:08 +0900
 comments: true
 categories: Windows
 published: true
@@ -19,7 +19,7 @@ published: true
 
 - <http://sourceforge.net/projects/mingw/>
 
-## Install Git Bash 
+## Install Git Bash
 
 Git for Windowsからインストール。昔に比べてちょっとおしゃれになっている。
 

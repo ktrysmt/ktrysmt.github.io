@@ -47,7 +47,7 @@ Twitterのハッシュタグは#nodefest
 
 - <http://party.rauchg.com/>
 
-ファイル分割してアップロードできるフレームワークのparty。  
+ファイル分割してアップロードできるフレームワークのparty。
 アメリカのサーバへファイル転送してるようなんだけど速度はたしかに早い。websocketにチェック入れたらなんか動かなかった。まだ公開してない、coming soonらしい。
 
 - <https://github.com/Automattic>
@@ -63,7 +63,7 @@ Automattic社のGithubリポジトリ。なんかすごいのいっぱい
 
 ### What’s coming in Node, Express & LoopBack @ijroth
 
-- <http://loopback.io/> 
+- <http://loopback.io/>
 
 StrongLoop社製の新しいnode.jsフレームワーク。
 
@@ -144,7 +144,7 @@ node-webkit & chrome-remote-interfaceでブラウザオートメーション、�
 たしかnode-webkitの話の時のソース保護とか暗号化の話してたときにググった気がする
 そんなこともできるのかと驚いた
 
-- <https://github.com/mochajs/mocha/wiki/Using-mocha-with-node-webkit> 
+- <https://github.com/mochajs/mocha/wiki/Using-mocha-with-node-webkit>
 
 Using mocha with node webkit. mochaもいいけど、今はpower-assertに気が行っている
 
@@ -153,7 +153,7 @@ Using mocha with node webkit. mochaもいいけど、今はpower-assertに気が
 
 
 ### すべてのノードトランスパイラーがひどい！ならば、ノードトランスパイラーをいかに改善できるか。 @leichtgewicht
- 
+
 - [NodeFest2014 - Transpiler](http://www.slideshare.net/leichtgewicht/nodefest2014-transpiler)
 
 スライド
@@ -190,7 +190,7 @@ Callbackの山と戦うあなたにjs-csp、`js-csp requires ES6 generators.`ら
 
 ### ド初心者が5000QPSの広告配信APIをNode.jsで構築したおはな死 @zuqqhi2, @Jimisky
 
-- <https://github.com/node-xmpp/node-expat> 
+- <https://github.com/node-xmpp/node-expat>
 
 node-expat
 
@@ -288,7 +288,7 @@ Node-v0.12のTLSを256倍使いこなす方法(@jovi0608)
 
 nodejs full profiler
 
-- <https://status.modern.ie/> 
+- <https://status.modern.ie/>
 
 たぶんこれメモったのは最近のMicrosoftいいよねって話から。主にVisualStudio,Azure,TypeScriptあたりが。LTのひとChrome使ってておもしろかった。Azure、ブラウザだけでnode書けるのは驚いた。
 
@@ -304,7 +304,7 @@ nodeをnodebrewでバージョン管理する話が出ててその使い方、�
 
 nodeのビルドオプション確認方法：`node -e 'console.log(process.config)'`でとれるっぽ
 
-- <https://twitter.com/teppeis/status/533543739566735360> 
+- <https://twitter.com/teppeis/status/533543739566735360>
 
 クラウドゲーミングの話。サーバーでcanvasのコマンドを生成してzlibで圧縮してwebsocketに送ってクライアントで再生するらしい。sugoi!!
 

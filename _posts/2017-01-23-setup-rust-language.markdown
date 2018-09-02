@@ -3,10 +3,10 @@ layout: post
 title: "Rustの開発環境はRustupで"
 date: 2017-01-23
 comments: true
-categories: "Rust"
+categories: Rust
 published: true
 use_toc: true
-description: "開発に必要な基本セットがだいたい揃ったっぽいのでまとめました" 
+description: "開発に必要な基本セットがだいたい揃ったっぽいのでまとめました"
 ---
 
 Rustupのおかげで開発環境がだいぶ整ってきましたね。
@@ -42,7 +42,7 @@ rustup default <toolchain> # use which stable, beta, nightly
 
 - Cargo
 
-### Should be installed 
+### Should be installed
 
 - Clippy
 - Racer

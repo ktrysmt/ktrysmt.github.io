@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[bash] Gitのコマンドやブランチ名を入力補完"
-date: 2014-02-02 15:09:08 +0900 
+date: 2014-02-02 15:09:08 +0900
 comments: true
 categories: Git
 published: true
@@ -25,7 +25,7 @@ published: true
 # wget http://git-core.googlecode.com/files/git-1.8.2.3.tar.gz
 # tar xvfz git-1.8.2.3.tar.gz
 # cd git-1.8.2.3
-# ./configure 
+# ./configure
 # make
 # make install
 # git --version

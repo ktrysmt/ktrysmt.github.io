@@ -19,16 +19,16 @@ yum list installed php* # アンインストールされたか確認
 
 ## add 3rd repositories
 
-install 
+install
 
 ```
-cd 
+cd
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm 
-rpm -Uvh epel-release-6-8.noarch.rpm 
-rpm -Uvh remi-release-6.rpm 
-rpm -Uvh rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm 
+wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
+rpm -Uvh remi-release-6.rpm
+rpm -Uvh rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 ```
 
 switch

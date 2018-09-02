@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MySQLの基本的なチューニングまとめ"
-date: 2015-07-09 15:09:08 +0900 
+date: 2015-07-09 15:09:08 +0900
 comments: true
 categories: MySQL
 published: true
@@ -10,7 +10,7 @@ published: true
 ## 基本計算式
 
 ```
- innodb_buffer_pool_size 
+ innodb_buffer_pool_size
  + key_buffer_size
  + max_connections * (sort_buffer_size + read_buffer_size + 2MB)
 ```
@@ -89,9 +89,9 @@ show variables like "%read_buffer_size%";
 show status like "%Key_reads%";
 show status like "%Key_read_requests%";
 
--- Key_blocks_not_flushed：変更されたが、ディスクへのフラッシュはまだされていないキーキャッシュのキーブロック 
--- Key_blocks_unused ：キーキャッシュの未使用ブロックの数 
--- Key_blocks_used ：キーキャッシュのブロックの使用数。この値は、これまで同時使用したブロックの最大値 
+-- Key_blocks_not_flushed：変更されたが、ディスクへのフラッシュはまだされていないキーキャッシュのキーブロック
+-- Key_blocks_unused ：キーキャッシュの未使用ブロックの数
+-- Key_blocks_used ：キーキャッシュのブロックの使用数。この値は、これまで同時使用したブロックの最大値
 -- [適切なkey_buffer_sizeを知るために]
 -- Key_block_unused
 -- これが数百ブロックといった小さな値になっている場合には増やす必要があります。

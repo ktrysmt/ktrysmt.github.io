@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Machine Learning Advent Calendar 2014 を手がかりに機械学習"
-date: 2015-04-26 15:09:08 +0900 
+date: 2015-04-26 15:09:08 +0900
 comments: true
 categories: MachineLearning
 published: true

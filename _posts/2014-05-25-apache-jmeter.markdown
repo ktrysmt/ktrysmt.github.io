@@ -76,7 +76,7 @@ Apache JMeter本体はこちら。<http://jmeter.apache.org/download_jmeter.cgi>
 > 追加＞サンプラー＞HTTPリクエスト
 ```
 
-を選択。  
+を選択。
 
 ![](/images/article/jmeter-3.png)
 

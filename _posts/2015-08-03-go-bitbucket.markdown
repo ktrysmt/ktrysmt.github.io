@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "bitbucketライブラリのgo-bitbucket作った"
-date: 2015-08-03 15:09:08 +0900 
+date: 2015-08-03 15:09:08 +0900
 comments: true
 categories: Golang
 published: true
@@ -25,8 +25,8 @@ Bitbucket REST API v2.0に対応しています。
 
 - v2.0のエンドポイントをひと通りサポート
 - メソッドチェーン風にエンドポイントをたどれる書き方
-- 認証はまだBasic認証のみ 
- 
+- 認証はまだBasic認証のみ
+
 
 ## Feature
 

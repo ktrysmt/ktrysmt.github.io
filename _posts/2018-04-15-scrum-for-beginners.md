@@ -3,10 +3,10 @@ layout: post
 title: "スクラムをチームに導入するときに気をつけていること"
 date: 2018-04-14
 comments: true
-categories: "Management"
+categories: Management
 published: true
 use_toc: false
-description: "迷いやすいポイントや議論になりやすい話題を中心に、うまくまわすためのアプローチをまとめました。ある程度スクラムを知ってる人、やったことがある人向けの記事です。" 
+description: "迷いやすいポイントや議論になりやすい話題を中心に、うまくまわすためのアプローチをまとめました。ある程度スクラムを知ってる人、やったことがある人向けの記事です。"
 ---
 
 

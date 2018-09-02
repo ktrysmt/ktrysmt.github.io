@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HometypeやめてVromeもやめてVimiumにした"
-date: 2015-04-23 15:09:08 +0900 
+date: 2015-04-23 15:09:08 +0900
 comments: true
 categories: Vim
 published: true

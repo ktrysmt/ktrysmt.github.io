@@ -3,7 +3,7 @@ layout: post
 title: "疲弊しないためのCloudFormation管理手法"
 date: 2018-05-05
 comments: true
-categories: "AWS"
+categories: AWS
 published: true
 use_toc: true
 description: "私も日々お世話になっている大変便利なCFnですが、上手に付き合うにはいくつかコツがいるのかなぁと感じたので、要点と管理手法をまとめました。"

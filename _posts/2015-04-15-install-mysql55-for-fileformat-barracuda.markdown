@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "「Row size too large.」と叱られたのでMySQLを5.5にしてinnodb_file_format=Barracudaにして逃げた"
-date: 2015-04-12 15:09:08 +0900 
+date: 2015-04-12 15:09:08 +0900
 comments: true
 categories: MySQL
 published: true

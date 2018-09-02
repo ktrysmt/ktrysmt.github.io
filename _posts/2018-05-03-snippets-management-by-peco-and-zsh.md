@@ -3,10 +3,10 @@ layout: post
 title: "pecoとzshでかんたんsnippet管理"
 date: 2018-05-03
 comments: true
-categories: "Zsh"
+categories: Zsh
 published: true
 use_toc: false
-description: "（pecoとzshを使っている人にとっては）かんたんです。" 
+description: "（pecoとzshを使っている人にとっては）かんたんです。"
 ---
 
 ### 手順
