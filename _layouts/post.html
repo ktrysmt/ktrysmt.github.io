@@ -29,12 +29,16 @@ archive: true
     </section>
 </article>
 
+<!-- Post meta -->
+{% include post-meta.html %}
+
 <!-- Disqus comments -->
 {% if site.disqus %}
     <div class="post-comment archive readmore">
         <hr>
         <h2>Comments</h2>
         {% include disqus.html %}
+	<hr>
     </div>
 {% endif %}
 
@@ -43,9 +47,6 @@ archive: true
 
 <!-- Recent post lists -->
 {% include recent-post-list.html %}
-
-<!-- Post meta -->
-{% include post-meta.html %}
 
 <!-- Credit -->
 <p class="small">(c) Copyright {{ site.time | date: '%Y' }} {{ site.authorRealName }}</p>
