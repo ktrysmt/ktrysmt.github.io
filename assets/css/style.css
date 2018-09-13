@@ -44,7 +44,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Spacing */
 .post h1, h3, h4, h5, p, .post-body ul, #post-list li, pre {
-margin-bottom: 20px;
+margin-bottom: 40px;
 }
 
 /* Base */
@@ -858,7 +858,7 @@ iframe.speakerdeck-iframe {
 .recent-post-list {
   text-align: justify;
   line-height: 1.7em;
-  margin: 2em 0px;
+  margin: 40px 0px;
   border-top: 1px solid #eee;
 }
 .recent-post-list ul {
