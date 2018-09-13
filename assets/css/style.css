@@ -848,6 +848,9 @@ iframe.speakerdeck-iframe {
   display: flex;
   justify-content: space-between;
 }
+.next-prev-post-link > a {
+    width: 250px;
+}
 .next-prev-post-link .next {
   text-align: right;
 }
