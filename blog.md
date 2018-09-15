@@ -1,5 +1,4 @@
 ---
-title: Engineering Blog at ktrysmt 
 permalink: /blog/
 profile: false 
 layout: list
