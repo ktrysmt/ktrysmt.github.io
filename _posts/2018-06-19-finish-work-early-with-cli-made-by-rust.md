@@ -27,7 +27,8 @@ description: "各種linuxコマンドをリッチで処理速度も早いRust製
 * SJISやEUC-JPなどもサポート、 `-E` で任意のエンコーディング指定が可能
 * `-t` でファイルタイプ指定のinclude、 `-T` でファイルタイプ指定のexclude。`-tpy`でPython, `-Tjs`でJSを除外、といった風に。
 * `-g` ファイルリストに対してglobできる。`-g '!*.min.js'`といった感じに`!`を入れるとexcludeに反転する。
-* `-r` で置換。まず検索して検索結果の末尾に`-r`を追加する流れ。`rg 'fast\s+(\w+)' README.md -r 'fast-$1'`
+* `-r` で置換。まず検索して検索結果の末尾に`-r`を追加する流れ。
+  * 構文例: `rg 'fast\s+(\w+)' README.md -r 'fast-$1'`
   * ただしripgrepは方針としてoverwriteはサポートしないので注意。置換結果の表示のみ。
 
 globとファイルの中身への検索を組み合わせて`rg foo -g '*.min.js' ./public`とか書けるのがいい。
