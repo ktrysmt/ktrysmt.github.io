@@ -70,3 +70,7 @@ http-server # or use any other simple http server
 ```
 
 and access <http://localhost:8080/slides/>.
+
+*How to open it as print mode*
+
+* open link with args `?print-pdf`.
