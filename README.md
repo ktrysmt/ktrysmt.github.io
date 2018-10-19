@@ -15,7 +15,7 @@ I'm interested in Golang, Docker, DevOps, SRE and Neovim.
 [Blog (ja)](https://ktrysmt.github.io/blog/)
 [Slides (Speaker Deck)](https://speakerdeck.com/ktrysmt)
 
-## Contact
+## Mail
 
 kotaro.yoshimatsu@gmail.com
 

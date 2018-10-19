@@ -17,7 +17,7 @@ I'm a japanese web developer and live in Japan.
 - [Blog (ja)]({{ site.blogTopUrl }})
 - [Slides (Speaker Deck)](https://speakerdeck.com/{{ site.authorTwitter }})
 
-### Contact
+### Mail
 
 - kotaro.yoshimatsu@gmail.com
 

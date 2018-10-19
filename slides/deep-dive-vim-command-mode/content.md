@@ -2,15 +2,13 @@
 
 <img style="float:left" class="avatar" data-src="https://avatars3.githubusercontent.com/u/6156742?v=3&s=460">
 
-* Kotaro Yoshimatsu
-
-* twitter@ktrysmt
+* Kotaro Yoshimatsu a.k.a ktrysmt
 
 * 経歴
-  * 学生時代 PerlMonger
+  * 学生時代 Perl monger
   * 受託開発会社 5年くらい
-  * 2015年 リクルート住まいカンパニーにJOIN 
- 
+  * 2015年 リクルートにJOIN
+
 ---
 
 ## Scope
@@ -104,24 +102,24 @@ Basic;
 |---|---|---|
 |left-right-motions| {count} + h,l,^,$,0,f,F,t,T |
 |up-down-motions| {count} + k,j,gk,gj,G,gg,% |
-|word-motions| {count} + w,W,e,E,b,B,ge,gE,s,p |   
-|object-motions| {count} + (,),{,} | 
+|word-motions| {count} + w,W,e,E,b,B,ge,gE,s,p |
+|object-motions| {count} + (,),{,} |
 
 --
- 
+
 Example;
- 
+
 |KEY|RANGE|
-|---|---| 
-|5j| Five rows down | 
+|---|---|
+|5j| Five rows down |
 |5w| Three words forward |
-|4$| Four rows lower line end| 
+|4$| Four rows lower line end|
 
 
 --
- 
+
 Also append that;
- 
+
 |MEAN|KEY|
 |---|---|
 |around|a|
@@ -138,10 +136,10 @@ Example combined them;
 |a"| Words enclosed in doublequotes (include quotes) |
 |i"| Words enclosed in doublequotes (exclude quotes) |
 |as| A Sentence and whitespace behind it |
-|is| A Sentence (exclude whitespace) | 
+|is| A Sentence (exclude whitespace) |
 
 ---
- 
+
 ## 2. Operator
 
 ---
@@ -155,9 +153,9 @@ Example combined them;
 |d| Delete |
 |~| Toggle uppercase or lowercase |
 |u| Make lowercase |
-|U| Make uppercase | 
-|>| Indent right | 
-|<| Indent left | 
+|U| Make uppercase |
+|>| Indent right |
+|<| Indent left |
 
 ---
 
@@ -178,7 +176,7 @@ Example combined them;
 ## Conclusion
 
 - Focus on Operator and Text Object
-- Learn a combination easy-to-use 
+- Learn a combination easy-to-use
 
 
 ---

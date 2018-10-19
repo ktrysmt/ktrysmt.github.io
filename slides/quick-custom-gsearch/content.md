@@ -6,13 +6,12 @@ Kotaro Yoshimatsu
 
 @ktrysmt
 
-<https://twitter.com/ktrysmt>  
+<https://twitter.com/ktrysmt>
 <https://github.com/ktrysmt>
 
-経歴
-* 学生時代 PerlMonger
+* 学生時代は Perl monger
 * 受託開発会社 5年くらい
-* リクルート住まいカンパニー 2年目 
+* リクルート 2年目
 
 ---
 
@@ -116,7 +115,7 @@ package.json
 
 - Use Browserify or Babili. :sleeping:
 
-*More faster test runner.*  
+*More faster test runner.*
 *Want to test about async/await.*
 
 - Use Ava. :triumph:
@@ -210,7 +209,7 @@ describe('View >', () => {
   });
 
   it('BindElement', () => {
-    //...  
+    //...
   });
 
   it('SetCssState', () => {

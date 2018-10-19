@@ -6,13 +6,12 @@ Kotaro Yoshimatsu
 
 @ktrysmt
 
-<https://twitter.com/ktrysmt>  
+<https://twitter.com/ktrysmt>
 <https://github.com/ktrysmt>
 
-経歴
-* 学生時代 PerlMonger
+* 学生時代 Perl monger
 * 受託開発会社 5年くらい
-* リクルート住まいカンパニー 2年目 ← ｲﾏｺｺ
+* リクルート 2年目
 
 ---
 
@@ -62,12 +61,12 @@ Kotaro Yoshimatsu
 
 ---
 
-技術スタックが多岐にわたるのは  
+技術スタックが多岐にわたるのは
 どうすればいいか。
 
 ---
 
-エコシステムが巨大で対応技術の多い，  
+エコシステムが巨大で対応技術の多い，
 安定した開発環境が必要。
 
 ---
@@ -177,7 +176,7 @@ ctagsのタグファイル自動生成。
 
 ---
 
-ctagsとは  
+ctagsとは
 
 > 変数・関数・DOCコメント等の定義リスト（タグファイル）をソースコードから生成するツールで，IDEでよくある宣言ジャンプや呼び出し元への復帰を助ける仕組み。
 
@@ -541,11 +540,11 @@ command! -nargs=* -complete=file Rg :tabnew | :silent grep <args>
 デフォルトでは出力結果がsortはされないので，
 
 * `--sort-files` をつけるか，
-* `| sort` 
+* `| sort`
 
 するとよいです
 
-`--sort-files` はシングルスレッドになるので，  
+`--sort-files` はシングルスレッドになるので，
 パフォーマンスに注意。
 
 ---
@@ -572,7 +571,7 @@ command! -nargs=* -complete=file Rg :tabnew | :silent grep <args>
 
 **まとめ**
 
-本当にその作業は必要ですかという業務ハックも，  
+本当にその作業は必要ですかという業務ハックも，
 もちろん大事ですが…
 
 一技術者として，
