@@ -47,3 +47,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 </details>
+
+## Setup
+
+### Install package
+
+* textlint
+* http-server
+
+```sh
+yarn # or `npm i`
+```
+
+### Create a slide
+
+Powered by reveal.js.
+
+```
+git submodule init
+git submodule update
+http-server # or use any other simple http server
+```
+
+and access <http://localhost:8080/slides/>.
