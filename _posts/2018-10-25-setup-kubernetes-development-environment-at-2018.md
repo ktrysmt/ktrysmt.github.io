@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kubernetes開発環境の構築と周辺ツールまとめ (2018年)"
+title: "Kubernetes開発環境構築と周辺ツールまとめ (2018年)"
 date: 2018-10-25 00:00:00 +0900
 comments: true
 categories: "Kubernetes"
