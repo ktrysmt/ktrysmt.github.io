@@ -81,5 +81,16 @@
         }
       }
     ]
-  }
+},
+"newFile.showPathRelativeTo": "project",
+"newFile.relativeTo": "project",
+"newFile.defaultFileExtension": ".md",
+"newFile.defaultBaseFileName": "_posts/0000-00-00-newfile",
+/*
+"newFile.fileTemplates": {
+    ".md": [
+        "/Users/kotaro_yoshimatsu/project/src/github.com/ktrysmt/ktrysmt.github.io/.vscode/markdown.snippet"
+    ]
+}
+*/
 }
