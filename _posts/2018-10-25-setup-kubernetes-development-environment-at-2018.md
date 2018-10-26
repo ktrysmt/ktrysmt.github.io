@@ -41,7 +41,7 @@ brew install kubectx
 設定画面からKubernetesを有効化しましょう。
 マシンリソースは気になるほどではないですがそれなりに食うので、適宜On/Offするのもよいかと。
 
-![](assets/images/blog/setup-kubernetes-development-environment-at-2018/docker-for-mac.png)
+![](/assets/images/blog/setup-kubernetes-development-environment-at-2018/docker-for-mac.png)
 
 minikubeと比べ`type: LoadBalancer`をそのまま使えるのでaddon(nginx-ingress)等の考慮が不要になるのが嬉しいです。
 
@@ -55,7 +55,7 @@ kubectx docker-for-desktop
 
 Docker for Macの設定からもコンテクストの変更が可能です。
 
-![](assets/images/blog/setup-kubernetes-development-environment-at-2018/k8s-context.png)
+![](/assets/images/blog/setup-kubernetes-development-environment-at-2018/k8s-context.png)
 
 ### 3. Hello World 
 
