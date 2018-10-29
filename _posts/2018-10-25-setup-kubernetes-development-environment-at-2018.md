@@ -5,7 +5,7 @@ date: 2018-10-25 00:00:00 +0900
 comments: true
 categories: "Kubernetes"
 published: true
-use_toc: false
+use_toc: true
 description: ""
 ---
 
@@ -176,6 +176,22 @@ local kubens=$(kubectl config view --minify --output 'jsonpath={.contexts..conte
 local kubectx=$(kubectl config current-context 2>/dev/null)
 ```
 
+
+
+### リソース監視
+
+<https://github.com/astefanutti/kubebox>
+* kubeboxはCUIベースのリソースモニタリング。htopのk8s版といった趣。htps://kube.shというウェブインターフェイスもあるのが面白い。
+
+<https://github.com/hjacobs/kube-ops-view>
+* リソースの使用率やpodsの配置状況を可視化してくれる。
+
+<https://github.com/bitnami-labs/kubewatch>
+* 監視リソースを指定してSlackに通知してくれる。helmで入れる。
+
+<https://appscode.com/products/searchlight/>
+  * kubernetes-dashboardのようなリッチなGUI。アラート通知にも対応してるぽい。
+  * appscodeからはk8s向けのツールがほかにも多数リリースされている様子。HAProxyをk8s上に配置するVoyager, k8s上にPostgresなどのRDBMSを配置するKubeDBなど。
 
 
 ### Storage
