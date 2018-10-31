@@ -102,7 +102,7 @@ kustomizeはhelmほど複雑にならずとも環境ごとの設定の分離が�
 
 ### Completion
 
-各種補完が揃っています。どれも作法が同じなので管理しやすく助かります。
+各種補完が揃ってます。どれも作法が同じなので管理しやすく助かります。
 
 k8s系の補完はやや重いことがあるので、簡易的なlazyloadを書いています([参考](https://github.com/kubernetes/kubernetes/issues/59078#issuecomment-363384825))。
 
@@ -139,6 +139,15 @@ fi
 ```
 
 上記の例は、zshのcompletionを呼んでますが、bashもあります。`kubectl completion bash` でOKです。
+
+また、REPLのように補完が効く`kube-prompt`もあります。
+あまり凝った設定をしていない場合はこちらのほうが手っ取り早く体感できてよさそうです。
+
+- <https://github.com/c-bata/kube-prompt>
+
+![](https://github.com/c-bata/assets/raw/master/kube-prompt/kube-prompt.gif)
+
+ほかのコマンドもいろいろ組み合わせる関係で普段はあまり使わないんですが、集中してオペレーションするときにはよさそうです。
 
 ### Aliases
 
@@ -237,4 +246,7 @@ kube2iamよりkiamのほうが安定性はよいようです。
 
 ~~思い出したりなにか見つけたら追記していきます。~~
 
-2018/10/29 リソース監視の項目を追加しました。
+- 2018/10/29 リソース監視の項目を追加しました。
+- 2018/10/31 kube-promptを忘れてたのでCompletionに追加しました。
+
+
