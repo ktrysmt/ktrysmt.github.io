@@ -57,7 +57,7 @@ Docker for Macの設定からもコンテクストの変更が可能です。
 
 ![](/assets/images/blog/setup-kubernetes-development-environment-at-2018/k8s-context.png)
 
-### 3. Hello World 
+### 3. Hello World
 
 最後にHello worldが動くかを確認しておきましょう。
 
@@ -220,7 +220,7 @@ Production運用ではEBSなどをPersistensVolumeとして使う手法が知ら
 
 そういう意味で、個人的に分散ストレージのRookも使ってみたいです（現状はAlpha版みたいですが）。
 
-### Networkking
+### Networking
 
 アーキテクチャには大まかに L7overlay, L3/L4, BPF とあり、それぞれの主要なライブラリとしては、
 
