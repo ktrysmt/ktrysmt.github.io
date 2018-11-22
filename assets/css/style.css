@@ -309,7 +309,7 @@ em, i { font-style: italic; }
 	border-left: 0.25em solid #dfe2e5;
 }
 
-#wrapper header {
+header.post-header {
 	margin: 100px;
 	text-align: center;
 }
