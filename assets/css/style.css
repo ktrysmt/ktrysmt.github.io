@@ -245,6 +245,7 @@ li {
 section#post-body {
 	padding: 0px 20px;
 	min-width: 800px;
+	width: 1000px;
 }
 section#post-body img,
 section#post-body iframe {
