@@ -379,17 +379,17 @@ p.small {
 	color: #bbb;
 	font-size: 14px;
 	line-height: 1.5;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: center;
-  -webkit-justify-content: center;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	-webkit-justify-content: center;
 }
 
 blockquote {
 	padding-left: 15px;
 	border-left: 3px solid #eee;
-  font-style: italic;
-  margin-bottom: 1.5em;
+	font-style: italic;
+	margin-bottom: 1.5em;
 }
 
 hr {
@@ -401,24 +401,25 @@ hr {
 }
 
 pre code {
-  font: normal 14px Consolas, Monaco, monospace;
-  border-radius: 4px;
-  border: 1px solid #e1e1e8;
+	font: normal 14px Consolas, Monaco, monospace;
+	border-radius: 4px;
+	border: 1px solid #e1e1e8;
 }
 
 p code, ul code {
-  font: normal 14px Consolas, Monaco, monospace;
-  padding: 2px 4px;
-  border-radius: 3px;
-  color: #d14;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
-  white-space: nowrap;
+	font: normal 14px Consolas, Monaco, monospace;
+	padding: 2px 4px 0px;
+	margin: 0px 3px;
+	border-radius: 3px;
+	color: #d14;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	white-space: nowrap;
 }
 
 table {
 	width: 100%;
-  margin: 0 0 2.3em;
+	margin: 0 0 2.3em;
 	border-collapse: collapse;
 	font-size: 13px;
 	line-height: 1.5em;
