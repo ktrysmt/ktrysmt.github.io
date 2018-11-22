@@ -279,70 +279,70 @@ em, i { font-style: italic; }
 
 .home h2 {
 	/* font: Georgia,serif; */
-  /* color: #000; */
-  /* font-size: 30px; */
-  font-size: 24px;
-  letter-spacing: -1px;
-  color: #333;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
+	/* color: #000; */
+	/* font-size: 30px; */
+	font-size: 24px;
+	letter-spacing: -1px;
+	color: #333;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #eee;
 }
 
 .home .readmore {
-  display: flex;
-  margin-bottom: 60px;
-  margin-top: 40px;
-  justify-content: center;
+	display: flex;
+	margin-bottom: 60px;
+	margin-top: 40px;
+	justify-content: center;
 }
 
 .top h1 {
-  box-shadow: 0 1px 0 #eee;
+	box-shadow: 0 1px 0 #eee;
 }
 .top h2 {
-    margin-bottom: 24px;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 0 1em;
-    color: #666;
-    border-left: 0.25em solid #dfe2e5;
+	margin-bottom: 24px;
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 0 1em;
+	color: #666;
+	border-left: 0.25em solid #dfe2e5;
 }
 
-.post header {
-	text-align:center;
-	flex: none;
+#wrapper header {
+	margin: 100px;
+	text-align: center;
 }
 
 .post h1 {
-  margin : 50px 0;
+	margin : 50px 0;
 	color: #222;
 	font: 300 32px/1.4em "Helvetica Neue", Helvetica,Arial,sans-serif;
 }
 
 .post h2 {
-  margin: 0 0 1.5em;
-  padding-top: 2em;
-  font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #333;
-  border-bottom: 1px solid #eee;
+	margin: 0 0 1.5em;
+	padding-top: 2em;
+	font: 300 24px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #333;
+	border-bottom: 1px solid #eee;
 }
 
 .post h2.headline {
 	/*font: italic 22px/1.3em Georgia,serif;*/
 	font: normal 13px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
 	margin: -5px 0 40px 0;
-  color: #b2b9be;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  /*margin-top: 15px;*/
-  display: inline-block;
-  border-bottom: none;
+	color: #b2b9be;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	/*margin-top: 15px;*/
+	display: inline-block;
+	border-bottom: none;
 }
 
 .post p {
-  margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 #post-list h2 {
@@ -836,6 +836,9 @@ iframe.speakerdeck-iframe {
 .post .toc-list {
   margin-top: 20px;
   margin-bottom: 60px;
+  position: sticky;
+  top: 10px;
+  z-index: 2;
 }
 .post .toc-title {
   font-size: 1.5em;
