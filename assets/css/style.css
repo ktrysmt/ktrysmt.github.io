@@ -484,7 +484,7 @@ img {
 Post List
 =========================================== */
 #post-list, .archive-list {
-  margin-top: 60px;
+  margin-top: 80px;
   padding-left: 0px;
   margin-bottom: 60px;
 }
@@ -498,7 +498,7 @@ Post List
 }
 
 #post-list li+li {
-	padding-top: 20px;
+	padding-top: 40px;
 	border-top: 1px solid #eee;
 }
 
