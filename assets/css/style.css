@@ -810,18 +810,18 @@ h2.month {
 
 /* iframe */
 .iframe-wrapper {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  padding-top: 56.25%;
-  margin-top: 20px;
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	padding-top: 56.25%;
+	margin-top: 20px;
 }
 .iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 iframe.speakerdeck-iframe {
@@ -830,53 +830,51 @@ iframe.speakerdeck-iframe {
 
 /*  slide */
 .slide-list {
-  margin: 30px 0;
+	margin: 30px 0;
 }
 
 /* toc */
 .post .toc-list {
-  margin-top: 20px;
-  margin-bottom: 60px;
-  position: sticky;
-  top: 10px;
-  z-index: 2;
+	position: sticky;
+	top: 10px;
+	z-index: 2;
 }
 .post .toc-title {
-  font-size: 1.5em;
-  letter-spacing: -1px;
-  color: #333;
-  padding-top: 1em;
-  margin-bottom: 1em;
+	font-size: 1.5em;
+	letter-spacing: -1px;
+	color: #333;
+	padding-top: 1em;
+	margin-bottom: 1em;
 }
 .post .toc-list ul {
-  margin: 0px;
+	margin: 0px;
 }
 
 .next-prev-post-link {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 .next-prev-post-link > a {
-    width: 290px;
+	width: 290px;
 }
 .next-prev-post-link .next {
-  text-align: right;
+	text-align: right;
 }
 
 .post-comment {
 }
 
 .recent-post-list {
-  text-align: justify;
-  line-height: 1.7em;
-  margin: 40px 0px;
-  border-top: 1px solid #eee;
+	text-align: justify;
+	line-height: 1.7em;
+	margin: 40px 0px;
+	border-top: 1px solid #eee;
 }
 .recent-post-list ul {
-  margin: 0px;
+	margin: 0px;
 }
 .recent-post-list .readmore {
-  text-align: right;
-  margin-right: 2em;
-  margin-top: 1em;
+	text-align: right;
+	margin-right: 2em;
+	margin-top: 1em;
 }
