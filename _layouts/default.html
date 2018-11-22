@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.blogName }}" href="/blog/feed.xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
   {% seo title=false %}
 </head>
 <body>
@@ -40,6 +41,15 @@
 
     document.addEventListener("DOMContentLoaded", function(event) {
       microlink('.card-preview')
+    });
+
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '#post-body',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h1, h2, h3',
     });
   </script>
 

@@ -11,6 +11,7 @@ archive: true
 
 <!-- Article -->
 <article class="post">
+
     <section id="post-body">
 
         {% if page.description %}
@@ -21,17 +22,10 @@ archive: true
 
     </section>
 
-    <div id="toc-frame">
     {% if page.use_toc %}
-    <div class="toc-title">TOC</div>
-    <div
-         class="toc-list"
-         data-toc
-         >
+    <div id=".js-toc">
     </div>
-    <script src="/assets/js/auto-toc.js"></script>
     {% endif %}
-    </div>
 
 </article>
 
@@ -57,4 +51,4 @@ archive: true
 <!-- Credit -->
 <p class="small">(c) Copyright {{ site.time | date: '%Y' }} {{ site.authorRealName }}</p>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
