@@ -1,5 +1,5 @@
 /* Reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;/* margin-top: 100px; *//* text-align: center; */}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 /* Clearfix */
@@ -157,7 +157,7 @@ nav.main-nav a.cta {
 }
 
 #wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 40px 40px 10px 40px;
 }
@@ -228,15 +228,17 @@ li	{
 
 /* section#post-body */
 #post-body {
-  padding-top: 10px;
+  /* padding-top: 10px; */
   font-size: 108%;
 }
 #post-body, p { 
   line-height:1.8; 
 }
 
-#post-body, div { 
+#post-body, div {
   margin-bottom: 1.5em;
+  /* width: 70%; */
+  /* flex: auto; */
 }
 
 section#post-body img,
@@ -309,7 +311,7 @@ em, i { font-style: italic; }
 
 .post header {
 	text-align:center;
-
+	flex: none;
 }
 
 .post h1 {
@@ -456,9 +458,10 @@ thead th,th {
 }
 
 img {
-	width: 100%;
+	width: 96%;
 	max-width: 100%;
 	border-radius: 3px;
+	margin-left: 2%;
 }
 
 /* Made with Cactus Badge */
@@ -565,7 +568,8 @@ article.top {
 }
 
 .post {
-	margin: 120px 0 0 0;
+	/* margin: 120px 0 0 0; */
+	display: flex;
 }
 
 #post-meta {
