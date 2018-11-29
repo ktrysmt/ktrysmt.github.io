@@ -216,7 +216,7 @@ article.post {
 }
 
 ul {
-  margin: 0px 0 1.5em;
+  margin: 2px;
   padding:0;
   padding-left: 20px;
 }
@@ -244,8 +244,8 @@ li {
 }
 
 section#post-list-body {
-  padding: 0px 20px;
-  min-width: 800px;
+	padding: 0px 20px;
+	min-width: 800px;
 }
 section#post-body {
   /* padding: 0px 20px; */
@@ -814,6 +814,10 @@ h2.month {
     margin-right: 0.5em !important;
     margin-top: 1em;
   }
+  .js-toc {
+    display: none;
+    content: unset;
+  }
 }
 
 /* disqus */
@@ -847,9 +851,8 @@ iframe.speakerdeck-iframe {
 
 /* toc */
 .js-toc {
-  width: 220px;
-  margin-left: 20px;
-  margin-top: 34px;
+  flex: none;
+  margin-left: 10px;
 }
 
 .post .toc-list {
@@ -869,12 +872,11 @@ iframe.speakerdeck-iframe {
 }
 ol.toc-list {
   list-style: none;
-  margin-left: -1em;
-  width: 160%;
+  margin: 0 0 0 -1em;
 }
 
 li.toc-list-item {
-  line-height: 1.5em;
+  line-height: 1.7em;
 }
 
 .next-prev-post-link {

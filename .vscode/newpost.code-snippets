@@ -23,7 +23,7 @@
         "---",
         "layout: post",
         "title: '${1}'",
-        "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} 00:00:00 +0900",
+        "date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
         "comments: true",
         "categories: '${2}'",
         "published: true",
