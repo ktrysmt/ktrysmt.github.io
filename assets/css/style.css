@@ -243,6 +243,9 @@ li {
   margin-bottom: 1.5em;
 }
 
+.top section#post-list-body {
+	padding: 0;
+}
 section#post-list-body {
 	padding: 0px 20px;
 	min-width: 800px;
