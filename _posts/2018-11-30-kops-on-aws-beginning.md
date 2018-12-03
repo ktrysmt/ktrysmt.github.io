@@ -16,7 +16,7 @@ kopsにはオプションが多くあるのですが、細かい設定につい�
 
 ## インストール
 
-Macなら brew で入ります。本記事では1.10.0をベースにすすめます。
+Macならbrewで入ります。本記事では1.10.0をベースにすすめます。
 
 ```
 $ brew install kops
@@ -67,7 +67,7 @@ state保存用のS3Bucket作成権限とは別に、クラスタを構築する�
 S3Bucketの作成も含め全てフル権限でやってもいいっちゃいいのですが、可能な限り構築に必要な最小限の権限でやるほうが、特に本番運用を視野にいれる場合は精神衛生上よいと思います。
 特にS3やIAMまわりは下手にフル権限を渡すと問題があることが多いと思うので以下のようになるべく制限してあげるといいと思います。
 
-ポリシーはこんな感じ（CloudFormationのテンプレートです）。
+ポリシーにするとこんな感じです。
 
 ```json
 {
@@ -132,9 +132,9 @@ $ export KOPS_STATE_STORE=s3://<YOUR_BUCKET_NAME>
 $ export KOPS_CLUSTER_NAME=<YOUR_NAME>.k8s.local
 ```
 
-KOPS_STATE_STOREとKOPS_CLUSTER_NAMEは、定義しておいてあげるとkopsコマンドを打つ際いちいち--stateや--nameで指定する手間が省けるのでおすすめです。
+$KOPS_STATE_STOREと$KOPS_CLUSTER_NAMEは、定義しておいてあげるとkopsコマンドを打つ際いちいち--stateや--nameで指定する手間が省けるのでおすすめです。
 
-`KOPS_CLUSTER_NAME`ですが、名付けをするときに`.k8s.local`で終わるようにします。今回は名前解決にkopsが提供する[Gossipプロトコル](https://ja.wikipedia.org/wiki/%E3%82%B4%E3%82%B7%E3%83%83%E3%83%97%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB)を使うためです。
+$KOPS_CLUSTER_NAMEですが、名付けをするときに`.k8s.local`で終わるようにします。今回は名前解決にkopsが提供する[Gossipプロトコル](https://ja.wikipedia.org/wiki/%E3%82%B4%E3%82%B7%E3%83%83%E3%83%97%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB)を使うためです。
 kopsはクラスタ名が`.k8s.local`で終わる場合、自動的にKubernetesクラスタ内のリソースを使用してGossipプロトコルベースに名前解決するように構築してくれます。
 
 パフォーマンスや安定性・速度面などでRoute53に依存させるほうがよい場合が多いのですが、Route53権限は体感的にやや強い気がして気がひけるので、開発用途等で構築することも踏まえ、今回はGossipで構築します。
@@ -145,9 +145,9 @@ kopsはクラスタ名が`.k8s.local`で終わる場合、自動的にKubernetes
 
 ## クラスタを作る
 
-`kops create`を主に使っていきます。
+kops create cluster を主に使っていきます。
 
-kops create clusterの流れとしては、以下のような2段階の流れをとります。
+kops create cluster の流れとしては、以下のような2段階の流れをとります。
 
 1. S3にkopsの設定情報を保存
 2. それらをもとにAWSの実リソースを作成
@@ -184,7 +184,7 @@ manifestには cluster と instance-group の情報が記述されます。
 
 ### manifestからクラスタを構築する
 
-生成したmanifestを使ってclusterを構築するには`-f`オプションを使います。
+生成したmanifestを使ってclusterを構築するには-fオプションを使います。
 
 ```
 $ kops create -f manifest.yaml
@@ -200,7 +200,7 @@ S3にPutされた情報をもとにリソースを配備していくのは以下
 kops update cluster --yes
 ```
 
-`--yes`オプションを外すといわゆる`dryrun`となり、具体的に生成されるリソースについての説明が標準出力に出ます。
+--yesオプションを外すといわゆるdryrunとなり、具体的に生成されるリソースについての説明が標準出力に出ます。
 
 ### クラスタ構築後のチェック
 
@@ -231,8 +231,8 @@ kops update cluster --yes
 
 kops update clusterだけでなく、kops rolling-update clusterが必要になります。
 
-rolling-updateが必要かどうかは`kops rolling-update cluster`打つと確認できます。
-これも`--yes`オプションがあり、実際にrolling-updateを適用する場合は`kops rolling-update cluster --yes`と打ちます。
+rolling-updateが必要かどうかは kops rolling-update cluster と打つと確認できます。
+これも--yesオプションがあり、実際にrolling-updateを適用する場合は　kops rolling-update cluster --yes と打ちます。
 
 ## クラスタを削除する
 
@@ -242,9 +242,9 @@ rolling-updateが必要かどうかは`kops rolling-update cluster`打つと確�
 kops delete cluster --yes
 ```
 
-これも同じく`--yes`が必要で、外せばdry-runになります。
+これも同じく--yesが必要で、外せばdry-runになります。
 事前に消えるリソースの確認ができるのでdelete時は一度dry-runするのを推奨します。
-万が一`$KOPS_CLUSTER_NAME`を間違えていたりすると、事故につながってしまうので。
+万が一$KOPS_CLUSTER_NAMEを間違えていたりすると、事故につながってしまうので。
 
 ## その他基本的なオプションについて
 
