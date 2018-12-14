@@ -160,6 +160,8 @@ nav.main-nav a.cta {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 40px 40px 10px 40px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 #wrapper.home {
@@ -770,7 +772,11 @@ h2.month {
 
 /* Media Queries */
 @media screen and (max-width: 540px) {
-	#wrapper { padding:20px 20px 20px 20px;}
+	#wrapper { 
+		padding:20px 20px 20px 20px;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
 	#header { margin-bottom: 60px; border-bottom: 1px solid #eee; }
 	.post { margin: 120px 0 40px 0; }
 	article.list {
