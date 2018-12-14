@@ -64,10 +64,10 @@ $ aws s3api put-bucket-encryption --bucket <YOUR_BUCKET_NAME> --server-side-encr
 ### IAM
 
 state保存用のS3Bucket作成権限とは別に、クラスタを構築するためのIAM権限を用意します。
-S3Bucketの作成も含め全てフル権限でやってもいいっちゃいいのですが、可能な限り構築に必要な最小限の権限でやるほうが、特に本番運用を視野にいれる場合は精神衛生上よいと思います。
-特にS3やIAMまわりは下手にフル権限を渡すと問題があることが多いと思うので以下のようになるべく制限してあげるといいと思います。
+S3Bucketの作成も含め全てフル権限でやってもいいっちゃいいのですが、可能な限り構築に必要な最小限の権限でやるほうが精神衛生上よいかと思います（特に本番運用を視野にいれる場合は）。
+現場によってはS3やIAMまわりは下手にフル権限を渡すと困ることがあると思うので、なるべく制限してあげるといいと思います。
 
-ポリシーにするとこんな感じです。
+ポリシー例は以下です。
 
 ```json
 {
@@ -229,10 +229,16 @@ kops update cluster --yes
 
 なお、内部で動いているkubernetesの設定を変更する場合や、kopsが動かすEC2のInstanceTypeを変更したりディスクサイズを変更したりした場合は、
 
-kops update clusterだけでなく、kops rolling-update clusterが必要になります。
+kops update clusterだけでなく kops rolling-update cluster が必要になります。
 
 rolling-updateが必要かどうかは kops rolling-update cluster と打つと確認できます。
-これも--yesオプションがあり、実際にrolling-updateを適用する場合は　kops rolling-update cluster --yes と打ちます。
+これも--yesオプションがあり、実際にrolling-updateを適用する場合は　
+
+```
+$ kops rolling-update cluster --yes
+``` 
+
+と打ちます。
 
 ## クラスタを削除する
 
@@ -242,8 +248,8 @@ rolling-updateが必要かどうかは kops rolling-update cluster と打つと�
 kops delete cluster --yes
 ```
 
-これも同じく--yesが必要で、外せばdry-runになります。
-事前に消えるリソースの確認ができるのでdelete時は一度dry-runするのを推奨します。
+これも同じく--yesが必要で、外せばdryrunになります。
+事前に消えるリソースの確認ができるのでdelete時は一度dryrunするのを推奨します。
 万が一$KOPS_CLUSTER_NAMEを間違えていたりすると、事故につながってしまうので。
 
 ## その他基本的なオプションについて
@@ -254,14 +260,15 @@ kops delete cluster --yes
 その場合はmasterについては`--master-size="t2.micro"`、
 workerについては`--node-size="t2.micro"`というふうに指定します。
 
+ただあまりにサイズが小さいとスペック不足気味になり(特にmaster)処理が遅れるかなにがしかエラーを吐くことも考えられるので、
+t2.smallやt2.mediumくらいにしておくといいかもしれません。
+
+
 ### ディスクサイズを変えたい
 
 EBSのディスクサイズについては`--node-volume-size=20`、`--master-volume-size=20` という感じです。
 
-ただあまりにサイズが小さいとスペック不足気味になり(特にmaster)処理が遅れるかなにがしかエラーを吐くことも考えられるので、
-t2.smallやt2.mediumくらいにしておくといいかもしれません。
-
-また、ディスクサイズについてもmasterはetcdのおかげでディスクI/Oが激しくサイズもk8sアプリケーションの配置数によっては大きくなってくるので、
+ディスクサイズについてもmasterはetcdのおかげでディスクI/Oが激しくサイズもk8sアプリケーションの配置数によっては大きくなってくるので、
 あまり小さくしすぎないほうがいいかもしれないです。
 
 ### 起動時の台数を変えたい
@@ -292,15 +299,18 @@ $ kops create cluster --name $KOPS_CLUSTER_NAME \
 # manifestをs3へput
 $ kops create -f manifest.yaml
 
-# リソース反映
+# リソース反映、クラスタ構築
 $ kops update cluster --yes
 
 # ローリングアップデート
 $ kops rolling-update cluster --yes
 
-# manifestを編集したので再反映
+# manifestを編集したのでクラスタに再反映
 $ kops replace -f manifest.yaml
 $ kops update cluster --yes
+
+# クラスタを削除
+$ kops delete cluster --yes
 ```
 
 ## リファレンス
