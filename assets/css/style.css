@@ -879,6 +879,10 @@ li.toc-list-item {
 
 li.toc-list-item.is-active-li {
     text-decoration: underline;
+    border-left: #eee solid 1px;
+    padding-left: 8px;
+    position: relative;
+    left: -9px;
 }
 
 .next-prev-post-link {
