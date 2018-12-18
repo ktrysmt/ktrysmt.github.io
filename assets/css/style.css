@@ -250,7 +250,8 @@ li {
 }
 
 section#post-body {
-	width: 100%;
+    width: 100%;
+    flex: none;
 }
 section#post-body img,
 section#post-body iframe {
@@ -847,8 +848,9 @@ iframe.speakerdeck-iframe {
 
 /* toc */
 .js-toc {
-	flex: none;
-	margin-left: 10px;
+    flex: none;
+    margin-left: 20px;
+    width: 35%;
 }
 
 .post .toc-list {
@@ -873,6 +875,10 @@ ol.toc-list {
 
 li.toc-list-item {
 	line-height: 1.7em;
+}
+
+li.toc-list-item.is-active-li {
+    text-decoration: underline;
 }
 
 .next-prev-post-link {
