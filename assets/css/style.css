@@ -883,6 +883,7 @@ li.toc-list-item.is-active-li {
     padding-left: 8px;
     position: relative;
     left: -9px;
+    margin-right: -8px;
 }
 
 .next-prev-post-link {
