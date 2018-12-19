@@ -158,9 +158,9 @@ src/以下にディレクトリを作成します。このディレクトリ名�
 
 ### Sources
 
-以下Makefileの一部です。ソース全体は[こちらのリポジトリ][1]にアップロードしてあります。
+以下Makefileの一部です。ソース全体は[こちらのリポジトリ(ktrysmt/j2cfn-boiler)][1]にアップロードしてあります。
 
-[1]: https://github.com/ktrysmt/one-off-cloudformation-boilerplate
+[1]: https://github.com/ktrysmt/j2cfn-boiler
 
 ```makefile
 .DEFAULT_GOAL := help
