@@ -25,8 +25,8 @@ kubectlでのマニュアルオペレーションでなくhelmベースでの管
 やり方ですが、一旦、
 
 ```
-$ kubectl delete sts <name> --cascade=false
-$ kubectl delete poddisruptionbudgets.policy <name> --cascade=false
+$ kubectl delete sts $NAME --cascade=false
+$ kubectl delete poddisruptionbudgets.policy $NAME --cascade=false
 ```
 
 などと `--cascade=false` を付けつつdeleteしてあげると、その後 `helm upgrade --recreate-pods` で更新できます。
