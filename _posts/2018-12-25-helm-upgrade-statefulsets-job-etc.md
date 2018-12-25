@@ -6,7 +6,7 @@ comments: true
 categories: 'Kubernetes'
 published: true
 use_toc: false
-description: 'helmの設定を書き換えようとしてもそれがstsやpoddisruptionbudgets.policy、job等についての変更の場合、うまく更新できず困っていたのですが。そういう場合は、実podは残しつつstsやpoddisruptionbudgets.policy等の設定のみを消すことで`helm upgrade`が叩けるようです。'
+description: 'helmの設定を書き換えようとしてもそれがstsやpoddisruptionbudgets.policy、job等についての変更の場合、うまく更新できず困っていたのですが。そういう場合は、実podは残しつつstsやpoddisruptionbudgets.policy等の設定のみを消すことで helm upgrade が叩けるようです。'
 ---
 
 helmの設定を書き換えようとしてもそれがstsやpoddisruptionbudgets.policy、job等についての変更の場合、うまく更新できず困っていたのですが。
@@ -27,7 +27,7 @@ helmの状況
 やり方ですが、一旦、
 
 ```sh
-$ kubectl delete sts <name> --cascade=false 
+$ kubectl delete sts <name> --cascade=false
 $ kubectl delete poddisruptionbudgets.policy <name> --cascade=false
 ```
 
