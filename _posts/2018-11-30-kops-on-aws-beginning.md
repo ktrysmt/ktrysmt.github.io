@@ -3,7 +3,7 @@ layout: post
 title: 'Kops on AWS コトハジメ'
 date: 2018-11-30
 comments: true
-categories: 'Kubernetes'
+categories: Kubernetes
 published: true
 use_toc: true
 description: '最近kopsをよく使うようになったので、備忘録代わりに基本的な操作方法や主要なオプションの解説などをまとめました。'
@@ -236,7 +236,7 @@ rolling-updateが必要かどうかは kops rolling-update cluster と打つと�
 
 ```
 $ kops rolling-update cluster --yes
-``` 
+```
 
 と打ちます。
 
