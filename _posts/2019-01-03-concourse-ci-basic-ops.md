@@ -13,7 +13,7 @@ description: 'お仕事でConcourseCIを建てたり運用したりすること�
 
 使用するバージョンは`4.2.1`を想定しています。
 
-## 1. Download fly command
+## flyコマンドの取得
 
 Concourseのオペレーションを行うためのコマンドが`fly`です。
 これは建っているConcourseサーバーのGUIからDLできるので、取得しておきましょう。
@@ -24,7 +24,7 @@ Concourseのオペレーションを行うためのコマンドが`fly`です。
 建っているサーバーのバージョンと揃える必要があるのでそこだけ注意ですが、
 バージョンを同期させるサブコマンドがあるので、それを使うとラクです。
 
-## 2. Basic operations
+## 基本操作
 
 `fly help`で出てくる各種サブコマンドのうち、よく使うもの・基本的なものを解説します。
 なお各サブコマンドには1文字〜2文字のaliasが提供されているので、慣れてきたらaliasを積極的に使うといいと思います。
@@ -105,7 +105,7 @@ $ # wait the job
 $ fly -t main wait -j example-helloworld/job-hello-world
 ```
 
-## 3. Enhanced operations (maintenance)
+## 応用１（メンテナンス関係）
 
 主にConcourseのお守りをするときに使うコマンドです。
 重要なのは`prune-worker`です。ConcourseのWorkerはジョブキックのたびにスポーンするのではなく基本的に常駐するため、プロセスのゾンビ状態のように応答しなくなってしまうことがたまにあります（ありました）。少しずつ安定してきて入るようなのですがこのWorkerの不安定感は私が使い始めた2系のころから（だいぶマシにはなりましたが）あまり変わっていないというのが実感です。（TCPコネクションを張りっぱなししているっぽく、それが切れると発生するように見える）
@@ -129,7 +129,7 @@ $ # stop build
 $ fly -t main abort-build -b <build_id>
 ```
 
-## 4. enhanced operation (hijack the container)
+## 応用２（タスクのハイジャック）
 
 最後に`hijack`コマンドを紹介します。
 
