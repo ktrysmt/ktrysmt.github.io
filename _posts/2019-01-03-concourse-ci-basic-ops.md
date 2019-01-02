@@ -5,7 +5,7 @@ date: 2019-01-03
 comments: true
 categories: CI/CD
 published: true
-use_toc: false
+use_toc: true
 description: 'お仕事でConcourseCIを建てたり運用したりすることが多いのですが、先日改めてこれを解説する機会があり、基本的な操作方法を軽く解説を添えつつまとめてみました。'
 ---
 
@@ -13,7 +13,7 @@ description: 'お仕事でConcourseCIを建てたり運用したりすること�
 
 使用するバージョンは`4.2.1`を想定しています。
 
-## 1. Download fly command 
+## 1. Download fly command
 
 Concourseのオペレーションを行うためのコマンドが`fly`です。
 これは建っているConcourseサーバーのGUIからDLできるので、取得しておきましょう。
@@ -154,7 +154,7 @@ $ fly -t main trigger-job -j example-sleep/job-sleep
 # confirm job stacking...
 $ fly -t main builds -j example-sleep/job-sleep
 
-# or, watch it 
+# or, watch it
 $ watch -n 1 fly -t main bs -j example-sleep/job-sleep
 
 # hijack it
