@@ -38,10 +38,10 @@ GithubOAuthなどのOAuth系のログインが提供されている場合には 
 なお、以降targetはmainという設定で、解説を進めます。
 
 ```
-# login (by local user account)
+$ # login (by local user account)
 $ fly -t main login -u test -p test
 
-# login (by sky token)
+$ # login (by sky token)
 $ fly -t main login -c <URL>
 ```
 
@@ -49,7 +49,7 @@ $ fly -t main login -c <URL>
 組織内で複数Concourseを建てている場合は target 間違いに注意。
 
 ```
-# login status
+$ # login status
 $ fly -t main status
 $ fly -t main targets
 ```
@@ -60,7 +60,7 @@ $ fly -t main targets
 これを打つだけで同期してくれるので、便利です。
 
 ```
-# sync command version
+$ # sync command version
 $ fly -t main sync
 ```
 
@@ -76,16 +76,16 @@ Concourseにはリポジトリ等の定期的なチェック（ポーリング�
 パイプライン処理の中で中盤のジョブをキックするようなケースは、承認フローやレビューフローを設けるような場合があげられます。
 
 ```
-# validate
+$ # validate
 $ fly -t main validate-pipeline -c helloworld/pipeline.yaml
 
-# set pipeline
+$ # set pipeline
 $ fly -t main set-pipeline -c helloworld/pipeline.yaml -p example-helloworld
 
-# unpause it
+$ # unpause it
 $ fly -t main unpause-pipeline -p example-helloworld
 
-# kick the job
+$ # kick the job
 $ fly -t main trigger-job -j example-helloworld/job-hello-world
 ```
 
@@ -96,12 +96,12 @@ $ fly -t main trigger-job -j example-helloworld/job-hello-world
 `wait`も同様で、ChatOps向けコマンドの実装や他のCIとの連携のときに便利なコマンドです。
 
 ```
-# list builds
+$ # list builds
 $ fly -t main builds
 $ fly -t main builds -p example-helloworld
 $ fly -t main builds -j example-helloworld/job-hello-world
 
-# wait the job
+$ # wait the job
 $ fly -t main wait -j example-helloworld/job-hello-world
 ```
 
@@ -110,22 +110,22 @@ $ fly -t main wait -j example-helloworld/job-hello-world
 主にConcourseのお守りをするときに使うコマンドです。
 重要なのは`prune-worker`です。ConcourseのWorkerはジョブキックのたびにスポーンするのではなく基本的に常駐するため、プロセスのゾンビ状態のように応答しなくなってしまうことがたまにあります（ありました）。少しずつ安定してきて入るようなのですがこのWorkerの不安定感は私が使い始めた2系のころから（だいぶマシにはなりましたが）あまり変わっていないというのが実感です。（TCPコネクションを張りっぱなししているっぽく、それが切れると発生するように見える）
 
-そういった経緯のなかで一時しのぎ的にだとは思うのですがWorkerをクリーンアップしてくれる`prune-worker`コマンドが生まれました。
+そういった経緯のなかで（当初は一時しのぎ的にだとは思うのですが）Workerをクリーンアップしてくれる`prune-worker`コマンドが生まれました。
 
-WorkerについてはほかにWorkerを追加する`land-worker`、Workerを退役する`retire-worker`がありますが、通常はサーバー等のスペックのためにWoeker数は一定数決まっていると思いますので、あまり使わないかなと思います。Worker数を増やすようなときは設定を変えて再起動したりプロビジョニングをし直したりクラスタの設定を変えたりなど、すると思うので。
+Worker系サブコマンドについてはほかにWorkerを追加する`land-worker`、Workerを退役する`retire-worker`がありますが、通常はサーバー等のスペックのためにWoeker数は一定数決まっていると思いますので、あまり使わないかなと思います。Worker数を増やすようなときは設定を変えて再起動したりプロビジョニングをし直したりクラスタの設定を変えたりなど、すると思うので。
 
 あと`abort-build`ですが緊急停止ボタン的に使うことがあるかもしれないので、一応覚えておくといいかもです。
 
 ```
-# analytics
+$ # analytics
 $ fly -t main workers
 $ fly -t main volumes
 $ fly -t main containers
 
-# clean up worker status
+$ # clean up worker status
 $ fly -t main prune-worker
 
-# stop build
+$ # stop build
 $ fly -t main abort-build -b <build_id>
 ```
 
@@ -138,26 +138,26 @@ $ fly -t main abort-build -b <build_id>
 これに関連したデバッグテクニックとして、調子の悪いジョブに対し、当該ジョブのタスク内でわざと長時間waitさせたり無限ループさせることで`hijack`できるように時間を稼ぎ、中身を確認しにいく...というやり方があります。Dockerfileデバッグとほぼ一緒ですが、Concourseもコンテナベースでのタスク実行という構成ですから、同じやり方が通用します。
 
 ```
-# hijack container task
+$ # hijack container task
 $ fly -t mian hijack -j <pipeline/job>
 ```
 
 なお参考までに、以下の一連のコマンドは上記の話を踏まえたもので、わざとsleepさせるタスクを書いて、当該タスクコンテナにhijackするという流れを体験できます。
 
 ```
-# set sleep pipeline
+$ # set sleep pipeline
 $ fly -t main set-pipeline -c sleep/pipeline.yaml -p example-sleep
 
-# kick the job
+$ # kick the job
 $ fly -t main trigger-job -j example-sleep/job-sleep
 
-# confirm job stacking...
+$ # confirm job stacking...
 $ fly -t main builds -j example-sleep/job-sleep
 
-# or, watch it
+$ # or, watch it
 $ watch -n 1 fly -t main bs -j example-sleep/job-sleep
 
-# hijack it
+$ # hijack it
 $ fly -t main hijack -j example-sleep/job-sleep sh
 ```
 
