@@ -188,3 +188,4 @@ jobs:
 ## 参考
 
 - <https://concourse-ci.org/>
+- <https://github.com/starkandwayne/concourse-tutorial>
