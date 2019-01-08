@@ -67,6 +67,8 @@ values.yamlを[githubからDL]して、編集して使います。
 
 最低限の変更箇所は以下のような感じです。
 
+（多少見やすくなるかと思い行番号も添えてます）
+
 ```
 79     postgres:
 80       ## The host to connect to.
