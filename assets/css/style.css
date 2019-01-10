@@ -570,6 +570,10 @@ article.top {
 	margin: 80px 0 0 0;
 }
 
+article.top section#post-list-body li {
+  line-height: 1.8em;
+}
+
 /* Post Page */
 #header {
 	border-bottom: 1px solid #eee;
@@ -773,7 +777,7 @@ h2.month {
 
 /* Media Queries */
 @media screen and (max-width: 540px) {
-	#wrapper { 
+	#wrapper {
 		padding:20px 20px 20px 20px;
 		word-wrap: break-word;
 		overflow-wrap: break-word;

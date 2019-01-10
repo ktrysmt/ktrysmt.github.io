@@ -37,7 +37,10 @@ $ kops create cluster $KOPS_CLUSTER_NAME \
   --node-volume-size 20 --yes
 ```
 
-もう少しインスタンスタイプやディスクサイズをケチってもいいのですが、不安定になってトラブっても悲しいので少し余裕をもたせています。
+kopsで立てる場合、`ADMIN_CIDR`にはご自身の環境のグローバルIPを指定して外部にさらされるリスクをカバーするのが手軽です。
+今回は言及しませんがこの辺EKSだとIAMベース認証がマストになるため、認証はもう少しモダンで強力になります。もちろん、kopsでもロールベース・ユーザーベース認証は実現できますが、今回は特に本番運用を想定しない記事なので、複雑化を避けるため割愛し、IP制限による最低限のセキュリティ確保にとどめています。
+
+なお上記例ではmaster/nodeにt2.mediumなどとリソース指定しており、これは厳密にはもう少しインスタンスタイプやディスクサイズをケチることもできるのですが、クラスタそのものが不安定になってトラブったりハマっても悲しいだけなので、念のため少し余裕をもたせるために上記設定にしています。
 
 ## Helmの設定
 
@@ -47,7 +50,9 @@ $ helm init
 $ kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default
 ```
 
-## 最も単純な構築の場合
+## 構築してみる
+
+### 最も単純な構築の場合
 
 ```
 $ helm install --name my-release stable/concourse
@@ -61,7 +66,7 @@ $ helm upgrade -i my-release stable/concourse
 
 これだけでOKです。Postgresもk8sクラスタ内に作られるのでreleaseをdeleteするとDBも消えてしまうのがネックですが、あらかじめdumpしておくなど一応対策はできます。
 
-## DBに外部のPostgresを使う場合
+### DBに外部のPostgresを使う場合
 
 values.yamlを[githubからDL]して、編集して使います。
 
@@ -120,7 +125,7 @@ $ helm install \
 
 kops(aws)で構築した場合はRDSを使ってPostgresを建てると思いますが、その場合はSubnetGroupやSecurityGroupを適宜設定してあげてください。
 
-## ローカル認証からGithubOAuthに変更する場合
+### 認証をローカル認証からGithubOAuthに変更する場合
 
 github上のどのくくりで認証を受け付けるか、values.yamlを編集して指定します。
 以下は github organization の team で指定している例です。
@@ -150,7 +155,7 @@ $ helm install \
 
 ## その他、values.yamlで変更しておくべき項目
 
-意外といろいろあるので、抜粋します。
+多数あるので、基本的なものについて抜粋します。
 
 * concourse.worker.baggageclaim.driver: `naive` to `btrfs` 
   * btrfsも古いですが一応これが推奨のようです
@@ -161,10 +166,18 @@ $ helm install \
 * concourse.web.bindPort: 8080 
   * 本番運用では443に変更し、証明書をあてます
 
+これ以外にもいわゆるSecretsまわりに設定変更を推奨している項目がいくつかあるのですが、開発用途でトライする分にはここまでできれば一旦は困らないと思うので、割愛しています。
+
 ## おわりに
 
-基礎的な解説にとどめましたが、結構慣れないと複雑に思われるかもしれません。まずは薄い設定で建ててみて、実際にいろいろ手を動かしたりしてみるのが早いと思います。HelmでConcourseを建てる際の本番運用向けの細かい設定についてもおって記事にしたいと思います。
+設定項目がかなり多くあるので今回は基礎的な解説にとどめましたが、それでも慣れていないとなかなか複雑に感じるかもしれません。ですので、まずは薄い設定で建ててみて、実際にいろいろ手を動かしたりしてみるのがよいと思います。
 
+HelmでConcourseを建てる際の本番運用向けの細かい設定についてもおって記事にしたいと思います。
 
 [1]: https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/#completion
 [2]: https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/#1-docker-for-mac
+
+## 参考
+
+* https://github.com/helm/charts/tree/master/stable/concourse
+* https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/
