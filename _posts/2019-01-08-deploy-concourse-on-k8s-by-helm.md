@@ -30,12 +30,13 @@ $ export KOPS_STATE_STORE=s3://YOUR_S3_BUCKET
 $ export KOPS_CLUSTER_NAME=your-cluster-name.k8s.local
 $ export ADMIN_CIDR=xxx.xxx.xxx.xxx/32
 $ kops create cluster $KOPS_CLUSTER_NAME \
+  --admin-access=$ADMIN_CIDR \
   --zones "ap-northeast-1c,ap-northeast-1d" \
   --node-size t2.medium \
-  --master-size t2.medium \
+  --node-volume-size 20 \
   --master-zones ap-northeast-1c \
-  --master-volume-size 20 \
-  --node-volume-size 20 --yes
+  --master-size t2.medium \
+  --master-volume-size 20 --yes
 ```
 
 kopsで立てる場合、`ADMIN_CIDR`にはご自身の環境のグローバルIPを指定して外部にさらされるリスクをカバーするのが手軽です。
@@ -69,7 +70,7 @@ $ helm upgrade -i my-release stable/concourse
 
 ### DBに外部のPostgresを使う場合
 
-values.yamlを[githubからDL]して、編集して使います。
+values.yamlを[githubからDL][1]して、編集して使います。
 
 最低限の変更箇所は以下のような感じです。
 
@@ -164,8 +165,8 @@ $ helm install \
   * helm deleteするときに一緒にnamespaceも消えてくれるので少し楽できます
 * concourse.web.bindIp: 0.0.0.0
   * 絞ることもできますがLBが前段に立つのでここは開放しても問題ないです
-* concourse.web.bindPort: 8080 
-  * 本番運用では443に変更し、証明書をあてます
+* concourse.web.bindPort: 80
+  * デフォルトは8080ですが80のほうがラクなので変更します。本番運用では443に変更し、証明書をあてるのがよいかと思います。
 
 これ以外にもいわゆるSecretsまわりに設定変更を推奨している項目がいくつかあるのですが、開発用途でトライする分にはここまでできれば一旦は困らないと思うので、割愛しています。
 
@@ -173,7 +174,7 @@ $ helm install \
 
 設定項目がかなり多くあるので今回は基礎的な解説にとどめましたが、それでも慣れていないとなかなか複雑に感じるかもしれません。ですので、まずは薄い設定で建ててみて、実際にいろいろ手を動かしたりしてみるのがよいと思います。
 
-HelmでConcourseを建てる際の本番運用向けの細かい設定についてもおって記事にしたいと思います。
+本番運用向けの細かい設定については、おって別記事にしたいと思います。
 
 [1]: https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/#completion
 [2]: https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/#1-docker-for-mac
