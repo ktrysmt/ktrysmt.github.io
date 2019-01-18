@@ -81,3 +81,7 @@ CloudTrailで気をつけるべき重要な点としては、証跡の数がリ�
 * [AWS CloudTrail データイベントで S3 バケットのオブジェクトレベルのログ記録を有効にする方法 - Amazon Simple Storage Service](https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/user-guide/enable-cloudtrail-events.html)
 * [AWS CloudTrail における制限 - AWS CloudTrail](https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html)
 * [CloudTrail ダイジェストファイルの構造 - AWS CloudTrail](https://docs.aws.amazon.com/ja_jp/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-digest-file-structure.html)
+
+
+
+

@@ -25,6 +25,7 @@ description: 'Helmを使ってKubernetesクラスタにConcourseをデプロイ�
 私が個人的にkopsをよく使うので、kopsの場合の例も載せておきます。
 
 ```
+$ brew install kops
 $ export KOPS_STATE_STORE=s3://YOUR_S3_BUCKET
 $ export KOPS_CLUSTER_NAME=your-cluster-name.k8s.local
 $ export ADMIN_CIDR=xxx.xxx.xxx.xxx/32
