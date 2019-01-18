@@ -72,7 +72,7 @@ externalUrlを指定してあげないとログイン後リダイレクトなど
 
 kopsで建てた場合は`kubectl svc`でelbのFQDNを抜けます。
 
-```sh
+```
 $ ENDPOINT=$(kubectl get svc --namespace test concourse-dev-web -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
 $ helm upgrade -i my-release --set concourse.web.externalUrl=http://${ENDPOINT}:8080 stable/concourse
 ```
