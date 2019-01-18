@@ -68,6 +68,15 @@ $ helm upgrade -i my-release stable/concourse
 
 これだけでOKです。Postgresもk8sクラスタ内に作られるのでreleaseをdeleteするとDBも消えてしまうのがネックですが、あらかじめdumpしておくなど一応対策はできます。
 
+externalUrlを指定してあげないとログイン後リダイレクトなどがうまく動かない(デフォルトでは`127.0.0.1`へのリダイレクト)と思いますので、`helm install`後にexternalUrlを指定してupgradeしておくことをおすすめします。
+
+kopsで建てた場合は`kubectl svc`でelbのFQDNを抜けます。
+
+```sh
+$ ENDPOINT=$(kubectl get svc --namespace test concourse-dev-web -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+$ helm upgrade -i my-release --set concourse.web.externalUrl=http://${ENDPOINT}:8080 stable/concourse
+```
+
 ### DBに外部のPostgresを使う場合
 
 values.yamlを[githubからDL][1]して、編集して使います。
