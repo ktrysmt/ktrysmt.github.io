@@ -31,7 +31,18 @@ $ export KOPS_CLUSTER_NAME=your-cluster-name.k8s.local
 $ export ADMIN_CIDR=xxx.xxx.xxx.xxx/32
 $ kops create cluster $KOPS_CLUSTER_NAME \
   --admin-access=$ADMIN_CIDR \
-  --zones "ap-northeast-1c,ap-northeast-1d" \
+  --zones "ap-northeast-1c,ap-northeast-1d" --yes
+```
+
+kopsで立てる場合、`ADMIN_CIDR`にはご自身の環境のグローバルIPを指定して外部にさらされるリスクをカバーするのが手軽です。
+今回は言及しませんがこの辺EKSだとIAMベース認証がマストになるため、認証はもう少しモダンで強力になります。もちろん、kopsでもロールベース・ユーザーベース認証は実現できますが、今回は特に本番運用を想定しない記事なので、複雑化を避けるため割愛し、IP制限による最低限のセキュリティ確保にとどめています。
+
+以下はもう少しリソースを節約したい場合のオプション例です。
+
+```
+$ kops create cluster $KOPS_CLUSTER_NAME \
+  --admin-access=$ADMIN_CIDR \
+  --zones "ap-northeast-1c" \
   --node-size t2.medium \
   --node-volume-size 20 \
   --master-zones ap-northeast-1c \
@@ -39,10 +50,8 @@ $ kops create cluster $KOPS_CLUSTER_NAME \
   --master-volume-size 20 --yes
 ```
 
-kopsで立てる場合、`ADMIN_CIDR`にはご自身の環境のグローバルIPを指定して外部にさらされるリスクをカバーするのが手軽です。
-今回は言及しませんがこの辺EKSだとIAMベース認証がマストになるため、認証はもう少しモダンで強力になります。もちろん、kopsでもロールベース・ユーザーベース認証は実現できますが、今回は特に本番運用を想定しない記事なので、複雑化を避けるため割愛し、IP制限による最低限のセキュリティ確保にとどめています。
-
 なお上記例ではmaster/nodeにt2.mediumなどとリソース指定しており、これは厳密にはもう少しインスタンスタイプやディスクサイズをケチることもできるのですが、クラスタそのものが不安定になってトラブったりハマっても悲しいだけなので、念のため少し余裕をもたせるために上記設定にしています。
+また、上記にはありませんが `--node-count 5` というオプションで台数の変更もできます。
 
 ## Helmの設定
 
@@ -192,3 +201,4 @@ $ helm install \
 
 * <https://github.com/helm/charts/tree/master/stable/concourse>
 * <https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/>
+
