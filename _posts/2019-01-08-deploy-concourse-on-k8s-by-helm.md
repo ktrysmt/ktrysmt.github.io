@@ -29,7 +29,7 @@ $ brew install kops
 $ export KOPS_STATE_STORE=s3://YOUR_S3_BUCKET
 $ export KOPS_CLUSTER_NAME=your-cluster-name.k8s.local
 $ export ADMIN_CIDR=xxx.xxx.xxx.xxx/32
-$ kops create cluster $KOPS_CLUSTER_NAME \
+$ kops create cluster \
   --admin-access=$ADMIN_CIDR \
   --zones "ap-northeast-1c,ap-northeast-1d" --yes
 ```
@@ -52,6 +52,10 @@ $ kops create cluster $KOPS_CLUSTER_NAME \
 
 なお上記例ではmaster/nodeにt2.mediumなどとリソース指定しており、これは厳密にはもう少しインスタンスタイプやディスクサイズをケチることもできるのですが、クラスタそのものが不安定になってトラブったりハマっても悲しいだけなので、念のため少し余裕をもたせるために上記設定にしています。
 また、上記にはありませんが `--node-count 5` というオプションで台数の変更もできます。
+
+その他、kopsでクラスタを建てる場合の解説は以下の記事にまとめていますのでこちらも参照ください。
+
+* [Kops on AWS コトハジメ](https://ktrysmt.github.io/blog/kops-on-aws-beginning/)
 
 ## Helmの設定
 
