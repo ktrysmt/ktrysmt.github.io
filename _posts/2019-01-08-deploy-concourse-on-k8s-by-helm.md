@@ -70,25 +70,41 @@ $ kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-a
 ### 最も単純な構築の場合
 
 ```
-$ helm install --name my-release stable/concourse
+$ helm install --name my-release \
+  --set concourse.web.kubernetes.keepNamespaces=false \
+  --set concourse.web.bindPort=80 \
+  --set web.service.type=LoadBalancer stable/concourse
 ```
 
-なれてくると `upgrade -i` のほうが便利かもしれません（当該リリースがあればUpgrade,なければInstall）。
+最低限必要なオプションを解説します。
+
+* concourse.web.kubernetes.keepNamespaces: `true` to `false`
+  * helm deleteするときに一緒にnamespaceも消えてくれるので少し楽できます。デバッグするときは頻繁に作ったり消したりすると思うのでfalse推奨です。
+* concourse.web.bindPort: 80
+  * デフォルトは8080ですが80のほうがラクなので変更します。本番運用では443に変更し、証明書をあてるのがよいかと思います。
+* web.service.type: loadBalancer
+  * デフォルトはClusterIPのためこちらで。
+
+引数で指定せずvalues.yamlをDLしてきて、そこに上記を書いてしまえばラクできます（後述）。
+
+また、なれてくると `install` より `upgrade -i` のほうが便利かもしれません（当該リリースがあればUpgrade,なければInstallという挙動になる）。
+
+それと、externalUrlを指定してあげないとログイン後リダイレクトなどがうまく動かない(デフォルトでは`127.0.0.1`へのリダイレクト)と思いますので、`helm install`後にexternalUrlを指定してupgradeしておくことをおすすめします。
+
+kopsで建てた場合は`kubectl svc`でelbのFQDNを抜けます。それでupgradeしましょう。
 
 ```
-$ helm upgrade -i my-release stable/concourse
+$ ENDPOINT=$(kubectl get svc my-release-web -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+$ helm upgrade -i my-release \
+  --set concourse.web.kubernetes.keepNamespaces=false \
+  --set concourse.web.bindPort=80 \
+  --set web.service.type=LoadBalancer \
+  --set concourse.web.externalUrl=http://${ENDPOINT} stable/concourse
 ```
 
-これだけでOKです。Postgresもk8sクラスタ内に作られるのでreleaseをdeleteするとDBも消えてしまうのがネックですが、あらかじめdumpしておくなど一応対策はできます。
+なおこの構築コマンドだとPostgresもk8sクラスタ内に作られるのでreleaseをdeleteするとDBも消えてしまうのがネックですが、あらかじめdumpしておくなど一応対策はできます。
 
-externalUrlを指定してあげないとログイン後リダイレクトなどがうまく動かない(デフォルトでは`127.0.0.1`へのリダイレクト)と思いますので、`helm install`後にexternalUrlを指定してupgradeしておくことをおすすめします。
-
-kopsで建てた場合は`kubectl svc`でelbのFQDNを抜けます。
-
-```
-$ ENDPOINT=$(kubectl get svc --namespace test concourse-dev-web -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
-$ helm upgrade -i my-release --set concourse.web.externalUrl=http://${ENDPOINT}:8080 stable/concourse
-```
+ここまでくれば、ブラウザで http://${ENDPOINT} にアクセスし、初期設定されているローカルユーザー (ユーザー名:test / パスワード:test) でログインできるようになると思います。
 
 ### DBに外部のPostgresを使う場合
 
@@ -183,12 +199,8 @@ $ helm install \
 
 * concourse.worker.baggageclaim.driver: `naive` to `btrfs` 
   * btrfsも古いですが一応これが推奨のようです
-* concourse.web.kubernetes.keepNamespaces: `true` to `false`
-  * helm deleteするときに一緒にnamespaceも消えてくれるので少し楽できます
 * concourse.web.bindIp: 0.0.0.0
   * 絞ることもできますがLBが前段に立つのでここは開放しても問題ないです
-* concourse.web.bindPort: 80
-  * デフォルトは8080ですが80のほうがラクなので変更します。本番運用では443に変更し、証明書をあてるのがよいかと思います。
 
 これ以外にもいわゆるSecretsまわりに設定変更を推奨している項目がいくつかあるのですが、開発用途でトライする分にはここまでできれば一旦は困らないと思うので、割愛しています。
 
