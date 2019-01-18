@@ -60,6 +60,10 @@ build                build docker dontainer          make build argument_name=ar
 test                 test the node app               make test NODE_ENV=production
 ```
 
+実際のターミナルの表示はこんな感じになります。
+
+![](/assets/images/blog/write-useful-help-command-by-shell/makefile-stdout.png)
+
 Sub command, Description, Example の alignment をきれいに揃えられるところが便利で気に入っています。
 また Sub command の列は cyan で色付けされてちょっときれいです。
 
