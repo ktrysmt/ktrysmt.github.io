@@ -190,5 +190,5 @@ $ helm install \
 
 ## 参考
 
-* https://github.com/helm/charts/tree/master/stable/concourse
-* https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/
+* <https://github.com/helm/charts/tree/master/stable/concourse>
+* <https://ktrysmt.github.io/blog/setup-kubernetes-development-environment-at-2018/>
