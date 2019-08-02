@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <body contenteditable style="background-color:black;color:white">
+  <body style="background-color:black;color:white">
     <div contenteditable id="editor" style="height:-webkit-fill-available;">
       <br>
     </div>
   </body>
   <script>
-    execCommand('formatBlock',false,"p");
+    document.execCommand('formatBlock',false,"p");
     document.querySelector("#editor").innerHTML = localStorage.getItem("memo");
     setInterval(function() { localStorage.setItem("memo", document.querySelector("#editor").innerHTML)}, 1000);
   </script>
