@@ -4,6 +4,6 @@
   </body>
   <script>
     document.querySelector("body").innerText = localStorage.getItem("memo");
-    setInterval(function() { localStorage.setItem("body", document.querySelector("html").innerText)}, 1000);
+    setInterval(function() { localStorage.setItem("body", document.querySelector("body").innerText)}, 1000);
   </script>
 </html>
