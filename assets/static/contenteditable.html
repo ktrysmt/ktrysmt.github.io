@@ -6,6 +6,7 @@
     </div>
   </body>
   <script>
+    execCommand('formatBlock',false,"p");
     document.querySelector("#editor").innerHTML = localStorage.getItem("memo");
     setInterval(function() { localStorage.setItem("memo", document.querySelector("#editor").innerHTML)}, 1000);
   </script>
