@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html contenteditable style="background-color:black;color:white">
-<script>
-document.querySelector("html").innerText = localStorage.getItem("memo");
-setInterval(function() { localStorage.setItem("memo", document.querySelector("html").innerText)}, 1000);
-</script>
+<html>
+  <body contenteditable style="background-color:black;color:white">
+  <script>
+    document.querySelector("html").innerText = localStorage.getItem("memo");
+    setInterval(function() { localStorage.setItem("memo", document.querySelector("html").innerText)}, 1000);
+  </script>
+  </body>
+</html>
