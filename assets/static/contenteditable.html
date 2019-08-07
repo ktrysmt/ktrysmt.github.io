@@ -7,6 +7,7 @@
   </body>
   <script>
     document.querySelector("#editor").innerHTML = localStorage.getItem("memo");
+    document.body.setAttribute("spellcheck",false);
     setInterval(function() { localStorage.setItem("memo", document.querySelector("#editor").innerHTML)}, 1000);
   </script>
 </html>
