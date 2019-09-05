@@ -135,13 +135,16 @@ fn new(args: &[String]) -> Self {
 
 ### 複数mod構成にするときの依存関係
 依存し合うmodについては Cargo.toml に
-```conf
+
+```
 [dependencies]
 add-one = { path = "../add-one" }
 ```
+
 とローカル相対パスが使えるのでこれを使うと効率良くできる。
 またそれを踏まえ複数のmodで構成されるcrateについては top root に workspace を設定しておくといい。
-```conf
+
+```
 [workspace]
 
 members = [
@@ -149,7 +152,9 @@ members = [
   "mod-b",
 ]
 ```
+
 この Cargo.toml があるパスで
+
 ```sh
 cargo new --lib mod-a 
 cargo new --lib mod-b
