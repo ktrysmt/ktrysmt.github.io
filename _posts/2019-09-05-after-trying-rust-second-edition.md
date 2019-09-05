@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rust Second Editinを通しでやって勉強になったことをまとめた"
+title: "Rust Second Editionを通しでやって勉強になったことをまとめた"
 date: 2019-09-06 01:00:00 +0900
 comments: true
 categories: ""
