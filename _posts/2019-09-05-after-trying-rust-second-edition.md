@@ -66,9 +66,12 @@ impl Struct {
 
 ### Option<T>は積極的に使うべき
 ```rs
-let v = vec![1,2,3];
-let data: Option<&i32> = v.get(2); 
-println!("{}", data.unwrap());     
+let v = vec![1, 2, 3];
+let data: Option<&i32> = v.get(2);
+match data {
+    Some(x) => println!("{}", x),
+    None => panic!("no data"),
+}
 ```
 値がない場合はNoneが自動で入ってくれる、可変データを安全に扱えるようになる。
 
