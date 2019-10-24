@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html contenteditable style="background-color:black;color:white">
-<!--
-var script = document.createElement('script');
-script.innerHTML = 'function w(){window.open("https://ktrysmt.github.io/assets/static/contenteditable.html","_blank","width=400,height=200,menubar=no,status=no,scrollbars=no");}';
-document.body.appendChild(script);
-var elm = document.createElement('div');
-elm.innerHTML = '<input type="button" value="" onClick="w();">';
-elm.querySelector('input').click();
--->
+<html>
+  <head>
+    <title>Memo</title>
+  </head>
+  <body style="background-color:black;color:white">
+    <div contenteditable id="editor" style="height:-webkit-fill-available;outline:none;">
+      <br>
+    </div>
+  </body>
+  <script>
+    document.querySelector("#editor").innerHTML = localStorage.getItem("memo");
+    document.body.setAttribute("spellcheck",false);
+    setInterval(function() { localStorage.setItem("memo", document.querySelector("#editor").innerHTML)}, 1000);
+  </script>
+</html>
