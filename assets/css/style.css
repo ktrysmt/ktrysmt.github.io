@@ -588,8 +588,6 @@ article.top section#post-list-body li {
 	font-size: 13px;
 	font-weight: bold;
 	line-height: 1.4;
-	border-top: 1px solid #eee;
-	padding-top: 40px;
 	margin-bottom: 40px;
 	margin-top: 40px;
 	color:#444;
@@ -599,6 +597,7 @@ article.top section#post-list-body li {
 	color: #aaa;
 	font-weight: 500;
 	display: block;
+  min-width: 150px;
 }
 
 #post-meta div span.dark {
@@ -909,7 +908,6 @@ li.toc-list-item.is-active-li {
 	text-align: justify;
 	line-height: 1.7em;
 	margin: 40px 0px;
-	border-top: 1px solid #eee;
 }
 .recent-post-list ul {
 	margin: 0px;

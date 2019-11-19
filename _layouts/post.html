@@ -29,24 +29,32 @@ archive: true
 
 </article>
 
+<hr>
+
 <!-- Post meta -->
 {% include post-meta.html %}
-
-<!-- Disqus comments -->
-{% if site.disqus %}
-    <div class="post-comment archive readmore">
-        <hr>
-        <h2>Comments</h2>
-        {% include disqus.html %}
-	<hr>
-    </div>
-{% endif %}
-
-<!-- Next and prev links -->
-{% include next-prev-post-link.html %}
+<hr>
 
 <!-- Recent post lists -->
 {% include recent-post-list.html %}
+<hr>
+
+<!-- Next and prev links -->
+{% include next-prev-post-link.html %}
+<hr>
+
+<!-- Disqus comments -->
+{% comment %}
+  <!-- unuse it. -->
+  {% if site.disqus %}
+      <div class="post-comment archive readmore">
+          <hr>
+          <h2>Comments</h2>
+          {% include disqus.html %}
+          <hr>
+      </div>
+  {% endif %}
+{% endcomment %}
 
 <!-- Credit -->
 <p class="small">(c) Copyright {{ site.time | date: '%Y' }} {{ site.authorRealName }}</p>
