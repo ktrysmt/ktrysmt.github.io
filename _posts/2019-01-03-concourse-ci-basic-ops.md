@@ -5,7 +5,7 @@ date: 2019-01-03
 comments: true
 categories: CI/CD
 published: true
-use_toc: true
+use_toc: false
 description: 'お仕事でConcourseCIを建てたり運用したりすることが多いのですが、先日改めてこれを解説する機会があり、基本的な操作方法を軽く解説を添えつつまとめてみました。'
 ---
 

@@ -5,7 +5,7 @@ date: 2017-03-02
 comments: true
 categories: Tools
 published: true
-use_toc: true
+use_toc: false
 description: "試しに使ってみたところ、集中しやすいタスク処理環境が構築できそうだったので。"
 ---
 

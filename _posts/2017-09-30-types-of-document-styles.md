@@ -4,7 +4,7 @@ date: 2017-06-01
 comments: true
 categories: Document
 published: true
-use_toc: true
+use_toc: false
 description: "汎用的に使えそうな文書構成の様式をまとめました。"
 ---
 

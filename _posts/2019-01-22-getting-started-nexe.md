@@ -5,7 +5,7 @@ date: 2019-01-22
 comments: true
 categories: NodeJS
 published: true
-use_toc: true
+use_toc: false
 description: 'とりあえず基本的な使い方をなぞってみました。シングルバイナリ吐いてくれるのはインフラおじさん的にはすごくありがたく...今後良く使うことになりそうです。'
 ---
 

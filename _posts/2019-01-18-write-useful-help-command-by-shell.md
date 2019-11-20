@@ -5,7 +5,7 @@ date: 2019-01-18
 comments: true
 categories: Linux
 published: true
-use_toc: true
+use_toc: false
 description: '主にインフラオペレーションの文脈でMakefileを使うことは多いと思いますがそのときのhelp出力の話です。コマンド例を見やすく出力したり色付けしたりするなどのちょっとした小技を紹介します。'
 ---
 

@@ -5,7 +5,7 @@ date: 2017-02-22
 comments: true
 categories: Event
 published: true
-use_toc: true
+use_toc: false
 description: "いってきたので、参加のモチベーションや感想などをつらつらと。"
 ---
 
