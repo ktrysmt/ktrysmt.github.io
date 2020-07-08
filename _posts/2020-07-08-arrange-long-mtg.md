@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ロングMTGのやり方を工夫して抽象度の高い問題をやっつける"
+title: "ロングMTGのやり方を工夫して難題をやっつける"
 date: 2020-07-08 23:30:00 +0900
 comments: true
 categories: "Management"
