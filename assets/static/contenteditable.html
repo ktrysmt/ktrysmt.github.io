@@ -9,8 +9,10 @@
     </div>
   </body>
   <script>
-    document.querySelector("#editor").innerHTML = localStorage.getItem("memo");
+    var div = document.querySelector("#editor");
+    div.innerHTML = localStorage.getItem("memo");
     document.body.setAttribute("spellcheck",false);
+    setTimeout(function() { div.focus(); }, 0);
     setInterval(function() { localStorage.setItem("memo", document.querySelector("#editor").innerHTML)}, 1000);
   </script>
 </html>
