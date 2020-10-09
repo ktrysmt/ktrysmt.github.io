@@ -13,7 +13,8 @@ zgenであまり困ってはいなかったのですがzinitでもうちょっ�
 
 ## zgenの場合
 
-<https://github.com/tarjoilija/zgen>
+[](https://github.com/tarjoilija/zgen){:.card-preview}
+
 
 ### setupのおさらい
 ```sh
@@ -55,7 +56,7 @@ git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 
 ## zinitに変える
 
-<https://github.com/zdharma/zinit>
+[](https://github.com/zdharma/zinit){:.card-preview}
 
 ### setup
 ```sh
