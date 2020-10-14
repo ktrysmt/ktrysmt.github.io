@@ -214,7 +214,7 @@ ul#post-list {
 article.post {
 	display: flex;
 	flex-direction: row;
-	padding: 0px 20px;
+	padding: 0px 2%;
 }
 
 ul {
@@ -240,10 +240,6 @@ li {
 }
 #post-body, p {
 	line-height:1.8;
-}
-
-#post-body, div {
-	margin-bottom: 1.5em;
 }
 
 .top section#post-list-body {
@@ -781,7 +777,7 @@ h2.month {
 /* Media Queries */
 @media screen and (max-width: 540px) {
 	#wrapper {
-		padding:20px 20px 20px 20px;
+		padding:2%;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
 	}

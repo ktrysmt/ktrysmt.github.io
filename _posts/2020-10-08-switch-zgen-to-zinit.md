@@ -81,7 +81,9 @@ git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
   # is-snippet for でまとめて読み込む
   zinit is-snippet for \
       OMZL::completion.zsh \
-      OMZL::key-bindings.zsh
+      OMZL::key-bindings.zsh \
+      OMZL::directories.zsh
+
 
   # oh-my-zshのファイルをスニペットとして非同期でバルクロード
   zinit wait lucid is-snippet for \
