@@ -11,7 +11,7 @@ yamlフォーマットでテストケースが書けるコマンドラインツ�
 
 名前つけるのは苦手なのだが、色々考えた結果checkupっていう名前にした。
 
-- https://github.com/keidrip/checkup
+- https://github.com/ktrysmt/checkup
 
 ## 特徴
 

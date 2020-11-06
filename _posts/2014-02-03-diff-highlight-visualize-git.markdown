@@ -14,7 +14,7 @@ published: true
 
 Gitのバージョンが古いとおそらくdiff-highlightがGitインストール時に同封されていないので、1.8系へのバージョンアップを試みる。
 
-参考：[Gitのコマンドやブランチ名を入力補完 - Sys Kit](http://kotaroyoshimatsu.github.io/blog/git-input-completion/)
+参考：[Gitのコマンドやブランチ名を入力補完](http://ktrysmt.github.io/blog/git-input-completion/)
 
 
 ```

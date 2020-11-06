@@ -15,7 +15,7 @@ published: true
 
 過去の記事を参考に。
 
-- <http://kotaroyoshimatsu.github.io/blog/how-to-install-phantomjs-casperjs/>
+- <http://ktrysmt.github.io/blog/how-to-install-phantomjs-casperjs/>
 
 キャプチャを取らない場合はFontのインストールはしなくてよい。
 
@@ -23,7 +23,7 @@ published: true
 
 rbenvを使います。これも過去の記事を参考にインストール。
 
-+ <http://kotaroyoshimatsu.github.io/blog/install-ruby-by-rbenv-to-centos/>
++ <http://ktrysmt.github.io/blog/install-ruby-by-rbenv-to-centos/>
 
 Rubyのバージョンはなんでもいいけど比較的新しくて安定版であればいいと思う。
 

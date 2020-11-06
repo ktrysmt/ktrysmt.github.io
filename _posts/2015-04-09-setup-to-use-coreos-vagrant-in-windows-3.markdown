@@ -9,7 +9,7 @@ published: true
 
 
 
-前回（<http://keidrip.github.io/blog/setup-to-use-coreos-vagrant-in-windows-2/>）の続き。
+前回（<http://ktrysmt.github.io/blog/setup-to-use-coreos-vagrant-in-windows-2/>）の続き。
 
 ## fleet
 

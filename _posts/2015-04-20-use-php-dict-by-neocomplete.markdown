@@ -7,7 +7,7 @@ categories: Vim
 published: true
 ---
 
-<http://keidrip.github.io/blog/update-vim-7.4/>の続き。
+<http://ktrysmt.github.io/blog/update-vim-7.4/>の続き。
 
 neocomplete-phpいれるとソースを開いて最初の補完時につっかかるというかもたつくのでストレスたまる、のでやめた。
 

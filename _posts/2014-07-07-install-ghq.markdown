@@ -8,7 +8,7 @@ published: true
 ---
 
 ## install go
-参考：<http://kotaroyoshimatsu.github.io/install-peco/>
+参考：<http://ktrysmt.github.io/install-peco/>
 
 ## install ghq
 

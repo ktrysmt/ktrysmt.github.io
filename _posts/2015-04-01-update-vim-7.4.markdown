@@ -63,7 +63,7 @@ let g:neocomplete_php_locale = 'ja'
 以上の内容をCentOS6用として自前のdotfilesに追記・更新した。
 暇があったら仕事用にCentOS5用も作っておきたいところ。
 
-- <https://github.com/keidrip/dotfiles>
+- <https://github.com/ktrysmt/dotfiles>
 
 ## 参考
 

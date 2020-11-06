@@ -25,14 +25,13 @@ baseurl: /
 domain_name: 'https:///ktrysmt.github.io'
 google_analytics: 'UA-XXXXXXXX-X'
 disqus: true
-disqus_shortname: 'syskit'
 
 url:            'https:///ktrysmt.github.io'
 blogTopUrl:        'https:///ktrysmt.github.io/blog/'
 author:         'ktrysmt'
 authorTwitter:  'ktrysmt'
 authorFullName: 'Kotaro Yoshimatsu a.k.a. ktrysmt'
-authorRealName: 'Kotaro Yoshimatsu' 
+authorRealName: 'Kotaro Yoshimatsu'
 twitter:
   username: ktrysmt
 

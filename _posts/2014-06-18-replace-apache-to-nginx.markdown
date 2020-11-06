@@ -26,8 +26,8 @@ published: true
 ※おことわり
 
 - OSはCentOS 6 64bitです。
-- PHPアクセラレータの利用は長くなるので割愛、<http://keidrip.github.io/blog/opcache-apcu-and-apc/>を参照のこと。
-- PHP >= 5.5推奨で、epel,remi(remi-php55等)を使うこと前提になっています、3rdPartyのインストールは<http://keidrip.github.io/blog/add-3rd-repositories-to-centos-6/>を参照。
+- PHPアクセラレータの利用は長くなるので割愛、<http://ktrysmt.github.io/blog/opcache-apcu-and-apc/>を参照のこと。
+- PHP >= 5.5推奨で、epel,remi(remi-php55等)を使うこと前提になっています、3rdPartyのインストールは<http://ktrysmt.github.io/blog/add-3rd-repositories-to-centos-6/>を参照。
 
 
 

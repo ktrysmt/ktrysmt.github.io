@@ -7,7 +7,7 @@ categories: CoreOS
 published: true
 ---
 
-前回（<http://keidrip.github.io/blog/about-coreos-docker-golang-and-kocha/>）の続き。
+前回（<http://ktrysmt.github.io/blog/about-coreos-docker-golang-and-kocha/>）の続き。
 
 Go先にやるといっときながら楽しそうなCoreOSから触っている。
 
@@ -25,7 +25,7 @@ Go先にやるといっときながら楽しそうなCoreOSから触っている
 
 私は他にも色々入れているが最低限上記で足りると思う。
 
-参考：<http://keidrip.github.io/blog/minimal-install-my-machines/>
+参考：<http://ktrysmt.github.io/blog/minimal-install-my-machines/>
 
 ## how to setup
 
@@ -45,7 +45,7 @@ CoreOSはホストマシンとのディレクトリ同期にrsyncを使うっぽ
 - Git Bashオンリーの場合は実行ファイルやDLLを落としてきて直接配置する。
 - Git BashオンリーだがMinGWインストールしてMinGW/binにパスを通す。
 
-私はめんどくさいので４つ目の方法を選択（[参考](http://keidrip.github.io/blog/use-mingw-with-git-bash-on-windows/)）。
+私はめんどくさいので４つ目の方法を選択（[参考](http://ktrysmt.github.io/blog/use-mingw-with-git-bash-on-windows/)）。
 汚したくない場合（３つ目）は、[ココ](http://hail2u.net/blog/software/install-rsync-to-git-for-windows.html)を参考にすればいい。
 最終的にrsyncのバージョン番号が確認できればOK。
 

@@ -11,7 +11,7 @@ go-bitbucketというgoで使えるbitbucketライブラリを書きました。
 
 Bitbucket REST API v2.0に対応しています。
 
-- <https://github.com/keidrip/go-bitbucket>
+- <https://github.com/ktrysmt/go-bitbucket>
 
 ## 動機
 

@@ -63,4 +63,4 @@ git --git-dir=.git push origin
 ## 参考
 
 - <http://tm.root-n.com/unix:command_operation:find_php_lint>
-- <http://keidrip.github.io/blog/setting-git-push-by-hook-post-commit/>
+- <http://ktrysmt.github.io/blog/setting-git-push-by-hook-post-commit/>

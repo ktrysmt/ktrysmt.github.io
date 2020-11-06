@@ -8,7 +8,7 @@ published: true
 ---
 
 ## 追記（2014/08/31）nodeならforeverを使ってデーモン化するほうがいいらしい
-参考：<http://kotaroyoshimatsu.github.io/blog/forever-ungit/>
+参考：<http://ktrysmt.github.io/blog/forever-ungit/>
 
 ## 追記（2014/08/31）以下、古い情報。
 
