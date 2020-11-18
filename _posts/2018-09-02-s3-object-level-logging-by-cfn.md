@@ -3,7 +3,7 @@ layout: post
 title: "S3 Object-level loggingの設定をCloudFormationで書くときのポイント"
 date: 2018-09-02 03:00:00 +0900
 comments: true
-categories: ""
+categories: AWS
 published: true
 use_toc: false
 description: "CloudTrailをCFnで書くことになるんですが、ReadWriteTypeのNoneを選びたいところ実はNoneは無いのです。その対処法です。"

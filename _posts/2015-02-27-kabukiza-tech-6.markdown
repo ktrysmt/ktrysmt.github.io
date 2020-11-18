@@ -3,7 +3,7 @@ layout: post
 title: "歌舞伎座Tech#6 タイムシフトみた"
 date: 2015-02-19 15:09:08 +0900
 comments: true
-categories: Node
+categories: NodeJS
 published: true
 ---
 

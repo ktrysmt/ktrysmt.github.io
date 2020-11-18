@@ -3,7 +3,7 @@ layout: post
 title: "CentOS6にphantomjs+casperjs+IPAフォントをインストール"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-categories: Node
+categories: NodeJS
 published: true
 ---
 

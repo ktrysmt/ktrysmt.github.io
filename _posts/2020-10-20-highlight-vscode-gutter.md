@@ -3,7 +3,7 @@ layout: post
 title: "vscodeで現在の行の行番号だけをhighlightする方法"
 date: 2020-10-20 00:00:00 +0900
 comments: true
-categories: "VSCode"
+categories: VSCode
 published: true
 use_toc: false
 description: ""

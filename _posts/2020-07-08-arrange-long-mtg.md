@@ -3,7 +3,7 @@ layout: post
 title: "ロングMTGのやり方を工夫して難題をやっつける"
 date: 2020-07-08 23:30:00 +0900
 comments: true
-categories: "Management"
+categories: Management
 published: true
 use_toc: false
 description: ""

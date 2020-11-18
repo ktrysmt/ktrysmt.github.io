@@ -3,7 +3,7 @@ layout: post
 title: "Rust Second Editionで勉強になったことまとめ"
 date: 2019-09-06 01:00:00 +0900
 comments: true
-categories: ""
+categories: Rust
 published: true
 use_toc: false
 description: ""
@@ -20,9 +20,9 @@ description: ""
 ただし網羅性はmatchに劣るので複雑なパターンが多数想定されるときは避けたほうがいい。
 ```rs
 let number = if condition {
-    5 
+    5
 } else {
-    6 
+    6
 }; // 戻り値の型は全条件で一致させる
 ```
 
@@ -165,9 +165,9 @@ members = [
 この Cargo.toml があるパスで
 
 ```sh
-cargo new --lib mod-a 
+cargo new --lib mod-a
 cargo new --lib mod-b
-cargo build 
+cargo build
 ```
 などができる。各モジュールごとにtestやrunももちろんできる。
 ```sh

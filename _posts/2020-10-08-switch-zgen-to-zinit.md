@@ -3,7 +3,7 @@ layout: post
 title: "zgenをzinitに置き換えたらzshの起動時間が500msから100msに改善した"
 date: 2020-10-08 00:00:00 +0900
 comments: true
-categories: "Zsh"
+categories: Zsh
 published: true
 use_toc: false
 description: ""

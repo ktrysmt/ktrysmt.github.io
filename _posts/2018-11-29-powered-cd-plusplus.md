@@ -3,7 +3,7 @@ layout: post
 title: 'powered_cdをもうちょっと便利にする'
 date: 2018-11-29 00:00:00 +0900
 comments: true
-categories: 'Zsh'
+categories: Zsh
 published: true
 use_toc: false
 description: 'powered_cd w/ fzf が大変便利で日々お世話になっているのですが、古いディレクトリパスをログから削除する術がなかったので、ちょっとコードをいじりました。'
