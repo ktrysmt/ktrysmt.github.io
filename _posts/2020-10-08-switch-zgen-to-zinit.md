@@ -21,7 +21,7 @@ zgenであまり困ってはいなかったのですがzinitでもうちょっ�
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 ```
 
-### 元のzsrcのconfigure
+### zgen時代のzshrc設定例
 ```sh
 : "zgen" && {
   source "${HOME}/.zgen/zgen.zsh"
@@ -64,7 +64,7 @@ mkdir ~/.zinit
 git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 ```
 
-### zinitを使った.zshrcのconfigure
+### zinitを使ったzshrcの設定例
 ```sh
 : "zinit" && {
   source ~/.zinit/bin/zinit.zsh
@@ -161,6 +161,8 @@ zinit wait lucid is-snippet as"completion" for OMZP::docker/_docker
 zinit ice src'bin/aws_zsh_completer.sh'
 zinit light aws/aws-cli
 ```
+
+前述の設定例ではOhMyZshプリインの機能のうち有効にしているのはごく一部ですので、追加でほしいものがある場合はショートハンドを活用して個別にloadするといいと思います。
 
 その他syntaxの解説は[こちらのWiki等を参照](https://zdharma.org/zinit/wiki/)。
 
