@@ -23,8 +23,6 @@ kramdown:
 
 baseurl: /
 domain_name: 'https:///ktrysmt.github.io'
-google_analytics: 'UA-XXXXXXXX-X'
-disqus: true
 
 url:            'https:///ktrysmt.github.io'
 blogTopUrl:        'https:///ktrysmt.github.io/blog/'

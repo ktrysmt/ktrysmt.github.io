@@ -43,19 +43,6 @@ archive: true
 {% include next-prev-post-link.html %}
 <hr>
 
-<!-- Disqus comments -->
-{% comment %}
-  <!-- unuse it. -->
-  {% if site.disqus %}
-      <div class="post-comment archive readmore">
-          <hr>
-          <h2>Comments</h2>
-          {% include disqus.html %}
-          <hr>
-      </div>
-  {% endif %}
-{% endcomment %}
-
 <!-- Credit -->
 <p class="small">(c) Copyright {{ site.time | date: '%Y' }} {{ site.authorRealName }}</p>
 
