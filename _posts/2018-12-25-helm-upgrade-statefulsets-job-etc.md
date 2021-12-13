@@ -33,3 +33,9 @@ $ kubectl delete poddisruptionbudgets.policy $NAME --cascade=false
 
 * <https://github.com/helm/helm/issues/2149>
 * <https://cloud.google.com/kubernetes-engine/docs/how-to/updating-apps?hl=JA#updating_a_job>
+
+## 追記
+
+`v1.21` から cascade オプションの指定方法が変わりました。
+本記事の要望を満たす場合 `--cascade=orphan` を使用します。
+* https://kubernetes.io/ja/docs/tasks/run-application/delete-stateful-set/
