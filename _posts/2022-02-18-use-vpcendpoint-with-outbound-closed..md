@@ -13,7 +13,7 @@ description: ""
 
 ## 要件
 
-* 80,443などのアウトバウンドを閉じる、あるいはprivate-subnetを使ってなんらかのコンピューティングを利用している
+* 443などのアウトバウンドを閉じて、あるいはprivate-subnetを使いつつもNATは建てずになんらかのコンピューティングを利用している
 * vpc endpoint interface type を設定できる
 
 ## 手順
@@ -21,7 +21,7 @@ description: ""
 1. 任意のサービスの vpc endpoint interface type を作成する
 2. 作成完了まで待つと対応する eni が判明する
 3. eni には作成した subnet の数だけ private ip 払い出されるので ip をメモ
-4. 任意のコンピューティングの SG の egress に3.でメモした ip を https として設定
+4. 任意のコンピューティングの SG の egress に3.でメモした ip を https(tcp:443) として設定
 
 ## 注意点
 
