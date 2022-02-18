@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "アウトバウンドを制限しながら VPC Endpoint を使う"
-date: 2022-02-18 00:00:00 +0900
+date: 2022-02-17 23:55:00 +0900
 comments: true
 categories: "AWS"
 published: true
@@ -28,4 +28,4 @@ description: ""
 * vpc に対し vpc endpoint interface type を設定する際、subnet が private か public かは実は問わない、azに対し１つずつ設定できる。同 vpc の同 az に対しpublic/privateそれぞれ（ダブって）設定しようとするとエラーが返る。
 * gateway type (s3,dynamo) ではこの方式は使えず、公式に提供されている prefixlist を使って SG egress に設定することで要件は満たせる。
 
-アウトバウンド閉じる意味はDNSトンネリングのせいで薄れているなと長らく思っていましたが、trailを確認したりあとからフォレンジックする際にノイズが減って特定が早まる可能性があるので、やっておく価値はあるなと最近気持ちを改めました。
+アウトバウンド閉じる意味はDNSトンネリングのせいで薄れているなと長らく思っていましたが、trailを確認したりあとからフォレンジックする際にノイズが減って特定が早まる可能性があるので、やっておく価値はあるなと最近認識を改めました。

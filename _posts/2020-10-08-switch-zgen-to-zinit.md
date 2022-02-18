@@ -9,6 +9,12 @@ use_toc: false
 description: ""
 ---
 
+## (2022/02/18 追記)
+
+[sheldonに移行しました。](./migrate-zinit-to-sheldon/)
+
+---
+
 zgenであまり困ってはいなかったのですがzinitでもうちょっと速く出来そう、ということなので。
 
 ## zgenの場合
