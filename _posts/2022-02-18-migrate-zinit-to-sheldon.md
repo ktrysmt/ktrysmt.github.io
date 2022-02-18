@@ -21,7 +21,7 @@ description: ""
 
 作業にあたっては予めzshrcなどのバックアップをとっておくといいと思います。
 
-### セットアップ
+### 初期設定
 
 ```sh
 $ brew install sheldon
@@ -117,7 +117,7 @@ dotfiles/zsh
 
 個々の設定ですが同期的読み込みでないと期待通りに動いてくれないものに限り `dotfiles/zsh/sync.zsh` にまとめて記述し、それ以外は全て非同期で読み込む…というようにして棲み分けてます。`use = ["{!sync,*}.zsh"]` と書けばsync以外をloadする、という意味です。直感的でいいですね。`sync.zsh` のサイズが目立ってきたら同期的読み込みのほうもファイル分割するかもしれません。
 
-`shelodn.plugins.toml` は冒頭のtomlのことで、セットアップ時には `mkdir ~/.sheldon/ && ln -s ~/dotfiles/zsh/sheldon.plugins.toml ~/.sheldon/plugins.toml` を実行します。
+`shelodn.plugins.toml` は冒頭のtomlのことで、端末セットアップ時には `mkdir ~/.sheldon/ && ln -s ~/dotfiles/zsh/sheldon.plugins.toml ~/.sheldon/plugins.toml` を実行します。
 なお.zshenvは利用継続してます（一部の用途でzshenvでないと都合が悪くなるため）。
 
 ## 更新は
