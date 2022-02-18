@@ -29,6 +29,7 @@ $ cd ~/
 $ mv .zshrc .zshrc.bk
 $ sheldon init --shell zsh
 $ ${EDITOR} ~/.sheldon/plugins.toml
+$ echo 'eval "$(sheldon source)"' > zshrcman
 ```
 
 ### 設定ファイル
