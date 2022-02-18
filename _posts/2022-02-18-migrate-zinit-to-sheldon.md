@@ -36,7 +36,7 @@ $ echo 'eval "$(sheldon source)"' > zshrcman
 
 [こちらの設定](https://ktrysmt.github.io/blog/switch-zgen-to-zinit/)を一部移植します。
 
-```conf
+```toml
 shell = "zsh"
 
 apply = ["defer"]
