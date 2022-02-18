@@ -11,7 +11,7 @@ description: ""
 
 ## (2022/02/18 追記)
 
-[sheldonに移行しました。](./migrate-zinit-to-sheldon/)
+[sheldonに移行しました。](https://ktrysmt.github.io/blog/migrate-zinit-to-sheldon/)
 
 ---
 
