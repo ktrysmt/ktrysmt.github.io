@@ -87,15 +87,15 @@ apply = ["source"]
 .zshrc内は `eval "$(sheldon source)"` 一行だけ書いて.zshrcには何も設定を置かないことを推奨です。
 仮に書いていても挙動を上書きされるのでbindkeyなど一度発火したら以降発火しなくなります。
 
-[基本の設定は公式を読めばわかりますが](https://sheldon.cli.rs/Examples.html)、公式docsに書いてない記述ものちらほらもあるので以下で補足します。
+[基本の設定は公式を読めばわかりますが](https://sheldon.cli.rs/Examples.html)、公式docsに書いてない記述もちらほらもあるので以下で補足します。
 
 * `apply = ["defer"]` これを頭でやっとくとデフォルトの挙動としてdefer（非同期読み込み）をしてくれます。
 * `apply = ["source"]` 逆に同期的読み込みを明示するときはこれを追加して対応します。
-* `inline = autoload -Uz compinit && zsh-defer compinit` compinitに依存する記述を自前のconfigでしてる場合などはこれを入れとく
+* `inline = autoload -Uz compinit && zsh-defer compinit` compinitに依存する記述をしている場合はこれを入れておくと期待した動作に
 
-### dotfilesの扱い
+### 自前の設定の組み入れ方
 
-dotfiles管理下の自分の設定ですが、これまでzshrcベタ書きだったのを `dotfiles/zsh/` 以下に分割してまとめました。
+dotfiles管理下の自分の設定をどうするかですが、これまでzshrc一枚で全部書いていたのを今回 `dotfiles/zsh/` 以下に分割して管理することにしました。
 
 ```
 $ exa -T dotfiles/zsh
@@ -115,16 +115,20 @@ dotfiles/zsh
 └── zprof.zsh
 ```
 
-個々の設定ですが同期的読み込みでないと期待通りに動いてくれないものに限り `dotfiles/zsh/sync.zsh` にまとめて記述し、それ以外は全て非同期で読み込むようにして棲み分けしてます。`use = ["{!sync,*}.zsh"]` と書けばsync以外をload、という意味です。直感的でいいですね。`sync.zsh` のサイズが目立ってきたら同期的読み込みのほうもファイル分割するかもしれません。`shelodn.plugins.toml` は冒頭のtomlのことで、セットアップ時には `mkdir ~/.sheldon/ && ln -s ~/dotfiles/zsh/sheldon.plugins.toml ~/.sheldon/plugins.toml` を実行します。
+個々の設定ですが同期的読み込みでないと期待通りに動いてくれないものに限り `dotfiles/zsh/sync.zsh` にまとめて記述し、それ以外は全て非同期で読み込む…というようにして棲み分けてます。`use = ["{!sync,*}.zsh"]` と書けばsync以外をloadする、という意味です。直感的でいいですね。`sync.zsh` のサイズが目立ってきたら同期的読み込みのほうもファイル分割するかもしれません。
+
+`shelodn.plugins.toml` は冒頭のtomlのことで、セットアップ時には `mkdir ~/.sheldon/ && ln -s ~/dotfiles/zsh/sheldon.plugins.toml ~/.sheldon/plugins.toml` を実行します。
 なお.zshenvは利用継続してます（一部の用途でzshenvでないと都合が悪くなるため）。
 
-## 更新
+## 更新は
 
 `sheldon lock --update` やっとけばOKです。本体は `brew upgrade` で。
 
-## 細かい話
+## 小ネタ
 
-`defer` を使ってbindkeyなどを呼ぶ場合はなにかひとつキーを押さないとloadされないので注意です。terminal起動直後にすぐ設定したキーバインドを使いたい場合は、目的のbindkeyだけはdeferを使わず同期的に読み込んであげる必要があります。一部のsetoptも同様です。このへんは触りながら調整するといいと思います。
+`defer` を使ってbindkeyなどを呼ぶ場合はなにかひとつキーを押さないとloadされないので注意です。terminal起動直後にすぐ設定したキーバインドを使いたい場合は、目的のbindkeyだけはdeferを使わず同期的に読み込んであげる必要があります。一部のsetoptも同様です。
+
+このへんは触りながら微調整するといいと思います。
 
 ## 計測
 
