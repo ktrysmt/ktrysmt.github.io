@@ -15,6 +15,8 @@ description: ""
 
 メンテナンスがやや心配になったのとsheldonが安定してきてよさそうとの話を目にしたので入れ替えてみました。
 
+[](https://github.com/rossmacarthur/sheldon){:.card-preview}
+
 ## 手順
 
 作業にあたっては予めzshrcなどのバックアップをとっておくといいと思います。
