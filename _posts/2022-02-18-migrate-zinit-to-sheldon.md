@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "zinitが不安なのでsheldonへ移行したら起動が50msと更に速くなった"
+title: "zinitが不安なのでsheldonへ移行したらzshの起動が50msと更に速くなった"
 date: 2022-02-18 00:00:00 +0900
 comments: true
 categories: "Zsh"
