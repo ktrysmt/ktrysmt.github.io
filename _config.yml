@@ -48,20 +48,3 @@ defaults:
     values:
       layout: post
       use_toc: false
-  -
-    scope:
-      path: ""
-      type: drafts
-    values:
-      layout: post
-  -
-    scope:
-      path: "_pages"
-      type: pages
-    values:
-      permalink: /pages/:title/
-      layout: post
-
-collections:
-  pages:
-    output: true
