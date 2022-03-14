@@ -232,7 +232,9 @@ ol {
 
 li {
 	margin-left: 10px;
-	display: list-item;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
 }
 
 #post-body {
@@ -513,6 +515,7 @@ Post List
 	top: 1px;
 	font: 300 17px/1.8 "Helvetica Neue",helvetica,Arial,sans-serif;
 	color: #bbb;
+  width: 97px;
 }
 
 #post-list-footer {
