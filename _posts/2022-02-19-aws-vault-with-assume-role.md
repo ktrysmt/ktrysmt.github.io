@@ -3,7 +3,7 @@ layout: post
 title: "aws-vaultでassume-roleする"
 date: 2022-02-19 00:05:00 +0900
 comments: true
-categories: "AWS"
+categories: AWS
 published: true
 use_toc: false
 description: ""
