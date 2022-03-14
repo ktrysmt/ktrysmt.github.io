@@ -919,3 +919,6 @@ li.toc-list-item.is-active-li {
 	margin-right: 2em;
 	margin-top: 1em;
 }
+.recent-post-list li {
+  flex-direction: row !important;
+}
