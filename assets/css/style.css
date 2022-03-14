@@ -209,6 +209,9 @@ ul#post-list {
 }
 #post-list li {
 	margin-left: 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
 }
 
 article.post {
@@ -232,9 +235,6 @@ ol {
 
 li {
 	margin-left: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row-reverse;
 }
 
 #post-body {
