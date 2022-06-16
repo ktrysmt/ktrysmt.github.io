@@ -44,8 +44,22 @@ JMESPathはjson形式の構造に対してXPathチックにアクセスできる
 
 型やクォートなどに少し気をつける必要はありますが、コマンドやクエリをスニペット化しておけば低コストに運用できそうです。
 
-ただ正直、filtersで済むのなら、可読性のよいfiltersで済ませたいところです...。
+### パターン集
 
-### FYI
+起動中の instance のうち、指定タグ（今回はExample）が「付いていない」 instance id を列挙する
+```
+aws ec2 describe-instances --filters Name=instance-state-name,Values=running --query 'Reservations[].Instances[?!not_null(Tags[?Key == `Example`].Value)] | [].InstanceId'
+```
 
-* [pecoとzshでかんたんsnippet管理](https://ktrysmt.github.io/blog/snippets-management-by-peco-and-zsh/)
+instance id を半角スペース区切りでjoinして列挙する
+```
+aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId | join(`" "`, @)' --output text
+
+# カンマ区切りなら
+aws ec2 describe-instances --query 'Reservations[].Instances[].InstanceId | join(`","`, @)' --output text
+```
+
+AAAというタグはhogeでBBBというタグはfugaではなくInstanceProfileにmogaが含まれる instance id を配列で列挙する
+```
+aws ec2 describe-instances --query 'Reservations[].Instances[?(Tags[?Key==`AAA`].Value|[0]==`"hoge"`) && !(Tags[?Key==`BBB`].Value|[0]==`"fuga"`) && (contains(IamInstanceProfile.Arn,`"moga"`))] | [].[InstanceId]'
+```
