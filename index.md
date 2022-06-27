@@ -11,7 +11,6 @@ layout: top
 - [Twitter](https://twitter.com/{{ site.authorTwitter }})
 - [Github](https://github.com/{{ site.authorTwitter }})
 - [Blog (ja)]({{ site.blogTopUrl }})
-- [Slides (Speaker Deck)](https://speakerdeck.com/{{ site.authorTwitter }})
 
 ### Mail
 

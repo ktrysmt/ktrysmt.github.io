@@ -13,7 +13,6 @@ I'm interested in Golang, Docker, DevOps, SRE and Neovim.
 * [Twitter](https://twitter.com/ktrysmt)
 * [Github](https://github.com/ktrysmt)
 * [Blog (ja)](https://ktrysmt.github.io/blog/)
-* [Slides (Speaker Deck)](https://speakerdeck.com/ktrysmt)
 
 ## Mail
 
