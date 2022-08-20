@@ -69,7 +69,8 @@ h1 {
 
 header h1 {
 	font-size: 36px !important;
-	margin-bottom: 30px !important;
+  margin-bottom: 30px !important;
+  letter-spacing: normal;
 }
 
 header h2.headline {
@@ -157,7 +158,7 @@ nav.main-nav a.cta {
 }
 
 #wrapper {
-	max-width: 800px;
+	max-width: 1200px;
 	margin: 0 auto;
 	padding: 40px 40px 10px 40px;
 	word-wrap: break-word;
