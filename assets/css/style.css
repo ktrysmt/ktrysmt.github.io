@@ -165,6 +165,14 @@ nav.main-nav a.cta {
 	overflow-wrap: break-word;
 }
 
+#wrapper-top {
+	max-width: 624px;
+	margin: 0 auto;
+	padding: 40px 40px 10px 40px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
 #wrapper.home {
 	max-width: 800px;
 	margin: 0 auto;
