@@ -42,12 +42,13 @@ EOF
 今回はあんまり意味がないかもだけど zsh なら global alias で設定しておくと展開して修正して実行したりとちょっと便利にできます。
 
 ```
-alias -g awsvault_1="unset AWS_VAULT; aws-vault exec account1 -- "
-alias -g awsvault_2="unset AWS_VAULT; aws-vault exec account2 -d 12h -- "
+alias -g awsvault_1="unset AWS_VAULT; aws-vault exec account1 --prompt=osascript -- "
+alias -g awsvault_2="unset AWS_VAULT; aws-vault exec account2 --prompt=osascript -d 12h -- "
 ```
 
 手癖的におなじセッションで作業することが多くて `unset AWS_VAULT` も入れてしまってます。
 `-d` durationはassume先でもexpireの延長をしないと無意味なので設定を忘れないように。
+`--prompt=osascript` をつけるとターミナルに平文でトークンが残らないので少し良いです（気持ちの問題）。
 
 ## 使い方
 
