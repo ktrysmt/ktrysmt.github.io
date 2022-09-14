@@ -39,7 +39,7 @@ EOF
 ```
 
 基本はこれでOKで、あとはaliasや関数で工夫。
-今回はあんまり意味がないかもだけど zsh なら global alias で設定しておくと展開して修正して実行したりとちょっと便利にできます。
+今回はあんまり意味がないかもだけど zsh なら global alias で設定しておくと展開して修正して実行したりとちょっと便利にできます([参考](https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html))。
 
 ```
 alias -g awsvault_1="unset AWS_VAULT; aws-vault exec account1 --prompt=osascript -- "
