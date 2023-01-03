@@ -1,16 +1,13 @@
 ---
 layout: post
-title: "CGI(Perl)が 500 Internal Server Error のときの対処法いろいろ"
+title: "CGI(Perl)が 500 Internal Server Error のときの確認箇所いろいろ"
 date: 2013-05-19 12:48:21 +0000
 comments: true
 categories: Perl
 published: true
 ---
 
-[<img class="aligncenter size-full wp-image-208" alt="wg8v" src="http://labo.in-ception.com/wp-content/uploads/2013/08/wg8v.png" width="769" height="161" />][1]
-500エラーは何が原因なんだか検討もつかず途方に暮れます。
-
-[1]: http://labo.in-ception.com/wp-content/uploads/2013/08/wg8v.png
+500エラーは何が原因なんだか検討もつかず途方に暮れるものです。
 
 ググればいろいろなサイトで対処法が載っていますが、
 後輩が困ってたので自分用も兼ねつつのまとめです。

@@ -1,20 +1,21 @@
 ---
 layout: post
-title: "rvmのgemsetでrubyとrailsを管理する"
+title: "rvmのgemsetでrubyとrailsのバージョンを管理する"
 date: 2014-01-09 05:52:07 +0000
 comments: true
 categories: Ruby
 published: true
 ---
 
-## rvm で複数バージョンのrubyとrailsをセット管理
-まずはrvmを更新。
+## rvmでrubyとrailsをセット
+
+まずはrvmを更新しておく。
 
 ```
 [root@localhost ~]# rvm get stable
 ```
 
-今回必要なバージョンは以下。
+今回必要なバージョンはそれぞれ以下。
 
 ``` bash
 ruby 1.8.7 (2009-12-24 patchlevel 248) [x86_64-linux], MBARI 0x6770, Ruby Enterprise Edition 2010.01
