@@ -2,7 +2,7 @@
 layout: post
 title: "2022年から筋トレをはじめたので知見をまとめる"
 date: 2023-01-01 00:00:00 +0900
-categories: "Health"
+categories: Health
 published: true
 use_toc: false
 description: ""
