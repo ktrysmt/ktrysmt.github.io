@@ -9,11 +9,6 @@ use_toc: false
 description: ""
 ---
 
-## (2022/02/18 追記)
-
-[sheldonに移行しました。](https://ktrysmt.github.io/blog/migrate-zinit-to-sheldon/)
-
----
 
 zgenであまり困ってはいなかったのですがzinitでもうちょっと速く出来そう、ということなので。
 
@@ -200,3 +195,10 @@ zinit times         # snippet, plugin, completionごとの速度計測
 ```
 
 さほど手間もかからずに移行できてよかった。
+
+---
+
+## 2022/02/18 追記
+
+zinitが不安なのでやめて[sheldonに移行しました。](https://ktrysmt.github.io/blog/migrate-zinit-to-sheldon/)
+
