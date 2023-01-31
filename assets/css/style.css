@@ -835,6 +835,12 @@ h2.month {
     content: unset;
   }
 }
+@media screen and (max-width: 1100px) {
+  .js-toc {
+    display: none;
+    content: unset;
+  }
+}
 
 /* disqus */
 .disqus {
