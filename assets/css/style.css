@@ -874,9 +874,9 @@ iframe.speakerdeck-iframe {
 /* toc */
 .js-toc {
   flex: none;
-  margin-left: 20px;
+  margin-left: 25px;
   width: 35%;
-  margin-top: 100px;
+  margin-top: 103px;
 }
 
 .post .toc-list {
