@@ -21,10 +21,10 @@ kramdown:
     disable : true
 
 baseurl: /
-domain_name: 'https:///ktrysmt.github.io'
+domain_name: 'https://ktrysmt.github.io'
 
-url:            'https:///ktrysmt.github.io'
-blogTopUrl:        'https:///ktrysmt.github.io/blog/'
+url:            'https://ktrysmt.github.io'
+blogTopUrl:        'https://ktrysmt.github.io/blog/'
 author:         'ktrysmt'
 authorTwitter:  'ktrysmt'
 authorFullName: 'Kotaro Yoshimatsu a.k.a. ktrysmt'
