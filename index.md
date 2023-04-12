@@ -1,5 +1,5 @@
 ---
-title: Kotaro Yoshimatsu a.k.a. ktrysmt
+title: Kotaro Yoshimatsu
 permalink: /
 layout: top
 ---
