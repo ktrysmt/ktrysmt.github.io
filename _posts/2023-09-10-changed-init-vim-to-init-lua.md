@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "init.vimをinit.luaに書き換えて起動時間30ms達成"
+title: "vimrcをluaで書き換えてlazy.nvimいれて、起動時間30ms切りを達成した"
 date: 2023-09-10 21:30:00 +0900
 categories: Vim
 published: true
@@ -23,7 +23,7 @@ Total Min:      97.406000 msec
 これを lua + lazy.nvimに置き換え、遅延読み込みを工夫した結果、
 
 ```
-Total Average: 23.951000 msec
+Total Average: 22.251000 msec
 Total Max:     26.319000 msec
 Total Min:     19.309000 msec
 ```
@@ -32,9 +32,9 @@ Total Min:     19.309000 msec
 
 やる前からすでに100msで十分に早いとも感じて、果たしてやる意味はあるのか？と正直疑問でした。
 
-ですが100msと25msは体感ではっきりと違いがわかります。
+ですが100msと25msは体感でも結構違いがわかります。
 
-起動時間がcat/bat/lessと体感ほぼ同じくらいになるので、`command | vim -` や `<C-x><C-e>` を使う機会がかなり増えました。
+起動時間が文字通り一瞬でcat/bat/lessあたりと遜色ないです。
 
 ## lazy.nvimについて
 
