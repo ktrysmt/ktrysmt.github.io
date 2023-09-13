@@ -8,7 +8,7 @@ use_toc: false
 description: ""
 ---
 
-luaに書き換えるのがだるくてvimrcの移行を見送っていたのですが、[lazy.nvim](https://github.com/folke/lazy.nvim)の遅延読み込みが非常に優れているとのことで最近頑張って書き換えました。
+luaに書き換えるのがだるくて移行を見送っていたのですが、[lazy.nvim](https://github.com/folke/lazy.nvim)の遅延読み込みが非常に優れているとのことで最近頑張って書き換えました。
 
 ## 計測
 
