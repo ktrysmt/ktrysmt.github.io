@@ -9,6 +9,32 @@ use_toc: false
 description: ""
 ---
 
+(2023/09/25追記)
+
+最近[こちらの記事](https://zenn.dev/fuzmare/articles/zsh-plugin-manager-cache)のキャッシュ機構を入れたらさらに改善しました。
+```sh
+cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}
+sheldon_cache="$cache_dir/sheldon.zsh"
+sheldon_toml="$HOME/.config/sheldon/plugins.toml"
+if [[ ! -r "$sheldon_cache" || "$sheldon_toml" -nt "$sheldon_cache" ]]; then
+  mkdir -p $cache_dir
+  sheldon source > $sheldon_cache
+fi
+source "$sheldon_cache"
+unset cache_dir sheldon_cache sheldon_toml
+```
+計測
+```
+time zsh -i -c exit
+zsh -i -c exit  0.02s user 0.01s system 88% cpu 0.031 total
+```
+更新は `rm ~/.cache/sheldon.zsh; sheldon lock --update;` で。
+
+(追記おわり)
+
+---
+
+
 [こちらの記事](https://ktrysmt.github.io/blog/switch-zgen-to-zinit/)で書いたとおり長らくzinitを使ってたんですがあるときリポジトリがなくなってforkを使い事なきを得ていましたが、
 
 [](https://github.com/zdharma-continuum/zinit){:.card-preview}

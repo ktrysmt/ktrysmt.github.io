@@ -9,11 +9,19 @@ use_toc: false
 description: "各種linuxコマンドをリッチで処理速度も早いRust製のCLIに置き換ると幸せになれるかもという話。タイトルが煽り気味で恐縮ですが、作業効率はわりかし上がると思うのでおすすめです。"
 ---
 
+(2023/09/25追記)
+
+exaがarchiveされezaにportされたようなので更新しました。
+
+(追記終わり)
+
+---
+
 今回紹介するのは以下の３つのCLIです。
 
 * ripgrep
 * fd
-* exa
+* ~~exa~~ eza
 
 ## ripgrep
 
@@ -53,17 +61,18 @@ globとファイルの中身への検索を組み合わせて`rg foo -g '*.min.j
 
 ## exa
 
-> <https://github.com/ogham/exa>
+> ~~<https://github.com/ogham/exa>~~
+> <https://github.com/eza-community/eza>
 
-コマンド名は`exa`。`ls`の拡張版でツリー表示の機能も内包されている。
+コマンド名は`eza`。`ls`の拡張版でツリー表示の機能も内包されている。
 
-* brewで入ります。 `brew install exa`
+* brewで入ります。 `brew install eza`
 * `-l` 通常のlsっぽい表示になる。デフォルトはgrid表示なのだけど、個人的にちょっと見づらいのでこっちを好んで使います。
 * `-T` lsを再帰的に行いかつツリー表示してくれる、これが便利
 * `-I` ignoreパターンを書ける、ツリー表示時に`-I "node_modules`などと指定します
 * `-L` いわゆるmaxDepth、intで指定。思いがけず階層が深かったときに。
 
-カラフルで見やすい。`exa -lha`, `exa -Tl`あたりをsnippetやaliasに入れておくといいです。私は`alias l="exa -lha"`をzshに入れてます。
+カラフルで見やすい。`eza -lha`, `eza -Tl`あたりをsnippetやaliasに入れておくといいです。私は`alias l="eza -lha"`をzshに入れてます。
 
 ## おまけ：Vimとripgrepの連携
 
@@ -91,7 +100,7 @@ command! -bang -nargs=* Ripgrep
 
 ## 所感
 
-WindowsなどでSJISも対象にしたい場合には無理に`rg`を使わず、`pt`を使うのもおすすめです。Go製なのでバイナリを置くだけですぐ使えますし、速度も`ag`並です。
+WindowsなどでSJISも対象にしたい場合には無理に`rg`を使わず、`pt`を使うのもおすすめです。Go製なのでバイナリを置くだけですぐ使えますし、速度も`ag`並です。
 
 よく使うツールの手入れといいますか、速くできるところは極力高速化していきたいものです。まぁ、zshrcやvimrcの手入れなんかも含めるとキリがないのですが...。特にripgrepとfdは処理速度の速さが売りなので、よければ入れてみてください。
 
@@ -100,6 +109,7 @@ WindowsなどでSJISも対象にしたい場合には無理に`rg`を使わず�
 * <https://github.com/BurntSushi/ripgrep>
 * <https://github.com/sharkdp/fd>
 * <https://github.com/ogham/exa>
+* <https://github.com/eza-community/eza>
 * <https://qiita.com/ktrysmt/items/70fa1d4e88e0d362c410>
 * <https://github.com/monochromegane/the_platinum_searcher>
 * <http://someneat.hatenablog.jp/entry/2017/03/12/011335>
