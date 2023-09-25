@@ -28,7 +28,6 @@ unset cache_dir sheldon_cache sheldon_toml
 time zsh -i -c exit
 zsh -i -c exit  0.02s user 0.01s system 88% cpu 0.031 total
 ```
-更新は `rm ~/.cache/sheldon.zsh; sheldon lock --update;` で。
 
 (追記おわり)
 
