@@ -45,12 +45,12 @@ lazy.nvimの遅延読み込みは
 3. ft
 4. event
 
-の４つがありますが、特にeventの挙動をプラグインごとに設定できるのがいいです。
+の４つがありますが、特にeventの種類が豊富なのがいいです。
 
 1. cmd,keys,ft で済むならそちらを設定
-2. event は極力 InsertEnter, BufWritePost などinitialを避けたりユーザー操作による発火で対応
+2. event は極力 InsertEnter, BufWritePost などユーザー操作による発火で対応
 3. 2.でだめなものは VeryLazy を設定
-4. 1.2.3.ではうまく動かないものは諦めて BufReadPre, VimEnter などを設定
+4. 1.2.3.ではうまく動かないものは諦めて BufReadPre などを設定
 
 LSPだけはBufReadPre,BufNewFileで設定してあげないとうまく動かなかったのですが、それがなければおそらく平均20ms程度になると思います。
 
@@ -67,5 +67,5 @@ LSPだけはBufReadPre,BufNewFileで設定してあげないとうまく動か�
 
 ## そもそも設定がめんどい人は
 
-[AstroNvim](https://astronvim.com/)入れればいいと思います。こちらもlazy.nvimが使われてるので起動が速く、リッチです。
-手元の環境だとAstroNvimいれたnvimはvim-startuptimeの結果が平均40msくらいでした。
+[LazyVim](https://www.lazyvim.org/)とか[AstroNvim](https://astronvim.com/)とか入れればいいと思います。これらもlazy.nvimが使われてるので起動も速くUIがリッチです。
+ちなみに手元の環境でAstroNvimいれたnvimのvim-startuptimeは平均40msくらいでした。
