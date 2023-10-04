@@ -13,18 +13,6 @@ description: ""
 
 最近[こちらの記事](https://zenn.dev/fuzmare/articles/zsh-plugin-manager-cache)のキャッシュ機構を入れたらさらに改善しました。
 ```sh
-function source {
-  ensure_zcompiled $1
-  builtin source $1
-}
-function ensure_zcompiled {
-  local compiled="$1.zwc"
-  if [[ ! -r "$compiled" || "$1" -nt "$compiled" ]]; then
-    echo "\033[1;36mCompiling\033[m $1"
-    zcompile $1
-  fi
-}
-ensure_zcompiled ~/.zshrc
 cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}
 sheldon_cache="$cache_dir/sheldon.zsh"
 sheldon_toml="$HOME/.config/sheldon/plugins.toml"
@@ -34,11 +22,6 @@ if [[ ! -r "$sheldon_cache" || "$sheldon_toml" -nt "$sheldon_cache" ]]; then
 fi
 source "$sheldon_cache"
 unset cache_dir sheldon_cache sheldon_toml
-source "$HOME/dotfiles/zsh/sync.zsh"
-for file in $HOME/dotfiles/zsh/defer/*.zsh; do
-  zsh-defer source "$file";
-done
-zsh-defer unfunction source
 ```
 計測
 ```
