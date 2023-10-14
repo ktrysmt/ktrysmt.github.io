@@ -73,9 +73,6 @@ apply = ["source"]
 [templates]
 defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 
-[plugins.compinit]
-inline = 'autoload -Uz compinit && zsh-defer compinit'
-
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
 
