@@ -21,11 +21,11 @@ description: ""
 ### 前提
 
 - python
-- uv
+- uv (mustではないがあるとべんり)
 
 ### 設定
 
-- 基本はmain.py実行でOK
+- 基本 clone && uv sync でOK
 - main.pyと同じ場所にcommands/フォルダがあるので、そこにツール化したいスクリプトを置くだけ
 - commandsフォルダは環境変数 `COMMAND_DIRECTORY` で変更可能
 - dotenv対応、main.pyと同じ場所に.envを配置
@@ -55,3 +55,6 @@ READMEそのままですがmcpの設定例は以下
 * ファイルには実行権限が必要（一応permissionを調整する処理を入れてあるが）。
 * あくまでローカルでの利用および自分が把握しているスクリプトのみを置くこと。
 
+### 感想
+
+Dockerfileをみんなが作る理由がわかった（クロスプラットフォーム対応がしやすい）。のであとでDockerfile足すかも。
