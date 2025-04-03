@@ -8,8 +8,8 @@ use_toc: false
 description: "シンプルかつ自由度高めのコマンド実行サーバーを作ったので解説"
 ---
 
-## はじめに
 
+[](https://github.com/ktrysmt/mcp-script-runner){:.card-preview}
 
 MCP Script Runner は主にシェルスクリプトなどを簡単にサーバーツール化します。
 似たようなことをしてるひとは多いですが使いやすい雛形が欲しかったのでmcpの理解ついでに作りました。
