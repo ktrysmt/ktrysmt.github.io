@@ -10,7 +10,7 @@ description: ""
 
 [](https://github.com/ktrysmt/mcp-script-runner){:.card-preview}
 
-主にシェルスクリプトなどをずぼらにサーバーツール化するmcpサーバです。
+主にシェルスクリプトなどをずぼらにサーバーツール化する薄いmcpです。
 似たようなことをしてるひとは多いでしょうが使いやすい雛形が欲しかったのでmcp理解ついでに作成。
 
 ### 機能
