@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MCP Script Runner: スクリプトを雑にmcpサーバのツールにするやつ"
-date: 2025-04-03 23:45:00 +0900
+date: 2025-04-03 22:30:00 +0900
 categories: LLM
 published: true
 use_toc: false
