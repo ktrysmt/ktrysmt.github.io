@@ -104,12 +104,12 @@ vim.keymap.set("n", "<C-w>f", function()
   end
   vim.defer_fn(function()
     vim.cmd("Neotree action=focus reveal_file=% dir=" .. path)
-  end, 100)
+  end, 150)
 end, { silent = true })
 ```
 
-`<C-w>f`のほうを少し解説すると起動直後など`&ft`がNoneなら単にfiler表示、current bufferがあるときは非同期にdelay(100ms)をいれつつgit rootに移動しつつファイルの位置をfocs表示。
-`dir=`や`reveal_file=`で引数を直接指定しても表示とfocusが同時に走ると描画の関係上カーソルの移動が追いつかないことがあるので、delayをいれている。
+`<C-w>f`のほうを少し解説すると起動直後など`&ft`がNoneなら単にfiler表示、current bufferがあるときは非同期にdelayをいれつつgit rootに移動しつつファイルの位置をfocs表示。
+`dir=`や`reveal_file=`で引数を直接指定しても表示とfocusが同時に走るとsortをいじったことでカーソルの移動に描画が追いつかないことがあるので、delayをいれている。
 
 
 ## trashコマンド対応
@@ -141,6 +141,6 @@ window = {
 ```
 
 
-残タスクとしてはdelete時、insertモードで直接`<cr>`するとconfirmedがtrueにならず、一度`<esc>`や`<C-c>`でnormalモードにしてから`<cr>`する必要がある点。ここだけなんとかしたいが今日は時間切れ。また時間あるときに。
+残タスクとしてはrename/delete時、confirmのfloatウィンドウ上でinsertモード状態のまま`<cr>`するとconfirmedの値がtrueにならず、一度`<esc>`や`<C-c>`でnormalモードにしてから`<cr>`する必要がある点。ここだけなんとかしたいが今日は時間切れ。また時間あるときに。
 
 
