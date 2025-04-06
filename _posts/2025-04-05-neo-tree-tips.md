@@ -10,70 +10,70 @@ description: ""
 
 ### 自然順ソート
 
-vim-fernから微妙に不満だったのがディレクトリやフォルダのソート順がいわゆる自然順ではなかった点。
+[vim-fern](https://github.com/lambdalisue/vim-fern) から微妙に不満だったのがディレクトリやフォルダのソート順がいわゆる自然順ではなかった点。
 `exa` あらため `eza` はこのへんいい感じにやってくれるので余計に差が気になっていた。
 
-sortのカスタマイズ性なども踏まえneo-tree.nvimに移行しつつ設定を固めた。
+sortのカスタマイズ性なども踏まえ [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) に移行しつつ設定を固めた。
 
 natural sort のコードは以下
 
 ```lua
-      local function natural_sort(a, b)
-        local function tonumber_if_possible(s)
-          local num = tonumber(s)
-          if num then
-            return num
-          else
-            return s
-          end
+local function natural_sort(a, b)
+  local function tonumber_if_possible(s)
+    local num = tonumber(s)
+    if num then
+      return num
+    else
+      return s
+    end
+  end
+
+  local function split_by_number(s)
+    local parts = {}
+    local current_part = ""
+    for i = 1, #s do
+      local char = s:sub(i, i)
+      if char:match("%d") then
+        if current_part ~= "" and not current_part:match("%d") then
+          table.insert(parts, current_part)
+          current_part = ""
         end
-
-        local function split_by_number(s)
-          local parts = {}
-          local current_part = ""
-          for i = 1, #s do
-            local char = s:sub(i, i)
-            if char:match("%d") then
-              if current_part ~= "" and not current_part:match("%d") then
-                table.insert(parts, current_part)
-                current_part = ""
-              end
-            else
-              if current_part ~= "" and current_part:match("%d") then
-                table.insert(parts, tonumber(current_part))
-                current_part = ""
-              end
-            end
-            current_part = current_part .. char
-          end
-          if current_part ~= "" then
-            table.insert(parts, tonumber_if_possible(current_part))
-          end
-          return parts
+      else
+        if current_part ~= "" and current_part:match("%d") then
+          table.insert(parts, tonumber(current_part))
+          current_part = ""
         end
-
-        local parts_a = split_by_number(a.path)
-        local parts_b = split_by_number(b.path)
-
-        local len_a = #parts_a
-        local len_b = #parts_b
-        local min_len = math.min(len_a, len_b)
-
-        for i = 1, min_len do
-          local part_a = parts_a[i]
-          local part_b = parts_b[i]
-
-          if type(part_a) == "number" and type(part_b) == "number" then
-            if part_a ~= part_b then
-              return part_a < part_b
-            end
-          elseif part_a ~= part_b then
-            return tostring(part_a) < tostring(part_b)
-          end
-        end
-
-        return len_a < len_b
       end
+      current_part = current_part .. char
+    end
+    if current_part ~= "" then
+      table.insert(parts, tonumber_if_possible(current_part))
+    end
+    return parts
+  end
+
+  local parts_a = split_by_number(a.path)
+  local parts_b = split_by_number(b.path)
+
+  local len_a = #parts_a
+  local len_b = #parts_b
+  local min_len = math.min(len_a, len_b)
+
+  for i = 1, min_len do
+    local part_a = parts_a[i]
+    local part_b = parts_b[i]
+
+    if type(part_a) == "number" and type(part_b) == "number" then
+      if part_a ~= part_b then
+        return part_a < part_b
+      end
+    elseif part_a ~= part_b then
+      return tostring(part_a) < tostring(part_b)
+    end
+  end
+
+  return len_a < len_b
+end
 ```
 
 呼び出しは以下
@@ -98,13 +98,13 @@ require("neo-tree").setup({
 vim.keymap.set("n", "<C-e>", "<Cmd>Neotree left toggle<CR>", { silent = true })
 vim.keymap.set("n", "<C-w>f", function()
   local path = vim.fn.system("git rev-parse --show-toplevel")
-  if vim.bo.filetype == "" then
+  if vim.bo.filetype == "" or vim.bo.filetype == "oil" then
     vim.cmd("Neotree left")
     return
   end
   vim.defer_fn(function()
     vim.cmd("Neotree action=focus reveal_file=% dir=" .. path)
-  end, 150)
+  end, 170)
 end, { silent = true })
 ```
 
@@ -119,28 +119,39 @@ neo-treeはカスタムコマンドをセットしやすくなっているのも
 設定は[このへん](https://github.com/nvim-neo-tree/neo-tree.nvim/issues/202)を参考に。
 
 ```lua
-commands = {
-  trash = function(state)
-    local inputs = require("neo-tree.ui.inputs")
-    local path = state.tree:get_node().path
-    local _, name = utils.split_path(path)
+require("neo-tree").setup({
+  use_popups_for_input = false,
+  commands = {
+    trash = function(state)
+      local inputs = require("neo-tree.ui.inputs")
+      local path = state.tree:get_node().path
+      local _, name = utils.split_path(path)
 
-    local msg = string.format("Are you sure you want to trash '%s'? (y/n) ", name)
-    inputs.confirm(msg, function(confirmed)
-      if not confirmed then
-        return
-      end
-      vim.fn.system({"trash", vim.fn.fnameescape(path)})
-      require("neo-tree.sources.manager").refresh(state.name)
-    end)
-  end,
-},
-window = {
-  mappings = {
-    ["d"] = "trash",
+      local msg = string.format("Are you sure you want to trash '%s'? (y/n) ", name)
+      inputs.confirm(msg, function(confirmed)
+        if not confirmed then
+          return
+        end
+        vim.fn.system({"trash", path})
+        require("neo-tree.sources.manager").refresh(state.name)
+      end)
+    end,
+  },
+  window = {
+    mappings = {
+      ["d"] = "trash",
 ```
 
+add/delete/rename/copy時の小さいpopupウィンドウの使い勝手が悪い場合は `use_popups_for_input = false` を指定すればOK。
 
-残タスクとしてはrename/delete時、confirmのfloatウィンドウ上でinsertモード状態のまま`<cr>`するとconfirmedの値がtrueにならず、一度`<esc>`や`<C-c>`でnormalモードにしてから`<cr>`する必要がある点。ここだけなんとかしたいが今日は時間切れ。また時間あるときに。
+## mark and ope
 
+fernには `-` でマークを付けてまとめて削除したりできたがneo-treeにはそういう機能がないっぽい。
+仕方ないのでここは [oil.nvim](https://github.com/stevearc/oil.nvim) で対応。あまり使うことはないが特にファイルの一括renameや一括移動で便利。
+キーマップを設定してもいいがほとんど打たないものにマップしてももったいないので lexima でショートハンド程度に留める。
 
+```lua
+vim.cmd[[
+LeximaAlterCommand oi Oil<space>.<cr>
+]]
+```
