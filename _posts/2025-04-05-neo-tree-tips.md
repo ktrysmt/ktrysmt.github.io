@@ -89,7 +89,7 @@ require("neo-tree").setup({
   end,
 ```
 
-## focus表示とgit root
+### focus表示とgit root
 
 あとよくfiler出すと同時に git root に移動しつつcurrent bufferのファイルにfocusしたいのだが、これも非常にやりやすかった。
 キーマップを少し調整して以下のようになった。
@@ -112,7 +112,7 @@ end, { silent = true })
 `dir=`や`reveal_file=`で引数を直接指定しても表示とfocusが同時に走るとsortをいじったことでカーソルの移動に描画が追いつかないことがあるので、delayをいれている。
 
 
-## trashコマンド対応
+### trashコマンド対応
 
 今更感あるがtrash/trash-cliを最近は使うようにしているので、それも対応。
 neo-treeはカスタムコマンドをセットしやすくなっているのもいい。
@@ -144,7 +144,7 @@ require("neo-tree").setup({
 
 add/delete/rename/copy時の小さいpopupウィンドウの使い勝手が悪い場合は `use_popups_for_input = false` を指定すればOK。
 
-## mark and ope
+### mark and ope
 
 fernには `-` でマークを付けてまとめて削除したりできたがneo-treeにはそういう機能がないっぽい。
 仕方ないのでここは [oil.nvim](https://github.com/stevearc/oil.nvim) で対応。あまり使うことはないが特にファイルの一括renameや一括移動で便利。
