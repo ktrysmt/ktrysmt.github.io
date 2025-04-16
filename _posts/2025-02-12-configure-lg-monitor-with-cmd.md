@@ -18,7 +18,7 @@ description: "MS-DOSすぐ忘れそうなので備忘。"
 ```
 cd "C:\Program Files (x86)\LG Electronics\OnScreen Control\bin"
 for /f "delims=" %%a in ('.\OSCCLI.exe -c list ^| findstr /v "Monitor Display ID"') do set "var=%%a"
-".\OSCCLI.exe" -c brightness -t %var:~0,1% -o set 50
+".\OSCCLI.exe" -c brightness -t %var:~0,2% -o set 50
 ```
 
 あとはbatにしてタスクスケジューラで呼び出すなりランチャから呼び出すなり。
