@@ -19,20 +19,20 @@ description: ""
 個人ではgrokもよく使う。鮮度が求められる調べ物に関してはツイッターを検索対象に入れられる点がでかい。あとllama4もだいぶよい、個人でsonnet/geminiなりがratelimitにかかったときにたまに使う程度だが、別に普段遣いでも問題ない印象。
 ### MCP
 
-think mcp
-* 自作cmp。消費するコンテキストの少なさの割に確かに出力精度が安定する気がするので高頻度で使ってる
+[think mcp](https://github.com/ktrysmt/mcp-think-as)
+* 自作mcp。消費するコンテキストの少なさの割に確かに出力精度が安定する気がするので高頻度で使ってる
 * 後述のユースケースに合わせてシステムプロンプトを少しいじっている
 
-github mcp server
+[github mcp server](https://github.com/github/github-mcp-server)
 * コードベースに関する浅い調べ物をするときにかなり重宝する。
 * 利用しているOSSに関する挙動で気になるところがでてきたらソースコードを読む癖があるが、これのおかげでリーディングの負担が激減した。
 * より細かくファイルを特定した調査をしたいときや手元で自分でもなにかしたいときは普通にcloneして諸々開き直す
 
-aws docs server
+[aws docs server](https://github.com/awslabs/mcp?tab=readme-ov-file#aws-documentation-mcp-server)
 * これのおかげでawsサポートケース利用率が激減した。超絶便利。なにより応答が爆速なのが最高。
-* bottlerocketをよくいじるのだが、これにgithub mcpを加えてbottlerocket関係を参照するとかなり捗った印象がある。
+* bottlerocketをよくいじるのだが、これにgithub mcpを加えて色々調査指示を出すとたいぶ捗った。
 
-mcp script runner
+[mcp script runner](https://github.com/ktrysmt/mcp-script-runner)
 * 自作mcp。任意のファイルのstdoutをtool responseにできるのが便利。
 * .env対応したのでcredentialをexportしておけばcliも使えるようにしてある。書き込み権限があるかどうかはcredential次第なのと出力はツールとして使ったファイルの書き方次第なので制御しやすいのが気に入ってる。
 
