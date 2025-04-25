@@ -10,6 +10,6 @@ layout: top
 
 - [Twitter](https://twitter.com/{{ site.authorTwitter }})
 - [Github](https://github.com/{{ site.authorTwitter }})
-- [Blog (ja)]({{ site.blogTopUrl }})
+- [Blog (ja)](/blog/)
 - kotaro.yoshimatsu@gmail.com
 
