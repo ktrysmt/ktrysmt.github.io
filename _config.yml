@@ -8,7 +8,7 @@ lang: ja_JP
 aboutPage: true
 
 gems:
-  - jekyll-seo-tag
+  # - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
   - jekyll-redirect-from
@@ -47,4 +47,3 @@ defaults:
     values:
       layout: post
       use_toc: false
-      seo_description_max_words: 200
