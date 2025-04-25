@@ -47,3 +47,4 @@ defaults:
     values:
       layout: post
       use_toc: false
+      seo_description_max_words: 200
