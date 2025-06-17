@@ -1,15 +1,14 @@
 ---
 layout: post
-title: "mac と wsl でちゃんと true color に対応する"
+title: "mac や wls で true color に対応する"
 date: 2025-06-17 09:00:00 +0900
 categories: Tmux
 published: true
 use_toc: false
 ---
 
-mac と wsl でちゃんと true color に対応する
 
-neovimで virtual text なりをあれこれ設定していると地味に true color にしたほうが見え方的に都合がいいことが多く、重い腰を上げてちゃんと対応することに。
+neovimで virtual text なりをあれこれ設定していると true color にしたほうが目に優しい・見え方的に都合がいいことが多く重い腰を上げてちゃんと対応することに。
 
 ## 前提
 
@@ -22,9 +21,9 @@ neovimで virtual text なりをあれこれ設定していると地味に true 
 
 などなど。
 
-またターミナルマルチプレクサには相変わらず tmux を使っている。手癖になっちゃって乗り換えがだるい。
+ターミナルマルチプレクサには相変わらず `tmux` を使っている。手癖になってしまっていて乗り換えがだるい。
 
-なお混乱の元なので `$TERM` はzshrc,bashrcなどで自分で set しないように。
+また混乱の元なので `$TERM` はzshrc,bashrcなどで自分で set しないように。
 
 ## 共通確認コマンド
 
