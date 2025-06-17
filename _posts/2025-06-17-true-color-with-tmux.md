@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mac や wls で true color に対応する"
+title: "mac や wsl で true color に対応する"
 date: 2025-06-17 09:00:00 +0900
 categories: Tmux
 published: true
