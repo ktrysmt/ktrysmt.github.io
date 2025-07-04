@@ -38,33 +38,31 @@ source_profile = default
 EOF
 ```
 
-基本はこれでOKで、あとはaliasや関数で工夫。
-今回はあんまり意味がないかもだけど zsh なら global alias で設定しておくと展開して修正して実行したりとちょっと便利にできます([参考](https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html))。
+`~/.aws/credentials` は使わない。基本は以上でOKで、あとはaliasや関数で少し楽をする。
+
+aliasの設定例；
 
 ```
-alias -g awsvault_1="unset AWS_VAULT; aws-vault exec account1 --prompt=osascript -- "
-alias -g awsvault_2="unset AWS_VAULT; aws-vault exec account2 --prompt=osascript -d 12h -- "
+alias assume1="aws-vault exec account1 -s --prompt=osascript -- "
+alias assume2="aws-vault exec account1 -s --prompt=osascript -d 12h -- "
 ```
 
-手癖的におなじセッションで作業することが多くて `unset AWS_VAULT` も入れてしまってます。
-`-d` durationはassume先でもexpireの延長をしないと無意味なので設定を忘れないように。
-`--prompt=osascript` をつけるとターミナルに平文でトークンが残らないので少し良いです（気持ちの問題）。
+- `-d` durationはあらかじめassume先でexpire延長をしておかないと効果がないので注意。
+- `--prompt=osascript` をつけるとターミナル上に平文でトークンが残らないので少し良いです。
 
 ## 使い方
 
 ```sh
 # ワンショットで
-$ awsvault_1 aws s3 ls
+$ assume1 aws s3 ls
 
 # セッションとして
-$ awsvault_2 zsh
+$ assume2 zsh
 $ aws s3 ls
-$ aws iam list-groups # ...以下略
 ```
 
-## おわりに
+## その他
 
-SSOないしSAMLでというのも組織によってはあるとは思いますが、個人的にはことAWS（というかIaaS）に関してはあえて独立して管理していたほうがリスク分散になると考えてます。
-コーポレートとプロダクト（サービス）は晒されているリスクの種類とコンテキストが異なるため。
+クレデンシャルを平文ではなくkeychainに置けるのが最大のメリットですが、keychain timeoutがきつすぎると地味にストレスなので以下を参考に調整すると良いです。
 
-平文で置かないとか IAM User 直では使わないとかなんか色々説明すっ飛ばしてますが、ひとまずこれだけでセットアップは完了です。便利な世の中に感謝。
+* <https://qiita.com/minamijoyo/items/5ed3113434e51308ded1>
