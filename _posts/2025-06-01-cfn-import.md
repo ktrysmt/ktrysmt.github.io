@@ -44,6 +44,20 @@ aws cloudformation get-template-summary --template-body file://template.yaml
 ec2などカスタム名を持たない一部は使えないのでそういうときは諦めて手動で。
 なお `change-set-type CREATE` のとき限定になる。
 
+### --tags は同時に使えない
+
+リソースの変更に相当する？らしく同時には使えないので外すこと。
+cfn作成時はそれがわかるタグを慣習的に付けるのだが、ここだけ例外。あとでchange-setを別の理由で使うときに改めてつけること。
+
+### 特殊なステータス
+
+- create-change-setが通った直後: `REVIEW_IN_PROGRESS`
+- execute-change-setが通った直後: `IMPORT_COMPLETE`
+
+statusをフックに色々やるときは上記に注意。
+
+`REVIEW_IN_PROGRESS` はcreate-change-setされただけでリソースやtemplateは空っぽの状態なので、この状態でdelete-stackをしても実害はない。安全装置的扱い。
+
 ### 流れのおさらい
 
 1. describe, get-template-summary などで importしたいリソースを確認
