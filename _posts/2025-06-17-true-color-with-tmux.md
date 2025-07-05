@@ -30,7 +30,7 @@ neovimで virtual text なりをあれこれ設定していると true color に
 以下を打ってグラデーションが滑らかに出力されていればOK
 
 ```
-curl -s https://gist.githubusercontent.com/lifepillar/09a44b8cf0f9397465614e622979107f/raw/24-bit-color.sh | bash
+curl -s https://gist.githubusercontent.com/ktrysmt/8c32c571e4e2f114834dc63425b9f78e/raw/truecolor.sh | bash
 ```
 
 
