@@ -43,12 +43,13 @@ EOF
 aliasの設定例；
 
 ```
-alias assume1="aws-vault exec account1 -s --prompt=osascript -- "
-alias assume2="aws-vault exec account2 -s --prompt=osascript -d 12h -- "
+alias assume1="unset AWS_VAULT; aws-vault exec account1 -s --prompt=osascript -- "
+alias assume2="unset AWS_VAULT; aws-vault exec account2 -s --prompt=osascript -d 12h -- "
 ```
 
 - `-d` durationはあらかじめassume先でexpire延長をしておかないと効果がないので注意。
 - `--prompt=osascript` をつけるとターミナル上に平文でトークンが残らないので少し良いです。
+- 毎回unsetするのだるいので`unset AWS_VAULT` を入れておく。
 
 ## 使い方
 
