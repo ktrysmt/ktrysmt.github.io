@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "claude-codeのおかげでterminal引きこもり生活が復活した"
+title: "claude-codeのおかげでterminal引きこもり生活に舞い戻る"
 date: 2025-07-12 09:00:00 +0900
 categories: LLM
 published: true
@@ -13,9 +13,9 @@ use_toc: false
 
 `roo code`のrole切り替えやorchestratorが使いやすかったので長らく使っていましたが、terminalからvscodeに切り替えないといけないこととvscodeということでどうしてもGUIを要求されがちなこと、キーバインド設定が大変なことが不満でした。
 
-この辺の小さなストレスが`claude-code`によってだいぶ解消し、terminal引きこもり生活に舞い戻ることができました。おかげで最近はもう技術系タスクは`claude-code`一択です。
+この辺の小さなストレスが`claude-code`によってだいぶ解消し、terminal生活が再開しました。おかげで最近はもう技術系タスクは`claude-code`一択です。
 
-`claude-code`を使い倒すにあたってちょこちょこと調整した箇所があるので、それらを踏まえ今のところの状況をまとめておきます。
+`claude-code`向けにちょこちょこと調整した箇所があるので、それらを踏まえ今のところの状況をまとめておきます。
 
 ## vim plugin
 
@@ -24,17 +24,28 @@ use_toc: false
 - <https://github.com/kiddos/gemini.nvim>
 - <https://github.com/zbirenbaum/copilot.lua>
 
-`claude-code.nvim`はあまり使わないけど自身でもファイルを開いていて手直しをしたいときに使います。このプラグイン経由だとclaudeが更新したファイルの内容をバッファに反映してくれるのがよい。
-`avante.nvim`はビジュアルモードで選択してaskしたりeditしたりが便利なのでそこだけ使ってます。シグネチャのすぐ上にコメント書いてgeminiなりcopilotでauto completionさせてもいいが`avante.nvim`にはclaudeのmodelを当ててるので確率を高めたいときは`avante.nvim`、みたいにして使い分けてます。
+`claude-code.nvim`はあまり使わないけど自身でもファイルを開いていて手直しをしたいであろうときに使います。このプラグイン経由だとclaudeが更新したファイルの内容をバッファに反映してくれるのがよいです。
+`avante.nvim`はビジュアルモードで選択してaskしたりeditしたりが便利なのでそこだけ使ってます。シグネチャのすぐ上にコメント書いて`gemini`なり`copilot`で補完させてもいいですが、`avante.nvim`にはclaudeのmodelを当ててるので確率を高めたいときは`avante.nvim`、とりあえずだせればOKなら`gemini`か`copilot`、みたいにして使い分けてます。
 
-キーマップとコマンドの組み合わせでもうちょっと効率的な設定にはできそうですが、そこまでしてもあんまりリターンがなさげなので上記でやってます。
+キーマップとコマンドの組み合わせをちゃんとやれば依存プラグインをもうちょっと減らせそうですが、苦労の割にリターンが薄いので一旦雑に上記でやってます。
 
 ## terminal keybind
-- `ctrl + space`で強制的にIMEを英数モードに切り替え
-- `shift + enter`を`meta + enter`にremap
-- `esc`および`ctrl + c`を入力したらその直前に強制IME英数モードに切り替えてから`esc`および`ctrl + c`を改めて入力
+1. `shift + enter`を`meta + enter`にremap
+2. `ctrl + space`、`esc`および`ctrl + c`を入力したらその直前に強制IME英数モードに切り替えてから元のキーバインドを改めて入力
 
-windowsの場合は上記をkeyhacで、macosの場合はkarabiner-elementsで上記を設定してます。なおterminalは[wezterm](https://wezterm.org/)を愛用してます。
+1.の`meta + enter`は`claude-code`限定なのでterminal側で設定してます。なおterminalは[wezterm](https://wezterm.org/)を愛用してます。
+2.については処理がやや複雑なのでwindowsの場合は上記をkeyhac、macosの場合はkarabiner-elementsで設定してます。
+
+wezterm(windows/macos共通)の例
+```lua
+local wezterm = require 'wezterm';
+local act = wezterm.action
+return {
+  keys = {
+    { key = 'Enter', mods = 'SHIFT',        action = act.SendKey { key = 'Enter', mods = 'META' } },
+  }
+}
+```
 
 keyhacの例
 ```python
@@ -107,4 +118,4 @@ karabiner-elementsの例
 ### /think-with-4d
 - <https://github.com/ktrysmt/dotfiles/blob/master/.claude/commands/think-with-4d.md>
 
-4d methodology が汎用的に使えるっぽいのをredditかなにかで見かけたので色々比較しながらできるだけ抽象的に記述してます。gptとやり取りするとき特有の2手先を読むような思考系タスクのときのreasoningの中身を覗くと、わりと意図通りのthinking logがでてくれているのを確認できました。claudeで使うときはroo code時代のarchitectロールと同じような感じで、やや不確実性が残る状態でスタートするときの前処理として思考ログをコンテキストに残させるとき使っています。拡張思考モードになるように明示的に指示した限りではgptと同様thinking logにそれっぽい順序で出力していたし合意できる点が多かったので、まぁまぁワークしてそうです。
+4d methodology が汎用的に使えるっぽいのをredditかなにかで見かけたので色々比較しながらできるだけ抽象的に記述してます。gptとやり取りするとき特有の2手先を読むような思考系タスクのときのreasoningの中身を覗くと、わりと意図通りのthinking logがでてくれているのを確認できました。claudeで使うときは`roo code`のarchitectロールと同じような感じで、やや不確実性が残る状態でスタートするときの前処理として考察の経緯をコンテキストに残させるとき使っています。拡張思考モードになるように明示的に指示した限りではgptと同様thinking logにそれっぽい順序で出力していたし合意できる点が多かったので、まぁまぁワークしてそうです。
