@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Neovimのインサートモードで大文字・小文字を切り替え"
-date:  09:00:00 +0900
+date: 2025-07-05 09:00:00 +0900
 categories: Vim
 published: true
 use_toc: false
