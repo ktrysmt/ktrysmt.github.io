@@ -27,7 +27,7 @@ use_toc: false
 - [fzf](https://github.com/junegunn/fzf)/[fzy](https://github.com/jhawthorn/fzy)/[peco](https://github.com/peco/peco) ... これがないとかなりつらい。とにかくラク。`CTRL_T` に当てたりhistoryなどの絞り込みに
 - [jnv](https://github.com/ynqa/jnv) ... 絞り込み検索しつつjqのqueryをプレビューできる。たまに使うが複雑なjsonに出くわしたときは正直もうLLMに聞くほうが速くて効率が良くなってしまった。もうあまり使わないかも。
 - [trash](https://formulae.brew.sh/formula/trash) ... ゴミ箱系コマンド。復元できるならこれでなくてもなんでもいい。事故防止に。
-- [reviewit](https://github.com/yoshiko-pg/difit) ... PR作るほどでもない、個人でLLMとの対話のみでやってるときのセルフレビューで。
+- [difit](https://github.com/yoshiko-pg/difit) ... PR作るほどでもない、個人でLLMとの対話のみでやってるときのセルフレビューで。
 - [gh](https://cli.github.com/manual/) ... pull requestの番号で手元に落とせるのでレビューのとき便利。それ以外の用途だとLLMに雑にgithubいかせたいときに。
 - [tmux](https://github.com/tmux/tmux) ... もはや乗り換えるのがだるいだけっていう。
 - [neovim](https://neovim.io/) ... プラグイン/言語別のツールまで言い出すと膨大な量になってしまうのでそのへんは今回は割愛。
@@ -55,7 +55,7 @@ use_toc: false
 * [rectangle](https://rectangleapp.com/) ... Win+left,Win+rightの手癖がそのまま再現できる。
 * [karabiner-elements](https://karabiner-elements.pqrs.org/) ... 説明不要のキーマップカスタマイズ。macosメジャーバージョンアップを急ぐと壊れる可能性があるのでメジャーを上げるのは慎重に。macosに関してはhammerspoonのほうがluaで設定を書けるので自由度は上なのだが、たまに固まるのでやはり安定のkarabinerに落ち着く。
 * [linermouse](https://linearmouse.app/ja-JP/) ... マウスのポインタの動きの細かい制御など。加重が苦手なので線形にしたり移動距離を大きくしたり。
-* [macgesture](https://github.com/MacGesture/MacGesture) ... マウスジェスチャー
+* [macgesture](https://github.com/MacGesture/MacGesture) ... マウスジェスチャー。定番。
 ### Windows
 * [flow launcher](https://www.flowlauncher.com/) ... win用ランチャ。powertoysrunと同じwoxのforkらしい。powertoysrunより少し動作が軽いのとUIをいじれるのでこちらを採用。ueliもいいがflow launcherのほうが軽快だった。
 * [x-mouse button contorl](https://www.highrez.co.uk/downloads/XMouseButtonControl.htm) ... win用。マウスにマクロをセットできる。ホイール長押しでmacでいうミッションコントロール（ウィンドウを俯瞰で表示）にしたり、追加ボタンにキーマップやマクロを割り当てたり。
