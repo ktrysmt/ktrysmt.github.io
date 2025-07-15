@@ -31,10 +31,10 @@ use_toc: false
 
 ## terminal keybind
 1. `shift + enter`を`meta + enter`にremap
-2. `ctrl + space`、`esc`および`ctrl + c`を入力したらその直前に強制IME英数モードに切り替えてから元のキーバインドを改めて入力
+2. `ctrl + space`、`esc`および`ctrl + c`を入力したらその直前に強制的にIME英数モードに切り替えつつ元のキーバインドを改めて入力
 
-1.の`meta + enter`は`claude-code`限定なのでterminal側で設定してます。なおterminalは[wezterm](https://wezterm.org/)を愛用してます。
-2.については処理がやや複雑なのでwindowsの場合は上記をkeyhac、macosの場合はkarabiner-elementsで設定してます。
+1.の`meta + enter`は`claude-code`特有でプラットフォームを問わないのでterminal側で設定してます。なおterminalは[wezterm](https://wezterm.org/)を愛用してます。
+2.については処理がやや複雑なのでwindowsの場合はkeyhac、macosの場合はkarabiner-elementsで設定してます。
 
 wezterm(windows/macos共通)の例
 ```lua
