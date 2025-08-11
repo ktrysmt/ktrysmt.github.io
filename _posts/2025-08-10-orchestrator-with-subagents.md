@@ -13,14 +13,17 @@ use_toc: false
 
 ## TL;DR
 
-1. `/orchestrator` で命令
+1. カスタムコマンド `/orchestrator` で依頼
 2. 以下のagentが順番に処理
-  1. Research: `./.claude/agents/researcher.md`
-  2. Requirements: `./.claude/agents/fn-reqs.md`
-  3. Architecture: `./.claude/agents/architect.md`
-  4. Task Breakdown: `./.claude/agents/task-tailor.md`
-  5. TDD Implementation: `./.claude/agents/tdd.md`
-  6. Quality Assurance: `./.claude/agents/qa.md`
+  - Research: `./.claude/agents/researcher.md`
+  - Requirements: `./.claude/agents/fn-reqs.md`
+  - Architecture: `./.claude/agents/architect.md`
+  - Task Breakdown: `./.claude/agents/task-tailor.md`
+  - TDD Implementation: `./.claude/agents/tdd.md`
+  - Quality Assurance: `./.claude/agents/qa.md`
+
+* <https://github.com/ktrysmt/dotfiles/blob/master/.claude/commands/orchestrator.md>
+* <https://github.com/ktrysmt/dotfiles/tree/master/.claude/agents>
 
 agent間の情報連携は issue file を作らせ、agent同士で読み書きさせることでカバー。
 
