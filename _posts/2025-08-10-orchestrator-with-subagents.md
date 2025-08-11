@@ -82,11 +82,14 @@ output:
 - test scenario と mock requirement
 - task dependency mapping
 
+
 ### 5. TDD Agent (`@tdd`)
 role:
 - 厳密な Test-Driven Development による実装
 
-Kent Beck の TDD principle に従い、Red-Green-Refactor cycle を徹底。「Tidy First」approach により、structural change と behavioral change を分離し、code quality を維持しながら implementation を推進。
+`tdd` のネタ自体は以前の記事のもの(Kent Beck)を流用。
+
+* <https://ktrysmt.github.io/blog/retreat-to-the-terminal-with-claude-code/>
 
 output:
 - passing unit test を伴う実装済み component
