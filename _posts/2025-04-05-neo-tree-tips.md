@@ -95,21 +95,55 @@ require("neo-tree").setup({
 キーマップを少し調整して以下のようになった。
 
 ```lua
+local function detect_dir()
+  local path = vim.api.nvim_buf_get_name(0)
+  local stat = (vim.uv or vim.loop).fs_stat(path)
+
+  if stat and stat.type == "directory" then
+    return 1
+  elseif stat and stat.type == "file" then
+    return 0
+  else
+    return 2 -- unknown type
+  end
+end
 vim.keymap.set("n", "<C-e>", "<Cmd>Neotree left toggle<CR>", { silent = true })
 vim.keymap.set("n", "<C-w>f", function()
-  local path = vim.fn.system("git rev-parse --show-toplevel")
-  if vim.bo.filetype == "" or vim.bo.filetype == "oil" then
+  -- special
+  if vim.bo.filetype == "neo-tree" or vim.bo.filetype == "oil" or vim.bo.filetype == "git" then
     vim.cmd("Neotree left")
     return
   end
+
+  -- detect
+  flag = detect_dir()
+
+  -- dir or unknown
+  if flag == 1 then
+    vim.cmd("Neotree left reveal")
+    return
+  elseif flag == 2 then
+    vim.cmd("Neotree left")
+    return
+  end
+
+  -- file: git or ungit
+  dotgit = vim.fn.system("git rev-parse --show-toplevel")
+  if string.sub(dotgit, 1, 5) == "fatal" then
+    path = vim.fn.expand("%:p:h")
+    vim.cmd("Neotree action=focus reveal_file=% dir=.")
+    return
+  end
+
+  -- git
   vim.defer_fn(function()
-    vim.cmd("Neotree action=focus reveal_file=% dir=" .. path)
+    vim.cmd("Neotree action=focus reveal_file=% dir=" .. dotgit)
   end, 170)
 end, { silent = true })
 ```
 
-`<C-w>f`のほうを少し解説すると起動直後など`&ft`がNoneなら単にfiler表示、current bufferがあるときは非同期にdelayをいれつつgit rootに移動しつつファイルの位置をfocs表示。
-`dir=`や`reveal_file=`で引数を直接指定しても表示とfocusが同時に走るとsortをいじったことでカーソルの移動に描画が追いつかないことがあるので、delayをいれている。
+`<C-w>f`のほうを少し解説すると起動直後や特殊なbuffer,dirなら単にfiler表示、current bufferがあるときははまずgit配下かどうか判定し、その上でgit配下なら非同期にdelayをいれつつgit rootに移動しつつファイルの位置をfocs表示。
+delayについては、`dir=`や`reveal_file=`で引数を直接指定しても表示とfocusが同時に走るとsortをいじったことでカーソルの移動に描画が追いつかないことがあるので、100-200msくらいでカバー。
 
 
 ### trashコマンド対応
