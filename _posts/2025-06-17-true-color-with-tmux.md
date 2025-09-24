@@ -39,15 +39,15 @@ curl -s https://gist.githubusercontent.com/ktrysmt/8c32c571e4e2f114834dc63425b9f
 termiinfo
 ```
 brew install ncurses
-infocmp tmux-256color > tmux-256color.info
-sudo tic -xe tmux-256color tmux-256color.info
-rm tmux-256color.info
+infocmp xterm-256color > xterm-256color.info
+sudo tic -xe xterm-256color xterm-256color.info
+rm xterm-256color.info
 ```
 
 .tmux.conf
 ```
-set-option -g default-terminal "tmux-256color"
-set-option -ga terminal-overrides ',screen-256color:Tc'
+set-option -g default-terminal "xterm-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
 ```
 
 overridesは `*` でもいいのかも。
