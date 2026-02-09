@@ -57,7 +57,7 @@ $ echo '# Hello\n\n```mermaid\nflowchart LR\n    A --> B\n```' | mema
 beautiful-mermaid と marked, marked-temrminal を使わせてもらってます。
 beautiful-mermaid が gantt に未対応なのでそこだけ出力しませんが、それ以外はかなりきれいな ascii art として出してくれます。
 
-svg出力でもいいのですがterminal環境での画像表示は色々とストレスが多い領域なので作業中気軽にmermaidを視覚的に確認できる ascii art出力としました。
+svg出力でもいいのですがterminal環境での画像表示は色々とストレスが多い領域なので作業中気軽にmermaidを目視確認できる ascii art出力としました。
 github上でviewするときと体験が変わらないのが、脳みそ邪魔しなくていい感じです。
 
 
