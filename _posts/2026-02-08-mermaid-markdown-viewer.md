@@ -14,7 +14,7 @@ use_toc: false
 
 ## インストール
 
-mpm登録めんどいのでgithub直入れです。
+めんどいのでgithub直入れです。
 
 ```sh
 npm install -g ktrysmt/mema
