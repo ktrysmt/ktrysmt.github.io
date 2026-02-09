@@ -9,7 +9,7 @@ use_toc: false
 
 ## つくったもの
 
-[](https://github.com/ktrysmt/mema){:.card-preview}
+[](https://github.com/ktrysmt/termaid){:.card-preview}
 
 
 ## インストール
@@ -17,15 +17,15 @@ use_toc: false
 めんどいのでgithub直入れです。
 
 ```sh
-npm install -g ktrysmt/mema
+npm install -g ktrysmt/termaid
 # Or
-npm install -g git+https://github.com/ktrysmt/mema.git
+npm install -g git+https://github.com/ktrysmt/termaid.git
 ```
 
 ## 使い方
 
 ```
-$ mema test/test1.md
+$ termaid test/test1.md
 # Hello
 
 This is markdown with mermaid:
@@ -42,7 +42,7 @@ More text.
 stdinでも可
 
 ```
-$ echo '# Hello\n\n```mermaid\nflowchart LR\n    A --> B\n```' | mema
+$ echo '# Hello\n\n```mermaid\nflowchart LR\n    A --> B\n```' | termaid
 # Hello
 
     ┌───┐     ┌───┐
