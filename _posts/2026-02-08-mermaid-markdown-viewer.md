@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ターミナルでmermaidが埋め込まれたmarkdownを見やすくするcli"
+title: "mermaid入りのmarkdownをascii artでみるCLI"
 date: 2026-02-08 23:00:00 +0900
 categories: Mermaid
 published: true
