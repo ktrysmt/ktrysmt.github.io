@@ -14,12 +14,9 @@ use_toc: false
 
 ## インストール
 
-めんどいのでgithub直入れです。
 
 ```sh
-npm install -g ktrysmt/termaid
-# Or
-npm install -g git+https://github.com/ktrysmt/termaid.git
+npm install -g termaid-cli
 ```
 
 ## 使い方
