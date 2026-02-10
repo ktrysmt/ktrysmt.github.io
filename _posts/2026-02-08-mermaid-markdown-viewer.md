@@ -21,7 +21,19 @@ npm install -g termaid-cli
 
 ## 使い方
 
+````
+$ cat test/test1.md
+# Hello
+
+This is **markdown** with mermaid:
+
+```mermaid
+flowchart LR
+    A --> B
 ```
+
+More text.
+
 $ termaid test/test1.md
 # Hello
 
@@ -34,7 +46,7 @@ This is markdown with mermaid:
     └───┘     └───┘
 
 More text.
-```
+````
 
 stdinでも可
 
