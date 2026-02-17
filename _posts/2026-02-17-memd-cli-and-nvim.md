@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "memd-cliをneovim内で使いやすくするpluginを書いた"
-date: 2026-02-08 23:00:00 +0900
-categories: Mermaid
+date: 2026-02-26 23:59:00 +0900
+categories: Neovim
 published: true
 use_toc: false
 ---
