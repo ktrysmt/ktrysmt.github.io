@@ -9,14 +9,14 @@ use_toc: false
 
 ## つくったもの
 
-[](https://github.com/ktrysmt/termaid){:.card-preview}
+[](https://github.com/ktrysmt/memd){:.card-preview}
 
 
 ## インストール
 
 
 ```sh
-npm install -g termaid-cli
+npm install -g memd-cli
 ```
 
 ## 使い方
@@ -34,7 +34,7 @@ flowchart LR
 
 More text.
 
-$ termaid test/test1.md
+$ memd test/test1.md
 # Hello
 
 This is markdown with mermaid:
@@ -51,7 +51,7 @@ More text.
 stdinでも可
 
 ```
-$ echo '# Hello\n\n```mermaid\nflowchart LR\n    A --> B\n```' | termaid
+$ echo '# Hello\n\n```mermaid\nflowchart LR\n    A --> B\n```' | memd
 # Hello
 
     ┌───┐     ┌───┐
