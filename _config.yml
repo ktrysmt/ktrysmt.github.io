@@ -4,6 +4,7 @@ description: "ソフトウェアエンジニアリングやマネジメントな
 meta_description: "ソフトウェアエンジニアリングやマネジメントなど"
 
 lang: ja_JP
+timezone: Asia/Tokyo
 
 aboutPage: true
 
