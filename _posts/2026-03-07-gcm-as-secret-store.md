@@ -3,7 +3,7 @@ layout: post
 title: "Git Credential Managerをシークレットストアとして使う"
 date: 2026-03-07 00:01:00 +0900
 categories: Shell
-published: false
+published: true
 use_toc: false
 ---
 
