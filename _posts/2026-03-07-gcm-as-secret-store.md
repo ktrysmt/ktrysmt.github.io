@@ -7,9 +7,9 @@ published: true
 use_toc: false
 ---
 
-Git for Windowsに同梱されるGit Credential Manager (GCM) を、APIキー等の環境変数管理に流用する話。
+Git for Windowsに同梱されるGit Credential Manager (GCM) を、APIキー等の管理に流用する話。
 
-## 仕組み
+## 概要
 
 GCMは本来Git認証用だが、`protocol`/`host`/`username`/`password`の組み合わせで任意の値を保存できる。`protocol=custom`、`host=env`などてきとーに名前空間を切って、Git認証と衝突しないようにすればOK。
 
@@ -130,10 +130,6 @@ _gcm-confirm() {
 }
 ```
 
-### gcm-env の廃止
-
-旧版にあった`gcm-env`（確認なしで全キーを`export`する関数）は削除した。確認プロンプトなしで全シークレットを環境変数に展開するのはリスクが高い。
-
 ## おわり
 
-数が多いと無理だが２～３個くらいなら。無いよりマシって感じ。
+数が多いと無理だが２～３個とかちょっとした用途くらいなら。平文よりはマシな感じ。
