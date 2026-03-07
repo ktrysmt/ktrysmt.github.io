@@ -10,6 +10,6 @@ in local,
 ```
 mise install ruby 3.1
 mise use ruby@3.1
-gem install jekyll jemoji jekyll-mentions jekyll-redirect-from jekyll-sitemap jekyll-feed -N
-jekyll s -P 8888 -H 0.0.0.0
+bundle install
+bundle exec jekyll s -P 8888 -H 0.0.0.0
 ```

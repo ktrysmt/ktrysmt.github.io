@@ -8,8 +8,8 @@ timezone: Asia/Tokyo
 
 aboutPage: true
 
-gems:
-  # - jekyll-seo-tag
+plugins:
+  - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
   - jekyll-redirect-from
