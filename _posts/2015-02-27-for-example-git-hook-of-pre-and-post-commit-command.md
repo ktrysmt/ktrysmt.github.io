@@ -5,6 +5,11 @@ date: 2015-02-25 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "よく使うgit hookのpre-commitとpost-commitのスクリプト例。PHPのsyntaxチェック、masterブランチへのコミット禁止、マージ済みブランチの自動削除など。"
+tags:
+  - git
+  - php
+  - shell
 ---
 
 ときどき使うのでコピペ用にまとめ。

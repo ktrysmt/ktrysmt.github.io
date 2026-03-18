@@ -5,6 +5,11 @@ date: 2014-05-24 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "CentOSにGitビューアtigをインストールする方法。ソースからのビルドとrpmforgeパッケージを使った2つの手順を紹介"
+tags:
+  - tig
+  - git
+  - centos
 ---
 
 ## ソースからインストール

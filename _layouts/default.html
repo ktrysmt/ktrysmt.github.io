@@ -7,10 +7,10 @@
 
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.blogName }}</title>
   {% seo title=false %}
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.blogName }}" href="/blog/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.blogName }}" href="/feed.xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 </head>
 <body>
@@ -24,27 +24,16 @@
     {{ content }}
   </section>
 
-  <script src="/assets/js/highlight.pack.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="/assets/js/main.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
+  <script defer src="/assets/js/highlight.pack.js"></script>
+  <script defer src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-      microlink('.card-preview')
+    document.addEventListener("DOMContentLoaded", function() {
+      hljs.highlightAll();
+      if (typeof microlink !== 'undefined') {
+        microlink('.card-preview');
+      }
     });
-
-    tocbot.init({
-      tocSelector: '.js-toc',
-      contentSelector: '#post-body',
-      headingSelector: 'h1, h2, h3',
-      collapseDepth: 6,
-      onClick: false,
-    });
-  </script>
-
-  <script>
-    hljs.initHighlightingOnLoad();
   </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47087716-1"></script>
@@ -57,6 +46,3 @@
   </script>
 </body>
 </html>
-
-
-

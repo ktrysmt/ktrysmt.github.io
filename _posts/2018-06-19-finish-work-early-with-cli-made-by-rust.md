@@ -7,6 +7,11 @@ categories: Rust
 published: true
 use_toc: false
 description: "各種linuxコマンドをリッチで処理速度も早いRust製のCLIに置き換ると幸せになれるかもという話。タイトルが煽り気味で恐縮ですが、作業効率はわりかし上がると思うのでおすすめです。"
+tags:
+  - rust
+  - ripgrep
+  - cli-tools
+  - vim
 ---
 
 (2023/09/25追記)

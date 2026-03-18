@@ -5,6 +5,11 @@ date: 2014-02-28 15:09:08 +0900
 comments: true
 categories: Security
 published: true
+description: "CentOS6にClamAVをインストールし常駐ウイルススキャンを設定する手順。スキャンスクリプトの作成とcronによる定期実行の設定方法。"
+tags:
+  - centos
+  - linux
+  - security
 ---
 
 ClamAVを使うときのコピペ用まとめ。

@@ -5,6 +5,11 @@ date: 2014-09-20 15:09:08 +0900
 comments: true
 categories: Apache
 published: true
+description: "Apacheの.htaccessの便利な書き方まとめ。メンテナンス画面リダイレクト、LB経由のアクセス制限、UserAgentによる振り分けなど実用的な設定例を紹介"
+tags:
+  - apache
+  - web
+  - infrastructure
 ---
 
 ときどき使うのでとりとめなくまとめ

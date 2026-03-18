@@ -7,6 +7,10 @@ categories: Management
 published: true
 use_toc: false
 description: "インフラエンジニアリングの現場も重要な意思決定の連続ですが、日々の設計やツール・サービス選定にあたって意識している考え方があったので、言語化しました。"
+tags:
+  - infrastructure
+  - management
+  - devops
 ---
 
 

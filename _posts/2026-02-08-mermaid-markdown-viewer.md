@@ -5,6 +5,10 @@ date: 2026-02-08 23:00:00 +0900
 categories: Mermaid
 published: true
 use_toc: false
+description: "Mermaid記法を含むMarkdownをターミナル上でASCII artとしてプレビューできるCLIツール memd-cli の紹介。stdin対応でパイプ利用も可能。"
+tags:
+  - cli-tools
+  - node-js
 ---
 
 ## つくったもの

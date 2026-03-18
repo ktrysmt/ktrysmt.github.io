@@ -1,10 +1,16 @@
 ---
 layout: post
-title: "[bash]CentOSにpecoをインストール"
+title: "CentOSにpecoをインストールする"
 date: 2014-05-24 15:09:08 +0900
 comments: true
 categories: Golang
 published: true
+description: "CentOSにpecoをインストールしbashのCtrl+rにpeco連携のヒストリ検索を設定する方法。バイナリの導入手順と.bashrcの設定例を紹介"
+tags:
+  - peco
+  - bash
+  - centos
+  - cli-tools
 ---
 
 ## 追記（2014-09-06）pecoのバイナリを設置してパスを通すだけでいい

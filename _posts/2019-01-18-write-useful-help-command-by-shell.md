@@ -7,6 +7,10 @@ categories: Linux
 published: true
 use_toc: false
 description: '主にインフラオペレーションの文脈でMakefileを使うことは多いと思いますがそのときのhelp出力の話です。コマンド例を見やすく出力したり色付けしたりするなどのちょっとした小技を紹介します。'
+tags:
+  - shell
+  - cli-tools
+  - devops
 ---
 
 自分が使うためのコピペ用ですが、せっかくなので解説もしようかと思います。

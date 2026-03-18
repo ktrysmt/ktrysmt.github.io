@@ -6,7 +6,11 @@ comments: true
 categories: AWS
 published: true
 use_toc: false
-description: ""
+description: "アウトバウンドを閉じた環境でVPC Endpoint Interface Typeを使う手順と注意点をまとめます。SGのegress設定やGateway Typeとの違いも解説。"
+tags:
+  - aws
+  - security
+  - infrastructure
 ---
 
 地味にハマったのでメモです。

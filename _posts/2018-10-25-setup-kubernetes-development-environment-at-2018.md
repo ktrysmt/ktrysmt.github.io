@@ -6,7 +6,12 @@ comments: true
 categories: Kubernetes
 published: true
 use_toc: false
-description: ""
+description: "2018年版Kubernetes開発環境構築ガイド。Docker for MacやkubectxによるセットアップからHelm、kustomize、ネットワーク、ストレージなどの周辺ツールまで網羅的に解説。"
+tags:
+  - kubernetes
+  - docker
+  - aws
+  - helm
 ---
 
 今更感もありますが、備忘録もかねて最近のk8s開発環境まわりをまとめていきます。

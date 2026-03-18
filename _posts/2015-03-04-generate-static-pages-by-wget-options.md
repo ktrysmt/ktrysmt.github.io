@@ -5,6 +5,11 @@ date: 2015-03-01 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "wgetコマンドのオプションを活用して動的サイトから静的HTMLページを生成する方法。再帰取得やドメイン制限などのオプション解説。"
+tags:
+  - linux
+  - shell
+  - cli-tools
 ---
 
 html拡張子を付ける場合

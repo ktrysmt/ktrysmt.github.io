@@ -5,6 +5,11 @@ date: 2014-02-02 15:09:08 +0900
 comments: true
 categories: Windows
 published: true
+description: "WindowsでCygwinとConEmuを組み合わせたターミナル環境の構築方法。フォント、カラー、タブ操作、ウィンドウ分割などの設定を紹介"
+tags:
+  - windows
+  - shell
+  - cli-tools
 ---
 
 基本的にWindowsはLinuxな開発にあまり適していないので、さっさとVagrantなりVPSなりにログインしてしまうに限る。

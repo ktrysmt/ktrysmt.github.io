@@ -5,6 +5,11 @@ date: 2014-01-12 15:09:08 +0900
 comments: true
 categories: Vagrant
 published: true
+description: "Vagrantで共有フォルダのマウントに失敗する問題の解決策まとめ。VBoxGuestAdditionsの再インストールやネットワーク設定の修正方法を解説"
+tags:
+  - vagrant
+  - centos
+  - windows
 ---
 
 結論を言ってしまうと、Vagrantをバージョンアップするなら合わせてVirtualBoxも最新のものを再インストールしたほうがトラブルが少ないということ。

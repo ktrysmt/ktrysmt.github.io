@@ -5,6 +5,11 @@ date: 2015-04-15 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "git hookのpre-commitでphp-cs-fixerを自動実行しPSR-2準拠のコード整形を行う設定方法。インストールからhookスクリプトの記述例まで。"
+tags:
+  - php
+  - git
+  - cli-tools
 ---
 
 php-cs-fixerはphp5.3以上を要求するので注意。

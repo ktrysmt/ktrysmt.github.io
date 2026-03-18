@@ -5,7 +5,11 @@ date: 2023-09-10 21:30:00 +0900
 categories: Vim
 published: true
 use_toc: false
-description: ""
+description: "Neovimの設定をvimLからluaに書き換え、lazy.nvimの遅延読み込みで起動時間を100msから25msに短縮した手順とポイントを解説します。"
+tags:
+  - neovim
+  - editor
+  - performance
 ---
 
 luaに書き換えるのがだるくて移行を見送っていたのですが、[lazy.nvim](https://github.com/folke/lazy.nvim)の遅延読み込みが非常に優れているとのことで最近頑張って書き換えました。

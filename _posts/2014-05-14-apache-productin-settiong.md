@@ -5,6 +5,11 @@ date: 2014-05-14 15:09:08 +0900
 comments: true
 categories: Apache
 published: true
+description: "Apache本番環境向けの設定まとめ。ServerTokens、ServerSignature、preforkチューニング、バージョン情報の隠蔽方法を解説"
+tags:
+  - apache
+  - security
+  - performance
 ---
 
 ## Apacheのconfをプロダクション向けに調整するときの確認箇所

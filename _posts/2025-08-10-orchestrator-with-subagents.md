@@ -5,6 +5,11 @@ date: 2025-08-10 09:00:00 +0900
 categories: LLM
 published: true
 use_toc: false
+description: "Claude Codeのsubagentsを活用し、Research・Requirements・Architecture・TDD・QAの6段階で開発プロセスをエージェント化するオーケストレータの構築方法。"
+tags:
+  - llm
+  - mcp
+  - devops
 ---
 
 

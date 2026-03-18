@@ -7,6 +7,10 @@ categories: Zsh
 published: true
 use_toc: false
 description: 'powered_cd w/ fzf が大変便利で日々お世話になっているのですが、古いディレクトリパスをログから削除する術がなかったので、ちょっとコードをいじりました。'
+tags:
+  - zsh
+  - shell
+  - cli-tools
 ---
 
 

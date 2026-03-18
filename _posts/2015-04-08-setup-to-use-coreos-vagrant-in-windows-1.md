@@ -5,6 +5,12 @@ date: 2015-04-09 15:09:08 +0900
 comments: true
 categories: CoreOS
 published: true
+description: "Windows環境でcoreos-vagrantをセットアップしetcdを構築する手順。rsyncのインストールからetcdデーモンの起動と動作確認までを解説。"
+tags:
+  - coreos
+  - vagrant
+  - windows
+  - devops
 ---
 
 前回（<http://ktrysmt.github.io/blog/about-coreos-docker-golang-and-kocha/>）の続き。

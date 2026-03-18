@@ -5,6 +5,11 @@ date: 2016-12-26 09:00:00 +0900
 categories: Javascript
 published: true
 use_toc: false
+description: "Navigation Timing APIを軸にJavaScriptの実行タイミングを体系的に理解する。DOMContentLoadedやwindow.onloadの違いとブラウザの処理フローを詳しく解説。"
+tags:
+  - javascript
+  - web
+  - performance
 ---
 
 恥ずかしながら`$(document).ready()`や`window.onload`、`document.addEventListener('DOMContentLoaded')`などそれぞれの実行タイミングの違いを正確に理解できていなかったのですが、調べていくうちにNavigation Timingを理解しておいたほうが後々捗りそうだと思い至り、Navigation Timing周辺の情報と合わせ調べた内容を記事にしてみました。

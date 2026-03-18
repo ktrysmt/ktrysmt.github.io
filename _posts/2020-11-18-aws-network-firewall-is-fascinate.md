@@ -7,6 +7,10 @@ categories: Security
 published: true
 use_toc: false
 description: "久しぶりにテンション上がるニュースが出たので野次馬的にまとめていきます。"
+tags:
+  - aws
+  - security
+  - infrastructure
 ---
 
 AWS Network Firewallについてです。

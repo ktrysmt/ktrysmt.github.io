@@ -5,7 +5,11 @@ date: 2025-04-03 22:30:00 +0900
 categories: LLM
 published: true
 use_toc: false
-description: ""
+description: "シェルスクリプトを手軽にMCPサーバーのツールとして公開できる自作MCPの紹介。設定はスクリプトをフォルダに置くだけで即利用可能です。"
+tags:
+  - llm
+  - mcp
+  - cli-tools
 ---
 
 [](https://github.com/ktrysmt/mcp-script-runner){:.card-preview}

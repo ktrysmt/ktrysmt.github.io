@@ -5,6 +5,11 @@ date: 2015-03-03 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "PHPのプロファイリング環境構築まとめ。Chrome Logger、XHProfのインストールと設定、auto_prepend_fileを使った自動プロファイリングの方法を解説。"
+tags:
+  - php
+  - performance
+  - apache
 ---
 
 便利な設定をまとめてメモ。

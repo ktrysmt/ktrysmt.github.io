@@ -7,6 +7,11 @@ categories: Kubernetes
 published: true
 use_toc: false
 description: 'Helmを使ってKubernetesクラスタにConcourseをデプロイする方法や、Chartに定義されている各種オプションの基礎的な部分についてまとめました。'
+tags:
+  - kubernetes
+  - helm
+  - concourse
+  - ci-cd
 ---
 
 執筆時の各種バージョンは以下です。

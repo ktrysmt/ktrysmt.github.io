@@ -5,6 +5,11 @@ date: 2014-02-05 15:09:08 +0900
 comments: true
 categories: NodeJS
 published: true
+description: "MEAN Stack(MongoDB, Express, AngularJS, Node.js)のインストール手順まとめ。nvm、MongoDB、bower、Gruntの導入からmean.ioの起動まで"
+tags:
+  - javascript
+  - node-js
+  - web
 ---
 
 やろうやろうと思って出来なかったmean、

@@ -5,6 +5,11 @@ date: 2014-09-20 15:09:08 +0900
 comments: true
 categories: Apache
 published: true
+description: "Apacheのhttpd.confで不要なLoadModuleをコメントアウトする際の参考設定例。必要最小限のモジュール構成を紹介"
+tags:
+  - apache
+  - linux
+  - performance
 ---
 
 

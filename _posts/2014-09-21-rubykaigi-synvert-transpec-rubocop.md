@@ -5,6 +5,10 @@ date: 2014-09-20 15:09:08 +0900
 comments: true
 categories: Ruby
 published: true
+description: "RubyKaigiで話題になったRubyツールのまとめ。synvert、transpec、rubocopの紹介とGitHubリポジトリへのリンク集"
+tags:
+  - ruby
+  - testing
 ---
 
 あとでインストールして使ってみる。

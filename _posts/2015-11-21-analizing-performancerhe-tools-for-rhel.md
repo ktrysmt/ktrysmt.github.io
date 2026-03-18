@@ -5,6 +5,13 @@ date: 2015-11-21 15:09:08 +0900
 comments: true
 categories: CentOS
 published: true
+description: "RHEL/CentOS向けパフォーマンス解析ツールまとめ。dstat、iftop、iotop等のOS系ツールとpt-query-digest、innotop、kataribeのMySQL/Web系ツールを紹介。"
+tags:
+  - centos
+  - linux
+  - mysql
+  - nginx
+  - performance
 ---
 
 よく使うツールのまとめ。

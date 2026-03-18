@@ -5,6 +5,11 @@ date: 2015-04-08 15:09:08 +0900
 comments: true
 categories: Windows
 published: true
+description: "WindowsのGit BashでMinGWのコマンドを使えるようにする設定方法。PATHを通すだけでrsyncやgcc等のツールが利用可能になる。"
+tags:
+  - git
+  - windows
+  - shell
 ---
 
 通常はGit BashにはMinGWで使える色々なコマンドが使えない。かといってMinGW一本化するとGitのバージョンが古かったりして困ったりもする。

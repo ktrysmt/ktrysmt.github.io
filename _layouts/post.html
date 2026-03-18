@@ -3,6 +3,9 @@ layout: default
 archive: true
 ---
 
+<!-- Breadcrumb -->
+{% include breadcrumb.html %}
+
 <!-- Header -->
 <header class="post-header">
     <h1>{{ page.title }}</h1>
@@ -37,6 +40,16 @@ archive: true
 
 <!-- Recent post lists -->
 {% include recent-post-list.html %}
+<hr>
+
+<!-- Tags -->
+{% if page.tags.size > 0 %}
+<div class="post-tags">
+  {% for tag in page.tags %}
+    <a href="/tags/#{{ tag }}" class="tag">{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}
 <hr>
 
 <!-- Post meta -->

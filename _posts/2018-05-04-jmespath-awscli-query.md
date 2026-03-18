@@ -7,6 +7,10 @@ comments: true
 published: true
 description: "書き方に少々クセがあるのが難点ですが、使いこなすとワンコマンドでだいたい事足りるようになるのでCIなどで助かります。awscliを使うひとは覚えておいて損はないです。"
 categories: AWS
+tags:
+  - aws
+  - cli-tools
+  - shell
 ---
 
 JMESPathのリファレンスは以下です。

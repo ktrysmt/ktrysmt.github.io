@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "[CentOS] OctopressのインストールとGithubPagesでの運用を試す"
+title: "CentOSでOctopressをインストールしGitHub Pagesで運用する"
 date: 2013-12-24 08:47:56 +0000
 comments: true
 categories: Ruby
-
+description: "CentOS 6にOctopressをインストールしGitHub Pagesで運用する手順。rvmによるRubyセットアップから記事作成・デプロイまでを解説"
+tags:
+  - ruby
+  - git
+  - centos
 ---
 
 ためしにやってみた。RubyやGem、Githubに慣れるのも兼ねて。

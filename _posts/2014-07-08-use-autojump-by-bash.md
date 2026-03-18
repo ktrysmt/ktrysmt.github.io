@@ -5,6 +5,10 @@ date: 2014-05-24 15:09:08 +0900
 comments: true
 categories: Bash
 published: true
+description: "bashでautojumpを使ってディレクトリ移動を効率化する方法。インストールから.bashrcの設定、基本的な使い方までを紹介"
+tags:
+  - bash
+  - cli-tools
 ---
 
 ## install

@@ -5,6 +5,11 @@ date: 2014-05-24 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "psshとsedを組み合わせて複数サーバのファイルを一括置換する方法。psshのインストールからノードリスト作成、実行手順までを紹介"
+tags:
+  - linux
+  - shell
+  - devops
 ---
 
 本番環境の状態を変更するなど時代と逆行しているが、必要なときもあったりするのでメモ。

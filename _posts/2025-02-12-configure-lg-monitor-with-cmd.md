@@ -6,6 +6,9 @@ categories: Windows
 published: true
 use_toc: false
 description: "MS-DOSすぐ忘れそうなので備忘。"
+tags:
+  - windows
+  - cli-tools
 ---
 
 ヘルプファイルがおよそ以下にある（と思われる）のでこれを参照する。パスが違う場合はeverythingなどで検索。

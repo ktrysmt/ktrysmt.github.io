@@ -5,6 +5,11 @@ date: 2015-12-06 15:09:08 +0900
 comments: true
 categories: Tmux
 published: true
+description: "WindowsとOSXでtmuxのコピーバッファをクリップボードに連携する設定方法。MSYS2のcopy-pipeとreattach-to-user-namespaceの使い方を解説。"
+tags:
+  - tmux
+  - windows
+  - macos
 ---
 
 Windows、OSX最近両方使うようになった。  

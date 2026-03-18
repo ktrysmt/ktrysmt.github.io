@@ -7,6 +7,10 @@ categories: CI/CD
 published: true
 use_toc: false
 description: 'お仕事でConcourseCIを建てたり運用したりすることが多いのですが、先日改めてこれを解説する機会があり、基本的な操作方法を軽く解説を添えつつまとめてみました。'
+tags:
+  - concourse
+  - ci-cd
+  - devops
 ---
 
 構築方法や運用ノウハウみたいなものは今回は書いていません、別記事で上げたいと思います。

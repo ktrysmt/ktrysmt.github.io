@@ -5,6 +5,10 @@ date: 2014-09-27 15:09:08 +0900
 comments: true
 categories: Windows
 published: true
+description: "Cygwinの.minttyrcを編集してカラースキーマを変更する方法。落ち着いた色味のカスタムカラー設定例を紹介"
+tags:
+  - windows
+  - shell
 ---
 
 `.minttyrc`を編集するといろいろ設定を変えられることを知った。

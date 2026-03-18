@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "[Git] git/hooks/post-commitで、commitしたら自動でリモートにPushする"
+title: "Gitのpost-commitフックでcommit時に自動pushする"
 date: 2014-10-01 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "Gitのpost-commitフックでcommit時に自動でリモートにPushする設定方法。push.default、upstream設定、Bitbucketへの接続についても解説"
+tags:
+  - git
+  - devops
 ---
 
 ソースコードコミットしたらBitbucketに自動プッシュさせたい。

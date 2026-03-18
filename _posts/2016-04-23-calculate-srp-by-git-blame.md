@@ -5,6 +5,10 @@ date: 2016-04-23 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "git blameを使ってSRP(単一責任原則)を定量的に算出する方法を紹介。コミット数・行数・ユーザー数でmultiple sortする改良版スクリプトも掲載。"
+tags:
+  - git
+  - shell
 ---
 
 [git blameによるSRP（単一責任原則）の定量化][L1] が便利だったので早速自分の環境に組み込んで使ってる。

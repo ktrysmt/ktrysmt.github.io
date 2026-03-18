@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "[bash] Gitのコマンドやブランチ名を入力補完"
+title: "BashでGitコマンドやブランチ名を入力補完する"
 date: 2014-02-02 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "bashでGitのコマンドやブランチ名をタブ補完する設定方法。CentOSへのGit 1.8インストールからgit-completionとgit-promptの導入手順を解説"
+tags:
+  - git
+  - bash
+  - centos
 ---
 
 

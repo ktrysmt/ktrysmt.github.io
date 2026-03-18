@@ -5,6 +5,11 @@ date: 2015-10-07 15:09:08 +0900
 comments: true
 categories: Cassandra
 published: true
+description: "CentOS6にCassandra v2.2をインストールする手順。DataStaxリポジトリの設定、nodetoolによるノード管理、cqlshでのCQL操作方法を紹介。"
+tags:
+  - cassandra
+  - centos
+  - linux
 ---
 
 ## Install

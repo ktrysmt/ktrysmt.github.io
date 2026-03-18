@@ -26,14 +26,27 @@ domain_name: 'https://ktrysmt.github.io'
 
 url:            'https://ktrysmt.github.io'
 blogTopUrl:        'https://ktrysmt.github.io/blog/'
-author:         'ktrysmt'
+author:
+  name: Kotaro Yoshimatsu
+  twitter: ktrysmt
+  url: https://github.com/ktrysmt
 authorTwitter:  'ktrysmt'
 authorFullName: 'Kotaro Yoshimatsu'
 authorRealName: 'Kotaro Yoshimatsu'
 twitter:
   username: ktrysmt
+  card: summary_large_image
+social:
+  name: Kotaro Yoshimatsu
+  links:
+    - https://twitter.com/ktrysmt
+    - https://github.com/ktrysmt
 
 permalink:       /blog/:title/
+exclude:
+  - assets/static/contenteditable.html
+  - google448087d1929cfb55.html
+
 defaults:
   -
     scope:
@@ -48,3 +61,4 @@ defaults:
     values:
       layout: post
       use_toc: false
+      image: /assets/images/og-default.png

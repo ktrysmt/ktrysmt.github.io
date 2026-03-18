@@ -5,7 +5,9 @@ date: 2023-01-01 00:00:00 +0900
 categories: Health
 published: true
 use_toc: false
-description: ""
+description: "2022年から始めた筋トレの知見を総まとめ。動機づけ・習慣化・ルーチン構築・食事管理・タンパク質摂取量の目安など、初心者向けに実践的な情報を紹介します。"
+tags:
+  - management
 ---
 
 久々のブログ投稿。少し前から筋トレを始めたので執筆のリハビリがてらの雑記です。

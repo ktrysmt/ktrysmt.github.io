@@ -7,6 +7,10 @@ categories: Kubernetes
 published: true
 use_toc: false
 description: '最近kopsをよく使うようになったので、備忘録代わりに基本的な操作方法や主要なオプションの解説などをまとめました。'
+tags:
+  - kubernetes
+  - aws
+  - infrastructure
 ---
 
 

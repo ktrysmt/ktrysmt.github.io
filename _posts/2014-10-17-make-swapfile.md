@@ -5,6 +5,10 @@ date: 2014-10-18 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "Linuxサーバーにスワップファイルを作成する手順。dd、mkswap、swaponコマンドとfstabへの永続化設定をコピペ用にまとめた備忘録"
+tags:
+  - linux
+  - infrastructure
 ---
 
 たまに必要になるのでコピペ用にメモ。

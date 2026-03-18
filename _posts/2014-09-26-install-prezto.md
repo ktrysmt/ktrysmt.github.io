@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "[CentOS] oh-my-zshが重いのでpreztoをインストールする"
+title: "oh-my-zshが重いのでpreztoに乗り換える"
 date: 2014-09-23 15:09:08 +0900
 comments: true
 categories: Zsh
 published: true
+description: "oh-my-zshが重いためCentOSにpreztoをインストールする手順。zshのビルドからpreztoの導入、既存設定の退避とアップデート方法まで解説"
+tags:
+  - zsh
+  - centos
+  - shell
 ---
 
 

@@ -5,6 +5,9 @@ date: 2015-08-03 15:09:08 +0900
 comments: true
 categories: Golang
 published: true
+description: "GoでBitbucket REST API v2.0に対応したライブラリgo-bitbucketを作成。メソッドチェーン風のAPI操作とstructやinterfaceの学びをまとめた。"
+tags:
+  - golang
 ---
 
 go-bitbucketというgoで使えるbitbucketライブラリを書きました。

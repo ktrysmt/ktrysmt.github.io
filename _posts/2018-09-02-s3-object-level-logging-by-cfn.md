@@ -7,6 +7,10 @@ categories: AWS
 published: true
 use_toc: false
 description: "CloudTrailをCFnで書くことになるんですが、ReadWriteTypeのNoneを選びたいところ実はNoneは無いのです。その対処法です。"
+tags:
+  - aws
+  - infrastructure
+  - security
 ---
 
 

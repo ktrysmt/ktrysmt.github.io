@@ -5,6 +5,11 @@ date: 2015-02-21 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "grep、xargs、sedを組み合わせた便利なワンライナー集。文字列置換、リモートのマージ済みブランチ削除、アクセスログのIP集計などを紹介。"
+tags:
+  - linux
+  - shell
+  - cli-tools
 ---
 
 ## grepして出てきた文字列を置換

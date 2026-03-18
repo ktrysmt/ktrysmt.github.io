@@ -5,6 +5,11 @@ date: 2018-04-30
 categories: Rust
 published: true
 use_toc: false
+description: "ripgrep(rg)でinclude/excludeするglobオプションの使い方と注意点。シングルクォートや正規表現オプションの組み合わせ方も紹介。"
+tags:
+  - ripgrep
+  - rust
+  - cli-tools
 ---
 
 ### コード

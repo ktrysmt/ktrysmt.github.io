@@ -5,6 +5,9 @@ date: 2020-03-23
 categories: Chrome
 published: true
 use_toc: false
+description: "ChromeのアドレスバーからDeepL翻訳を即座に呼び出すカスタム検索エンジンの設定方法を紹介します。Google Translateからの移行にも対応。"
+tags:
+  - web
 ---
 
 久々の投稿なので、リハビリ代わりに軽いものを。

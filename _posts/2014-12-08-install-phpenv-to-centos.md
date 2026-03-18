@@ -5,6 +5,11 @@ date: 2014-12-08 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "CentOS6にphpenvとphp-buildをインストールしPHPのバージョン管理を行う手順。依存ライブラリの導入からPHP5.5のインストールまで解説"
+tags:
+  - php
+  - centos
+  - linux
 ---
 
 昔 phpenv + phpbuild でのセットアップで何かにコケて挫折していました。

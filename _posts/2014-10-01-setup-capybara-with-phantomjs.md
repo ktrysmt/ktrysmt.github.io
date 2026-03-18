@@ -5,6 +5,11 @@ date: 2014-09-27 15:09:08 +0900
 comments: true
 categories: Ruby
 published: true
+description: "CentOS6でPhantomJSとCapybaraを使ったRubyテスト環境を構築する手順。rbenvによるRubyインストール、Gemfile作成、依存ライブラリの導入まで解説"
+tags:
+  - ruby
+  - testing
+  - centos
 ---
 
 環境はCentoOS6 です。

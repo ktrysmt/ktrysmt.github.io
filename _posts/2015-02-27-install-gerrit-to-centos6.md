@@ -5,6 +5,11 @@ date: 2015-02-27 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "CentOS6にGerritコードレビューツールをインストールする手順。Java7のセットアップからGerritのwar配備、SSH設定までを解説。"
+tags:
+  - git
+  - centos
+  - linux
 ---
 
 ## Install Java

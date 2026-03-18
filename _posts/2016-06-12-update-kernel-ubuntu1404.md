@@ -5,6 +5,11 @@ date: 2016-06-12 15:09:08 +0900
 comments: true
 categories: Ubuntu
 published: true
+description: "Ubuntu 14.04のKernelを3.19にアップグレードする手順を解説。Docker関連OSSを利用するために必要なカーネル更新をdpkgで実施する方法。"
+tags:
+  - linux
+  - ubuntu
+  - docker
 ---
 
 Dockerを駆使したOSSを触るようになると上げねばならなくなってくる。

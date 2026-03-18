@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "add 3rd repositories to centos 6"
+title: "CentOS 6にサードパーティリポジトリを追加する"
 date: 2015-06-29 15:09:08 +0900
 comments: true
 categories: CentOS
 published: true
+description: "CentOS6にEPEL、Remi、RPMforgeのサードパーティyumリポジトリを追加するコピペ用コマンドまとめ。"
+tags:
+  - centos
+  - linux
 ---
 
 もう何度も使ってるがいい加減コピペでほしくなるのでそれ用に立てることに。

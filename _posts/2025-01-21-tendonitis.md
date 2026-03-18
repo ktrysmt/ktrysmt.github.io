@@ -6,6 +6,8 @@ categories: Health
 published: true
 use_toc: false
 description: "愛用していたロジクール g300s/g300sr がしばらく前に廃盤となり、確保していた予備機もほどなく壊れ、いよいよ追い詰められ彷徨ううち入力デバイス選びや使い方の最適解がわかってきたのでまとめます。"
+tags:
+  - performance
 ---
 
 

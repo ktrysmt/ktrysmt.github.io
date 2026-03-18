@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "[CentOS] vsftpdインストールと設定まとめ"
+title: "CentOSにvsftpdをインストールして設定する"
 date: 2014-09-06 15:09:08 +0900
 comments: true
 categories: CentOS
 published: true
+description: "CentOSにvsftpdをインストールしFTPサーバーを構築する手順。設定ファイルの編集コマンドをコピペで使えるようにまとめた備忘録"
+tags:
+  - centos
+  - linux
+  - infrastructure
 ---
 
 面倒なのでコピペで運用できるようにした。

@@ -1,0 +1,14 @@
+---
+---
+
+User-agent: *
+Allow: /
+Disallow: /assets/static/
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://ktrysmt.github.io/sitemap.xml

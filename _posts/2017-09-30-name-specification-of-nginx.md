@@ -7,6 +7,10 @@ categories: Nginx
 published: true
 use_toc: false
 description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。"
+tags:
+  - nginx
+  - aws
+  - infrastructure
 ---
 
 Microservicesが市民権を得てきた昨今，特にAWSのELB等をInternalなロードバランサとして使うことも当たり前になり，ハマるひとも多かったのではないでしょうか。私も漏れなくハマりまして，以前遭遇した時はNginxのバグではないかと疑っていたのですが，よく調べたらどうもこの辺りの挙動は仕様のようです。

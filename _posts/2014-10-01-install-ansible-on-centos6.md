@@ -5,6 +5,12 @@ date: 2014-10-02 15:09:08 +0900
 comments: true
 categories: Ansible
 published: true
+description: "CentOS6にAnsibleをインストールし構成管理を始める手順。EPELリポジトリ追加、hostsとplaybookの書き方、includeによるファイル分割やDry-Runまで解説"
+tags:
+  - ansible
+  - centos
+  - devops
+  - infrastructure
 ---
 
 環境はCentOS 6.5 x86_64です。

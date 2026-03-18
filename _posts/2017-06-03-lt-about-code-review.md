@@ -7,6 +7,10 @@ categories: Zsh
 published: true
 use_toc: false
 description: "作業効率化のためのいろいろな工夫をコードレビューの観点でまとめてみました。"
+tags:
+  - vim
+  - zsh
+  - git
 ---
 
 

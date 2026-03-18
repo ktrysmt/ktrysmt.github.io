@@ -5,6 +5,11 @@ date: 2015-07-01 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "PHPアクセラレータの設定まとめ。PHP5.5以上のopcache+APCuとPHP5.4以下のAPC設定例、pharファイルとの相性問題の対処法を解説。"
+tags:
+  - php
+  - performance
+  - apache
 ---
 
 ## php5.5以上の場合 → opcache+APCu

@@ -7,6 +7,10 @@ categories: Rust
 published: true
 use_toc: false
 description: "開発に必要な基本セットがだいたい揃ったっぽいのでまとめました"
+tags:
+  - rust
+  - vim
+  - ubuntu
 ---
 
 Rustupのおかげで開発環境がだいぶ整ってきましたね。

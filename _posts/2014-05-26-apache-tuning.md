@@ -5,6 +5,11 @@ date: 2014-05-26 15:09:08 +0900
 comments: true
 categories: Apache
 published: true
+description: "Apache preforkモードのチューニング方法。メモリ消費量からMaxClientsを算出する手順とServer-Pool設定のポイントを解説"
+tags:
+  - apache
+  - performance
+  - linux
 ---
 
 ## preforkの場合

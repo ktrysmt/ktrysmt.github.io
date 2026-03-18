@@ -5,6 +5,11 @@ date: 2015-04-19 15:09:08 +0900
 comments: true
 categories: Vim
 published: true
+description: "neocomplete-phpが重いため辞書ファイル方式に切り替えてPHP補完を軽量化する方法。辞書生成からvimrcの設定までを解説。"
+tags:
+  - vim
+  - php
+  - editor
 ---
 
 <http://ktrysmt.github.io/blog/update-vim-7.4/>の続き。

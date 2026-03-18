@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "[CentOS6] 不要なデーモンを止めてメモリを節約する"
+title: "CentOS 6で不要なデーモンを止めてメモリを節約する"
 date: 2014-05-24 15:09:08 +0900
 comments: true
 categories: CentOS
 published: true
+description: "CentOS 6で不要なデーモンを停止しメモリを節約する方法。chkconfigによるサービス無効化とコンソール数の削減手順を紹介"
+tags:
+  - centos
+  - linux
+  - performance
 ---
 
 ## 不要なデーモンを止めます

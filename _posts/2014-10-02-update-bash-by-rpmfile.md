@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "[Bash] yumでバージョンアップできない"
+title: "yumでBashをバージョンアップできないときの対処法"
 date: 2014-10-01 15:09:08 +0900
 comments: true
 categories: Bash
 published: true
+description: "yumでBashをバージョンアップできない場合にRPMファイルを直接取得してアップデートする手順。Shellshock脆弱性の検証コマンドも紹介"
+tags:
+  - bash
+  - centos
+  - security
 ---
 
 理由としてはyum repositoryの向け先に問題があるかサーバに登録してるrepositoryにbashのアップデートが行き渡っていないか。

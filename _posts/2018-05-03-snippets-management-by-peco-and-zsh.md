@@ -7,6 +7,11 @@ categories: Zsh
 published: true
 use_toc: false
 description: "（pecoとzshを使っている人にとっては）かんたんです。"
+tags:
+  - peco
+  - zsh
+  - shell
+  - cli-tools
 ---
 
 ### 手順

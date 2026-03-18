@@ -5,6 +5,10 @@ date: 2014-01-23 05:52:07 +0000
 comments: true
 categories: Windows
 published: true
+description: "ThinkPad X1 CarbonでCPUが遅くなる原因と対処法。Windows電源オプションの省電力モードによるCPUパワーセーブの解除方法を解説"
+tags:
+  - windows
+  - performance
 ---
 
 購入してからそれほど日が経っていないのに、Chromeのタブをたくさん開くとすぐに遅くなる。

@@ -5,6 +5,11 @@ date: 2014-05-24 12:48:21 +0000
 comments: true
 categories: Git
 published: true
+description: "CentOSにGit 1.8をソースからコンパイルしてインストールする手順。yumでは1.7系までのため手動ビルドが必要"
+tags:
+  - git
+  - centos
+  - linux
 ---
 
 yumでのインストールだと1.7系までみたいなので、1.8は手でインストールする必要がある。

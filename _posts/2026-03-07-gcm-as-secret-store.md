@@ -5,6 +5,12 @@ date: 2026-03-07 00:01:00 +0900
 categories: Shell
 published: true
 use_toc: false
+description: "Git Credential Manager(GCM)をAPIキー等のシークレットストアとして流用する方法。WSL環境での注意点やzshでのget/set/erase実装例を紹介します。"
+tags:
+  - git
+  - zsh
+  - security
+  - windows
 ---
 
 Git for Windowsに同梱されるGit Credential Manager (GCM) を、APIキー等の管理に流用する話。

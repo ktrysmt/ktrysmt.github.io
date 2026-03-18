@@ -5,6 +5,11 @@ date: 2015-02-19 15:09:08 +0900
 comments: true
 categories: NodeJS
 published: true
+description: "歌舞伎座.tech#6のVirtualDOMとReact特集の視聴まとめ。React、Flux、Flowtype、Cordova等のスライドリンク集と所感。"
+tags:
+  - javascript
+  - node-js
+  - web
 ---
 
 全体おさらいするなら以下を参考に。

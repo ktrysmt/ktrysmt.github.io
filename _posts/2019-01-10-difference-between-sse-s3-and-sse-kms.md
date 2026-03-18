@@ -7,6 +7,9 @@ categories: AWS
 published: true
 use_toc: false
 description: 'KMSは大変便利で私の好きなAWSマネージドサービスのひとつなのですが、初見ではSSE-S3とSSE-KMSの違いはかなりわかりにくいかなと思います。そこで今回はS3のサーバーサイド暗号化においてよく使われるSSE-S3とSSE-KMSの違いについてまとめました。'
+tags:
+  - aws
+  - security
 ---
 
 結論言ってしまうとSSE-S3の場合は鍵を利用したかどうかの監査証跡が取れないことがネックになります。一方でSSE-S3は追加料金が発生せず、APIコールの制限を考慮する必要もないのがメリットです。

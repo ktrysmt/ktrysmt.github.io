@@ -5,6 +5,11 @@ date: 2015-04-10 15:09:08 +0900
 comments: true
 categories: CentOS
 published: true
+description: "CentOSでadvpngを使ってPNG画像を圧縮する方法。advancecompのインストール手順と基本的な使い方を紹介。"
+tags:
+  - centos
+  - linux
+  - cli-tools
 ---
 
 PNGに限るやり方っぽいが割と使いやすくおすすめ、軽くて早い。

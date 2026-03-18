@@ -4,7 +4,7 @@ permalink: /
 layout: top
 ---
 
-<img src="/assets/images/avatar.png" style="width:128px;">
+<img src="/assets/images/avatar.webp" style="width:128px;" alt="Kotaro Yoshimatsu">
 
 
 

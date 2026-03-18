@@ -5,6 +5,12 @@ date: 2015-04-09 15:09:08 +0900
 comments: true
 categories: CoreOS
 published: true
+description: "Windows環境でのcoreos-vagrant構築シリーズ第2回。config.rbとuser-dataの設定、vagrant upでCoreOSクラスタを起動しfleetctlで確認するまで。"
+tags:
+  - coreos
+  - vagrant
+  - windows
+  - devops
 ---
 
 前回（<http://ktrysmt.github.io/blog/setup-to-use-coreos-vagrant-in-windows-1/>）の続き。

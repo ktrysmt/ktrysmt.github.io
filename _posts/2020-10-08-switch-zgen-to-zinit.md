@@ -6,7 +6,11 @@ comments: true
 categories: Zsh
 published: true
 use_toc: false
-description: ""
+description: "zshプラグインマネージャをzgenからzinitに移行し、起動時間を500msから100msに改善した手順と設定例を詳しく解説します。"
+tags:
+  - zsh
+  - shell
+  - performance
 ---
 
 

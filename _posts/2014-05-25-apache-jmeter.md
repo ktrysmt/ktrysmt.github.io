@@ -5,6 +5,12 @@ date: 2014-05-25 15:09:08 +0900
 comments: true
 categories: Apache
 published: true
+description: "Apache JMeterを使った負荷テストの手順まとめ。GUIでの設定からLinuxサーバでのコマンドライン実行、ログ出力、変数の利用方法まで解説"
+tags:
+  - apache
+  - performance
+  - testing
+  - linux
 ---
 
 [今から３分で jmeter の使い方を身に付ける　　（負荷テスト入門） - 主に言語とシステム開発に関して][1].

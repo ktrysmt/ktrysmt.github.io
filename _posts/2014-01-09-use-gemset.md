@@ -5,6 +5,10 @@ date: 2014-01-09 05:52:07 +0000
 comments: true
 categories: Ruby
 published: true
+description: "rvmのgemsetを使ってRubyとRailsのバージョンを管理する方法。Ruby 1.8.7とRails 2.3.5の環境構築手順を紹介"
+tags:
+  - ruby
+  - centos
 ---
 
 ## rvmでrubyとrailsをセット

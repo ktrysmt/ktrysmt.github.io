@@ -5,6 +5,10 @@ date: 2014-11-27 15:09:08 +0900
 comments: true
 categories: Vagrant
 published: true
+description: "Vagrantで/vagrantにマウントできない問題の対処法。VirtualBox Guest Additionsのバージョン不一致を解消するためVagrantとVirtualBoxを最新化する手順"
+tags:
+  - vagrant
+  - infrastructure
 ---
 
 だいたい`/vagrant`にマウントできなくて困るのが事の発端。

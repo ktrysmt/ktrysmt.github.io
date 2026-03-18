@@ -5,6 +5,11 @@ date: 2015-07-10 15:09:08 +0900
 comments: true
 categories: Apache
 published: true
+description: "Apacheのmod_expiresとmod_deflateを使ったパフォーマンス改善設定のコピペ用まとめ。キャッシュ期限とgzip圧縮の設定例。"
+tags:
+  - apache
+  - performance
+  - web
 ---
 
 Cloudflare使うかとかそもそもhttpdやめればとかはともかく必要なケースもあるのでコピペ用にまとめ。

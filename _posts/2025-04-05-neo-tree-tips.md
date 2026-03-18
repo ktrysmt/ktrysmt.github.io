@@ -5,7 +5,10 @@ date: 2025-04-05 22:00:00 +0900
 categories: Vim
 published: true
 use_toc: false
-description: ""
+description: "neo-tree.nvimで自然順ソート、git rootへの自動移動とfocus表示、trashコマンド対応などのカスタマイズ設定をluaコード付きで紹介します。"
+tags:
+  - neovim
+  - editor
 ---
 
 ### 自然順ソート

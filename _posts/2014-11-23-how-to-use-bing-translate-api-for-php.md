@@ -5,6 +5,10 @@ date: 2014-11-22 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "PHPとCodeIgniterでBing Translate APIを利用する翻訳クラスの実装例。文字列・配列の両方に対応したcURLベースの翻訳処理を紹介"
+tags:
+  - php
+  - web
 ---
 
 クラス化したので保存しとく。

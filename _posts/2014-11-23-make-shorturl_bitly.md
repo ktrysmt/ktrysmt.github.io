@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "[goo.gl|bit.ly] GoogleとBit.lyで短縮URLを作成するPHPスクリプト"
+title: "GoogleとBit.lyで短縮URLを作成するPHPスクリプト"
 date: 2014-11-22 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "PHPでgoo.glとbit.lyの短縮URLを作成するスクリプト。Google URL Shortener APIとBitly APIをcURLで呼び出す実装例"
+tags:
+  - php
+  - web
 ---
 
 時々使うので自分用にメモ。

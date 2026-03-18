@@ -5,6 +5,11 @@ date: 2015-04-19 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "CentOS5にPHP5.2をインストールするためのyumリポジトリ設定とコマンド手順。utterramblingsリポジトリを使ったコピペ用まとめ。"
+tags:
+  - php
+  - centos
+  - linux
 ---
 
 遭遇するたびにググってて時間の無駄なのでコピペ用にまとめ。

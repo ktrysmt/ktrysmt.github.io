@@ -7,6 +7,9 @@ categories: Kubernetes
 published: true
 use_toc: false
 description: 'helmの設定を書き換えようとしてもそれがstsやpoddisruptionbudgets.policy、job等についての変更の場合、うまく更新できず困っていたのですが...。'
+tags:
+  - kubernetes
+  - helm
 ---
 
 そういう場合は、実podは残しつつstsやpoddisruptionbudgets.policy等の設定のみを消すことで helm upgrade が叩けるようです。

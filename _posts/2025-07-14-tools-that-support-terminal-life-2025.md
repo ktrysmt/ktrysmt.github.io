@@ -5,6 +5,13 @@ date: 2025-07-14 09:00:00 +0900
 categories: Zsh
 published: true
 use_toc: false
+description: "2025年版ターミナル生活を支えるCLI・GUI・パッケージマネージャの紹介。ripgrep, fzf, eza, tmux, neovim, weztermなど愛用ツールを一挙まとめ。"
+tags:
+  - cli-tools
+  - shell
+  - zsh
+  - neovim
+  - tmux
 ---
 
 過去記事で部分的に解説してきた情報のとりまとめ・アップデートを兼ねて、2025年7月時点での生活を支える道具類を紹介します。

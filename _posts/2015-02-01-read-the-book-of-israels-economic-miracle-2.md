@@ -5,6 +5,10 @@ date: 2015-02-01 15:09:08 +0900
 comments: true
 categories: BookReview
 published: true
+description: "イスラエルのイノベーション戦略を解説した書籍の読了まとめ。動機の重要性、リスクを受け入れる文化、兵役免除の弊害など多角的に考察する。"
+tags:
+  - book-review
+  - management
 ---
 
 「アップル、グーグル、マイクロソフトはなぜ、イスラエル企業を欲しがるのか?」を読了した。

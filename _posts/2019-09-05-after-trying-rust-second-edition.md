@@ -6,7 +6,9 @@ comments: true
 categories: Rust
 published: true
 use_toc: false
-description: ""
+description: "Rust Second Editionを通して学んだ所有権、ライフタイム、パターンマッチ、テスト手法など実践的なポイントをまとめた備忘録。"
+tags:
+  - rust
 ---
 
 最近仲間内でRust熱が高まっておりSecondEditionがすごく良いみたいだったのでやってみました。

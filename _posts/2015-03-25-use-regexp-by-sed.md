@@ -5,6 +5,11 @@ date: 2015-03-21 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "sedコマンドで拡張正規表現を使う方法の解説。-rオプションの使い方、デリミタの変更、後方参照の記法などをCentOS環境で紹介。"
+tags:
+  - linux
+  - shell
+  - cli-tools
 ---
 
 たまに使う置換コマンド。

@@ -5,6 +5,11 @@ date: 2014-07-22 15:09:08 +0900
 comments: true
 categories: Ruby
 published: true
+description: "rvmからrbenvに移行してCentOSにRubyをインストールする手順。rbenvとruby-buildの導入からバージョン指定、globalとlocalの使い分けまで解説"
+tags:
+  - ruby
+  - centos
+  - linux
 ---
 
 ## 依存パッケージいれる

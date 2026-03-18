@@ -5,6 +5,10 @@ date: 2017-03-08 09:00:00 +0900
 categories: Docker
 published: true
 use_toc: false
+description: "Docker初心者向けにDockerfileの書き方やレイヤー設計、よく使うワンライナー、DockerHubの使い方などの開発Tipsをまとめた備忘録。"
+tags:
+  - docker
+  - devops
 ---
 
 最近ようやっと本格的に触りだしたので備忘録的に書きます。

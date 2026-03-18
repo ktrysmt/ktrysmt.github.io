@@ -7,6 +7,10 @@ categories: AWS
 published: true
 use_toc: false
 description: 'AWSのS3・CloudTrail・KMSはいろいろと入り組んだ？関係性になっていて、初見でもろもろをすんなり理解することはちょっと難しそうかなと思い、備忘録です。'
+tags:
+  - aws
+  - security
+  - infrastructure
 ---
 
 わかりにくい箇所をポイントごとにまとめました。

@@ -5,6 +5,10 @@ date: 2025-07-05 09:00:00 +0900
 categories: Vim
 published: true
 use_toc: false
+description: "Neovimのインサートモードでカーソル下の単語の大文字・小文字をCtrl+Lでトグル切り替えするluaキーマップの実装例を紹介します。"
+tags:
+  - neovim
+  - editor
 ---
 
 結構便利だったので少し改変して

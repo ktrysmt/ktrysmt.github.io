@@ -5,6 +5,11 @@ date: 2015-06-28 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "rsyncで押さえておくべきオプションまとめ。権限上書き防止、Dry-Run、更新日時チェック、SSH鍵指定などの実用的な使い方を紹介。"
+tags:
+  - linux
+  - shell
+  - cli-tools
 ---
 
 バックアップ、転送、ネットワークまたいで簡単に差分チェックと、便利なrsync。

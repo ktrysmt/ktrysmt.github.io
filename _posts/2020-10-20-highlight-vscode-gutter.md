@@ -6,7 +6,9 @@ comments: true
 categories: VSCode
 published: true
 use_toc: false
-description: ""
+description: "VSCodeで現在行の行番号(gutter)だけをハイライトし、エディタ本体を邪魔せず現在位置を視認しやすくする設定方法を紹介します。"
+tags:
+  - editor
 ---
 
 小ネタです。

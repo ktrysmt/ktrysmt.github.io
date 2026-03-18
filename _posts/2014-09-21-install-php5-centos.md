@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "[CentOS] PHP 5.3を5.5にバージョンアップ"
+title: "CentOSでPHP 5.3から5.5にバージョンアップする"
 date: 2014-09-20 15:09:08 +0900
 comments: true
 categories: PHP
 published: true
+description: "CentOS6でPHP5.3を5.5にバージョンアップする手順。remiリポジトリの追加からyumでのPHP5.5インストールまでをコマンド付きで解説"
+tags:
+  - php
+  - centos
+  - linux
 ---
 
 CentOS6 64bitです。

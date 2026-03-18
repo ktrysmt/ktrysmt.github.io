@@ -6,7 +6,9 @@ comments: true
 categories: Management
 published: true
 use_toc: false
-description: ""
+description: "難題に取り組むためのロングMTG手法を紹介。毎日60-120分の議論を重ね、心理的安全性を保ちながらチームで合意形成する運用方法と実践知見をまとめます。"
+tags:
+  - management
 ---
 
 経営合宿やプロダクト合宿で取り扱うような議題難題、ちょっとやそっとでは解消できない中長期的な技術課題など、すぐに解決策を出すことが難しいテーマについての取り組み方に関する小ネタです。

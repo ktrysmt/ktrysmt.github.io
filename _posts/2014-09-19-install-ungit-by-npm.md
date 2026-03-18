@@ -5,6 +5,12 @@ date: 2014-05-23 15:09:08 +0900
 comments: true
 categories: Git
 published: true
+description: "npmでungitをインストールしinit.dスクリプトでデーモン化する手順。nvmによるNode.js環境構築からchkconfigへの登録まで解説"
+tags:
+  - git
+  - node-js
+  - javascript
+  - linux
 ---
 
 ## 追記（2014/08/31）nodeならforeverを使ってデーモン化するほうがいいらしい

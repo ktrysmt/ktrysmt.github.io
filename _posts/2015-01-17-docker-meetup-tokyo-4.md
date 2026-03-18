@@ -5,6 +5,12 @@ date: 2015-01-17 15:09:08 +0900
 comments: true
 categories: Docker
 published: true
+description: "Docker Meetup Tokyo #4の参加レポート。CoreOS、Dockerパフォーマンスチューニング、Amazon ECS、Kubernetes、cgroup等の発表スライドまとめ。"
+tags:
+  - docker
+  - kubernetes
+  - aws
+  - devops
 ---
 
 Docker Meetup Tokyo #4いってきたのでスライドをまとめた。

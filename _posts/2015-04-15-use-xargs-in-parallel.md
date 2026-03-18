@@ -5,6 +5,12 @@ date: 2015-04-11 15:09:08 +0900
 comments: true
 categories: Linux
 published: true
+description: "xargsの-Pオプションで並列処理を行う方法の解説。-Lオプションとの組み合わせやbzip2、php-cs-fixerでの実用例を紹介。"
+tags:
+  - linux
+  - shell
+  - cli-tools
+  - performance
 ---
 
 xargsの並列処理。@tagomoris氏の記事が参考になる。

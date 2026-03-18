@@ -6,7 +6,11 @@ comments: true
 categories: Zsh
 published: true
 use_toc: false
-description: ""
+description: "zshプラグインマネージャをzinitからsheldonに移行し、起動時間を85msから50msに改善。TOML形式の設定例やdefer活用法を詳しく解説します。"
+tags:
+  - zsh
+  - shell
+  - performance
 ---
 
 (2023/09/25追記)
