@@ -943,11 +943,7 @@ nav.breadcrumb li[aria-current="page"] {
 
 /* Excerpt in post list */
 #post-list .excerpt {
-  font-size: 13px;
-  color: #999;
-  line-height: 1.6;
-  margin: 4px 0 0;
-  width: 100%;
+  display: none;
 }
 
 /* Tags */
