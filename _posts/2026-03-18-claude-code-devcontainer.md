@@ -79,23 +79,20 @@ GitHub Releases から直接バイナリを埋め込み。すべて `devcontaine
 
 Go と Rust は ARG でオプトアウト可
 
-### tmux
+### その他
 
-v3.6a使いたくてソースからビルド。ホスト側 tmux のソケットを bind mount していつもやってるstatus系をhostに通知する用
+**tmux** -- v3.6a使いたくてソースからビルド。ホスト側 tmux のソケットを bind mount していつもやってるstatus系をhostに通知する用。
 
-### Claude Code 本体
+**Claude Code 本体** -- 公式インストーラ (`claude.ai/install.sh`) を使用。
 
-公式インストーラ (`claude.ai/install.sh`) を使用。
-
-
-### dotfiles
+**dotfiles** -- dotfiles リポジトリの `claude/` ディレクトリ (CLAUDE.md、hooks、rules、skills、statusline など) をイメージに含める。
 
 ```dockerfile
 COPY --chown=node:node claude/ /home/node/.dotfiles-claude/
 COPY --chown=node:node .gitignore_global /home/node/.gitignore_global
 ```
 
-dotfiles リポジトリの `claude/` ディレクトリ (CLAUDE.md、hooks、rules、skills、statusline など) をイメージに含める。先にイメージ内に展開しておき、最後に `postCreateCommand` で `~/.claude/` にput。あとで永続化の都合で .claudeは volume mount するため
+先にイメージ内に展開しておき、最後に `postCreateCommand` で `~/.claude/` にput。あとで永続化の都合で .claudeは volume mount するため
 
 ## ファイアウォール
 
@@ -124,7 +121,9 @@ GitHub の IP レンジは `api.github.com/meta` から動的に取得し、`agg
 - VS Code 関連
 - storage.googleapis.com
 
-など。わりと幅広く許可せざるを得ず、正直あんま意味ない。
+など。個人であれこれやってる都合上わりと幅広く許可せざるを得ず、いまんとこあんま意味ない。土台作り程度の認識。
+
+仕事で使うときはもっと絞らないとだめ。
 
 ### 拡張
 
@@ -155,7 +154,7 @@ dmesg -T | grep 'FIREWALL-UNLISTED' | grep -oP 'DST=\K[0-9.]+' | sort -u | \
 
 一応スクリプト末尾で `example.com` へのアクセスがブロックされること、`api.github.com` にアクセスできることを毎回確認してる。どちらかが期待と異なれば `exit 1` で失敗するので気づくっていう。
 
-## setup-claude.sh
+## セットアップ
 
 `postCreateCommand` で実行
 
