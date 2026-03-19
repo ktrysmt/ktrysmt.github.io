@@ -3,7 +3,7 @@ layout: post
 title: "Windowsでcoreos-vagrant,etcd,fleetを使う(3)"
 date: 2015-04-09 15:09:08 +0900
 comments: true
-categories: CoreOS
+categories: Linux
 published: true
 description: "Windows環境でのcoreos-vagrant構築シリーズ第3回。CentOS VMからfleetctlをビルドし、CoreOSクラスタのサービス管理とフェイルオーバーを体験。"
 tags:

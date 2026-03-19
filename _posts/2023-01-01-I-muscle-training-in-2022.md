@@ -2,7 +2,7 @@
 layout: post
 title: "2022年から筋トレをはじめたので知見をまとめる"
 date: 2023-01-01 00:00:00 +0900
-categories: Health
+categories: Lifestyle
 published: true
 use_toc: false
 description: "2022年から始めた筋トレの知見を総まとめ。動機づけ・習慣化・ルーチン構築・食事管理・タンパク質摂取量の目安など、初心者向けに実践的な情報を紹介します。"

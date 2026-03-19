@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="list">
+    <header>
+        <h1>{{ page.tag }}</h1>
+    </header>
+    <section id="post-body">
+        {% assign tag_posts = site.tags[page.tag] | sort: "date" | reverse %}
+        <ul class="tag-post-list">
+          {% for post in tag_posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+              <span class="dates">{{ post.date | date: "%b %d, %Y" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+    </section>
+</article>
+
+{% include footer.html %}

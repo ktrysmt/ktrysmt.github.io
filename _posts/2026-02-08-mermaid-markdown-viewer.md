@@ -2,7 +2,7 @@
 layout: post
 title: "mermaid入りのmarkdownをascii artでみるCLI"
 date: 2026-02-08 23:00:00 +0900
-categories: Mermaid
+categories: DevTools
 published: true
 use_toc: false
 description: "Mermaid記法を含むMarkdownをターミナル上でASCII artとしてプレビューできるCLIツール memd-cli の紹介。stdin対応でパイプ利用も可能。"

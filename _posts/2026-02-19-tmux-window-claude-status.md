@@ -2,7 +2,7 @@
 layout: post
 title: "ClaudeCodeの進捗状況をtmuxウィンドウ名に反映する"
 date: 2026-02-19 23:00:00 +0900
-categories: Tmux
+categories: Shell
 published: true
 use_toc: false
 description: "Claude Codeの思考中・応答完了・権限確認待ちなどの状態をtmuxウィンドウ名と色で可視化するhookスクリプトの実装方法を解説します。"

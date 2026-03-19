@@ -3,7 +3,7 @@ layout: post
 title: "Vagrantでgulp+BrowserSyncを使いライブリロード"
 date: 2015-06-27 15:09:08 +0900
 comments: true
-categories: NodeJS
+categories: JavaScript
 published: true
 description: "Vagrant上のLinuxでgulpとBrowserSyncを使いCoffeeScriptのライブリロード開発環境を構築する方法。gulpfileとpackage.jsonの設定例を紹介。"
 tags:

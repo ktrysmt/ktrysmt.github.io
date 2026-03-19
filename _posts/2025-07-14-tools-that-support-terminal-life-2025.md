@@ -2,7 +2,7 @@
 layout: post
 title: "2025版 ターミナル引きこもり生活を支えてくれる道具たち"
 date: 2025-07-14 09:00:00 +0900
-categories: Zsh
+categories: Shell
 published: true
 use_toc: false
 description: "2025年版ターミナル生活を支えるCLI・GUI・パッケージマネージャの紹介。ripgrep, fzf, eza, tmux, neovim, weztermなど愛用ツールを一挙まとめ。"

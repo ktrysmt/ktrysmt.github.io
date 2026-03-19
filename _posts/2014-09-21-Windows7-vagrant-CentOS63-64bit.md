@@ -3,7 +3,7 @@ layout: post
 title: "Windows7上にVagrantでCentOS6.3 64bit環境を構築する"
 date: 2014-02-01 15:09:08 +0900
 comments: true
-categories: Vagrant
+categories: Infrastructure
 published: true
 description: "Windows7上にCygwin、VirtualBox、Vagrantを導入しCentOS6.3 64bit仮想環境を構築する手順。Vagrantfileの設定からLAMP環境構築まで詳しく解説"
 tags:

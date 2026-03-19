@@ -3,7 +3,7 @@ layout: post
 title: "Ubuntu14.04のKernelを3.19に上げる"
 date: 2016-06-12 15:09:08 +0900 
 comments: true
-categories: Ubuntu
+categories: Linux
 published: true
 description: "Ubuntu 14.04のKernelを3.19にアップグレードする手順を解説。Docker関連OSSを利用するために必要なカーネル更新をdpkgで実施する方法。"
 tags:

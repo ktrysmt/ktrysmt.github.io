@@ -32,6 +32,14 @@ archive: true
 
 </article>
 
+{% if page.tags.size > 0 %}
+<div class="post-tags">
+  {% for tag in page.tags %}
+    <a href="/blog/tags/{{ tag }}/" class="tag-hash">#{{ tag }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+
 <hr>
 
 <!-- Next and prev links -->
@@ -45,15 +53,6 @@ archive: true
 {% include recent-post-list.html %}
 <hr>
 
-<!-- Tags -->
-{% if page.tags.size > 0 %}
-<div class="post-tags">
-  {% for tag in page.tags %}
-    <a href="/tags/#{{ tag }}" class="tag">{{ tag }}</a>
-  {% endfor %}
-</div>
-{% endif %}
-<hr>
 
 <!-- Post meta -->
 {% include post-meta.html %}

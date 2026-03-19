@@ -2,7 +2,7 @@
 layout: post
 title: 今更まとめるdockerコンテナの開発Tips
 date: 2017-03-08 09:00:00 +0900
-categories: Docker
+categories: Infrastructure
 published: true
 use_toc: false
 description: "Docker初心者向けにDockerfileの書き方やレイヤー設計、よく使うワンライナー、DockerHubの使い方などの開発Tipsをまとめた備忘録。"

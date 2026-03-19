@@ -3,7 +3,7 @@ layout: post
 title: "Nginxの名前解決についてまとめ"
 date: 2017-09-30
 comments: true
-categories: Nginx
+categories: Infrastructure
 published: true
 use_toc: false
 description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。"

@@ -3,7 +3,7 @@ layout: post
 title: 'HelmでConcourseをデプロイしてみる'
 date: 2019-01-08
 comments: true
-categories: Kubernetes
+categories: Infrastructure
 published: true
 use_toc: false
 description: 'Helmを使ってKubernetesクラスタにConcourseをデプロイする方法や、Chartに定義されている各種オプションの基礎的な部分についてまとめました。'
