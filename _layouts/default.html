@@ -25,6 +25,7 @@
     {{ content }}
   </section>
 
+  <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/nginx.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/vim.min.js"></script>
@@ -33,6 +34,17 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('pre code.language-mermaid').forEach(function(code) {
+        var pre = code.parentElement;
+        var div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = code.textContent;
+        pre.parentElement.replaceChild(div, pre);
+      });
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ startOnLoad: false });
+        mermaid.run();
+      }
       hljs.registerAliases(['zsh'], { languageName: 'bash' });
       hljs.highlightAll();
       if (typeof microlink !== 'undefined') {
