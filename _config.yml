@@ -44,7 +44,6 @@ social:
 
 permalink:       /blog/:title/
 exclude:
-  - assets/static/contenteditable.html
   - google448087d1929cfb55.html
 
 defaults:
