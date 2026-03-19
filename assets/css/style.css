@@ -98,34 +98,45 @@ h2 {
   font-style: normal;
 }
 
-nav.main-nav {
-  background: #fff;
-  background: rgba(255,255,255,.90);
-  margin: 0 auto;
-  text-align: right;
-  position: relative;
+nav.site-nav {
+  position: sticky;
+  top: 0;
   z-index: 100;
+  background: rgba(255,255,255,0.95);
   display: flex;
-  float: right;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 13px;
+  transition: box-shadow 0.2s;
+}
+nav.site-nav.stuck {
+  box-shadow: 0 1px 0 #eee;
+}
+.site-nav-title {
+  color: #666;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
+  transition: opacity 0.2s;
+}
+nav.site-nav.stuck .site-nav-title {
+  opacity: 1;
+}
+.site-nav-links {
+  display: flex;
+  flex-shrink: 0;
   align-items: center;
 }
-nav.main-nav a {
-  top: 8px;
-  right: 6px;
+.site-nav-links a {
   padding: 8px 12px;
   color: #8397CF;
   font-size: 13px;
-  /*font-weight: bold;*/
   line-height: 1.35;
   border-radius: 3px;
-
-}
-nav.main-nav a i {
-  font-size:2em;
-}
-
-nav.main-nav a.cta {
-  padding-right: 0px !important;
 }
 
 #wrapper {
@@ -919,53 +930,6 @@ li.toc-list-item.is-active-li {
   flex-direction: row !important;
 }
 
-/* Breadcrumb */
-nav.breadcrumb {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,0.95);
-  margin: 20px 0 0;
-  padding: 8px 0;
-  font-size: 13px;
-  color: #767676;
-  transition: box-shadow 0.2s;
-}
-nav.breadcrumb.stuck {
-  box-shadow: 0 1px 0 #eee;
-}
-nav.breadcrumb ol {
-  list-style: none;
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0;
-  margin: 0;
-}
-nav.breadcrumb li {
-  margin-left: 0;
-  flex-shrink: 0;
-}
-nav.breadcrumb li + li::before {
-  content: "/";
-  margin: 0 8px;
-  color: #ccc;
-}
-nav.breadcrumb a {
-  color: #8397CF;
-}
-nav.breadcrumb li[aria-current="page"] {
-  color: #666;
-  opacity: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  min-width: 0;
-  flex-shrink: 1;
-  transition: opacity 0.2s;
-}
-nav.breadcrumb.stuck li[aria-current="page"] {
-  opacity: 1;
-}
 
 /* Excerpt in post list */
 #post-list .excerpt {

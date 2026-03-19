@@ -1,4 +1,6 @@
-<nav class="main-nav">
+<nav class="site-nav">
+  <span class="site-nav-title">{{ page.title }}</span>
+  <div class="site-nav-links">
     {% if page.url != "/blog/" %}
         <a href="/blog/">Blog top</a>
     {% endif %}
@@ -8,10 +10,16 @@
     {% if page.url != "/" %}
         <a href="/">About me</a>
     {% endif %}
-
-    <!--
-    <a href="https://twitter.com/{{ site.authorTwitter }}"><i class="fa fa-twitter fa-2" aria-hidden="true"></i></a>
-    <a href="https://github.com/{{ site.authorTwitter }}"><i class="fa fa-github fa-2" aria-hidden="true"></i></a>
-    <a class="cta" href="/blog/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
-    -->
+  </div>
 </nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var header = document.querySelector(".post-header");
+  var nav = document.querySelector("nav.site-nav");
+  if (!header || !nav) return;
+  new IntersectionObserver(function(entries) {
+    nav.classList.toggle("stuck", !entries[0].isIntersecting);
+  }).observe(header);
+});
+</script>
