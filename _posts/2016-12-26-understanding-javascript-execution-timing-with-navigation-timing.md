@@ -2,7 +2,7 @@
 layout: post
 title: Navigation Timingを軸にJavascriptの実行タイミングを理解する
 date: 2016-12-26 09:00:00 +0900
-categories: Javascript
+categories: JavaScript
 published: true
 use_toc: false
 description: "Navigation Timing APIを軸にJavaScriptの実行タイミングを体系的に理解する。DOMContentLoadedやwindow.onloadの違いとブラウザの処理フローを詳しく解説。"

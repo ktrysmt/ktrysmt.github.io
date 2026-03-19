@@ -1,32 +1,174 @@
 ---
 layout: post
-title: "zgenをzinitに置き換えたらzshの起動時間が500msから100msに改善した"
-date: 2020-10-08 00:00:00 +0900
+title: "Zshプラグイン管理の変遷"
+date: 2014-09-26 00:00:00 +0900
 comments: true
 categories: Zsh
 published: true
-use_toc: false
-description: "zshプラグインマネージャをzgenからzinitに移行し、起動時間を500msから100msに改善した手順と設定例を詳しく解説します。"
+use_toc: true
+description: "oh-my-zshからprezto、zgen、zinitへの移行手順やpeco/fzf活用によるスニペット管理・ディレクトリ移動の効率化を解説"
 tags:
   - zsh
+  - centos
   - shell
+  - peco
+  - cli-tools
   - performance
+redirect_from:
+  - /blog/install-prezto/
+  - /blog/snippets-management-by-peco-and-zsh/
+  - /blog/powered-cd-plusplus/
+  - /blog/switch-zgen-to-zinit/
 ---
 
+## oh-my-zshが重いのでpreztoに乗り換える
+
+### install
+
+```
+yum -y install ncurses-devel git
+wget http://downloads.sourceforge.net/project/zsh/zsh/5.0.5/zsh-5.0.5.tar.gz
+tar xvzf zsh-5.0.5.tar.gz
+cd zsh-5.0.5
+./configure && make && make install
+```
+
+### 既にzshやoh-my-zshの設定がある場合は退避
+
+```
+cd ~/
+mkdir zsh_orig
+mv .zlogin .zlogout .zprofile .zshenv .zshrc zsh_orig
+```
+
+### zsh起動
+
+```
+zsh
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+chsh -s `which zsh`
+```
+
+### Updating
+
+```
+cd ~/.zprezto
+git pull && git submodule update --init --recursive
+```
+
+## pecoとzshでかんたんスニペット管理
+
+### 手順
+
+たまに使うコマンドなどをあらかじめ`~/.snippets`に一行ずつ書いておきます。
+
+```sh
+cut -d' ' -f1,3
+dig -x 1.1.1.1
+tcpdump -nn src host 1.1.1.1 and port not 22
+find . -type f -regextype posix-basic -regex ".*.(log|txt)" ! -regex ".*./foo/bar/.*"
+:
+:
+```
+
+その上で`~/.zshrc`に以下を追加。
+
+```sh
+: "peco snippet" && {
+  function peco-select-snippet() {
+    BUFFER=$(cat ~/.snippets | peco)
+    CURSOR=$#BUFFER
+    zle -R -c
+  }
+  zle -N peco-select-snippet
+  bindkey '^x^r' peco-select-snippet
+}
+```
+
+私は`<C-X><C-R>`にスニペット呼び出しを割り当ててます。
+
+### 所感
+
+はじめはプラグインやCLIの導入を検討してたんですが、あまり高機能にしたところで使いこなせるイメージもなく（オプションなど覚えていられないし）、ニーズもシンプルだったので薄く自作しました。
+
+私はこのスニペットファイルをdotfiles管理下において、日々育てて（？）います。便利です。
+
+## powered_cdをもうちょっと便利にする
+
+ディレクトリが既に削除されている場合は`cd`せずにログから削除します。
+
+```sh
+: "powered_cd" && {
+  function chpwd() {
+    powered_cd_add_log
+  }
+  function powered_cd_add_log() {
+    local i=0
+    cat ~/.powered_cd.log | while read line; do
+    (( i++ ))
+    if [ i = 30 ]; then
+      sed -i -e "30,30d" ~/.powered_cd.log
+    elif [ "$line" = "$PWD" ]; then
+      sed -i -e "${i},${i}d" ~/.powered_cd.log
+    fi
+  done
+  echo "$PWD" >> ~/.powered_cd.log
+  }
+  function powered_cd() {
+    if (which tac > /dev/null); then
+      tac="tac"
+    else
+      tac="tail -r"
+    fi
+    if [ $# = 0 ]; then
+      local dir=$(eval $tac ~/.powered_cd.log | fzf)
+      if [ "$dir" = "" ]; then
+        return 1
+      elif [ -d "$dir" ]; then
+        cd "$dir"
+      else
+        local res=$(grep -v -E "^${dir}" ~/.powered_cd.log)
+        echo $res > ~/.powered_cd.log
+        echo "powerd_cd: deleted old path: ${dir}"
+      fi
+    elif [ $# = 1 ]; then
+      cd $1
+    else
+      echo "powered_cd: too many arguments"
+    fi
+  }
+  _powered_cd() {
+    _files -/
+  }
+  compdef _powered_cd powered_cd
+  [ -e ~/.powered_cd.log ] || touch ~/.powered_cd.log
+  alias c="powered_cd"
+}
+```
+
+元ネタはこちら；
+
+- [cdの履歴を保存してpecoとかfzfとか使ってディレクトリ移動する - Qiita](https://qiita.com/arks22/items/8515a7f4eab37cfbfb17)
+
+## zgenをzinitに置き換えたらzshの起動時間が500msから100msに改善した
 
 zgenであまり困ってはいなかったのですがzinitでもうちょっと速く出来そう、ということなので。
 
-## zgenの場合
+### zgenの場合
 
 [](https://github.com/tarjoilija/zgen){:.card-preview}
 
 
-### setupのおさらい
+#### setupのおさらい
 ```sh
 git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 ```
 
-### zgen時代のzshrc設定例
+#### zgen時代のzshrc設定例
 ```sh
 : "zgen" && {
   source "${HOME}/.zgen/zgen.zsh"
@@ -59,17 +201,17 @@ git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 そして、調査・確認しながら移行した結果が以下です。
 
 
-## zinitに変える
+### zinitに変える
 
 [](https://github.com/zdharma/zinit){:.card-preview}
 
-### setup
+#### setup
 ```sh
 mkdir ~/.zinit
 git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 ```
 
-### zinitを使ったzshrcの設定例
+#### zinitを使ったzshrcの設定例
 ```sh
 : "zinit" && {
   source ~/.zinit/bin/zinit.zsh
@@ -128,7 +270,7 @@ git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
 # 以下略 / export,aliasなど
 ```
 
-### zinit基本設定をかいつまんで説明
+#### zinit基本設定をかいつまんで説明
 
 ```sh
 # 必須
@@ -171,7 +313,7 @@ zinit light aws/aws-cli
 
 その他syntaxの解説は[こちらのWiki等を参照](https://zdharma.org/zinit/wiki/)。
 
-## パフォーマンス計測してみる
+### パフォーマンス計測してみる
 
 ```sh
 # 素の状態
@@ -189,7 +331,7 @@ zsh -i -c exit  0.03s user 0.04s system 80% cpu 0.085 total
 
 だいぶいいんじゃないかなぁと。
 
-## zinitの使い方
+### zinitの使い方
 ```sh
 zinit self-update   # zinitのupdate
 zinit update        # snippet, plugin, completionのupdate
@@ -202,7 +344,6 @@ zinit times         # snippet, plugin, completionごとの速度計測
 
 ---
 
-## 2022/02/18 追記
+#### 2022/02/18 追記
 
 zinitが不安なのでやめて[sheldonに移行しました。](https://ktrysmt.github.io/blog/migrate-zinit-to-sheldon/)
-

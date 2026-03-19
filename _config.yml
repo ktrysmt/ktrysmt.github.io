@@ -1,7 +1,7 @@
 name: "ktrysmt"
 blogName: "ktrysmt.log"
-description: "ソフトウェアエンジニアリングやマネジメントなど"
-meta_description: "ソフトウェアエンジニアリングやマネジメントなど"
+description: "SREとかセキュリティガバナンスとか"
+meta_description: "SREとかセキュリティガバナンスとか"
 
 lang: ja_JP
 timezone: Asia/Tokyo
