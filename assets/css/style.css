@@ -34,6 +34,7 @@ h1 {
   letter-spacing: -1px;
   color: #222;
   font: 300 32px/1.4em "Helvetica Neue", Helvetica,Arial,sans-serif;
+  word-break: auto-phrase;
 }
 
 header h1 {
@@ -47,7 +48,7 @@ header h2.headline {
 }
 
 header span.list-headline {
-  color: rgb(170,170,170);
+  color: #767676;
   font-size: 1.1em;
 }
 
@@ -91,7 +92,7 @@ h2 {
 .profile h2 {
   font-size: 20px;
   font-weight: 300;
-  color: #aaa;
+  color: #767676;
   margin-top: 10px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -257,7 +258,7 @@ em, i { font-style: italic; }
 .description {
   float: right;
   font: italic 14px/1.4em Georgia,serif;
-  color: #aaa;
+  color: #767676;
 }
 
 .home h1 {
@@ -317,7 +318,7 @@ header.post-header {
 .post h2.headline {
   font: normal 13px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin: -5px 0 40px 0;
-  color: #b2b9be;
+  color: #767676;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -331,7 +332,7 @@ header.post-header {
 
 #post-list h2 {
   font: normal 17px/1.5em "Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #aaa;
+  color: #767676;
   max-width: 400px;
   margin-top: 2px;
 }
@@ -360,7 +361,7 @@ h6 {
 }
 
 p.small {
-  color: #bbb;
+  color: #767676;
   font-size: 14px;
   line-height: 1.5;
   display: flex;
@@ -492,7 +493,7 @@ Post List
   margin-left: 20px;
   top: 1px;
   font: 300 17px/1.8 "Helvetica Neue",helvetica,Arial,sans-serif;
-  color: #bbb;
+  color: #767676;
   width: 105px;
 }
 
@@ -574,7 +575,7 @@ article.top section#post-list-body li {
 }
 
 #post-meta div span {
-  color: #aaa;
+  color: #767676;
   font-weight: 500;
   display: block;
   width: 125px;
@@ -699,7 +700,7 @@ h2.month {
   position: relative;
   top: 1px;
   font: 300 17px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
-  color: #bbb;
+  color: #767676;
 }
 
 .archive-list li a:hover,.archive-list li:hover .dates {
@@ -773,7 +774,7 @@ h2.month {
     margin: 120px 0 80px 0;
   }
   header span.list-headline {
-    color: rgb(170,170,170);
+    color: #767676;
     margin-bottom: 40px;
     display: block;
   }
@@ -915,19 +916,29 @@ li.toc-list-item.is-active-li {
 
 /* Breadcrumb */
 nav.breadcrumb {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,0.95);
   margin: 20px 0 0;
+  padding: 8px 0;
   font-size: 13px;
-  color: #aaa;
+  color: #767676;
+  transition: box-shadow 0.2s;
+}
+nav.breadcrumb.stuck {
+  box-shadow: 0 1px 0 #eee;
 }
 nav.breadcrumb ol {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 0;
   margin: 0;
 }
 nav.breadcrumb li {
   margin-left: 0;
+  flex-shrink: 0;
 }
 nav.breadcrumb li + li::before {
   content: "/";
@@ -939,6 +950,16 @@ nav.breadcrumb a {
 }
 nav.breadcrumb li[aria-current="page"] {
   color: #666;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
+  transition: opacity 0.2s;
+}
+nav.breadcrumb.stuck li[aria-current="page"] {
+  opacity: 1;
 }
 
 /* Excerpt in post list */
@@ -988,7 +1009,7 @@ nav.breadcrumb li[aria-current="page"] {
 }
 .tag-count {
   font-size: 14px;
-  color: #aaa;
+  color: #767676;
   font-weight: normal;
 }
 .tag-post-list {
@@ -1004,8 +1025,31 @@ nav.breadcrumb li[aria-current="page"] {
   margin-left: 0;
 }
 .tag-post-list .dates {
-  color: #bbb;
+  color: #767676;
   font-size: 14px;
   white-space: nowrap;
   margin-left: 20px;
+}
+
+/* Related posts */
+.related-posts {
+  text-align: justify;
+  line-height: 1.7em;
+  margin: 40px 0px;
+}
+.related-posts ul {
+  margin: 0px;
+}
+.related-posts li {
+  flex-direction: row !important;
+}
+
+/* Keyboard focus styles */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #8397CF;
+  outline-offset: 2px;
 }

@@ -2,12 +2,13 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.blogName }}</title>
   {% seo title=false %}
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="shortcut icon" href="/assets/images/favicon.ico">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.blogName }}" href="/feed.xml">
@@ -28,7 +29,7 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/nginx.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/vim.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/toml.min.js"></script>
-  <script defer src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {

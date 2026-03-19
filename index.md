@@ -8,8 +8,8 @@ layout: top
 
 
 
-- [Twitter](https://twitter.com/{{ site.authorTwitter }})
-- [Github](https://github.com/{{ site.authorTwitter }})
+- [Twitter](https://twitter.com/{{ site.authorTwitter }}){:rel="me"}
+- [Github](https://github.com/{{ site.authorTwitter }}){:rel="me"}
 - [Blog (ja)](/blog/)
 - kotaro.yoshimatsu@gmail.com
 
