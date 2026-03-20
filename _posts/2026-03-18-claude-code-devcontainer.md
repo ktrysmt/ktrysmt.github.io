@@ -24,15 +24,11 @@ tags:
   init-firewall.sh           # iptables + ipset によるネットワーク制限
   refresh-firewall.sh        # ipset エントリの定期リフレッシュ (cron)
   setup-claude.sh            # postStartCommand: dotfiles 展開 + settings.json マージ
-
-mise/
-  config.toml                # ツールバージョン定義 (mise install で適用)
+  mise.toml                  # devcontainer 用ツール定義 (mise install で適用)
 
 .github/workflows/
   devcontainer.yml           # master push 時に GHCR へ自動ビルド
 ```
-
-流れは単純で、
 
 ```mermaid
 graph TD
@@ -56,81 +52,82 @@ graph TD
 
 ## Dockerfile
 
-ベースは公式のリファレンス実装にならって `node:20` で。
+ベースは `ubuntu:24.04`。
 
 ### CLI ツール群
 
-ツール管理は [mise](https://mise.jdx.dev/)。`mise/config.toml` をイメージ内にコピーし、`mise install` で一括インストール。
+ツール管理は [mise](https://mise.jdx.dev/)。devcontainer 用に軽量化した `.devcontainer/mise.toml` をイメージ内にコピーし、`mise install` で一括インストール。
 
 ```toml
 [tools]
-go = "1.25"
-bun = "latest"
+node = "latest"
+neovim = "latest"
 ripgrep = "latest"
 fzf = "latest"
-fd  = "10.3"
+fd = "10.3"
 bat = "latest"
 eza = "latest"
-delta = "latest"
-# ...
+gh = "latest"
+jq = "latest"
 ```
 
 ```dockerfile
 RUN curl https://mise.run | sh
-COPY --chown=node:node mise/config.toml /home/node/.config/mise/config.toml
+COPY --chown=ubuntu:ubuntu .devcontainer/mise.toml /home/ubuntu/.config/mise/config.toml
 ENV MISE_YES=1
-RUN mise install
+RUN mise install && mise cache clear && rm -rf /home/ubuntu/.local/share/mise/downloads
 ```
 
 ### 言語ランタイム
 
 | ランタイム  | 備考                                      |
 |-----------  |------                                     |
-| Node.js 20  | ベースイメージ由来                        |
-| Go 1.25     | mise 経由                                 |
-| Bun         | mise 経由                                 |
+| Node.js     | mise 経由 (latest)                        |
 | Rust        | `INSTALL_RUST=true` で有効化 (ARG で制御) |
 
-Python は直接インストールせず、uv / ruff を mise で管理。Rust のみ ARG でオプトアウト可。
+Go や Bun はホスト側では使うが devcontainer には含めていない。必要なプロジェクトでは `FIREWALL_EXTRA_DOMAINS` と合わせて追加する想定。
+
+### ユーザーセットアップ
+
+Ubuntu 24.04 にはデフォルトで `ubuntu` ユーザー (UID 1000) が存在するため、そのまま利用する。シェルだけ zsh に変更。
+
+```dockerfile
+RUN chsh -s /bin/zsh ubuntu
+```
 
 ### その他
 
-**tmux** -- v3.6a を使いたくてソースからビルド。マルチステージビルドで builder ステージに分離し、最終イメージにはバイナリだけ持ち込む。ホスト側 tmux のソケットを bind mount していつもやってる status 系を host に通知する用。
-
-以下一部抜粋
+**tmux** -- v3.6a を使いたくてソースからビルド。マルチステージビルドでちょい軽量化。
 
 ```dockerfile
-FROM node:20 AS tmux-builder
+FROM ubuntu:24.04 AS tmux-builder
 # build-essential, libevent-dev, ncurses-dev ...
 RUN ./configure --prefix=/usr/local && make -j"$(nproc)" && make install
 
-FROM node:20
+FROM ubuntu:24.04
 COPY --from=tmux-builder /usr/local/bin/tmux /usr/local/bin/tmux
 ```
 
 **Claude Code 本体** -- 公式インストーラ (`claude.ai/install.sh`) で。
+```dockerfile
+ARG CLAUDE_CODE_VERSION=latest
+RUN curl -fsSL https://claude.ai/install.sh | bash -s -- ${CLAUDE_CODE_VERSION}
+```
 
 **dotfiles** -- 最低限 dotfiles の `claude/` ディレクトリ (CLAUDE.md、hooks、rules、skills、settings.json、statusline など) と `.gitignore_global` をイメージに含める。
 
 ```dockerfile
-COPY --chown=node:node claude/ /home/node/claude/
-COPY --chown=node:node .gitignore_global /home/node/.gitignore_global
+COPY --chown=ubuntu:ubuntu claude/ /home/ubuntu/claude/
+COPY --chown=ubuntu:ubuntu .gitignore_global /home/ubuntu/.gitignore_global
 ```
 
 先にイメージ内に展開しておき、`postStartCommand` で `~/.claude/` にシンボリックリンクを張る。`~/.claude` は bind mount するため。
 
-処理順は buind mount > postStartCommand なので永続化の恩恵を受けつつ、使い慣れた設定を注入。
+処理順は bind mount > postStartCommand なので永続化の恩恵を受けつつ、使い慣れた設定を注入。
 
-**mise** -- ツールバージョンマネージャ。Go、Bun、Node、Neovim などの言語ランタイムや ripgrep、fzf、gh といった CLI ツールを `mise/config.toml` で宣言的に管理し、ビルド時に一括インストールする。
+**mise** -- 最低限のツールセットを雑に配備。devcontainer 用に用意。
 
-```dockerfile
-RUN curl https://mise.run | sh
-COPY --chown=node:node mise/config.toml /home/node/.config/mise/config.toml
-ENV MISE_YES=1
-RUN mise install
-```
-
-`config.toml` には標準バックエンドのほか `aqua:` や `github:`、`npm:` バックエンドも活用しており、difftastic や pnpm、devcontainers CLI なども mise 経由で導入している。PATH にはシム (`/home/node/.local/share/mise/shims`) を通しているため、コンテナ内のどこからでもバージョン固定されたツールが使える。
+PATH にはシム (`/home/ubuntu/.local/share/mise/shims`) を通しているため、コンテナ内のどこからでもバージョン固定されたツールが使える。
 
 ## ファイアウォール
 
@@ -265,7 +262,7 @@ devcontainer exec --workspace-folder . \
 
 ## CI
 
-`.github/workflows/devcontainer.yml` が `.devcontainer/**`、`claude/**`、`.gitignore_global`、`.dockerignore` の変更を検知して GHCR に push。`mise/config.toml` も Docker ビルドコンテキストに含まれるが、CI のトリガーパスには現状含めていない (`.dockerignore` でホワイトリスト管理)。
+`.github/workflows/devcontainer.yml` が `.devcontainer/**`、`claude/**`、`.gitignore_global`、`.dockerignore` の変更を検知して GHCR に push。mise.toml も `.devcontainer/` 内に移動したため、ツール構成の変更も自然にトリガーされる。
 
 
 アクションは commit hash で pin。Docker layer cache は GitHub Actions Cache (`type=gha`)。
@@ -274,7 +271,7 @@ devcontainer exec --workspace-folder . \
 
 ```json
 "mounts": [
-  "source=${localEnv:HOME}/.claude-devcontainer,target=/home/node/.claude,type=bind",
+  "source=${localEnv:HOME}/.claude-devcontainer,target=/home/ubuntu/.claude,type=bind",
   "source=claude-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
   "source=${localEnv:TMUX_TMPDIR:/tmp/tmux-1000},target=${localEnv:TMUX_TMPDIR:/tmp/tmux-1000},type=bind"
 ]
