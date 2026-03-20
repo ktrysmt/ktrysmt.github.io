@@ -203,7 +203,7 @@ ul#post-list {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 article.post {
@@ -502,6 +502,7 @@ Post List
   color: #333;
   display: block;
   font: 300 19px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
+  min-width: 0;
 }
 
 #post-list .dates {

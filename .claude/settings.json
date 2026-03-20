@@ -3,7 +3,7 @@
     "allow": [
       "Bash(bundle exec:*)",
       "mcp__chrome-devtools__*",
-      "mcp__grep-github__*",
+      "mcp__grep-github__*"
     ]
   },
   "sandbox": {
