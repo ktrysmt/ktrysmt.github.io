@@ -1,5 +1,5 @@
 <nav class="site-nav">
-  <span class="site-nav-title">{{ page.title }}</span>
+  <span class="site-nav-title">{{ page.title | default: site.blogName }}{% if page.url == "/blog/" and page.description != "" and page.description %}<span class="site-nav-desc"> - {{ page.description }}</span>{% endif %}</span>
   <div class="site-nav-links">
     {% if page.url != "/blog/" %}
         <a href="/blog/">Blog top</a>
@@ -15,7 +15,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  var header = document.querySelector(".post-header");
+  var header = document.querySelector(".post-header") || document.querySelector("article > header");
   var nav = document.querySelector("nav.site-nav");
   if (!header || !nav) return;
   new IntersectionObserver(function(entries) {

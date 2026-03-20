@@ -42,6 +42,10 @@ bundle exec jekyll s -P 8888 -H 0.0.0.0
 curl http://localhost:8888/blog/
 ```
 
+## Use Browser
+
+* use `chrome-devtools mcp` or `agent-browser skill`
+
 ## Build
 
 ```bash
