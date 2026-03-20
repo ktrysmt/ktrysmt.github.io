@@ -53,6 +53,7 @@ defaults:
       type: pages
     values:
       layout: default
+      image: /assets/images/logo.png
   -
     scope:
       path: "" # empty string for all files
@@ -60,4 +61,4 @@ defaults:
     values:
       layout: post
       use_toc: false
-      # image: /assets/images/og-default.png
+      image: /assets/images/logo.png
