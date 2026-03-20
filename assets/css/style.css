@@ -226,6 +226,9 @@ article.post {
   flex-direction: row;
   padding: 0px 2%;
 }
+article.post.not-found {
+  flex-direction: column;
+}
 
 ul {
   margin: 2px;
