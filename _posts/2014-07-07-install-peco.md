@@ -3,7 +3,7 @@ layout: post
 title: "CentOSにpecoをインストールする"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "CentOSにpecoをインストールしbashのCtrl+rにpeco連携のヒストリ検索を設定する方法。バイナリの導入手順と.bashrcの設定例を紹介"
 tags:

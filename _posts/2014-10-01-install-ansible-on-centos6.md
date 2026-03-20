@@ -3,7 +3,7 @@ layout: post
 title: "CentOS6でAnsibleを使う"
 date: 2014-10-02 15:09:08 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 description: "CentOS6にAnsibleをインストールし構成管理を始める手順。EPELリポジトリ追加、hostsとplaybookの書き方、includeによるファイル分割やDry-Runまで解説"
 tags:

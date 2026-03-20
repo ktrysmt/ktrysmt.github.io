@@ -2,7 +2,7 @@
 layout: post
 title: DeepL翻訳をchromeのアドレスバーからすぐ呼べるようにする
 date: 2020-03-23
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 use_toc: false
 description: "ChromeのアドレスバーからDeepL翻訳を即座に呼び出すカスタム検索エンジンの設定方法を紹介します。Google Translateからの移行にも対応。"

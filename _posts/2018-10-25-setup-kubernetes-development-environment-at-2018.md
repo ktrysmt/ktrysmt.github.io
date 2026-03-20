@@ -3,7 +3,7 @@ layout: post
 title: "Kubernetes開発環境構築と周辺ツールまとめ (2018年)"
 date: 2018-10-25 00:00:00 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 use_toc: false
 description: "2018年版Kubernetes開発環境構築ガイド。Docker for MacやkubectxによるセットアップからHelm、kustomize、ネットワーク、ストレージなどの周辺ツールまで網羅的に解説。"

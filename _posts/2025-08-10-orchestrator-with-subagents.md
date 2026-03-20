@@ -2,7 +2,7 @@
 layout: post
 title: "claude subagents で開発プロセスを再定義・エージェント化する"
 date: 2025-08-10 09:00:00 +0900
-categories: AI Engineering
+categories: [AI Engineering]
 published: true
 use_toc: false
 description: "Claude Codeのsubagentsを活用し、Research・Requirements・Architecture・TDD・QAの6段階で開発プロセスをエージェント化するオーケストレータの構築方法。"

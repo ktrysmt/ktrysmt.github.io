@@ -3,7 +3,7 @@ layout: post
 title: "Git環境構築・ツールまとめ"
 date: 2013-05-20 12:00:00 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "CentOSへのGitインストール、diff-highlight、tig、ghq、ungit、Gerritなど、Git関連ツールの導入手順をまとめて紹介"
 tags:

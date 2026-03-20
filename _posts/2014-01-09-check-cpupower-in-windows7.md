@@ -3,7 +3,7 @@ layout: post
 title: "ThinkPad X1 CarbonのCPUが遅い"
 date: 2014-01-23 05:52:07 +0000
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "ThinkPad X1 CarbonでCPUが遅くなる原因と対処法。Windows電源オプションの省電力モードによるCPUパワーセーブの解除方法を解説"
 tags:

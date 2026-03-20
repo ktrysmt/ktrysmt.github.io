@@ -2,7 +2,7 @@
 layout: post
 title: "cfn import をちゃんと使う"
 date: 2025-06-01 09:00:00 +0900
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 use_toc: false
 description: "CloudFormationのimport機能を使って既存リソースをスタックに取り込む手順と注意点を整理。change-set-type IMPORTやget-template-summaryの活用法を解説。"

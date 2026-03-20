@@ -3,7 +3,7 @@ layout: post
 title: "歌舞伎座Tech#6 タイムシフトみた"
 date: 2015-02-19 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "歌舞伎座.tech#6のVirtualDOMとReact特集の視聴まとめ。React、Flux、Flowtype、Cordova等のスライドリンク集と所感。"
 tags:

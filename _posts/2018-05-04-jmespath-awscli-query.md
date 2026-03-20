@@ -6,7 +6,7 @@ date: 2018-05-24
 comments: true
 published: true
 description: "書き方に少々クセがあるのが難点ですが、使いこなすとワンコマンドでだいたい事足りるようになるのでCIなどで助かります。awscliを使うひとは覚えておいて損はないです。"
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 tags:
   - aws
   - cli-tools

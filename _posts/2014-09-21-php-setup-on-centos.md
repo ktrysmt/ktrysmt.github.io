@@ -3,7 +3,7 @@ layout: post
 title: "PHP環境構築まとめ (CentOS)"
 date: 2014-09-20 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "CentOSでのPHP環境構築をまとめた記事。yumやphpenvでのインストール、バージョン管理、php-cs-fixerによるコード整形まで網羅"
 redirect_from:

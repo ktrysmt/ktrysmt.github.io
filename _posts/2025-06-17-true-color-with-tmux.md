@@ -2,7 +2,7 @@
 layout: post
 title: "mac や wsl で true color に対応する"
 date: 2025-06-17 09:00:00 +0900
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 use_toc: false
 description: "macOSやWSLのtmux環境でtrue color(24bitカラー)に対応する設定方法を解説。terminfo設定やtmux.confの記述例をOS別にまとめます。"

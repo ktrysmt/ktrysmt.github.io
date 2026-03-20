@@ -2,7 +2,7 @@
 layout: post
 title: "ECS ServiceをCFnから分離するかどうか"
 date: 2026-03-20 09:00:00 +0900
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 use_toc: false
 description: "CFnでECS Serviceを管理するときの構造的問題"

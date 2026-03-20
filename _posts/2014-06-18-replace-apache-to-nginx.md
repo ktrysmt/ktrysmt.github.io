@@ -3,7 +3,7 @@ layout: post
 title: "apache+mod_php を nginx+php-fpmに移行 (+ TCP Connection & File Descriptor)"
 date: 2014-06-19 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "Apache+mod_phpからNginx+PHP-FPMへの移行手順。TCP/FD設定、Nginx・PHP-FPMのチューニング、バーチャルホストやhtaccessの移行方法を網羅"
 tags:

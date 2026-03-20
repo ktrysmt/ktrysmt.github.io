@@ -3,7 +3,7 @@ layout: post
 title: "Ruby環境構築まとめ"
 date: 2013-12-24 08:47:56 +0000
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "Ruby環境構築の総合ガイド。rvm/rbenvによるインストール、gemsetの使い方、Octopress導入、Capybaraテスト環境、便利ツール紹介"
 redirect_from:

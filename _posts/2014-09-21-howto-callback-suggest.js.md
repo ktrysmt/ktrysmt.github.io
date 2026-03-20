@@ -3,7 +3,7 @@ layout: post
 title: "suggest.jsで入力・選択後callback関数を呼ぶ"
 date: 2014-09-21 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "JavaScriptの入力補完ライブラリsuggest.jsにコールバック関数hookAfterSearchを追加する方法。ソースコードの修正箇所と呼び出し方を解説"
 tags:

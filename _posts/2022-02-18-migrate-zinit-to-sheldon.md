@@ -3,7 +3,7 @@ layout: post
 title: "zinitが不安なのでsheldonへ移行したらzshの起動が50msと更に速くなった"
 date: 2022-02-18 00:00:00 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 use_toc: false
 description: "zshプラグインマネージャをzinitからsheldonに移行し、起動時間を85msから50msに改善。TOML形式の設定例やdefer活用法を詳しく解説します。"

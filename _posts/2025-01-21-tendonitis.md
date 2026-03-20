@@ -2,7 +2,7 @@
 layout: post
 title: "腱鞘炎から逃げ切るための知見"
 date: 2025-01-21 23:45:00 +0900
-categories: Engineering Practices
+categories: [Engineering Practices]
 published: true
 use_toc: false
 description: "愛用していたロジクール g300s/g300sr がしばらく前に廃盤となり、確保していた予備機もほどなく壊れ、いよいよ追い詰められ彷徨ううち入力デバイス選びや使い方の最適解がわかってきたのでまとめます。"

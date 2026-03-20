@@ -3,7 +3,7 @@ layout: post
 title: "Apache JMeterの使い方"
 date: 2014-05-25 15:09:08 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 description: "Apache JMeterを使った負荷テストの手順まとめ。GUIでの設定からLinuxサーバでのコマンドライン実行、ログ出力、変数の利用方法まで解説"
 tags:

@@ -2,7 +2,7 @@
 layout: post
 title: "vimrcをluaで書き換えてlazy.nvimいれて、起動時間30ms切りを達成した"
 date: 2023-09-10 21:30:00 +0900
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 use_toc: false
 description: "Neovimの設定をvimLからluaに書き換え、lazy.nvimの遅延読み込みで起動時間を100msから25msに短縮した手順とポイントを解説します。"

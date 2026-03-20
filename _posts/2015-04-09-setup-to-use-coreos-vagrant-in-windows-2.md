@@ -3,7 +3,7 @@ layout: post
 title: "Windowsでcoreos-vagrant,etcd,fleetを使う(2)"
 date: 2015-04-09 15:09:08 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 description: "Windows環境でのcoreos-vagrant構築シリーズ第2回。config.rbとuser-dataの設定、vagrant upでCoreOSクラスタを起動しfleetctlで確認するまで。"
 tags:

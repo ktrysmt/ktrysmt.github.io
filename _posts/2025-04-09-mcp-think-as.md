@@ -2,7 +2,7 @@
 layout: post
 title: "mcp think toolの'think'と'think + prompt'のいいとこ取りをしたい"
 date: 2025-04-09 22:30:00 +0900
-categories: AI Engineering
+categories: [AI Engineering]
 published: true
 use_toc: false
 description: "MCP think toolにロール別プロンプトを組み合わせ、coderやarchitectなど役割ごとに思考の質を高める自作MCPツール mcp-think-as の紹介と考察。"

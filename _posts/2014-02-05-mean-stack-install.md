@@ -3,7 +3,7 @@ layout: post
 title: "MEAN Stackインストール手順まとめ"
 date: 2014-02-05 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "MEAN Stack(MongoDB, Express, AngularJS, Node.js)のインストール手順まとめ。nvm、MongoDB、bower、Gruntの導入からmean.ioの起動まで"
 tags:

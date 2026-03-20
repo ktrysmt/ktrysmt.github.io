@@ -2,7 +2,7 @@
 layout: post
 title: ググったあとワンクリックで期間指定ができるChrome拡張を作った
 date: 2016-12-20 09:00:00 +0900
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 use_toc: false
 description: "Google検索の期間指定や言語指定をワンクリックで行えるChrome拡張Quick Custom GSearchの紹介。MutationObserverやwebpack2を活用した技術的な工夫も解説。"

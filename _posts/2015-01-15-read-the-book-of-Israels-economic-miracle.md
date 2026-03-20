@@ -3,7 +3,7 @@ layout: post
 title: "なぜ、イスラエル企業を欲しがるのか？(1) - 'Israels economic miracle'"
 date: 2015-01-15 15:09:08 +0900
 comments: true
-categories: Engineering Practices
+categories: [Engineering Practices]
 published: true
 description: "イスラエル企業の成功要因を解説した書籍の書評。インテルのイスラエルチームによる半導体技術革新の事例から、KPIの正しさや摩擦を恐れない姿勢の重要性を考察する。"
 tags:

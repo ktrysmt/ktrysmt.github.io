@@ -3,7 +3,7 @@ layout: post
 title: "neocomplete-php重いのでやめて、辞書ファイルをneocompleteで読み込む方法に切り替えた"
 date: 2015-04-19 15:09:08 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "neocomplete-phpが重いため辞書ファイル方式に切り替えてPHP補完を軽量化する方法。辞書生成からvimrcの設定までを解説。"
 tags:

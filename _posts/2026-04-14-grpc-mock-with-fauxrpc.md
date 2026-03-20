@@ -2,7 +2,7 @@
 layout: post
 title: "buf起点でgRPCモックサーバーを気軽に建てる -- FauxRPC実践"
 date: 2026-04-14 09:00:00 +0900
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 use_toc: false
 description: "buf buildの出力をそのまま入力にしてgRPCモックサーバーを即座に立ち上げるFauxRPCの導入手順。Stub定義やMakefile統合など実践的な活用方法も紹介。"

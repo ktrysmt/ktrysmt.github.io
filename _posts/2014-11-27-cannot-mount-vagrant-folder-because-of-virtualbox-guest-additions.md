@@ -3,7 +3,7 @@ layout: post
 title: "/vagrantにマウントできない とか、guest additions バージョン違い とか"
 date: 2014-11-27 15:09:08 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 description: "Vagrantで/vagrantにマウントできない問題の対処法。VirtualBox Guest Additionsのバージョン不一致を解消するためVagrantとVirtualBoxを最新化する手順"
 tags:

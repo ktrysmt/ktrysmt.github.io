@@ -3,7 +3,7 @@ layout: post
 title: ".minttyrcを編集してCygwinのカラースキーマを変更する"
 date: 2014-09-27 15:09:08 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "Cygwinの.minttyrcを編集してカラースキーマを変更する方法。落ち着いた色味のカスタムカラー設定例を紹介"
 tags:

@@ -3,7 +3,7 @@ layout: post
 title: "PHP実践テクニック集"
 date: 2014-11-22 15:09:08 +0900
 comments: true
-categories: Programming
+categories: [Programming]
 published: true
 description: "PHPの実践的なテクニック集。Bing翻訳API、短縮URL生成、プロファイラ設定、アクセラレータ(opcache/APCu/APC)の導入方法をまとめて解説"
 redirect_from:

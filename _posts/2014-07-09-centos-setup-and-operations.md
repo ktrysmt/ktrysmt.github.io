@@ -3,7 +3,7 @@ layout: post
 title: "CentOS運用・セットアップまとめ"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 description: "CentOS 6の不要デーモン停止、vsftpd構築、PNG圧縮、サードパーティリポジトリ追加、パフォーマンス解析ツールなど運用ノウハウ集。"
 tags:

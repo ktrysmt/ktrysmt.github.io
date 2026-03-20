@@ -3,7 +3,7 @@ layout: post
 title: "yumでBashをバージョンアップできないときの対処法"
 date: 2014-10-01 15:09:08 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "yumでBashをバージョンアップできない場合にRPMファイルを直接取得してアップデートする手順。Shellshock脆弱性の検証コマンドも紹介"
 tags:

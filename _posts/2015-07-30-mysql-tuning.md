@@ -3,7 +3,7 @@ layout: post
 title: "MySQLの基本的なチューニングまとめ"
 date: 2015-07-09 15:09:08 +0900
 comments: true
-categories: Cloud Infrastructure
+categories: [Cloud Infrastructure]
 published: true
 description: "MySQLの基本的なチューニング方法まとめ。innodb_buffer_pool_size、key_buffer_size等の設定指針と調査用SQLコマンドをInnoDBを中心に解説。"
 tags:

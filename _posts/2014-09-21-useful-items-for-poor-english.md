@@ -3,7 +3,7 @@ layout: post
 title: "開発に欠かせない英語翻訳ツールの設定"
 date: 2014-09-21 15:09:08 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "開発者向け英語翻訳ツールの設定まとめ。Chrome拡張ImTranslator、codic、Google翻訳のアドレスバー検索設定やlaunchyへの登録方法を紹介"
 tags:

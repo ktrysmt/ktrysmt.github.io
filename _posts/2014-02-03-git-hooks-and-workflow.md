@@ -3,7 +3,7 @@ layout: post
 title: "Git Hook・ワークフロー活用術"
 date: 2014-02-03 12:00:00 +0900
 comments: true
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 description: "Gitの入力補完、post-commitフックによる自動push、pre-commit/post-commitの実用例、git blameによるSRP算出をまとめて解説"
 tags:

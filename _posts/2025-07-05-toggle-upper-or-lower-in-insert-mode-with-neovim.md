@@ -2,7 +2,7 @@
 layout: post
 title: "Neovimのインサートモードで大文字・小文字を切り替え"
 date: 2025-07-05 09:00:00 +0900
-categories: Developer Tools
+categories: [Developer Tools]
 published: true
 use_toc: false
 description: "Neovimのインサートモードでカーソル下の単語の大文字・小文字をCtrl+Lでトグル切り替えするluaキーマップの実装例を紹介します。"
