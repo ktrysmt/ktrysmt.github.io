@@ -6,7 +6,7 @@ archive: false
 <article class="list">
     <header>
         <h1>{{ page.title | default: site.blogName }}</h1>
-        <p>{{ site.description }}</p>
+        {% if page.description %}<p>{{ page.description }}</p>{% endif %}
     </header>
     <section id="post-body">
         {{content}}

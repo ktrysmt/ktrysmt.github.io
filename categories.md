@@ -2,7 +2,7 @@
 title: Categories
 permalink: /categories/
 layout: list
-description: "記事をカテゴリ別に分類した一覧ページです。"
+description: ""
 ---
 
 {% comment %}カテゴリを最新投稿日順にソート{% endcomment %}

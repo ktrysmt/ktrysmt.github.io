@@ -302,6 +302,7 @@ em, i { font-style: italic; }
 
 .top h1 {
   box-shadow: 0 1px 0 #eee;
+  margin-bottom: 40px !important;
 }
 .top h2 {
   margin-bottom: 24px;

@@ -2,6 +2,7 @@
 permalink: /blog/
 profile: false
 layout: list
+description: "SREとかセキュリティガバナンスとか"
 ---
 
 <ul id="post-list">
