@@ -60,4 +60,4 @@ defaults:
     values:
       layout: post
       use_toc: false
-      image: /assets/images/og-default.png
+      # image: /assets/images/og-default.png
