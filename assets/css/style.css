@@ -841,14 +841,6 @@ h2.month {
   .post h1 { font-size:24px; }
   .post h2 { font-size:20px; }
 
-  .recent-post-list {
-    word-break: break-all;
-  }
-  .recent-post-list .readmore {
-    text-align: right;
-    margin-right: 0.5em !important;
-    margin-top: 1em;
-  }
   .js-toc {
     display: none;
     content: unset;
@@ -943,23 +935,6 @@ li.toc-list-item.is-active-li {
 }
 
 .post-comment {
-}
-
-.recent-post-list {
-  text-align: justify;
-  line-height: 1.7em;
-  margin: 40px 0px;
-}
-.recent-post-list ul {
-  margin: 0px;
-}
-.recent-post-list .readmore {
-  text-align: right;
-  margin-right: 2em;
-  margin-top: 1em;
-}
-.recent-post-list li {
-  flex-direction: row !important;
 }
 
 
