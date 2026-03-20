@@ -1,13 +1,15 @@
 {% if page.url == "/" %}
-<meta property="og:image" content="{{ '/assets/images/logo.png' | absolute_url }}">
 <meta name="twitter:card" content="summary">
+<meta property="og:image" content="{{ '/assets/images/logo.png' | absolute_url }}">
 {% elsif page.url == "/blog/" %}
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_90_bold:ktrysmt.log,co_rgb:333333,g_center,y_-50/l_text:Rounded%20Mplus%201c_40:SRE%E3%81%A8%E3%81%8B%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9%E3%81%A8%E3%81%8B,co_rgb:888888,g_center,y_100/background.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 {% elsif page.title %}
 {% assign og_text = page.title | url_encode | replace: "+", "%20" | replace: "%2F", "%252F" | replace: "%2C", "%252C" %}
-<meta property="og:image" content="https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_60_bold:{{ og_text }},co_rgb:333333,g_north,y_100,w_1000,c_fit/l_text:Rounded%20Mplus%201c_48_bold:ktrysmt.log,co_rgb:666666,g_south_east,x_80,y_140/background.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_68_bold:{{ og_text }},co_rgb:333333,g_north,y_140,w_1000,c_fit/l_text:Rounded%20Mplus%201c_48_bold:ktrysmt.log,co_rgb:666666,g_south_east,x_80,y_140/background.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 {% endif %}

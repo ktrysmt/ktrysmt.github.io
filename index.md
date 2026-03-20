@@ -2,9 +2,6 @@
 title: Kotaro Yoshimatsu
 permalink: /
 layout: top
-image: /assets/images/logo.png
-twitter:
-  card: summary
 ---
 
 <img src="/assets/images/avatar.webp" style="width:128px;" alt="Kotaro Yoshimatsu">

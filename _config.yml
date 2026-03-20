@@ -35,7 +35,6 @@ authorFullName: 'Kotaro Yoshimatsu'
 authorRealName: 'Kotaro Yoshimatsu'
 twitter:
   username: ktrysmt
-  card: summary_large_image
 social:
   name: Kotaro Yoshimatsu
   links:
@@ -53,7 +52,6 @@ defaults:
       type: pages
     values:
       layout: default
-      image: /assets/images/logo.png
   -
     scope:
       path: "" # empty string for all files
@@ -61,4 +59,3 @@ defaults:
     values:
       layout: post
       use_toc: false
-      image: /assets/images/logo.png
