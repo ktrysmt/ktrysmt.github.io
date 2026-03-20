@@ -3,7 +3,7 @@ layout: post
 title: "Windows7でdockerを使いプロビジョニングテストするまで"
 date: 2015-03-01 15:09:08 +0900
 comments: true
-categories: Infrastructure
+categories: Cloud Infrastructure
 published: true
 description: "Windows7でboot2dockerを使いDockerコンテナでプロビジョニングテスト環境を構築する手順。Dockerfile作成からSSH接続、コンテナのcommit/runまで解説。"
 tags:

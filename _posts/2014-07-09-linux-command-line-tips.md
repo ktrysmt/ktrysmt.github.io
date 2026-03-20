@@ -3,7 +3,7 @@ layout: post
 title: "Linuxコマンドライン Tips集"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-categories: Linux
+categories: Cloud Infrastructure
 published: true
 description: "pssh、sed、grep、xargs、rsync、wgetなどLinuxコマンドラインの実用的なTipsをまとめた記事。並列処理やMakefileヘルプの小技も紹介。"
 tags:

@@ -2,7 +2,7 @@
 layout: post
 title: rg(ripgrep)でinclude/excludeする
 date: 2018-04-30
-categories: Rust
+categories: Programming
 published: true
 use_toc: false
 description: "ripgrep(rg)でinclude/excludeするglobオプションの使い方と注意点。シングルクォートや正規表現オプションの組み合わせ方も紹介。"

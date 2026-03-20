@@ -3,7 +3,7 @@ layout: post
 title: 'Concourseの基本操作まとめ'
 date: 2019-01-03
 comments: true
-categories: DevTools
+categories: Developer Tools
 published: true
 use_toc: false
 description: 'お仕事でConcourseCIを建てたり運用したりすることが多いのですが、先日改めてこれを解説する機会があり、基本的な操作方法を軽く解説を添えつつまとめてみました。'

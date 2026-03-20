@@ -2,7 +2,7 @@
 layout: post
 title: "スクリプトを雑にmcpサーバのツールにするやつ"
 date: 2025-04-03 22:30:00 +0900
-categories: LLM
+categories: AI Engineering
 published: true
 use_toc: false
 description: "シェルスクリプトを手軽にMCPサーバーのツールとして公開できる自作MCPの紹介。設定はスクリプトをフォルダに置くだけで即利用可能です。"

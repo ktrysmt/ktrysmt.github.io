@@ -2,7 +2,7 @@
 layout: post
 title: "LG OnScreen Controlをcliで操作する"
 date: 2025-02-12 23:45:00 +0900
-categories: Windows
+categories: Developer Tools
 published: true
 use_toc: false
 description: "MS-DOSすぐ忘れそうなので備忘。"

@@ -3,7 +3,7 @@ layout: post
 title: "社内LT会でコードレビューを支える技術というテーマで話してきた"
 date: 2017-06-03
 comments: true
-categories: Shell
+categories: Developer Tools
 published: true
 use_toc: false
 description: "作業効率化のためのいろいろな工夫をコードレビューの観点でまとめてみました。"

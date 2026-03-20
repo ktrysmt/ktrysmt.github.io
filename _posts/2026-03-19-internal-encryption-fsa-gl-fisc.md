@@ -2,7 +2,7 @@
 layout: post
 title: "VPC内通信の暗号化おさらい - FSA GL / FISC 第13版を読みつつ"
 date: 2026-03-19 09:00:00 +0900
-categories: Security
+categories: Security Governance
 published: true
 use_toc: false
 description: "VPC内部通信の暗号化がFSA GL 2.3.4.4-基-3とFISC安全対策基準第13版でどう要求されているか。規制根拠と典型的なECS構成への実装影響を整理したときのメモ"

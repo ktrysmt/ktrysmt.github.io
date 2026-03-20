@@ -3,7 +3,7 @@ layout: post
 title: "Rust Second Editionで勉強になったことまとめ"
 date: 2019-09-06 01:00:00 +0900
 comments: true
-categories: Rust
+categories: Programming
 published: true
 use_toc: false
 description: "Rust Second Editionを通して学んだ所有権、ライフタイム、パターンマッチ、テスト手法など実践的なポイントをまとめた備忘録。"

@@ -3,7 +3,7 @@ layout: post
 title: "Cassandra v2.2をCentOS6で使う"
 date: 2015-10-07 15:09:08 +0900
 comments: true
-categories: Infrastructure
+categories: Cloud Infrastructure
 published: true
 description: "CentOS6にCassandra v2.2をインストールする手順。DataStaxリポジトリの設定、nodetoolによるノード管理、cqlshでのCQL操作方法を紹介。"
 tags:

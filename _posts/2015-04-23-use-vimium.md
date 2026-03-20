@@ -3,7 +3,7 @@ layout: post
 title: "HometypeやめてVromeもやめてVimiumにした"
 date: 2015-04-23 15:09:08 +0900
 comments: true
-categories: Vim
+categories: Developer Tools
 published: true
 description: "Chrome拡張のVimiumを導入した経緯と設定例。Hometype、Vromeとの比較やカスタムキーマッピング、除外URL設定を紹介。"
 tags:

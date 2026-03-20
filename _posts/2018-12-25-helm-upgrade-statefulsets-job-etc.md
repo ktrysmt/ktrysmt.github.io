@@ -3,7 +3,7 @@ layout: post
 title: 'helmでのstatefulsetsの更新をうまくやるワークアラウンド'
 date: 2018-12-25
 comments: true
-categories: Infrastructure
+categories: Cloud Infrastructure
 published: true
 use_toc: false
 description: 'helmの設定を書き換えようとしてもそれがstsやpoddisruptionbudgets.policy、job等についての変更の場合、うまく更新できず困っていたのですが...。'

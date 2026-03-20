@@ -3,7 +3,7 @@ layout: post
 title: "CGI(Perl)が 500 Internal Server Error のときの確認箇所いろいろ"
 date: 2013-05-19 12:48:21 +0000
 comments: true
-categories: Perl
+categories: Programming
 published: true
 description: "Perl CGIで500 Internal Server Errorが発生した際の確認手順まとめ。構文チェック、文字コード、改行コード、エラーログの確認方法を解説"
 tags:

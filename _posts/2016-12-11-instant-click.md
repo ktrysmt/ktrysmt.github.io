@@ -3,7 +3,7 @@ layout: post
 title: "画面遷移の体感速度をサクッと改善するInstantClick"
 date: 2016-12-11 15:09:08 +0900
 comments: true
-categories: JavaScript
+categories: Programming
 published: true
 description: "InstantClickを導入して画面遷移の体感速度を改善する方法。aタグへのマウスオーバーで先読みする仕組みで、静的サイトに特におすすめ。"
 tags:

@@ -2,7 +2,7 @@
 layout: post
 title: Vim + Syntastic + eslint が動かないのはPATHをzshrcに書いていたのが原因だった
 date: 2016-09-22 09:00:00 +0900
-categories: Shell
+categories: Developer Tools
 published: true
 use_toc: false
 description: "Vim+Syntastic+eslintが動かない原因はPATHを.zshrcに書いていたこと。Vimは.zshenvのPATHを参照するため、そちらに記述を移す必要がある。"

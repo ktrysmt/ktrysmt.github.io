@@ -3,7 +3,7 @@ layout: post
 title: "Apache設定・チューニングまとめ"
 date: 2014-05-14 15:09:08 +0900
 comments: true
-categories: Infrastructure
+categories: Cloud Infrastructure
 published: true
 description: "Apache本番環境の設定、preforkチューニング、.htaccess、不要モジュール整理、mod_expires/deflateなど運用ノウハウを集約。"
 tags:

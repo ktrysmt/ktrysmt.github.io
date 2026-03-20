@@ -3,7 +3,7 @@ layout: post
 title: "Rustの開発環境はRustupで"
 date: 2017-01-23
 comments: true
-categories: Rust
+categories: Programming
 published: true
 use_toc: false
 description: "開発に必要な基本セットがだいたい揃ったっぽいのでまとめました"

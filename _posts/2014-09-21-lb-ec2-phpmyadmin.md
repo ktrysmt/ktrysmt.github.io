@@ -3,7 +3,7 @@ layout: post
 title: "LB+ec2環境にphpmyadminを入れる"
 date: 2014-09-20 15:09:08 +0900
 comments: true
-categories: AWS
+categories: Cloud Infrastructure
 published: true
 description: "AWS EC2+ロードバランサー環境にphpMyAdminをインストールしアクセス制御を設定する手順。X-Forwarded-Forを使ったIP制限の方法も紹介"
 tags:

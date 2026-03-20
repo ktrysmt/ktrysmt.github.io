@@ -3,7 +3,7 @@ layout: post
 title: "Docker Meetup Tokyo #4 まとめ"
 date: 2015-01-17 15:09:08 +0900
 comments: true
-categories: Infrastructure
+categories: Cloud Infrastructure
 published: true
 description: "Docker Meetup Tokyo #4の参加レポート。CoreOS、Dockerパフォーマンスチューニング、Amazon ECS、Kubernetes、cgroup等の発表スライドまとめ。"
 tags:

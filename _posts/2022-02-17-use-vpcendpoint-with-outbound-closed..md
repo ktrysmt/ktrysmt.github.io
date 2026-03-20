@@ -3,7 +3,7 @@ layout: post
 title: "アウトバウンドを制限しながら VPC Endpoint を使う"
 date: 2022-02-17 23:55:00 +0900
 comments: true
-categories: AWS
+categories: Cloud Infrastructure
 published: true
 use_toc: false
 description: "アウトバウンドを閉じた環境でVPC Endpoint Interface Typeを使う手順と注意点をまとめます。SGのegress設定やGateway Typeとの違いも解説。"

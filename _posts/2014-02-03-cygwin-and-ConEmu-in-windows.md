@@ -3,7 +3,7 @@ layout: post
 title: "cygwin＋ConEmuでWinターミナル環境整備"
 date: 2014-02-02 15:09:08 +0900
 comments: true
-categories: Windows
+categories: Developer Tools
 published: true
 description: "WindowsでCygwinとConEmuを組み合わせたターミナル環境の構築方法。フォント、カラー、タブ操作、ウィンドウ分割などの設定を紹介"
 tags:

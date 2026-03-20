@@ -3,7 +3,7 @@ layout: post
 title: "WindowsのGit BashでMinGWを使う"
 date: 2015-04-08 15:09:08 +0900
 comments: true
-categories: Windows
+categories: Developer Tools
 published: true
 description: "WindowsのGit BashでMinGWのコマンドを使えるようにする設定方法。PATHを通すだけでrsyncやgcc等のツールが利用可能になる。"
 tags:

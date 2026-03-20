@@ -3,7 +3,7 @@ layout: post
 title: "CentOS6にphantomjs+casperjs+IPAフォントをインストール"
 date: 2014-05-24 15:09:08 +0900
 comments: true
-categories: JavaScript
+categories: Programming
 published: true
 description: "CentOS 6にPhantomJS、CasperJS、IPAフォントをインストールする手順。ヘッドレスブラウザ環境の構築方法を解説"
 tags:

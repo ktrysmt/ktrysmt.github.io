@@ -2,7 +2,7 @@
 layout: post
 title: "neo-tree.nvimのちょっとした手直し"
 date: 2025-04-05 22:00:00 +0900
-categories: Vim
+categories: Developer Tools
 published: true
 use_toc: false
 description: "neo-tree.nvimで自然順ソート、git rootへの自動移動とfocus表示、trashコマンド対応などのカスタマイズ設定をluaコード付きで紹介します。"
