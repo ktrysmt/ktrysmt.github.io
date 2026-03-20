@@ -22,31 +22,37 @@ tags:
   devcontainer.json          # GHCR イメージ参照 (任意リポジトリで利用可)
   Dockerfile                 # ツール群 + dotfiles を焼き込み
   init-firewall.sh           # iptables + ipset によるネットワーク制限
+  refresh-firewall.sh        # ipset エントリの定期リフレッシュ (cron)
   setup-claude.sh            # postStartCommand: dotfiles 展開 + settings.json マージ
+
+mise/
+  config.toml                # ツールバージョン定義 (mise install で適用)
 
 .github/workflows/
   devcontainer.yml           # master push 時に GHCR へ自動ビルド
 ```
 
-流れは単純。
+流れは単純で、
 
 ```mermaid
 graph TD
-  A[Push to master] --> B[GitHub Actions]
-  B --> C[Build Docker image]
-  C --> D[Push to GHCR]
+  A[Push to master]
+  subgraph github actions
+    A --> B[on: push: branches: master]
+    B --> C[Build Docker image]
+    C --> D[Push to GHCR]
+  end
   E[devcontainer.json<br>references GHCR image] --> F[devcontainer up<br>on any repo]
   D -.-> |docker pull| F
   F --> G[postStartCommand]
   subgraph container [Inside devcontainer]
     G --> H[setup-claude.sh<br>symlink dotfiles +<br>merge settings.json]
     G --> I[init-firewall.sh<br>iptables + ipset]
+    I --> K[refresh-firewall.sh<br>resolve domains + cron]
     H --> J[Claude Code<br>--dangerously-skip-permissions]
-    I --> J
+    K --> J
   end
 ```
-
-以前は `portable/devcontainer.json` を別に持っていたが、ローカルビルドをやめて GHCR イメージ直参照に一本化したので不要になった。`devcontainer.json` 自体がポータブル版を兼ねる。
 
 ## Dockerfile
 
@@ -54,32 +60,38 @@ graph TD
 
 ### CLI ツール群
 
-ツール関係は GitHub Releases から直接バイナリを埋め込み。バージョンは Dockerfile 内の `ARG` で固定。
+ツール管理は [mise](https://mise.jdx.dev/)。`mise/config.toml` をイメージ内にコピーし、`mise install` で一括インストール。
 
-```dockerfile
-ARG GIT_DELTA_VERSION=0.18.2
-ARG RIPGREP_VERSION=15.1.0
-ARG FD_VERSION=v10.4.2
-ARG BAT_VERSION=v0.26.1
-ARG EZA_VERSION=v0.23.4
-ARG FZF_VERSION=v0.70.0
+```toml
+[tools]
+go = "1.25"
+bun = "latest"
+ripgrep = "latest"
+fzf = "latest"
+fd  = "10.3"
+bat = "latest"
+eza = "latest"
+delta = "latest"
+# ...
 ```
 
-あとは `dpkg --print-architecture` で amd64/arm64 を判定し、適切なバイナリを取得。パッケージマネージャを経由せず、軽量化。
-
-brewはともかくmiseくらいだったら使ってもいいかも。増えてきたら考える。
+```dockerfile
+RUN curl https://mise.run | sh
+COPY --chown=node:node mise/config.toml /home/node/.config/mise/config.toml
+ENV MISE_YES=1
+RUN mise install
+```
 
 ### 言語ランタイム
 
 | ランタイム  | 備考                                      |
 |-----------  |------                                     |
 | Node.js 20  | ベースイメージ由来                        |
-| Python 3.13 | uv 経由で                                 |
-| Go          | `INSTALL_GO=true` で有効化 (ARG で制御)   |
+| Go 1.25     | mise 経由                                 |
+| Bun         | mise 経由                                 |
 | Rust        | `INSTALL_RUST=true` で有効化 (ARG で制御) |
-| Bun         | /usr/local にインストール                 |
 
-Go と Rust は ARG でオプトアウト可。
+Python は直接インストールせず、uv / ruff を mise で管理。Rust のみ ARG でオプトアウト可。
 
 ### その他
 
@@ -109,6 +121,17 @@ COPY --chown=node:node .gitignore_global /home/node/.gitignore_global
 
 処理順は buind mount > postStartCommand なので永続化の恩恵を受けつつ、使い慣れた設定を注入。
 
+**mise** -- ツールバージョンマネージャ。Go、Bun、Node、Neovim などの言語ランタイムや ripgrep、fzf、gh といった CLI ツールを `mise/config.toml` で宣言的に管理し、ビルド時に一括インストールする。
+
+```dockerfile
+RUN curl https://mise.run | sh
+COPY --chown=node:node mise/config.toml /home/node/.config/mise/config.toml
+ENV MISE_YES=1
+RUN mise install
+```
+
+`config.toml` には標準バックエンドのほか `aqua:` や `github:`、`npm:` バックエンドも活用しており、difftastic や pnpm、devcontainers CLI なども mise 経由で導入している。PATH にはシム (`/home/node/.local/share/mise/shims`) を通しているため、コンテナ内のどこからでもバージョン固定されたツールが使える。
+
 ## ファイアウォール
 
 申し訳程度の `init-firewall.sh` は `postStartCommand` で毎回実行。
@@ -117,11 +140,15 @@ COPY --chown=node:node .gitignore_global /home/node/.gitignore_global
 
 1. Docker の DNS ルール (`127.0.0.11`) を退避してから iptables をフラッシュ
 2. DNS (udp/53)、SSH、localhost を許可
-3. `ipset` で許可 IP セットを構築
-4. ホストネットワーク (`ip route` から自動検出) を許可
-5. OUTPUT チェインを DROP に設定し、許可セットに一致するものだけ ACCEPT
+3. `ipset` で許可 IP セットを構築 (timeout 付き、デフォルト 3600 秒)
+4. `refresh-firewall.sh` でドメイン解決し ipset にエントリ投入
+5. cron で `refresh-firewall.sh --quiet` を定期実行 (デフォルト 30 分間隔)
+6. ホストネットワーク (`ip route` から自動検出) を許可
+7. OUTPUT チェインを DROP に設定し、許可セットに一致するものだけ ACCEPT
 
-GitHub の IP レンジは `api.github.com/meta` から動的に取得し、`aggregate` で CIDR を集約してから `ipset` に投入。静的ドメインは `dig` で A レコードを引いて IP を追加する感じで。
+DNS 解決のロジックは `refresh-firewall.sh` に分離。GitHub の IP レンジは `api.github.com/meta` から動的に取得し、`aggregate` で CIDR を集約してから `ipset` に投入。静的ドメインは `dig` で A レコードを引いて IP を追加。
+
+ipset エントリには timeout を設定しており、cron で定期的に再解決することで IP の変更にも追従する。`FIREWALL_REFRESH_INTERVAL` で cron の間隔、`FIREWALL_IPSET_TIMEOUT` で ipset エントリの有効期間をそれぞれ制御可能。
 
 ### 許可対象
 
@@ -166,6 +193,17 @@ dmesg -T | grep 'FIREWALL-UNLISTED' | grep -oP 'DST=\K[0-9.]+' | sort -u | \
 ```
 
 当面は strict で。
+
+### 定期リフレッシュ
+
+DNS の解決結果は変わりうるので、`init-firewall.sh` が cron ジョブを登録して `refresh-firewall.sh --quiet` を定期実行する。
+
+```bash
+# cron 登録 (init-firewall.sh 内)
+CRON_LINE="*/${REFRESH_INTERVAL} * * * * ... /usr/local/bin/refresh-firewall.sh --quiet 2>&1 | logger -t refresh-firewall"
+```
+
+ログは `logger` 経由で syslog に流れる。
 
 ### 検証
 
@@ -213,7 +251,7 @@ jq -s '.[0] * .[1]' "$CLAUDE_DIR/settings.json" <(echo "$DESIRED_SETTINGS") > "$
 
 ## 使い方
 
-`devcontainer.json` が GHCR のビルド済みイメージを直接参照するようになったので、任意のリポジトリで以下のように使える。
+任意のリポジトリで以下のように使える。
 
 ```sh
 cd ~/projects/target-repo
@@ -224,15 +262,13 @@ devcontainer exec --workspace-folder . \
   claude --dangerously-skip-permissions
 ```
 
-対象リポジトリに `.devcontainer/` を置く必要がないのがメリット。dotfiles リポジトリ側で設定を一元管理できるのがちょっとラク。
 
 ## CI
 
-`.github/workflows/devcontainer.yml` が `.devcontainer/**`、`claude/**`、`.gitignore_global`、`.dockerignore` の変更を検知して GHCR に push。
+`.github/workflows/devcontainer.yml` が `.devcontainer/**`、`claude/**`、`.gitignore_global`、`.dockerignore` の変更を検知して GHCR に push。`mise/config.toml` も Docker ビルドコンテキストに含まれるが、CI のトリガーパスには現状含めていない (`.dockerignore` でホワイトリスト管理)。
 
-以前は `devcontainer.json` の `build.args` から `jq` でビルド引数を動的抽出していたが、ローカルビルドを廃止して ARG を Dockerfile 内に直接定義するようにしたので不要になった。CI は単に `docker/build-push-action` で Dockerfile をビルドするだけ。
 
-アクションは commit hash で pin している。Docker layer cache は GitHub Actions Cache (`type=gha`) を使う。
+アクションは commit hash で pin。Docker layer cache は GitHub Actions Cache (`type=gha`)。
 
 ## mount 設計
 
@@ -244,7 +280,7 @@ devcontainer exec --workspace-folder . \
 ]
 ```
 
-- `~/.claude` はホスト側の `~/.claude-devcontainer/` への bind mount。セッション履歴や認証トークンがコンテナ再作成で消えないようにする。以前は `devcontainerId` ごとの named volume だったが、ホスト側からも中身を確認・バックアップしやすいよう bind mount に変えた。`initializeCommand` でホスト側ディレクトリを自動作成するため初回の手動操作は不要
+- `~/.claude` はホスト側の `~/.claude-devcontainer/` への bind mount。セッション履歴や認証トークンがコンテナ再作成で消えないようにする。`initializeCommand` でホスト側ディレクトリを自動作成するため初回の手動操作は不要
 - bash history は named volume で永続化
 - tmux ソケットディレクトリを bind mount し、ホスト側 tmux セッションのウィンドウ名やステータスをコンテナ内から操作する。これで聖徳太子を続行可能に
 
@@ -252,12 +288,6 @@ devcontainer exec --workspace-folder . \
 
 ## おわり
 
-- Dockerfile にツールチェインと dotfiles を配置、どの環境でも同じ体験最低限維持
-- iptables + ipset でネットワークを許可リスト方式に
-- CI で GHCR にイメージ push、`devcontainer.json` 一本で任意リポジトリから使えるように
-- settings.json は permission 除去 + deep-merge でコンテナ用に生成
-- `~/.claude` は bind mount でホスト側からも参照可能に
-
-`--dangerously-skip-permissions` をちゃんと使おうとするとネットワークとファイルシステムの両方への配慮が要る。devcontainer はその箱としては若干気になるところはあるものの過不足はないんだろうな、と思う。もうちょっとメンテ楽になってほしいが。
+`--dangerously-skip-permissions` をちゃんと使おうとするとネットワークとファイルシステム両方の配慮が要る。devcontainer はその箱としては若干気になるところはあるものの過不足はないんだろうな、という気持ち。もうちょっとメンテしやすいとうれしいが元がDockerなので仕方ない。。
 
 [](https://github.com/ktrysmt/dotfiles/tree/master/.devcontainer){:.card-preview}
