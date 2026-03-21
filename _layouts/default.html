@@ -5,21 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.blogName }}</title>
-  {% seo title=false %}
+  <title>{{ page.title }}</title>
   {% include og-image.html %}
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="alternate" type="application/rss+xml" title="{{ site.blogName }}" href="/feed.xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css">
 </head>
 <body>
-
-  {% if page.profile %}
-      {% include profile.html %}
-  {% endif %}
 
   <section id="wrapper" class="{% if page.profile %}home{% endif %}">
   {% include navigation.html %}

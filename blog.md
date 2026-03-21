@@ -1,7 +1,8 @@
 ---
-permalink: /blog/
-profile: false
+name: ktrysmt.log
+title: ktrysmt.log
 layout: list
+permalink: /blog/
 description: "SREとかセキュリティガバナンスとか"
 ---
 

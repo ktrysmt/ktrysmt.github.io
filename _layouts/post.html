@@ -46,10 +46,6 @@ archive: true
 
     </section>
 
-    {% if page.use_toc %}
-    <div class="js-toc">
-    </div>
-    {% endif %}
 
 </article>
 
@@ -77,7 +73,6 @@ archive: true
 {% include post-meta.html %}
 <hr>
 
-<!-- Credit -->
-<p class="small">(c) Copyright {{ site.time | date: '%Y' }} {{ site.authorRealName }}</p>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<!-- Footer -->
+{% include footer.html %}
+

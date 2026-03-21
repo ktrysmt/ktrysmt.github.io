@@ -1,15 +1,41 @@
+{% assign default_og_image = "https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_90_bold:ktrysmt%2Elog,co_rgb:333333,g_center,y_-50/l_text:Rounded%20Mplus%201c_40:SRE%E3%81%A8%E3%81%8B%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9%E3%81%A8%E3%81%8B,co_rgb:888888,g_center,y_100/background.png" %}
+{% assign meta_title = page.title | default: site.blogName | escape %}
+{% assign meta_description = page.description | default: site.description | escape %}
+{% assign canonical_url = page.url | absolute_url %}
 {% if page.url == "/" %}
-<meta name="twitter:card" content="summary">
-<meta property="og:image" content="{{ '/assets/images/logo.png' | absolute_url }}">
-{% elsif page.url == "/blog/" %}
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_90_bold:ktrysmt%2Elog,co_rgb:333333,g_center,y_-50/l_text:Rounded%20Mplus%201c_40:SRE%E3%81%A8%E3%81%8B%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AC%E3%83%90%E3%83%8A%E3%83%B3%E3%82%B9%E3%81%A8%E3%81%8B,co_rgb:888888,g_center,y_100/background.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-{% elsif page.title %}
+{% assign og_image_url = "/assets/images/logo.png" | absolute_url %}
+{% assign twitter_card_type = "summary" %}
+{% elsif page.date and page.title %}
 {% assign og_text = page.title | url_encode | replace: "+", "%20" | replace: "%2F", "%252F" | replace: "%2C", "%252C" %}
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_68_bold:{{ og_text }},co_rgb:333333,g_north,y_140,w_1000,c_fit/l_text:Rounded%20Mplus%201c_48_bold:ktrysmt%2Elog,co_rgb:666666,g_south_east,x_80,y_140/background.png">
+{% assign og_image_url = "https://res.cloudinary.com/dy4mjumcs/image/upload/w_1200,h_630,c_fill/l_text:Rounded%20Mplus%201c_68_bold:" | append: og_text | append: ",co_rgb:333333,g_north,y_140,w_1000,c_fit/l_text:Rounded%20Mplus%201c_48_bold:ktrysmt%2Elog,co_rgb:666666,g_south_east,x_80,y_140/background.png" %}
+{% assign twitter_card_type = "summary_large_image" %}
+{% else %}
+{% assign og_image_url = default_og_image %}
+{% assign twitter_card_type = "summary_large_image" %}
+{% endif %}
+<meta name="description" content="{{ meta_description }}">
+<link rel="canonical" href="{{ canonical_url }}">
+<meta property="og:title" content="{{ meta_title }}">
+<meta property="og:description" content="{{ meta_description }}">
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:site_name" content="{{ site.blogName }}">
+<meta property="og:locale" content="{{ site.locale }}">
+{% if page.date %}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% else %}
+<meta property="og:type" content="website">
+{% endif %}
+<meta property="og:image" content="{{ og_image_url }}">
+{% if twitter_card_type == "summary_large_image" %}
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+{% endif %}
+<meta name="twitter:card" content="{{ twitter_card_type }}">
+<meta name="twitter:title" content="{{ meta_title }}">
+<meta name="twitter:image" content="{{ og_image_url }}">
+{% if page.date %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"{{ meta_title }}","description":"{{ meta_description }}","datePublished":"{{ page.date | date_to_xmlschema }}","url":"{{ canonical_url }}","image":"{{ og_image_url }}","author":{"@type":"Person","name":"{{ site.author }}"}}
+</script>
 {% endif %}

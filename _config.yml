@@ -1,61 +1,38 @@
-name: "ktrysmt"
-blogName: "ktrysmt.log"
+author: Kotaro Yoshimatsu
+blogName: ktrysmt.log
+userid: ktrysmt
+locale: ja_JP
 description: "SREとかセキュリティガバナンスとか"
-meta_description: "SREとかセキュリティガバナンスとか"
-
-lang: ja_JP
-timezone: Asia/Tokyo
-
-aboutPage: true
-
+url: 'https://ktrysmt.github.io'
+permalink: /blog/:title/
+exclude:
+  - google448087d1929cfb55.html
+#
+# blogName: "ktrysmt.log"
+#
+# aboutPage: true
+#
 plugins:
-  - jekyll-seo-tag
   - jemoji
   - jekyll-mentions
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-feed
 
-markdown: kramdown
-kramdown:
-  syntax_highlighter_opts:
-    disable : true
+#
+# markdown: kramdown
+# kramdown:
+#   syntax_highlighter_opts:
+#     disable : true
+#
+# baseurl: /
+#
+# domain_name: 'https://ktrysmt.github.io'
+#
+# url: 'https://ktrysmt.github.io'
+#
+# authorTwitter:  'ktrysmt'
+# authorFullName: 'Kotaro Yoshimatsu'
+# authorRealName: 'Kotaro Yoshimatsu'
+#
 
-baseurl: /
-domain_name: 'https://ktrysmt.github.io'
-
-url:            'https://ktrysmt.github.io'
-blogTopUrl:        'https://ktrysmt.github.io/blog/'
-author:
-  name: Kotaro Yoshimatsu
-  twitter: ktrysmt
-  url: https://github.com/ktrysmt
-authorTwitter:  'ktrysmt'
-authorFullName: 'Kotaro Yoshimatsu'
-authorRealName: 'Kotaro Yoshimatsu'
-twitter:
-  username: ktrysmt
-social:
-  name: Kotaro Yoshimatsu
-  links:
-    - https://twitter.com/ktrysmt
-    - https://github.com/ktrysmt
-
-permalink:       /blog/:title/
-exclude:
-  - google448087d1929cfb55.html
-
-defaults:
-  -
-    scope:
-      path: "" # empty string for all files
-      type: pages
-    values:
-      layout: default
-  -
-    scope:
-      path: "" # empty string for all files
-      type: posts
-    values:
-      layout: post
-      use_toc: false
