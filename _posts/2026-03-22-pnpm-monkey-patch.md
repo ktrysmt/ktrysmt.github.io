@@ -8,6 +8,7 @@ description: "npm公開とかしてるとたまに必要になる、依存パッ
 tags:
   - pnpm
   - nodejs
+  - javascript
 ---
 
 依存パッケージにバグや不足機能があるとして upstream に PR を出すほどでもない、あるいは PR がマージされるまで待てないってときに。
