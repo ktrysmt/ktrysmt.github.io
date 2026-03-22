@@ -5,7 +5,6 @@ date: 2017-09-30
 comments: true
 categories: [Cloud Infrastructure]
 published: true
-use_toc: false
 description: "Nginxの名前解決にはいくつか特徴があり，把握しておかないとまれにトラブルに見舞われることがある（あった）のでまとめました。"
 tags:
   - nginx

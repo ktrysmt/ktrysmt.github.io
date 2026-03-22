@@ -5,7 +5,6 @@ date: 2019-01-10
 comments: true
 categories: [Security Governance]
 published: true
-use_toc: false
 description: 'KMSは大変便利で私の好きなAWSマネージドサービスのひとつなのですが、初見ではSSE-S3とSSE-KMSの違いはかなりわかりにくいかなと思います。そこで今回はS3のサーバーサイド暗号化においてよく使われるSSE-S3とSSE-KMSの違いについてまとめました。'
 tags:
   - aws

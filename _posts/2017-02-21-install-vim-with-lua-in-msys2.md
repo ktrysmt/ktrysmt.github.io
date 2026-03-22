@@ -5,7 +5,6 @@ date: 2017/02/21
 comments: true
 categories: [Developer Tools]
 published: true
-use_toc: false
 description: "Msys2のRuntimeは不安定だがそれでもvim+luaが使いたい、です…。"
 tags:
   - vim

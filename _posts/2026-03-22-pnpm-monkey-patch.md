@@ -4,7 +4,6 @@ title: "pnpmで依存パッケージに一時的なpatchを当てる"
 date: 2026-03-22 12:00:00 +0900
 categories: [Developer Tools]
 published: true
-use_toc: false
 description: "npm公開とかしてるとたまに必要になる、依存パッケージにpatchを当てる話。"
 tags:
   - pnpm

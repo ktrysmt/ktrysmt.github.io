@@ -1,6 +1,5 @@
 ---
 layout: post
-use_toc: false
 title: "JMESPathを覚えてawscliを使いこなす"
 date: 2018-05-24
 comments: true

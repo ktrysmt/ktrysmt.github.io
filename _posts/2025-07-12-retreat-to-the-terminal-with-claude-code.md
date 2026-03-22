@@ -4,7 +4,6 @@ title: "claude-codeのおかげでterminal引きこもり生活に舞い戻る"
 date: 2025-07-12 09:00:00 +0900
 categories: [AI Engineering]
 published: true
-use_toc: false
 description: "Claude Codeの登場でVSCodeからターミナル生活に回帰。Neovimプラグイン、キーバインド設定、MCP構成、モデル使い分けなど現在の開発環境をまとめます。"
 tags:
   - llm

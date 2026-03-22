@@ -5,7 +5,6 @@ date: 2018-06-19 23:00:00 +0900
 comments: true
 categories: [Programming]
 published: true
-use_toc: false
 description: "各種linuxコマンドをリッチで処理速度も早いRust製のCLIに置き換ると幸せになれるかもという話。タイトルが煽り気味で恐縮ですが、作業効率はわりかし上がると思うのでおすすめです。"
 tags:
   - rust

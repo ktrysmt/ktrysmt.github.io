@@ -5,7 +5,6 @@ date: 2014-09-26 00:00:00 +0900
 comments: true
 categories: [Developer Tools]
 published: true
-use_toc: true
 description: "oh-my-zshからprezto、zgen、zinitへの移行手順やpeco/fzf活用によるスニペット管理・ディレクトリ移動の効率化を解説"
 tags:
   - zsh

@@ -5,7 +5,6 @@ date: 2018-06-17 15:00:00 +0900
 comments: true
 categories: [Engineering Practices]
 published: true
-use_toc: false
 description: "インフラエンジニアリングの現場も重要な意思決定の連続ですが、日々の設計やツール・サービス選定にあたって意識している考え方があったので、言語化しました。"
 tags:
   - infrastructure

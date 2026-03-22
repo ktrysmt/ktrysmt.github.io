@@ -5,7 +5,6 @@ date: 2018-04-14
 comments: true
 categories: [Engineering Practices]
 published: true
-use_toc: false
 description: "迷いやすいポイントや議論になりやすい話題を中心に、うまくまわすためのアプローチをまとめました。ある程度スクラムを知ってる人、やったことがある人向けの記事です。"
 tags:
   - management

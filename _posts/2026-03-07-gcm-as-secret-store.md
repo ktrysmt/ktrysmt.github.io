@@ -4,7 +4,6 @@ title: "Git Credential Managerをシークレットストアとして使う"
 date: 2026-03-07 00:01:00 +0900
 categories: [Developer Tools]
 published: true
-use_toc: false
 description: "Git Credential Manager(GCM)をAPIキー等のシークレットストアとして流用する方法。WSL環境での注意点やzshでのget/set/erase実装例を紹介します。"
 tags:
   - git

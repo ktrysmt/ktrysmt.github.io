@@ -62,7 +62,6 @@ title: "Title"
 date: YYYY-MM-DD HH:MM:SS +0900
 categories: [Category]  # see "Allowed Categories" below
 published: true
-use_toc: false
 description: "Summary"
 tags: [tag1, tag2]
 ---
@@ -81,7 +80,6 @@ Posts must use exactly one of the following categories:
 
 - Permalink: `/blog/:title/`
 - Mermaid diagrams: use ```` ```mermaid ```` code blocks
-- TOC: set `use_toc: true` in front matter to enable
 
 ## CI/CD
 

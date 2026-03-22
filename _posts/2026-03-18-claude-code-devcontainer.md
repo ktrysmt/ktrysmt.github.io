@@ -4,7 +4,6 @@ title: "ClaudeCode の devcontainer 対応をちゃんとやる"
 date: 2026-03-18 09:00:00 +0900
 categories: [AI Engineering]
 published: true
-use_toc: false
 description: "Claude Codeの--dangerously-skip-permissionsを安全に使うべく一旦devcontainerでがんばる。"
 tags:
   - llm

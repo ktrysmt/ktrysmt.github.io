@@ -5,7 +5,6 @@ date: 2020-11-19 00:00:00 +0900
 comments: true
 categories: [Security Governance]
 published: true
-use_toc: false
 description: "久しぶりにテンション上がるニュースが出たので野次馬的にまとめていきます。"
 tags:
   - aws

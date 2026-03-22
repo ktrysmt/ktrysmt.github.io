@@ -5,7 +5,6 @@ date: 2022-02-19 00:05:00 +0900
 comments: true
 categories: [Cloud Infrastructure]
 published: true
-use_toc: false
 description: "aws-vaultを使ったassume-roleのセットアップ手順とalias設定例を紹介。keychainによるクレデンシャル管理やMFA対応もカバーします。"
 tags:
   - aws

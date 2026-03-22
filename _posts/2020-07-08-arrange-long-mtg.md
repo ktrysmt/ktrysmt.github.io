@@ -5,7 +5,6 @@ date: 2020-07-08 23:30:00 +0900
 comments: true
 categories: [Engineering Practices]
 published: true
-use_toc: false
 description: "難題に取り組むためのロングMTG手法を紹介。毎日60-120分の議論を重ね、心理的安全性を保ちながらチームで合意形成する運用方法と実践知見をまとめます。"
 tags:
   - management

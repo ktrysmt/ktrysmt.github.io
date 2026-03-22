@@ -4,7 +4,6 @@ title: "bufを使ってgRPCのmockを建てる"
 date: 2026-03-21 00:01:00 +0900
 categories: [Cloud Infrastructure]
 published: true
-use_toc: false
 description: "buf buildの出力をそのまま入力にしてgRPCモックサーバーを即座に立ち上げるFauxRPCの導入手順まとめ。Stub定義など"
 tags:
   - grpc
