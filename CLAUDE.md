@@ -60,13 +60,24 @@ bundle exec jekyll build
 layout: post
 title: "Title"
 date: YYYY-MM-DD HH:MM:SS +0900
-categories: [Category]
+categories: [Category]  # see "Allowed Categories" below
 published: true
 use_toc: false
 description: "Summary"
 tags: [tag1, tag2]
 ---
 ```
+
+## Allowed Categories
+
+Posts must use exactly one of the following categories:
+
+- `AI Engineering`
+- `Cloud Infrastructure`
+- `Developer Tools`
+- `Engineering Practices`
+- `Programming`
+- `Security Governance`
 
 - Permalink: `/blog/:title/`
 - Mermaid diagrams: use ```` ```mermaid ```` code blocks
