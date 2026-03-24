@@ -37,11 +37,11 @@ rclone serve webdav . \
 
 ### systemdなどで常時起動する場合
 
-スクリプト化するなら `tailscale wait` でTailscaleの準備完了を待ってからバインドする。
+スクリプト化するならTailscaleの接続完了を待ってからバインドする。`tailscale ip -4` は接続前だとエラーを返すので、これをポーリングすれば待ち合わせになる。
 
 ```bash
 #!/bin/bash
-tailscale wait
+until tailscale ip -4 >/dev/null 2>&1; do sleep 1; done
 TS_IP=$(tailscale ip -4)
 exec rclone serve webdav /path/to/vault \
   --addr "${TS_IP}:8080" \
@@ -50,6 +50,10 @@ exec rclone serve webdav /path/to/vault \
   --include 'dir/**' \
   --filter '- **'
 ```
+
+`After=tailscaled.service` でtailscaledの起動後に実行されるが、デーモン起動=接続完了ではないのでポーリング
+
+`exec` でシェルプロセスをrcloneに置き換えるため、systemd が rclone のプロセスを直接管理するようになる。
 
 あとはこいつを `/usr/local/bin/rclone-webdav.sh` などに置いて `chmod +x`
 
@@ -72,8 +76,6 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-`After=tailscaled.service` でtailscaledの起動後に実行されるが、デーモン起動=接続完了ではないのでスクリプト内の `tailscale wait` があるとよい。
-`exec` でシェルプロセスをrcloneに置き換えるため、systemd が rclone のプロセスを直接管理するようになる。
 
 ```bash
 sudo systemctl daemon-reload
@@ -81,8 +83,6 @@ sudo systemctl enable --now rclone-webdav.service
 ```
 
 ## Obsidian側: Remotely Save
-
-Remotely Saveプラグインをインストールしたら、以下を設定する。
 
 | 項目 | 設定値 |
 |------|--------|
