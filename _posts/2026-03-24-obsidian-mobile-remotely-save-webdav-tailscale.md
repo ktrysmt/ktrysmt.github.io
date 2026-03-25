@@ -111,6 +111,12 @@ mobileからも編集したい場合はbidirectionalにするとよい。
 
 前述の通り多端末で母艦からpullする形をとるので `Incremental Pull And Delete`。
 
+#### 初回同期時のconflict
+
+2台目のデバイスなど、既にリモートにファイルがある状態で初めて同期すると `conflict_created_then_do_nothing` で全ファイルがスキップされることがある。これはRemotely Saveが同期メタデータを持っていないため、ローカルとリモートのどちらが正かを判断できず安全側に倒した結果。
+
+Remotely Saveの設定画面下部にある「Delete Sync Metadata」でメタデータをリセットしてから再同期すれば解消する。
+
 ## おわり
 
 とても快適です。
