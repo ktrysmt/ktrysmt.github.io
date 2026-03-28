@@ -8,8 +8,8 @@
 in local,
 
 ```
-mise install ruby 3.1
-mise use ruby@3.1
+mise install ruby 3.3
+mise use ruby@3.3
 bundle install
 bundle exec jekyll s -P 8888 -H 0.0.0.0
 ```
