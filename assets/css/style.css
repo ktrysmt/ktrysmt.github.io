@@ -523,6 +523,10 @@ Post List
   min-width: 0;
 }
 
+#post-list .post-date-link {
+  padding-left: 100px;
+}
+
 #post-list .dates {
   float: right;
   position: relative;
