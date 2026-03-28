@@ -53,6 +53,10 @@ header h1 {
   letter-spacing: normal;
 }
 
+.list-desc {
+  margin-bottom: 160px;
+}
+
 header h2.headline {
   border-bottom:none;
 }
