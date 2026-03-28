@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "VPC内通信の暗号化おさらい - FSA GL / FISC 第13版を読みつつ"
+title: "VPC内部通信の暗号化はなぜ必要か -- FSA GL 2.3.4.4-基-3とFISC第13版の要求を整理する"
 date: 2026-03-19 09:00:00 +0900
 categories: [Security Governance]
 published: true
-description: "VPC内部通信の暗号化がFSA GL 2.3.4.4-基-3とFISC安全対策基準第13版でどう要求されているか。規制根拠と典型的なECS構成への実装影響を整理したときのメモ"
+description: "VPC内部通信の暗号化がFSA GL 2.3.4.4-基-3とFISC安全対策基準第13版でどう要求されているか。規制根拠と典型的なECS構成への実装影響を整理。"
 tags:
   - security
   - aws
@@ -67,3 +67,6 @@ ECS Service Connect は Private CA 対応してて mTLS を導入しやすいの
 
 AWS前提の話になってしまいましたが。
 別にむずくはないけど、地味に気を使うやつだった。
+
+関連記事:
+- [FISC安全対策基準 第13版の全体像](/blog/fisc-13th-edition-overview/) -- 第13版全体の改訂内容（6テーマ・130件）を整理

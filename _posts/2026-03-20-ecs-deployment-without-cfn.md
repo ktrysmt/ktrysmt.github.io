@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "ECS ServiceをCFnから分離するかどうか"
+title: "ECS ServiceのデプロイをCloudFormationから分離すべき3つの理由と移行パターン"
 date: 2026-03-20 09:00:00 +0900
 categories: [Cloud Infrastructure]
 published: true
-description: "CFnでECS Serviceを管理するときの構造的問題"
+description: "CloudFormationでECS Serviceを管理する際のCircuit Breaker状態不整合、3時間タイムアウト、ロールバック連鎖の問題と、CLI/Step Functionsへの分離パターンを整理。"
 tags:
   - aws
   - infrastructure
@@ -121,6 +121,9 @@ graph TD
 ## おわり
 
 IaC(CFn/Terraform) + ASG(EC2/ECS) は昔から相性が悪かったけど、最近は色々機能改善もされてもうちょっとでこういう悩みもなくなっていくんだなと、過渡期を感じる日々です。
+
+関連記事:
+- [VPC内部通信の暗号化はなぜ必要か](/blog/internal-encryption-fsa-gl-fisc/) -- ECS構成における暗号化要件の整理
 
 ## 参考
 

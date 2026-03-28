@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "pnpmで依存パッケージに一時的なpatchを当てる"
+title: "pnpm patchで依存パッケージにモンキーパッチを当てる -- 手順6ステップとpnpm linkでの事前検証"
 date: 2026-03-22 12:00:00 +0900
 categories: [Developer Tools]
 published: true
-description: "npm公開とかしてるとたまに必要になる、依存パッケージにpatchを当てる話。"
+description: "pnpm patchによる依存パッケージへの一時パッチ適用手順。展開・編集・確定・解除の全ステップとpnpm linkでのローカル事前検証を解説。"
 tags:
   - pnpm
   - nodejs

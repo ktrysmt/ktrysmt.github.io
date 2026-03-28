@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "ClaudeCode の devcontainer 対応をちゃんとやる"
+title: "Claude Codeの--dangerously-skip-permissionsをdevcontainerで安全に運用する"
 date: 2026-03-18 09:00:00 +0900
 categories: [AI Engineering]
 published: true
-description: "Claude Codeの--dangerously-skip-permissionsを安全に使うべく一旦devcontainerでがんばる。"
+description: "Claude Codeの--dangerously-skip-permissionsを安全に使うためのdevcontainer構成。iptables/ipsetによるネットワーク制限、dotfilesの注入、settings.jsonのマージ、GHCR自動ビルドまで。"
 tags:
   - llm
   - docker

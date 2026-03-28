@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Obsidian Mobileの同期はGit PluginよりRemotely Save+WebDAVのが快適"
+title: "Obsidian Mobileの同期をGit PluginからRemotely Save + WebDAVに乗り換えたら快適になった"
 date: 2026-03-24 09:00:00 +0900
 categories: [Developer Tools]
 published: true
-description: "設定手順とかの備忘録。Obsidian MobileでGit Pluginの遅さに困っているなら、Tailscale環境でrclone+WebDAV+Remotely Saveに乗り換えると快適になるというありふれた話。"
+description: "Obsidian MobileのGit Plugin（isomorphic-git）が遅い問題を、Tailscale + rclone WebDAV + Remotely Saveで解消。systemd常時起動の設定、初回同期時のconflict対処法も。"
 tags:
   - obsidian
   - tailscale

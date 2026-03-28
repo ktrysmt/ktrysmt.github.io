@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "君はcaffeinateの本当の使い方を知っているか"
+title: "macOSのcaffeinateを使い倒す -- fork親子逆転の仕組みからMakefile統合、LOOBinまで"
 date: 2026-03-28 01:00:00 +0900
 categories: [Developer Tools]
 published: true
-description: "macOSのスリープを一時的に抑制するcaffeinateのマニアックな使い方とか。"
+description: "caffeinateの内部実装（fork親子逆転、IOKitアサーション）からMakefile SHELL書き換え、trap連携、LOOBinとしてのセキュリティリスクまで。macOSの電源管理を掘り下げる。"
 tags:
   - macos
   - cli-tools
@@ -204,4 +204,8 @@ killall caffeinate
 
 ## おわり
 
-SHELL 書き換えとか trap は普通に使える。
+SHELL 書き換えや trap 連携は実務で普通に使える。fork の親子逆転は設計として面白い。
+
+関連記事:
+- [dotfiles再構築 in 2026](/blog/dotfiles-2026/) -- Makefile やシェル周りの構成管理
+- [2025版 ターミナル引きこもり生活を支えてくれる道具たち](/blog/tools-that-support-terminal-life-2025/) -- CLI ツールまとめ
