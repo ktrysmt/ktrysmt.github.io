@@ -170,17 +170,35 @@ caffeinate -i /tmp/payload
 
 攻撃者はスリープによる中断を防ぎつつペイロードを実行できる。正規のプロセスとして動作するため EDR での検出が難しく、MITRE ATT&CK では Execution / Defense Evasion にマッピングされている。
 
-防御側の視点では、前述の `pmset -g assertions` で不審なアサーションがないか確認するだとか、あるいは `caffeinate` の子プロセスを監視するとかが対策になりそう。
+防御側の検知手段だが、
+
+まず macOS Ventura 以降なら `eslogger` でbinaryの実行を捕捉できるようだ
+
+```sh
+sudo eslogger exec | jq 'select(.process.executable.path == "/usr/bin/caffeinate")'
+```
+
+追加インストール不要だが、実行元のアプリ（Terminal.app や iTerm2 など）に「システム設定 > プライバシーとセキュリティ > フルディスクアクセス」の許可が必要。launchd デーモンとして常駐させる場合も同様に TCC 権限を付与。
+
+より軽量な方法だと前述の `pmset -g assertions` を定期実行して既知のプロセス以外がアサーションを保持していないかチェック
+
+```sh
+if pmset -g assertions | grep -q 'caffeinate'; then
+  pmset -g assertions | logger -t caffeinate-audit
+fi
+```
+
+あとは osquery とか。`processes` テーブルでの親子関係を監査したり、[Santa](https://github.com/google/santa) で caffeinate 経由の実行バイナリを MONITOR モードで記録するとかもあるが、、めんどいかも。いつの時代も防御側は苦しい。
 
 ### クラムシェル
 
-`caffeinate` はクラムシェルスリープを防止できないらしい。蓋を閉じつつ `caffeinate` したい場合は以下の条件を満たす必要がある
+外部デバイスなしでは、 `caffeinate` はクラムシェルスリープを防止できないらしい。蓋を閉じつつ `caffeinate` したい場合は以下の条件を満たす必要がある
 
 - 外部ディスプレイ接続
 - AC 電源接続
 - 外部キーボード / マウス接続
 
-`sudo pmset -a disablesleep 1` を叩けば強制的にスリープを無効化できるが、蓋を閉じたままカバンに入れると発熱するだとかバッテリー消耗とかリスクを伴う。たぶんやらないほうがいい。
+`sudo pmset -a disablesleep 1` を叩けば強制的にスリープを無効化できるそうが、蓋を閉じたままカバンに入れると発熱するだとか戻すのを忘れてバッテリー消耗とかリスクを伴う。やらないほうがいい。
 
 ### デバッグとか
 
@@ -200,7 +218,7 @@ killall caffeinate
 
 ## おわり
 
-SHELL 書き換えや trap 連携は実務で普通に使える。fork の親子逆転は設計として面白い。
+SHELL 書き換えや trap 連携は実務で普通に使えるやつだった。
 
 関連記事:
 - [dotfiles再構築 in 2026](/blog/dotfiles-2026/) -- Makefile やシェル周りの構成管理
