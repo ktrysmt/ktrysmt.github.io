@@ -5,8 +5,7 @@ locale: ja_JP
 description: "SREとかセキュリティガバナンスとか"
 url: 'https://ktrysmt.github.io'
 permalink: /blog/:title/
-exclude:
-  - google1d3f81208ecf60fb.html
+exclude: []
 #
 # blogName: "ktrysmt.log"
 #
