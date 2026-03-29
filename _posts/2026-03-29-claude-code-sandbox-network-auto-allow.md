@@ -130,6 +130,11 @@ SSL_PATTERNS+='|DEPTH_ZERO_SELF_SIGNED_CERT'        # Node.js
 SSL_PATTERNS+='|ERR_TLS_CERT_ALTNAME_INVALID'       # Node.js
 SSL_PATTERNS+='|InvalidCertificate'                 # Rust rustls
 SSL_PATTERNS+='|gnutls.*certificate'                # GnuTLS (C/C++)
+SSL_PATTERNS+='|UNABLE_TO_GET_ISSUER_CERT'           # Node.js
+SSL_PATTERNS+='|ERR_CERT_AUTHORITY_INVALID'           # Node.js (Chromium)
+SSL_PATTERNS+='|CERT_UNTRUSTED'                       # Node.js
+SSL_PATTERNS+='|PKIX path building failed'            # Java
+SSL_PATTERNS+='|unable to get local issuer certificate' # curl/OpenSSL
 
 CONN_PATTERNS='dial tcp.*(Operation not permitted|connection refused)'  # Go
 CONN_PATTERNS+='|proxyconnect tcp:'                 # Go proxy
@@ -143,6 +148,11 @@ CONN_PATTERNS+='|Proxy CONNECT aborted'             # curl proxy
 CONN_PATTERNS+='|tunnel connection failed'          # curl proxy
 CONN_PATTERNS+='|Received HTTP code [0-9]+ from proxy'  # curl proxy
 CONN_PATTERNS+='|Failed to connect to'              # curl
+CONN_PATTERNS+='|i/o timeout'                        # Go
+CONN_PATTERNS+='|Connection timed out'               # curl / POSIX
+CONN_PATTERNS+='|Connection reset by peer'           # curl / POSIX
+CONN_PATTERNS+='|Network is unreachable'             # Linux
+CONN_PATTERNS+='|No route to host'                   # Linux
 
 DNS_PATTERNS='Could not resolve host'               # curl
 DNS_PATTERNS+='|ENOTFOUND'                          # Node.js
@@ -154,6 +164,10 @@ DNS_PATTERNS+='|getaddrinfo.*failed'                 # C/C++
 DNS_PATTERNS+='|dns.*failed to lookup'               # Rust
 DNS_PATTERNS+='|NXDOMAIN'                           # DNS response
 DNS_PATTERNS+='|SERVFAIL'                           # DNS response
+DNS_PATTERNS+='|socket\.gaierror'                     # Python
+DNS_PATTERNS+='|UnknownHostException'                 # Java
+DNS_PATTERNS+='|unable to resolve host address'       # wget
+DNS_PATTERNS+='|SocketError.*getaddrinfo'             # Ruby
 
 if ! printf '%s\n%s' "$stdout" "$stderr" \
   | grep -qE "${SSL_PATTERNS}|${CONN_PATTERNS}|${DNS_PATTERNS}"; then
@@ -190,10 +204,18 @@ nohost_domains=$(printf '%s' "$combined" \
 connect_domains=$(printf '%s' "$combined" \
   | grep -oE 'connect to [^ ]+ port [0-9]+ failed' \
   | sed 's/^connect to //;s/ port [0-9]* failed$//' || true)
-domains=$(printf '%s\n%s\n%s\n%s\n%s\n%s\n%s' \
+# Java: UnknownHostException: domain
+unknownhost_domains=$(printf '%s' "$combined" \
+  | grep -oE 'UnknownHostException: [^ ]+' \
+  | sed 's/^UnknownHostException: //' || true)
+# wget: unable to resolve host address 'domain'
+wget_domains=$(printf '%s' "$combined" \
+  | grep -oE "unable to resolve host address '[^']+'" \
+  | sed "s/^unable to resolve host address '//;s/'$//" || true)
+domains=$(printf '%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s' \
   "$url_domains" "$dial_domains" "$resolve_domains" \
   "$notfound_domains" "$failed_domains" "$nohost_domains" \
-  "$connect_domains" \
+  "$connect_domains" "$unknownhost_domains" "$wget_domains" \
   | grep -v '^$' | sort -u || true)
 [[ -n "$domains" ]] || exit 0
 
@@ -269,6 +291,11 @@ hookは stdin で以下の形式の JSON を受け取る。
 | `ERR_TLS_CERT_ALTNAME_INVALID` | Node.js |
 | `InvalidCertificate` | Rust rustls |
 | `gnutls.*certificate` | GnuTLS (C/C++) |
+| `UNABLE_TO_GET_ISSUER_CERT` | Node.js |
+| `ERR_CERT_AUTHORITY_INVALID` | Node.js (Chromium) |
+| `CERT_UNTRUSTED` | Node.js |
+| `PKIX path building failed` | Java |
+| `unable to get local issuer certificate` | curl/OpenSSL |
 
 ### 接続/プロキシ エラー
 
@@ -286,6 +313,11 @@ hookは stdin で以下の形式の JSON を受け取る。
 | `tunnel connection failed` | curl proxy |
 | `Received HTTP code NNN from proxy` | curl proxy |
 | `Failed to connect to` | curl |
+| `i/o timeout` | Go |
+| `Connection timed out` | curl / POSIX |
+| `Connection reset by peer` | curl / POSIX |
+| `Network is unreachable` | Linux |
+| `No route to host` | Linux |
 
 ### DNS エラー
 
@@ -301,6 +333,10 @@ hookは stdin で以下の形式の JSON を受け取る。
 | `dns.*failed to lookup` | Rust |
 | `NXDOMAIN` | DNS応答 |
 | `SERVFAIL` | DNS応答 |
+| `socket.gaierror` | Python |
+| `UnknownHostException` | Java |
+| `unable to resolve host address` | wget |
+| `SocketError.*getaddrinfo` | Ruby |
 
 ### domain抽出元
 
@@ -313,6 +349,8 @@ hookは stdin で以下の形式の JSON を受け取る。
 | `Failed to connect to domain port` | `Failed to connect to pypi.org port 443` → `pypi.org` |
 | `no such host "domain"` | `no such host "api.example.com"` → `api.example.com` |
 | `connect to domain port NNN failed` | `connect to crates.io port 443 failed` → `crates.io` |
+| `UnknownHostException: domain` | `UnknownHostException: api.example.com` → `api.example.com` |
+| `unable to resolve host address 'domain'` | `unable to resolve host address 'registry.npmjs.org'` → `registry.npmjs.org` |
 
 ## 補足: キャッシュ書き込みエラーの対策
 
