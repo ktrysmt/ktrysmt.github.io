@@ -359,7 +359,7 @@ networkとは別に、`mise` や `uv` のキャッシュ書き込みもsandbox m
 
 ```
 mise WARN  failed to write cache file:
-/Users/dew/Library/Caches/mise/.../exec_env_xxx.msgpack.z
+/Users/<user>/Library/Caches/mise/.../exec_env_xxx.msgpack.z
 Operation not permitted (os error 1)
 ```
 
