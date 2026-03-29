@@ -45,7 +45,7 @@ Apple の[ソースコード](https://github.com/apple-oss-distributions/PowerMa
 3. 子プロセス（caffeinate 自身）が親の終了を `DISPATCH_SOURCE_TYPE_PROC` + `DISPATCH_PROC_EXIT` で監視する
 4. 子は `SIGINT` と `SIGQUIT` を `SIG_IGN` で無視する
 
-この設計により、シェルから見ると `make` が直接の子プロセスになるため、終了コードやシグナルの伝搬が自然に機能する。`caffeinate` 越しでも `$?` がそのまま使える理由がこれ。よく考えられてるけど親子を逆にするという発想がなかった。
+この設計により、シェルから見ると `make` が直接の子プロセスになるため、終了コードやシグナルの伝搬が自然に機能する。`caffeinate` 越しでも `$?` がそのまま使える理由がこれ。よく考えられてる、親子を逆にするという発想がなかった。目からウロコ
 
 ## (2) IOKit アサーション
 
