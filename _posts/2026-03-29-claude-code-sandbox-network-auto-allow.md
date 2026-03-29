@@ -4,7 +4,7 @@ title: "ClaudeCode /sandboxのnetwork許可をhooksで永続化する"
 date: 2026-03-29 16:00:00 +0900
 categories: [AI Engineering]
 published: true
-description: "sandboxのnetwork制限で都度発生するdomain許可promptをPostToolUse hookで自動化。TLSエラーからdomainを抽出しsettings.jsonのallowedDomainsへ自動追記するシェルスクリプトの実装とflockによる排他制御"
+description: "sandboxのnetwork制限で都度発生するdomain許可promptをPostToolUse hookで自動化。TLSエラーからdomainを抽出しsettings.jsonのallowedDomainsへ自動追記するシェルスクリプトの実装とmkdirベースの排他制御"
 tags:
   - claude-code
   - sandbox
@@ -105,7 +105,7 @@ hook登録 (`hooks.PostToolUse` セクション):
 set -euo pipefail
 
 SETTINGS="$HOME/.claude/settings.json"
-LOCKFILE="/tmp/claude-sandbox-auto-allow.lock"
+LOCKDIR="/tmp/claude-sandbox-auto-allow.lock"
 INPUT=$(cat)
 
 exit_code=$(printf '%s' "$INPUT" | jq -r '.tool_response.exitCode // 0')
@@ -133,8 +133,9 @@ domains=$(printf '%s\n%s' "$domains" "$dial_domains" \
   | grep -v '^$' | sort -u || true)
 [[ -n "$domains" ]] || exit 0
 
-exec 9>"$LOCKFILE"
-flock 9
+cleanup_lock() { rmdir "$LOCKDIR" 2>/dev/null; }
+trap cleanup_lock EXIT
+while ! mkdir "$LOCKDIR" 2>/dev/null; do sleep 0.1; done
 
 for domain in $domains; do
   if jq -e --arg d "$domain" \
@@ -155,7 +156,8 @@ for domain in $domains; do
   fi
 done
 
-exec 9>&-
+cleanup_lock
+trap - EXIT
 
 exit 0
 ```
