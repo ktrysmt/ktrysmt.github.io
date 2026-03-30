@@ -193,8 +193,7 @@ network_policies:
 | 設定                | 選択           | 理由                                                |
 |---                  |---             |---                                                  |
 | Model/auth provider | `inference`    | OpenShellゲートウェイ経由でNVIDIA NIMにルーティング |
-| Default model       | `Keep current` | inference/nvidia/nemotron-3-super-120b-a12b         |
-| Select channel      | `Skip for now` | Dashboard検証が優先                                 |
+| Default model       | `Keep current` | 前述の通り inference/nvidia/nemotron-3-super-120b-a12b         |
 
 ## 細かい仕様
 
