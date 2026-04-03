@@ -3,7 +3,7 @@ layout: post
 title: "FISC 4編 324項目 の構造と読み方"
 date: 2026-04-03 09:00:00 +0900
 categories: [Security Governance]
-published: false
+published: true
 description: "FISC安全対策基準（第13版）の4編324項目の構造、番号体系、基礎/付加基準の区分、語尾による必須/任意の見分け方、リスクベースアプローチの6段階プロセスを解説する。"
 tags:
   - fisc
@@ -36,12 +36,6 @@ graph TD
     C --> E["監査基準<br>2項目"]
     D --> E
     B --> E
-
-    style A fill:#f5f5f5,stroke:#333
-    style B fill:#4a90d9,color:#fff
-    style C fill:#50b86c,color:#fff
-    style D fill:#e6a23c,color:#fff
-    style E fill:#e25555,color:#fff
 ```
 
 役割分担は単純。
@@ -183,13 +177,6 @@ graph TD
     S3 --> S4
     S4 --> S5
     S5 --> S6
-
-    style S1 fill:#4a90d9,color:#fff
-    style S2 fill:#4a90d9,color:#fff
-    style S3 fill:#e6a23c,color:#fff
-    style S4 fill:#50b86c,color:#fff
-    style S5 fill:#50b86c,color:#fff
-    style S6 fill:#e25555,color:#fff
 ```
 
 | ステップ | 内容 | 具体例 |
@@ -257,9 +244,6 @@ graph TD
 ```mermaid
 graph TD
     FI["金融機関"] -->|"委託契約"| V["委託先<br>オンプレミス/<br>共同センター/<br>クラウド"]
-
-    style FI fill:#4a90d9,color:#fff
-    style V fill:#50b86c,color:#fff
 ```
 
 ### 三者間構成
@@ -271,10 +255,6 @@ graph TD
     FI["金融機関"] -->|"契約"| IT["ITベンダー"]
     FI -->|"契約"| FT["FinTech企業"]
     IT -->|"API/データ連携"| FT
-
-    style FI fill:#4a90d9,color:#fff
-    style IT fill:#50b86c,color:#fff
-    style FT fill:#e6a23c,color:#fff
 ```
 
 三者間構成の原則は以下の通り。

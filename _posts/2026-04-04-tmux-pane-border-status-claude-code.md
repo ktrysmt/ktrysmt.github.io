@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ClaudeCode teamsがtmuxのpane-border-statusをtopに変えてしまう問題の対処"
-date: 2026-04-04 12:00:00 +0900
+date: 2026-04-04 01:00:00 +0900
 categories: [Developer Tools]
 published: true
 description: "ClaudeCode teamsでteammateを起動するとtmuxのpane-border-statusがbottomからtopに変わる問題。ClaudeCodeのstatusline機能がpane/windowレベルでtopを設定しグローバル設定を上書きしていたため、set-hookとClaudeCode hookの両方で対処"

@@ -39,7 +39,42 @@
       });
       if (typeof mermaid !== 'undefined') {
         mermaid.initialize({ startOnLoad: false });
-        mermaid.run();
+        mermaid.run().then(function() {
+          document.querySelectorAll('.mermaid').forEach(function(el) {
+            el.addEventListener('click', function() {
+              var overlay = document.createElement('div');
+              overlay.className = 'mermaid-modal-overlay';
+              var content = document.createElement('div');
+              content.className = 'mermaid-modal-content';
+              content.innerHTML = el.innerHTML;
+              var svg = content.querySelector('svg');
+              if (svg) {
+                var vb = svg.getAttribute('viewBox');
+                if (vb) {
+                  var w = parseFloat(vb.split(/\s+/)[2]);
+                  svg.style.maxWidth = w + 'px';
+                  svg.style.width = w + 'px';
+                }
+              }
+              overlay.appendChild(content);
+              document.body.appendChild(overlay);
+              requestAnimationFrame(function() { overlay.classList.add('active'); });
+              overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                  overlay.classList.remove('active');
+                  overlay.addEventListener('transitionend', function() { overlay.remove(); });
+                }
+              });
+              document.addEventListener('keydown', function handler(e) {
+                if (e.key === 'Escape') {
+                  overlay.classList.remove('active');
+                  overlay.addEventListener('transitionend', function() { overlay.remove(); });
+                  document.removeEventListener('keydown', handler);
+                }
+              });
+            });
+          });
+        });
       }
       hljs.registerAliases(['zsh'], { languageName: 'bash' });
       hljs.highlightAll();
