@@ -872,6 +872,7 @@ h2.month {
 
   #title { font-size: 17px; }
   #post-list .dates, .archive-list .dates { display: none; }
+  #post-list .post-date-link { padding-left: 0; }
 
   #post-list-footer { margin-top: 20px; padding-top: 40px; }
 
