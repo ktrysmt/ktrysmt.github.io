@@ -387,7 +387,7 @@ ul#post-list {
   align-items: center;
   justify-content: flex-end;
   gap: 12px;
-  margin-top: 6px;
+  margin-top: 0.5em;
 }
 
 article.post {
