@@ -2,13 +2,28 @@
 ---
 
 User-agent: *
-Allow: /
+Allow: /blog/
 Disallow: /assets/static/
-
-User-agent: GPTBot
-Disallow: /
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /blog/tags/
+Disallow: /categories/
+Disallow: /feed.xml
+Disallow: /redirects.json
 
 User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Bytespider
 Disallow: /
 
 Sitemap: https://ktrysmt.github.io/sitemap.xml
