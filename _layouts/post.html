@@ -34,7 +34,10 @@ archive: true
 <!-- Header -->
 <header class="post-header">
     <h1>{{ page.title }}</h1>
-    <h2 class="headline">{{ page.date | date:"%B %-d, %Y" }}</h2>
+    <h2 class="headline">
+        <span>{{ page.date | date:"%B %-d, %Y" }}</span>
+        <a href="/blog/#{{ page.categories | first | replace: ' ', '%20' }}" class="post-category-link">{{ page.categories | first }}</a>
+    </h2>
 </header>
 
 <!-- Article -->

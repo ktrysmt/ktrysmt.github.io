@@ -8,7 +8,7 @@ Kotaro Yoshimatsu's personal tech blog (SRE / Security Governance). Built with J
 
 ## Tech Stack
 
-- Ruby 3.1 / Jekyll 4.4.x
+- Ruby 3.3 / Jekyll 4.4.x
 - Plugins: jekyll-seo-tag, jemoji, jekyll-mentions, jekyll-redirect-from, jekyll-sitemap, jekyll-feed
 - Syntax highlighting: Highlight.js (external)
 - Diagrams: Mermaid.js v11
@@ -44,7 +44,7 @@ curl http://localhost:8888/blog/
 
 ## Use Browser
 
-* use `chrome-devtools mcp` or `agent-browser skill`
+* use `chrome-devtools mcp` or `/agent-browser skill`
 
 ## Build
 

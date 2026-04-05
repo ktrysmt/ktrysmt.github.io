@@ -51,3 +51,8 @@ MyObjectLevelLoggingTrail:
 ```
 
 `IncludeManagementEvents`を`false`にすれば、実態としては`None`を選んだことになります。できてよかった。
+
+## 関連記事
+
+- [S3とCloudTrailとKMS暗号化の、ちょっと複雑な関係について](/blog/s3-and-cloudtrail-and-kms/) -- S3/CloudTrail/KMSの暗号化の関係性
+- [SSE-S3とSSE-KMSの違いを知る](/blog/difference-between-sse-s3-and-sse-kms/) -- 暗号化方式の選定基準

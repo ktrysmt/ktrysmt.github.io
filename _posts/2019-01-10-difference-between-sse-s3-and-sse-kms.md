@@ -46,5 +46,10 @@ SSE-S3の固定のキーポリシーはSSE-KMS同様署名バージョン4で保
 * [料金 - AWS Key Management Service][2]
 * [Amazon Simple Storage Service (Amazon S3) で AWS KMS を使用する方法 - AWS Key Management Service](https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/services-s3.html)
 
+## 関連記事
+
+- [S3とCloudTrailとKMS暗号化の、ちょっと複雑な関係について](/blog/s3-and-cloudtrail-and-kms/) -- S3/CloudTrail/KMSの暗号化の組み合わせ
+- [S3 Object-level loggingの設定をCloudFormationで書くときのポイント](/blog/s3-object-level-logging-by-cfn/) -- CFnでのObjectLevelLogging設定
+
 [1]: https://docs.aws.amazon.com/ja_jp/kms/latest/developerguide/limits.html
 [2]: https://aws.amazon.com/jp/kms/pricing/

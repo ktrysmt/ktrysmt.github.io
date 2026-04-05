@@ -35,7 +35,8 @@
 <meta name="twitter:title" content="{{ meta_title }}">
 <meta name="twitter:image" content="{{ og_image_url }}">
 {% if page.date %}
+{% assign date_modified = page.last_modified_at | default: page.date %}
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","headline":"{{ meta_title }}","description":"{{ meta_description }}","datePublished":"{{ page.date | date_to_xmlschema }}","url":"{{ canonical_url }}","image":"{{ og_image_url }}","author":{"@type":"Person","name":"{{ site.author }}"}}
+{"@context":"https://schema.org","@type":"BlogPosting","headline":"{{ meta_title }}","description":"{{ meta_description }}","datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ date_modified | date_to_xmlschema }}","url":"{{ canonical_url }}","image":"{{ og_image_url }}","author":{"@type":"Person","name":"{{ site.author }}","url":"{{ site.url }}/about/"}}
 </script>
 {% endif %}

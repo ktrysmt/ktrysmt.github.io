@@ -348,6 +348,11 @@ QEMUビルド vs ネイティブARMランナー、それぞれ比較してみた
 
 ファイアウォールから eBPF トレーサーへの移行は、個人利用の現実に合わせた判断。許可リストのメンテに時間を使うよりは、全通信を可視化して問題があれば事後に気づけるほうが健全だった。仕事で使う場合にはネットワークポリシーを別のレイヤー (Kubernetes NetworkPolicy など) で制御するほうが筋がいいだろう。
 
+## シリーズ
+
+- [Claude Codeの--dangerously-skip-permissionsをdevcontainerで安全に運用する](/blog/claude-code-devcontainer/) -- 初回構築
+- [devcontainerとホスト間のUnixソケットがmacOSでは通らないのでsocatのTCPリレーで通す](/blog/claude-code-devcontainer-3/) -- macOS Docker環境でのtmuxソケット問題
+
 ## 参考
 
 - https://github.com/tmux/tmux-builds

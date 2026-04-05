@@ -7,7 +7,6 @@ Disallow: /assets/static/
 Disallow: /assets/css/
 Disallow: /assets/js/
 Disallow: /blog/tags/
-Disallow: /categories/
 Disallow: /feed.xml
 Disallow: /redirects.json
 

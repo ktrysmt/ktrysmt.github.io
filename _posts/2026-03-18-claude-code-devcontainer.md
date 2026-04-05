@@ -286,4 +286,9 @@ devcontainer exec --workspace-folder . \
 
 `--dangerously-skip-permissions` をちゃんと使おうとするとネットワークとファイルシステム両方の配慮が要る。devcontainer はその箱としては若干気になるところはあるものの過不足はないんだろうな、という気持ち。もうちょっとメンテしやすいとうれしいが元がDockerなので仕方ない。。
 
+## シリーズ
+
+- [続・ClaudeCode の devcontainer 対応をちゃんとやる](/blog/claude-code-devcontainer-2/) -- eBPFトレーサーへの移行、ARM64対応、uv導入
+- [devcontainerとホスト間のUnixソケットがmacOSでは通らないのでsocatのTCPリレーで通す](/blog/claude-code-devcontainer-3/) -- macOS Docker環境でのtmuxソケット問題
+
 [](https://github.com/ktrysmt/dotfiles/tree/master/.devcontainer){:.card-preview}

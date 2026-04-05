@@ -32,3 +32,9 @@ tags:
 * gateway type (s3,dynamo) ではこの方式は使えず、公式に提供されている prefixlist を使って SG egress に設定することで要件は満たせる。
 
 アウトバウンド閉じる意味はDNSトンネリングのせいで薄れているなと長らく思っていましたが、trailを確認したりあとからフォレンジックする際にノイズが減って特定が早まる可能性があるので、やっておく価値はあるなと最近認識を改めました。
+
+## 関連記事
+
+- [VPC内部通信の暗号化はなぜ必要か](/blog/internal-encryption-fsa-gl-fisc/) -- FSA GL/FISCの規制要件と内部通信暗号化
+- [SSE-S3とSSE-KMSの違いを知る](/blog/difference-between-sse-s3-and-sse-kms/) -- S3暗号化方式の選定基準
+- [S3とCloudTrailとKMS暗号化の、ちょっと複雑な関係について](/blog/s3-and-cloudtrail-and-kms/) -- S3/CloudTrail/KMSの暗号化の関係性

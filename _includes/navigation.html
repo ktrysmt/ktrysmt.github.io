@@ -1,11 +1,11 @@
 <nav class="site-nav">
   <span class="site-nav-title">{{ page.title | default: site.blogName }}{% if page.url == "/blog/" and page.description != "" and page.description %}<span class="site-nav-desc"> - {{ page.description }}</span>{% endif %}</span>
   <div class="site-nav-links">
+    {% if page.url != "/about/" %}
+        <a href="/about/">About</a>
+    {% endif %}
     {% if page.url != "/blog/" %}
         <a href="/blog/">Blog top</a>
-    {% endif %}
-    {% if page.url != "/categories/" %}
-        <a href="/categories/">Categories</a>
     {% endif %}
     {% if page.url != "/" %}
         <a href="/">Home</a>

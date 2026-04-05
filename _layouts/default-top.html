@@ -8,7 +8,29 @@
   <title>{{ page.title }}</title>
   {% include og-image.html %}
   <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    html,body,div,span,h1,p,a,img,ul,li,article,footer,header,section{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,footer,header,section{display:block}body{line-height:1}
+    *,*:before,*:after{box-sizing:border-box}
+    body{display:flex;flex-direction:column;min-height:100vh;overflow-x:hidden;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;color:#666;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    html{height:100%}
+    #wrapper-top{flex:1;width:100%;max-width:624px;margin:0 auto;padding:40px 40px 10px 40px;word-wrap:break-word;overflow-wrap:break-word}
+    h1{font:300 32px/1.4em "Helvetica Neue",Helvetica,Arial,sans-serif;color:#222;letter-spacing:-1px;word-break:auto-phrase}
+    a{text-decoration:none;color:#8397CF;transition:all .15s ease}
+    .home a:hover{color:#333}
+    .home p{margin-bottom:10px}
+    ul{margin:2px;padding:0;padding-left:20px;margin-bottom:1.5em}
+    li{margin-left:10px}
+    img{width:96%;max-width:100%;border-radius:3px;margin-left:2%}
+    .top h1{box-shadow:0 1px 0 #eee;margin-bottom:46px!important}
+    article.top{margin:80px 0 0 0}
+    article.top section#post-list-body li{line-height:1.8em}
+    .top section#post-list-body{padding:0}
+    p.small{color:#767676;font-size:14px;line-height:1.5;display:flex;justify-content:center}
+    #footer{box-shadow:inset 0 1px 0 #eee;padding:40px 0 0 0;margin-top:100px;position:relative;z-index:1}
+    body::after{content:"";display:block;width:100vw;height:200px;flex-shrink:0;margin-left:calc(50% - 50vw);background:url('/assets/images/footer-waves.svg') no-repeat bottom center;background-size:100% 100%}
+  </style>
+  <link rel="stylesheet" href="/assets/css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
 </head>
 <body>
 
