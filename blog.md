@@ -18,7 +18,7 @@ description: "SREとかセキュリティガバナンスとか"
 
 <ul id="post-list">
     {% for post in site.posts %}
-        <li data-category="{{ post.categories | first }}">
+        <li data-category="{{ post.categories | first }}"{% if forloop.first %} class="first-visible"{% endif %}>
             <a href="/{{ post.url | remove_first: '/' }}">{{ post.title }}</a>
             <div class="post-meta-row">
                 <a href="#" class="post-category-link" data-category="{{ post.categories | first }}">{{ post.categories | first }}</a>
