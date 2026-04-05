@@ -1217,13 +1217,13 @@ iframe.speakerdeck-iframe {
 }
 
 .category-filter-link:hover {
-  color: #8397CF;
+  background: #8397CF;
+  color: #fff;
   border-color: #8397CF;
 }
 
 .category-filter-link.active {
-  background: #8397CF;
-  color: #fff;
+  color: #8397CF;
   border-color: #8397CF;
 }
 
