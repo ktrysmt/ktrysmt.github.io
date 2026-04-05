@@ -3,6 +3,7 @@ layout: list
 title: About
 permalink: /about/
 description: ""
+published: false
 ---
 
 <script type="application/ld+json">
