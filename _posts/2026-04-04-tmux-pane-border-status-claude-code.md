@@ -11,16 +11,16 @@ tags:
   - hooks
 ---
 
-ClaudeCode teams で teammate を起動すると、`.tmux.conf` で指定していた `pane-border-status bottom` が `top` に変わってしまう。
+ClaudeCode teams で teammate を起動すると、`.tmux.conf` で指定していた `pane-border-status bottom` が `top` に変わってしまいます。
 
-ClaudeCode の statusline 機能が、ペインレベル (`-p`) とウィンドウレベル (`-w`) の両方で `pane-border-status top` を設定していた。
-tmux のオプション解決は pane > window > global の順で優先されるため、グローバル (`-g`) で `bottom` を指定していてもペイン/ウィンドウレベルの `top` で上書き。
+ClaudeCode の statusline 機能が、ペインレベル (`-p`) とウィンドウレベル (`-w`) の両方で `pane-border-status top` を設定していました。
+tmux のオプション解決は pane > window > global の順で優先されるため、グローバル (`-g`) で `bottom` を指定していてもペイン/ウィンドウレベルの `top` で上書きされます。
 
-なので2箇所で `bottom` を強制。
+なので2箇所で `bottom` を強制します。
 
 ### 1. .tmux.conf に set-hook を追加
 
-ウィンドウやペインが新規作成されるタイミングで、ウィンドウレベルの `pane-border-status` を `bottom` に強制する。
+ウィンドウやペインが新規作成されるタイミングで、ウィンドウレベルの `pane-border-status` を `bottom` に強制します。
 
 ```tmux
 set-hook -g after-split-window "set-option -w pane-border-status bottom"
@@ -29,7 +29,7 @@ set-hook -g after-new-window "set-option -w pane-border-status bottom"
 
 ### 2. ClaudeCode の hook スクリプトで再設定
 
-ClaudeCode の hook (UserPromptSubmit, PostToolUse, Notification, Stop) が発火するたびに、ペイン/ウィンドウレベルで `bottom` を再設定する。
+ClaudeCode の hook (UserPromptSubmit, PostToolUse, Notification, Stop) が発火するたびに、ペイン/ウィンドウレベルで `bottom` を再設定します。
 
 statuslineのhookで走らせるshellにて
 
@@ -37,5 +37,5 @@ statuslineのhookで走らせるshellにて
 tmux set-option -p -t "$pane" pane-border-status bottom 2>/dev/null
 ```
 
-`-p` (ペインレベル) と `-w` (ウィンドウレベル) の両方で設定することで、ClaudeCode の statusline が後からどちらのレベルで `top` を設定しても `bottom` で上書き。
+`-p` (ペインレベル) と `-w` (ウィンドウレベル) の両方で設定することで、ClaudeCode の statusline が後からどちらのレベルで `top` を設定しても `bottom` で上書きされます。
 

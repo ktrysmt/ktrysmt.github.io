@@ -11,7 +11,7 @@ tags:
   - shell
 ---
 
-いろいろ工夫のしがいがあって結構おもろい。
+いろいろ工夫のしがいがあって結構おもしろいです。
 
 ## オプションまとめ
 
@@ -26,30 +26,30 @@ tags:
 | `-w <PID>` | - | 指定PIDのプロセスが終了するまでアサーションを維持 |
 
 - フラグなしで実行すると `-i` と同じ（アイドルスリープ防止）
-- `-u` は `-t` を指定しないとデフォルト5秒でアサーションが切れる
-- `-i` でシステムが起きていればディスクアクセスがある限りディスクも寝ない。`-m` が要るのはシステムは起きてるけどディスクアクセスが長時間ないケース（ネットワーク中継のみなど）で、通常は `-i` だけで十分
-- `-d` はディスプレイを消したくない場合だけ使う。ディスプレイがオフでも `-i` があればシステムは動き続ける
+- `-u` は `-t` を指定しないとデフォルト5秒でアサーションが切れます
+- `-i` でシステムが起きていればディスクアクセスがある限りディスクも寝ません。`-m` が要るのはシステムは起きてるけどディスクアクセスが長時間ないケース（ネットワーク中継のみなど）で、通常は `-i` だけで十分です
+- `-d` はディスプレイを消したくない場合だけ使います。ディスプレイがオフでも `-i` があればシステムは動き続けます
 
 ## (1) fork/exec の親子逆転
 
-`caffeinate -i make` を実行したとき、内部で何が起きているのか？普通に考えれば「caffeinate が親、make が子」と考えるんだが、実際は逆。
+`caffeinate -i make` を実行したとき、内部で何が起きているのか？普通に考えれば「caffeinate が親、make が子」と考えるのですが、実際は逆です。
 
-Apple の[ソースコード](https://github.com/apple-oss-distributions/PowerManagement/blob/main/caffeinate/caffeinate.c)にはこうコメントされている:
+Apple の[ソースコード](https://github.com/apple-oss-distributions/PowerManagement/blob/main/caffeinate/caffeinate.c)にはこうコメントされています:
 
 > Our parent might care about the total life cycle of this process, therefore rather than propagate exit status, Unix signals, Mach exceptions, etc, we just flip the normal parent/child relationship.
 
 つまり:
 
-1. caffeinate が `fork()` する
-2. 親プロセスが `execvp()` でユーザー指定コマンド（make）に変身する
-3. 子プロセス（caffeinate 自身）が親の終了を `DISPATCH_SOURCE_TYPE_PROC` + `DISPATCH_PROC_EXIT` で監視する
-4. 子は `SIGINT` と `SIGQUIT` を `SIG_IGN` で無視する
+1. caffeinate が `fork()` します
+2. 親プロセスが `execvp()` でユーザー指定コマンド（make）に変身します
+3. 子プロセス（caffeinate 自身）が親の終了を `DISPATCH_SOURCE_TYPE_PROC` + `DISPATCH_PROC_EXIT` で監視します
+4. 子は `SIGINT` と `SIGQUIT` を `SIG_IGN` で無視します
 
-この設計により、シェルから見ると `make` が直接の子プロセスになるため、終了コードやシグナルの伝搬が自然に機能する。`caffeinate` 越しでも `$?` がそのまま使える理由がこれ。よく考えられてる、親子を逆にするという発想がなかった。目からウロコ
+この設計により、シェルから見ると `make` が直接の子プロセスになるため、終了コードやシグナルの伝搬が自然に機能します。`caffeinate` 越しでも `$?` がそのまま使える理由がこれです。よく考えられています、親子を逆にするという発想がありませんでした。目からウロコです
 
 ## (2) IOKit アサーション
 
-各フラグは IOKit の電源アサーション API に1対1で対応している:
+各フラグは IOKit の電源アサーション API に1対1で対応しています:
 
 | フラグ | IOKit アサーション型 |
 |--------|---------------------|
@@ -59,11 +59,11 @@ Apple の[ソースコード](https://github.com/apple-oss-distributions/PowerMa
 | `-u` | `kIOPMAssertionUserIsActive` |
 | `-m` | `kIOPMAssertPreventDiskIdle` |
 
-内部的には `IOPMAssertionCreateWithDescription()` が呼ばれ、アサーション名は `"caffeinate command-line tool"` として `powerd` デーモンに登録。ポーリングや合成入力ではなく IOKit の電源管理レイヤで動作するため、CPU オーバーヘッドは実質ゼロ。つまりほとんど負荷がかからない。
+内部的には `IOPMAssertionCreateWithDescription()` が呼ばれ、アサーション名は `"caffeinate command-line tool"` として `powerd` デーモンに登録されます。ポーリングや合成入力ではなく IOKit の電源管理レイヤで動作するため、CPU オーバーヘッドは実質ゼロです。つまりほとんど負荷がかかりません。
 
-プロセスがクラッシュしても IOKit がアサーションを自動解放するためゾンビも残らない。
+プロセスがクラッシュしても IOKit がアサーションを自動解放するためゾンビも残りません。
 
-ちなみに `pmset noidle` は caffeinate の前身で、現在は deprecated。man page には "This argument is deprecated in favor of caffeinate(8)" と明記されてる。
+ちなみに `pmset noidle` は caffeinate の前身で、現在は deprecated です。man page には "This argument is deprecated in favor of caffeinate(8)" と明記されています。
 
 ## 実践編
 
@@ -83,7 +83,7 @@ caffeinate -i rsync -avz /src/ /dst/
 
 ### Makefile の SHELL 変数を書き換える
 
-個別のコマンドに `caffeinate` を前置する代わりに、Makefile の `SHELL` 変数を書き換えると全レシピが自動的に caffeinate 経由になる
+個別のコマンドに `caffeinate` を前置する代わりに、Makefile の `SHELL` 変数を書き換えると全レシピが自動的に caffeinate 経由になります
 
 ```makefile
 ifeq ($(shell uname -s),Darwin)
@@ -94,19 +94,19 @@ build:
 	./long-running-build.sh  # 自動的に caffeinate 経由で実行される
 ```
 
-Linux には `caffeinate` がないので `uname -s` などのOS分岐をいれとくと丁寧。
+Linux には `caffeinate` がないので `uname -s` などのOS分岐をいれとくと丁寧です。
 
 ### .app バンドルを渡す
 
-通常 `caffeinate -i /Applications/Slack.app/` は "Permission denied" になる、caffeinateはUnixコマンドしか引数に取れないため。
+通常 `caffeinate -i /Applications/Slack.app/` は "Permission denied" になります、caffeinateはUnixコマンドしか引数に取れないためです。
 
-これを `open -W` 経由にする
+これを `open -W` 経由にします
 
 ```sh
 caffeinate -i open -W -a "Slack"
 ```
 
-`open -W` でアプリが終了するまで `open` 自体が終了しなくなり、アサーションが維持される。
+`open -W` でアプリが終了するまで `open` 自体が終了しなくなり、アサーションが維持されます。
 
 ### 既に走っているプロセスに後付けでcaffeinate
 
@@ -121,7 +121,7 @@ caffeinate -i -w $(pgrep make)
 caffeinate -u -t 1
 ```
 
-発想の逆転で、例えばSSHでMacに接続したりしたときに、Macのディスプレイを点灯させられる。長時間起こしておきたい場合は `-t` の値を大きくする。
+発想の逆転で、例えばSSHでMacに接続したりしたときに、Macのディスプレイを点灯させられます。長時間起こしておきたい場合は `-t` の値を大きくします。
 
 ### script で trap と組み合わせ
 
@@ -133,11 +133,11 @@ trap "kill $CAF_PID 2>/dev/null" EXIT
 # ... 長時間処理 ...
 ```
 
-スクリプト終了時に caffeinate を確実に片付けられる。
+スクリプト終了時に caffeinate を確実に片付けられます。
 
 ### cron / launchd との組み合わせ
 
-定期実行タスクがスリープで実行されない問題を防ぐ
+定期実行タスクがスリープで実行されない問題を防ぎます
 
 ```sh
 # crontab 内で
@@ -148,19 +148,19 @@ trap "kill $CAF_PID 2>/dev/null" EXIT
 
 ### バッテリー20%以下で強制解除される
 
-バッテリーが20%を下回ると macOS はハードウェアレベルで電源アサーションを強制解放する。caffeinate でも防げない。AC 電源に繋いでいれば関係ない。
+バッテリーが20%を下回ると macOS はハードウェアレベルで電源アサーションを強制解放します。caffeinate でも防げません。AC 電源に繋いでいれば関係ありません。
 
 ### -t / -w はコマンド指定時には無視
 
-`caffeinate -t 3600 make` の `3600` は無視され、`make` の実行時間がアサーションの寿命になる。`-w` も同様。両立は不可ってこと。
+`caffeinate -t 3600 make` の `3600` は無視され、`make` の実行時間がアサーションの寿命になります。`-w` も同様です。両立は不可ということです。
 
 ### 複数起動
 
-複数の `caffeinate` を同時に起動するとアサーションが重複する。害はないがたぶん無駄。いちおう `pmset -g assertions` で確認できる。
+複数の `caffeinate` を同時に起動するとアサーションが重複します。害はないですがたぶん無駄です。いちおう `pmset -g assertions` で確認できます。
 
 ### セキュリティ：LOOBin としての caffeinate
 
-caffeinate は [LOOBins (Living Off the Orchard Bins)](https://www.loobins.io/binaries/caffeinate/) に登録されている。LOOBins とは、macOS に標準搭載されているバイナリのうち攻撃者が悪用可能なものを体系化したプロジェクトで、Linux における LOLBAS / GTFOBins の macOS 版にあたる。
+caffeinate は [LOOBins (Living Off the Orchard Bins)](https://www.loobins.io/binaries/caffeinate/) に登録されています。LOOBins とは、macOS に標準搭載されているバイナリのうち攻撃者が悪用可能なものを体系化したプロジェクトで、Linux における LOLBAS / GTFOBins の macOS 版にあたります。
 
 攻撃シナリオ:
 
@@ -168,19 +168,19 @@ caffeinate は [LOOBins (Living Off the Orchard Bins)](https://www.loobins.io/bi
 caffeinate -i /tmp/payload
 ```
 
-攻撃者はスリープによる中断を防ぎつつペイロードを実行できる。正規のプロセスとして動作するため EDR での検出が難しく、MITRE ATT&CK では Execution / Defense Evasion にマッピングされている。
+攻撃者はスリープによる中断を防ぎつつペイロードを実行できます。正規のプロセスとして動作するため EDR での検出が難しく、MITRE ATT&CK では Execution / Defense Evasion にマッピングされています。
 
-防御側の検知手段だが、
+防御側の検知手段ですが、
 
-まず macOS Ventura 以降なら `eslogger` でbinaryの実行を捕捉できるようだ
+まず macOS Ventura 以降なら `eslogger` でbinaryの実行を捕捉できるようです
 
 ```sh
 sudo eslogger exec | jq 'select(.process.executable.path == "/usr/bin/caffeinate")'
 ```
 
-追加インストール不要だが、実行元のアプリ（Terminal.app や iTerm2 など）に「システム設定 > プライバシーとセキュリティ > フルディスクアクセス」の許可が必要。launchd デーモンとして常駐させる場合も同様に TCC 権限を付与。
+追加インストール不要ですが、実行元のアプリ（Terminal.app や iTerm2 など）に「システム設定 > プライバシーとセキュリティ > フルディスクアクセス」の許可が必要です。launchd デーモンとして常駐させる場合も同様に TCC 権限を付与します。
 
-より軽量な方法だと前述の `pmset -g assertions` を定期実行して既知のプロセス以外がアサーションを保持していないかチェック
+より軽量な方法だと前述の `pmset -g assertions` を定期実行して既知のプロセス以外がアサーションを保持していないかチェックします
 
 ```sh
 if pmset -g assertions | grep -q 'caffeinate'; then
@@ -188,17 +188,17 @@ if pmset -g assertions | grep -q 'caffeinate'; then
 fi
 ```
 
-あとは osquery とか。`processes` テーブルでの親子関係を監査したり、[Santa](https://github.com/google/santa) で caffeinate 経由の実行バイナリを MONITOR モードで記録するとかもあるが、、めんどいかも。いつの時代も防御側は苦しい。
+あとは osquery とか。`processes` テーブルでの親子関係を監査したり、[Santa](https://github.com/google/santa) で caffeinate 経由の実行バイナリを MONITOR モードで記録するとかもありますが、、めんどいかもしれません。いつの時代も防御側は苦しいです。
 
 ### クラムシェル
 
-外部デバイスなしでは、 `caffeinate` はクラムシェルスリープを防止できないらしい。蓋を閉じつつ `caffeinate` したい場合は以下の条件を満たす必要がある
+外部デバイスなしでは、 `caffeinate` はクラムシェルスリープを防止できないようです。蓋を閉じつつ `caffeinate` したい場合は以下の条件を満たす必要があります
 
 - 外部ディスプレイ接続
 - AC 電源接続
 - 外部キーボード / マウス接続
 
-`sudo pmset -a disablesleep 1` を叩けば強制的にスリープを無効化できるそうが、蓋を閉じたままカバンに入れると発熱するだとか戻すのを忘れてバッテリー消耗とかリスクを伴う。やらないほうがいい。
+`sudo pmset -a disablesleep 1` を叩けば強制的にスリープを無効化できるそうですが、蓋を閉じたままカバンに入れると発熱するだとか戻すのを忘れてバッテリー消耗とかリスクを伴います。やらないほうがよいです。
 
 ### デバッグとか
 
@@ -218,7 +218,7 @@ killall caffeinate
 
 ## おわり
 
-SHELL 書き換えや trap 連携は実務で普通に使えるやつだった。
+SHELL 書き換えや trap 連携は実務で普通に使えるやつでした。
 
 関連記事:
 - [dotfiles再構築 in 2026](/blog/dotfiles-2026/) -- Makefile やシェル周りの構成管理

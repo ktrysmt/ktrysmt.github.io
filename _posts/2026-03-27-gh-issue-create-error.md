@@ -11,13 +11,13 @@ tags:
   - rest-api
 ---
 
-GitHub Actions で `gh issue create` を使おうとしたら、`permissions: issues: write` などをちゃんとを設定しているのに以下のエラーで失敗する件。
+GitHub Actions で `gh issue create` を使おうとしたら、`permissions: issues: write` などをちゃんとを設定しているのに以下のエラーで失敗する件です。
 
 ```
 GraphQL: Resource not accessible by integration (createIssue.issue)
 ```
 
-原因と回避策の備忘録。
+原因と回避策の備忘録です。
 
 ## 状況
 
@@ -27,7 +27,7 @@ GraphQL: Resource not accessible by integration (createIssue.issue)
 
 ## 発生したエラー
 
-ワークフローで `issues: write` 権限を明示的に付与し、リポジトリ設定でも `Read and write permissions` を選択しているにもかかわらず、`gh issue create` が失敗する。
+ワークフローで `issues: write` 権限を明示的に付与し、リポジトリ設定でも `Read and write permissions` を選択しているにもかかわらず、`gh issue create` が失敗します。
 
 ```yaml
 permissions:
@@ -51,7 +51,7 @@ jobs:
 
 ## 原因
 
-`gh issue create` は内部的に GitHub GraphQL API を使っている。この GraphQL の `createIssue` mutation に対して `GITHUB_TOKEN` ではアクセスを拒否されてしまう。
+`gh issue create` は内部的に GitHub GraphQL API を使っています。この GraphQL の `createIssue` mutation に対して `GITHUB_TOKEN` ではアクセスを拒否されてしまいます。
 
 ひと通り確認した項目:
 
@@ -63,11 +63,11 @@ jobs:
 | 前段のアクションによるトークン上書き | なし |
 | `GH_TOKEN` 環境変数での明示的なトークン渡し | 設定済み |
 
-全て問題ないのに GraphQL 経由でだけ権限エラーが出る。GraphQL API と REST API で `GITHUB_TOKEN` の権限チェックに差異がある模様。GraphQLのほうが仕組み的にアグリゲート等行う関係上追加で必要な権限が（repo系ではなくユーザー系で）ありそうな気がする。
+全て問題ないのに GraphQL 経由でだけ権限エラーが出ます。GraphQL API と REST API で `GITHUB_TOKEN` の権限チェックに差異がある模様です。GraphQLのほうが仕組み的にアグリゲート等行う関係上追加で必要な権限が（repo系ではなくユーザー系で）ありそうな気がします。
 
 ## 回避策: REST API を使う
 
-`gh issue create` (GraphQL) の代わりに `gh api` で REST API を直接呼ぶと必要な権限はピンポイントで定まるので、安定した。
+`gh issue create` (GraphQL) の代わりに `gh api` で REST API を直接呼ぶと必要な権限はピンポイントで定まるので、安定しました。
 
 ```yaml
       - name: Create issue
@@ -80,12 +80,12 @@ jobs:
             -f "labels[]=my-label"
 ```
 
-- `gh api` は REST API (`POST /repos/{owner}/{repo}/issues`) を使う
-- `-f body=@<file>` でファイルからボディを読み込める (`@` プレフィックスがファイル読み込みの意味)
-- ラベルは `-f "labels[]=label-name"` の形式で配列として渡せる
-- 複数ラベルを付ける場合は `-f "labels[]=label1" -f "labels[]=label2"` と繰り返す
+- `gh api` は REST API (`POST /repos/{owner}/{repo}/issues`) を使います
+- `-f body=@<file>` でファイルからボディを読み込めます (`@` プレフィックスがファイル読み込みの意味)
+- ラベルは `-f "labels[]=label-name"` の形式で配列として渡せます
+- 複数ラベルを付ける場合は `-f "labels[]=label1" -f "labels[]=label2"` と繰り返します
 
-なおラベルが存在しない場合は事前に作成しておくこと。`gh label create` は REST API ベースなので影響を受けない。
+なおラベルが存在しない場合は事前に作成しておきます。`gh label create` は REST API ベースなので影響を受けません。
 
 ```yaml
           gh label create my-label \
@@ -106,5 +106,5 @@ jobs:
 
 ## おわり
 
-権限まわりでハマったときはRESTに置き換えるといいかも。
+権限まわりでハマったときはRESTに置き換えるとよいかもしれません。
 
