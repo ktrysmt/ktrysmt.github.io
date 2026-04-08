@@ -14,7 +14,7 @@ tags:
 
 [前回の記事](/blog/llmwiki/)で紹介した llmwiki の内部実装を解説します。
 
-[](/blog/llmwiki/){:.card-preview}
+[](https://ktrysmt.github.io/blog/llmwiki/){:.card-preview}
 
 ## /llmwiki:make の処理フロー
 

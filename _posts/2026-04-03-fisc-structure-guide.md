@@ -284,9 +284,9 @@ graph LR
 
 今どの層のどの種類の話か、を意識できるとブレなさそうです。
 
-[](/blog/fisc-13th-edition-overview/){:.card-preview}
+[](https://ktrysmt.github.io/blog/fisc-13th-edition-overview/){:.card-preview}
 
-[](/blog/internal-encryption-fsa-gl-fisc/){:.card-preview}
+[](https://ktrysmt.github.io/blog/internal-encryption-fsa-gl-fisc/){:.card-preview}
 
 ## 参考
 

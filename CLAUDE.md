@@ -80,6 +80,7 @@ Posts must use exactly one of the following categories:
 
 - Permalink: `/blog/:title/`
 - Mermaid diagrams: use ```` ```mermaid ```` code blocks
+- `.card-preview` links must use absolute URL (`https://ktrysmt.github.io/blog/...`). Relative paths are not supported by Microlink.
 
 ## CI/CD
 
