@@ -11,19 +11,19 @@ tags:
   - protobuf
 ---
 
-`buf` で Protocol Buffers を管理しているプロジェクトで、`.proto` から手軽に gRPC モックサーバーを建てたかったのだが。いくつか調べた結果、buf エコシステムとの親和性が高そうな FauxRPC を使ってみることに。`buf build` + `fauxrpc run` の 2 ステップ。
+`buf` で Protocol Buffers を管理しているプロジェクトで、`.proto` から手軽に gRPC モックサーバーを建てたかったのですが。いくつか調べた結果、buf エコシステムとの親和性が高そうな FauxRPC を使ってみることにしました。`buf build` + `fauxrpc run` の 2 ステップです。
 
 ## FauxRPC
 
-Protobuf 定義からフェイクの gRPC / gRPC-Web / Connect / REST サーバーを上げてくれる。`buf build` の出力 (ディスクリプタ) をそのまま入力にできる。
+Protobuf 定義からフェイクの gRPC / gRPC-Web / Connect / REST サーバーを上げてくれます。`buf build` の出力 (ディスクリプタ) をそのまま入力にできます。
 
-- buf ネイティブ
-- gRPC / gRPC-Web / Connect / REST
-- Server Reflection 有効 (grpcurl でもそのまま叩ける)
-- Stub 定義で固定レスポンス
-- protovalidate 連携によるバリデーションルール準拠のデータ生成
-- コード生成・実装が一切不要
-- HTTP/1.1 (Connect) と HTTP/2 (gRPC) の両方をサポートしているので `grpcurl`, `buf curl` いずれも使える
+- buf ネイティブです
+- gRPC / gRPC-Web / Connect / REST に対応しています
+- Server Reflection 有効 (grpcurl でもそのまま叩けます)
+- Stub 定義で固定レスポンスが可能です
+- protovalidate 連携によるバリデーションルール準拠のデータ生成ができます
+- コード生成・実装が一切不要です
+- HTTP/1.1 (Connect) と HTTP/2 (gRPC) の両方をサポートしているので `grpcurl`, `buf curl` いずれも使えます
 
 ## セットアップ
 
@@ -40,7 +40,7 @@ cd libs/proto
 buf build -o service.binpb
 ```
 
-既存の `buf.yaml` がそのまま使われるため、追加設定は不要。
+既存の `buf.yaml` がそのまま使われるため、追加設定は不要です。
 
 ### 3. モックサーバー起動
 
@@ -92,7 +92,7 @@ $ grpcurl -plaintext \
 
 ### レスポンスの特徴
 
-スキーマの型情報に基づくランダムなフェイクデータが自動生成される。
+スキーマの型情報に基づくランダムなフェイクデータが自動生成されます。
 
 - `string` -- ランダムな英文
 - `bool` -- true / false
@@ -101,7 +101,7 @@ $ grpcurl -plaintext \
 - `message` (nested) -- 再帰的にフェイクデータ生成
 - `google.protobuf.Timestamp` -- ランダムな日時
 
-ネストされたメッセージも含め完全自動:
+ネストされたメッセージも含め完全自動で生成されます。
 
 ```json
 {
@@ -118,7 +118,7 @@ $ grpcurl -plaintext \
 
 ## Stub による固定レスポンス
 
-デフォルトのランダムデータでは不十分な場合、Stub ファイルで特定 RPC への固定レスポンスを定義できる。
+デフォルトのランダムデータでは不十分な場合、Stub ファイルで特定 RPC への固定レスポンスを定義できます。
 
 ```yaml
 # stubs/method_a.yaml
@@ -147,14 +147,14 @@ libs/proto/service.binpb: $(wildcard libs/proto/**/*.proto)
 
 ## 注意点
 
-- フェイクデータは型ベースのランダム値なので、`status` enum などがビジネスロジック上ありえない値になりうるる。重要なテストシナリオには Stub 定義が必須
-- `int64` フィールドに非常に大きなランダム値が入る。現実的な値が必要ならやはり Stub か protovalidate の制約
+- フェイクデータは型ベースのランダム値なので、`status` enum などがビジネスロジック上ありえない値になりえます。重要なテストシナリオには Stub 定義が必須です
+- `int64` フィールドに非常に大きなランダム値が入ります。現実的な値が必要ならやはり Stub か protovalidate の制約が必要です
 
 ## チーム間での共有
 
-protoとMakefileなどがリポジトリにあれば十分で、各自の手元で `buf build` からモック起動まで完結できる。前述の Makefile 例のように `make mock/grpc` 一発で済む。
+protoとMakefileなどがリポジトリにあれば十分で、各自の手元で `buf build` からモック起動まで完結できます。前述の Makefile 例のように `make mock/grpc` 一発で済みます。
 
-`--schema` は複数指定できるので、マイクロサービス構成でも `--schema=a.binpb --schema=b.binpb` のように合成可能。
+`--schema` は複数指定できるので、マイクロサービス構成でも `--schema=a.binpb --schema=b.binpb` のように合成可能です。
 
 ## おわり
 

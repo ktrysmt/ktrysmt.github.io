@@ -19,6 +19,7 @@ Kotaro Yoshimatsu's personal tech blog (SRE / Security Governance). Built with J
 ```
 _config.yml        # Jekyll configuration
 _posts/            # Blog posts (112 articles, 2014-present)
+_drafts/           # Draft posts (not published; previewed with `jekyll s --drafts`)
 _layouts/          # default, post, list, tag, top, default-top
 _includes/         # navigation, profile, share, footer, etc.
 _plugins/          # tag_pages.rb (tag archive generator)
@@ -52,6 +53,13 @@ curl http://localhost:8888/blog/
 bundle exec jekyll build
 # Output: _site/
 ```
+
+## Drafts
+
+- 下書きは `_drafts/` に配置する（日付なしのファイル名でよい）
+- リポジトリのルート直下に `blog-draft-*.md` のような下書きファイルを置かない
+- プレビュー: `bundle exec jekyll s -P 8888 -H 0.0.0.0 --drafts`
+- 公開時は `_posts/YYYY-MM-DD-title.md` にリネームして移動する
 
 ## Post Format
 

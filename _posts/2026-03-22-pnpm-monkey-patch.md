@@ -11,7 +11,7 @@ tags:
   - javascript
 ---
 
-依存パッケージにバグや不足機能があるとして upstream に PR を出すほどでもない、あるいは PR がマージされるまで待てないってときに。
+依存パッケージにバグや不足機能があるとして upstream に PR を出すほどでもない、あるいは PR がマージされるまで待てないというときのメモです。
 
 ## 手順
 
@@ -21,17 +21,17 @@ tags:
 pnpm patch @ktrysmt/beautiful-mermaid@1.3.0
 ```
 
-一時ディレクトリにパッケージが展開される。パスが標準出力に出る。
+一時ディレクトリにパッケージが展開されます。パスが標準出力に出ます。
 
 ### 2. コードを編集する
 
-展開されたディレクトリ内のファイルを直接編集する。
+展開されたディレクトリ内のファイルを直接編集します。
 
 ```bash
 vim /tmp/xxxxx/dist/index.js
 ```
 
-ビルド済みの `dist/` を触ることになるので、変更箇所は最小限にする。
+ビルド済みの `dist/` を触ることになるので、変更箇所は最小限にします。
 
 ### 3. patch を確定する
 
@@ -39,7 +39,7 @@ vim /tmp/xxxxx/dist/index.js
 pnpm patch-commit /tmp/xxxxx
 ```
 
-`patches/` ディレクトリに `.patch` ファイルが生成され `package.json` に `pnpm.patchedDependencies` が自動追加される。
+`patches/` ディレクトリに `.patch` ファイルが生成され `package.json` に `pnpm.patchedDependencies` が自動追加されます。
 
 ```json
 {
@@ -57,7 +57,7 @@ pnpm patch-commit /tmp/xxxxx
 pnpm install
 ```
 
-patch が適用された状態で `node_modules` に展開される。
+patch が適用された状態で `node_modules` に展開されます。
 
 ### 5. 動作確認
 
@@ -67,13 +67,13 @@ pnpm test
 
 ### 6. patch が不要になったら
 
-upstream に修正が取り込まれたら、`pnpm.patchedDependencies` を `package.json` から消して `patches/` 内の `.patch` ファイルを削除する。その後 `pnpm install` で元に戻る。
+upstream に修正が取り込まれたら、`pnpm.patchedDependencies` を `package.json` から消して `patches/` 内の `.patch` ファイルを削除します。その後 `pnpm install` で元に戻ります。
 
 ## 注意
 
-- patch はバージョンに紐づくようで依存パッケージをアップデートしたら patch が当たらなくなる。バージョンを上げるたびに patch を作り直すか都度確認。
-- `dist/` いじってるだけなのであくまで一時的な措置。
-- もしチームでこれを使う場合は `.patch` ファイルと `package.json` の変更をコミットしておいて `pnpm install` すれば、他のメンバーにも同じ patch が当たってくれる。
+- patch はバージョンに紐づくようで依存パッケージをアップデートしたら patch が当たらなくなります。バージョンを上げるたびに patch を作り直すか都度確認が必要です
+- `dist/` をいじっているだけなのであくまで一時的な措置です
+- もしチームでこれを使う場合は `.patch` ファイルと `package.json` の変更をコミットしておいて `pnpm install` すれば、他のメンバーにも同じ patch が当たってくれます
 
 ## pnpm link でローカルテスト
 
@@ -91,9 +91,9 @@ rm node_modules/@ktrysmt/beautiful-mermaid
 pnpm install
 ```
 
-`pnpm link` は `node_modules` にsymlink張るだけなのでローカルで編集した内容は当然即反映。
+`pnpm link` は `node_modules` にsymlinkを張るだけなのでローカルで編集した内容は当然即反映されます。
 
 ## おわり
 
-めんどいけど `yarn patch` より少し手間が少ないっぽくて、一時的にpatch運用を受け入れるとするなら体験はいいほうだったと思う。
+めんどいですが `yarn patch` より少し手間が少ないっぽくて、一時的にpatch運用を受け入れるとするなら体験はいいほうだったと思います。
 
