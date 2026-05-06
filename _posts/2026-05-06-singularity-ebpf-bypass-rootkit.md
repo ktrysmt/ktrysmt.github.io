@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "少し前に話題になったebpf迂回してくるSingularity rootkitの設計思想まとめ"
+title: "ebpf迂回してくるSingularity rootkitの設計思想など"
 date: 2026-05-06 16:51:00 +0900
 categories: [Security Governance]
 published: true
@@ -14,7 +14,7 @@ tags:
   - security
 ---
 
-Linux 6.x カーネルに対するrootkitである Singularity（作者: Matheus Alves／MatheuZSecurity, MIT ライセンス）が話題になってました。注目点は ftrace ベースの巧妙なフッキングと ebpf を「無効化」せず「目隠し」する挙動。本稿ではその仕組みを技術的にまとめます。
+少し前Linux 6.x カーネルに対するrootkitである Singularityが話題になってました。特徴的なのはftraceベースの巧妙なフッキングとebpfを無効化せず目隠しするような挙動。
 
 
 ## ebpfをすり抜けてくる衝撃
